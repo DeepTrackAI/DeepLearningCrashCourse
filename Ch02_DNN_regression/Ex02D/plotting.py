@@ -48,7 +48,7 @@ def plot_pred_2d(x, y_gt, y_p):
     plt.show()
 
 
-def plot_pred_vs_gt(x, y_gt, y_p):
+def plot_pred_vs_gt(y_gt, y_p):
     import matplotlib.pyplot as plt
 
     plt.plot([-1, 1], [-1, 1], "k:")
@@ -57,4 +57,29 @@ def plot_pred_vs_gt(x, y_gt, y_p):
     plt.xlabel("y groundtruth", fontsize=24)
     plt.ylabel("y predicted", fontsize=24)
     plt.tick_params(axis="both", which="major", labelsize=16)
+    plt.show()
+
+def plot_mse(mse, smooth=11):
+    import matplotlib.pyplot as plt
+    from numpy import convolve, full
+
+    mse_smooth = convolve(mse, full((smooth,), 1 / smooth), mode="valid")
+
+    fig, ax = plt.subplots(1, 2)
+    
+    fig.set_size_inches(10, 5)
+    
+    ax[0].plot(mse, c="tab:orange")
+    ax[0].plot(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, c="k")
+    ax[0].set_xlabel("epoch", fontsize=24)
+    ax[0].set_ylabel("MSE", fontsize=24)
+    ax[0].tick_params(axis="both", which="major", labelsize=16)
+
+    ax[1].loglog(mse, c="tab:orange")
+    ax[1].loglog(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, c="k")
+    ax[1].set_xlabel("epoch", fontsize=24)
+    ax[1].set_ylabel("MSE", fontsize=24)
+    ax[1].tick_params(axis="both", which="major", labelsize=16)
+    
+    plt.tight_layout()
     plt.show()
