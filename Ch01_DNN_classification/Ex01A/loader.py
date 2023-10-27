@@ -10,7 +10,7 @@ def load_data_1d(filename):
             data.append(row)
         data = asarray(data).astype(float)
 
-    x = data[:, 0] # input data
-    y = data[:, 1] # output data / targets / groundtruth
+    x = data[:, 0] # input
+    y = data[:, 1] # output / targets / groundtruth
     
     return (x, y)
