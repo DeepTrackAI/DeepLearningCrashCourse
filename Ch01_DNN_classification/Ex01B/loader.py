@@ -10,8 +10,8 @@ def load_data_1d(filename):
             data.append(row)
         data = asarray(data).astype(float)
 
-    x = data[:, 0] # input data
-    y = data[:, 1] # output data / targets / groundtruth
+    x = data[:, 0] # input
+    y = data[:, 1] # output / targets / groundtruth
     
     return (x, y)
 
@@ -27,9 +27,9 @@ def load_data(filename):
             data.append(row)
         data = asarray(data).astype(float)
 
-    x = data[:, 0:-1] # input data
+    x = data[:, 0:-1] # input
 
     num_samples = data.shape[0]
-    y = reshape(data[:, -1], (num_samples, 1)) # output data/targets/groundtruth
+    y = reshape(data[:, -1], (num_samples, 1)) # output / targets / groundtruth
     
     return (x, y)
