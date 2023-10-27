@@ -15,6 +15,7 @@ def load_data_1d(filename):
     
     return (x, y)
 
+
 def load_data(filename):
     import csv
     from numpy import asarray, reshape
