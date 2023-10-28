@@ -11,6 +11,6 @@ def load_data_1d(filename):
         data = asarray(data).astype(float)
 
     x = data[:, 0] # input
-    y = data[:, 1] # output / targets / groundtruth
+    y = data[:, 1] # output / target / groundtruth
     
     return (x, y)
