@@ -19,25 +19,12 @@ def plot_examples(uninfected_files,infected_files):
     plt.show()
 
 def plot_ROC_AUC(classifier, dataset):
-    from numpy import array
+    from torch import tensor, stack
     from sklearn.metrics import roc_curve, auc
     from matplotlib import pyplot as plt
 
-    # im = []
-    # gt = []
-    # pred = []
-
-    # for images,labels in loader:
-    #     predictions = classifier(images)
-
-    #     [im.append(i) for i in images.detach().numpy()]
-    #     # [gt.append(i.argmax()) for i in labels.numpy().astype(int)]
-    #     # [pred.append(i.argmax()) for i in predictions.detach().numpy()]
-    #     [gt.append(i[0]) for i in labels.numpy().astype(int)]
-    #     [pred.append(i[0]) for i in predictions.detach().numpy()]
-
     im, gt = zip(*dataset)
-    pred = CNN(torch.tensor(torch.stack(im)))
+    pred = classifier(tensor(stack(im))).tolist()
     # calculate the ROC curve
     fpr, tpr, thresholds = roc_curve(gt, pred, pos_label=1) 
     roc_auc = auc(fpr, tpr) 
@@ -54,12 +41,17 @@ def plot_ROC_AUC(classifier, dataset):
     plt.legend(loc = 'center right')
     plt.show()
 
-    return array(im), array(gt), array(pred), roc_auc
+    return im, gt, pred, roc_auc
 
 
 def plot_failure(images, gt, pred, threshold = 0.5, num_of_plots = 5):
-    from matplotlib import pyplot as plt    
+    from matplotlib import pyplot as plt 
+    from numpy import array, squeeze   
     
+    pred = array(pred).squeeze()
+    gt = array(gt).squeeze()
+    images = array(images)
+
     pred_class = pred > threshold
 
     false_positives = (pred_class == 1) & (gt == 0)
@@ -70,6 +62,7 @@ def plot_failure(images, gt, pred, threshold = 0.5, num_of_plots = 5):
 
     plt.figure(figsize=(num_of_plots*2, 5))
     for i in range(num_of_plots):
+
         # false positives
         plt.subplot(2, num_of_plots, i + 1)
         plt.imshow(false_positives_images[i].transpose(1, 2, 0))
@@ -82,5 +75,49 @@ def plot_failure(images, gt, pred, threshold = 0.5, num_of_plots = 5):
         if i == 0:
             plt.title("False negatives", fontsize=16, y=1.1)
 
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_filters_activations(tensor,n_rows, label = '',normalize = True):
+    from matplotlib import pyplot as plt
+    fig,axes = plt.subplots(n_rows, -(tensor.shape[0] // -n_rows), figsize=(2*(-(tensor.shape[0] // -n_rows)),2*n_rows))
+    for i in range(-(tensor.shape[0] // -n_rows)*n_rows):
+        try: 
+            p  = tensor[i].permute(1,2,0).numpy()
+            if normalize: 
+                p -= p.min(axis=(0,1), keepdims=True)
+                p /= p.max(axis=(0,1), keepdims=True)
+            axes.ravel()[i].axis('off')
+            axes.ravel()[i].imshow(p)
+            axes.ravel()[i].set_title(i)
+        except: 
+            axes.ravel()[i].axis('off')
+    fig.suptitle(label, fontsize = 16)
+    fig.tight_layout()
+    plt.show()
+
+
+def plot_gradcam(gcam, img):
+    from matplotlib import pyplot as plt
+    from skimage.transform import resize
+    from skimage.exposure import rescale_intensity
+
+    gcam = resize(gcam, img.shape, order = 2)
+    gcam = rescale_intensity(gcam,out_range=(0.25,1))
+
+    plt.figure(figsize=(12, 5)) 
+    plt.subplot(1, 3, 1)
+    plt.imshow(img, interpolation = 'bilinear')
+    plt.title('Original image')
+    plt.axis('off')
+    plt.subplot(1, 3, 2)
+    plt.imshow(gcam.mean(axis=-1), interpolation = 'bilinear')
+    plt.title('Grad-CAM')
+    plt.axis('off')
+    plt.subplot(1, 3, 3)
+    plt.imshow(img*gcam)
+    plt.title('Overlay')
+    plt.axis('off')
     plt.tight_layout()
     plt.show()
