@@ -79,12 +79,12 @@ def plot_failure(images, gt, pred, threshold = 0.5, num_of_plots = 5):
     plt.show()
 
 
-def plot_filters_activations(tensor,n_rows, label = '',normalize = True):
+def plot_filters_activations(input,n_rows, label = '',normalize = True):
     from matplotlib import pyplot as plt
-    fig,axes = plt.subplots(n_rows, -(tensor.shape[0] // -n_rows), figsize=(2*(-(tensor.shape[0] // -n_rows)),2*n_rows))
-    for i in range(-(tensor.shape[0] // -n_rows)*n_rows):
+    fig,axes = plt.subplots(n_rows, -(input.shape[0] // -n_rows), figsize=(2*(-(input.shape[0] // -n_rows)),2*n_rows))
+    for i in range(-(input.shape[0] // -n_rows)*n_rows):
         try: 
-            p  = tensor[i].permute(1,2,0).numpy()
+            p  = input[i].permute(1,2,0).numpy()
             if normalize: 
                 p -= p.min(axis=(0,1), keepdims=True)
                 p /= p.max(axis=(0,1), keepdims=True)
@@ -121,3 +121,27 @@ def plot_gradcam(gcam, img):
     plt.axis('off')
     plt.tight_layout()
     plt.show()
+
+class fwd_hook():
+    def __init__(self, m):
+        self.hook = m.register_forward_hook(self.hook_func)   
+    def hook_func(self, m, i, o):
+        print('Forward hook running...') 
+        self.stored = o.detach().clone()
+        print(f'Activations size: {self.stored.size()}')
+    def __enter__(self, *args): 
+        return self
+    def __exit__(self, *args): 
+        self.hook.remove()
+
+class bwd_hook():
+    def __init__(self, m):
+        self.hook = m.register_full_backward_hook(self.hook_func)
+    def hook_func(self, m, gi, go):
+        print('Backward hook running...')
+        self.stored = go[0].detach().clone()
+        print(f'Gradients size: {self.stored.size()}')
+    def __enter__(self, *args): 
+        return self
+    def __exit__(self, *args): 
+        self.hook.remove()
