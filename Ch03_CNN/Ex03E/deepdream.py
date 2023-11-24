@@ -3,12 +3,13 @@ class fwd_hook():
         self.hook = m.register_forward_hook(self.hook_func)   
     def hook_func(self, m, i, o):
         #print('Forward hook running...') 
-        self.stored = o#.detach().clone()
+        self.stored = o
         #print(f'Activations size: {self.stored.size()}')
     def __enter__(self, *args): 
         return self
     def __exit__(self, *args): 
         self.hook.remove()
+      
 
 def preprocess(image):
     import torch 
