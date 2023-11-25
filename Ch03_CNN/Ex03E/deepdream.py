@@ -1,14 +1,31 @@
-class fwd_hook():
-    def __init__(self, m):
-        self.hook = m.register_forward_hook(self.hook_func)   
+class fwd_hooks():
+    def __init__(self, ms):
+        self.ms = ms
+        self.hook, self.stored = [], []
+        for m in self.ms:
+            self.hook.append(m.register_forward_hook(self.hook_func))
     def hook_func(self, m, i, o):
-        #print('Forward hook running...') 
-        self.stored = o
-        #print(f'Activations size: {self.stored.size()}')
+        # print('Forward hook running...') 
+        self.stored.append(o)
+        # print(f'Activations size: {o.size()}')
     def __enter__(self, *args): 
-        return self
+         return self
     def __exit__(self, *args): 
-        self.hook.remove()
+        for h in self.hook:    
+            h.remove() 
+
+
+# class fwd_hook():
+#     def __init__(self, m):
+#         self.hook = m.register_forward_hook(self.hook_func)   
+#     def hook_func(self, m, i, o):
+#         #print('Forward hook running...') 
+#         self.stored = o
+#         #print(f'Activations size: {self.stored.size()}')
+#     def __enter__(self, *args): 
+#         return self
+#     def __exit__(self, *args): 
+#         self.hook.remove()
       
 
 def preprocess(image):
@@ -29,6 +46,22 @@ def deprocess(tensor):
                                     std = [1/0.229, 1/0.224, 1/0.225] )
     im = np.array(denormalize(tensor.detach().squeeze())).transpose(1,2,0)
     return im
+
+def plot_dream(im_in,im_out):
+    import matplotlib.pyplot as plt
+    plt.figure(figsize=(10, 5)) 
+    plt.subplot(1, 2, 1)
+    plt.imshow(im_in)
+    plt.title('Original image')
+    plt.axis('off')
+    plt.subplot(1, 2, 2)
+    plt.imshow(im_out)
+    plt.title('Deepdream image') 
+    plt.axis('off')
+    plt.show()
+
+
+
 
 
 
