@@ -42,15 +42,19 @@ def deprocess(tensor, mean_ds, std_ds):
     im = np.array(denormalize(tensor.detach().squeeze())).transpose(1,2,0)
     return im
 
-def plot_dream(im_in,im_out):
+def plot_style(im_c, im_s, im_out):
     import matplotlib.pyplot as plt
-    plt.figure(figsize=(10, 5)) 
-    plt.subplot(1, 2, 1)
-    plt.imshow(im_in)
-    plt.title('Original image')
+    plt.figure(figsize=(15, 5)) 
+    plt.subplot(1, 3, 1)
+    plt.imshow(im_c)
+    plt.title('Content image')
     plt.axis('off')
-    plt.subplot(1, 2, 2)
+    plt.subplot(1, 3, 2)
+    plt.imshow(im_s)
+    plt.title('Style image') 
+    plt.axis('off')
+    plt.subplot(1, 3, 3)
     plt.imshow(im_out)
-    plt.title('Deepdream image') 
+    plt.title('Output image') 
     plt.axis('off')
     plt.show()
