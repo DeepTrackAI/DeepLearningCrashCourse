@@ -30,7 +30,6 @@ def preprocess(image, mean_ds, std_ds):
                             transforms.Normalize(mean=mean_ds,
                                  std=std_ds),
                             ])
-    # tensor = normalize(torch.from_numpy(image.transpose(2,0,1)).type(torch.FloatTensor).unsqueeze(0)).requires_grad_(True)
     tensor = normalize(image).unsqueeze(0).requires_grad_(True)
     return tensor
 
