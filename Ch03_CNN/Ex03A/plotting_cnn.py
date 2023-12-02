@@ -1,7 +1,7 @@
 def plot_image(image):
     import matplotlib.pyplot as plt
     
-    plt.imshow(image, cmap="gray", aspect="equal", 
+    plt.imshow(image, cmap="gray", aspect="equal", vmin=-2, vmax=2,
                extent=[0, image.shape[1], 0, image.shape[0]])
     plt.colorbar()
     plt.xticks(range(0, image.shape[1] + 1))
@@ -16,7 +16,7 @@ def plot_channels(channels):
     fig, axs = plt.subplots(1, channels.shape[0], figsize=(12, 4))
 
     for channel, ax, i in zip(channels, axs, range(channels.shape[0])):
-        im = ax.imshow(channel, cmap="gray", aspect="equal", 
+        im = ax.imshow(channel, cmap="gray", aspect="equal", vmin=-2, vmax=2,
                        extent=[0, channel.shape[1], 0, channel.shape[0]])
         plt.colorbar(im)
         ax.set_title(f"Channel {i}")
