@@ -10,34 +10,6 @@ def plot_blood_smears(title, files):
     plt.show()
 
 
-def plot_roc(classifier, dataset):
-    from torch import tensor, stack
-    from sklearn.metrics import roc_curve, auc
-    from matplotlib import pyplot as plt
-
-    # calculate predictions
-    images, gt = zip(*dataset)
-    pred = classifier(tensor(stack(images))).tolist()
-    
-    # calculate the ROC curve
-    fpr, tpr, thresholds = roc_curve(gt, pred, pos_label=1) 
-    roc = auc(fpr, tpr) 
-
-    # plot the ROC curve
-    plt.figure(figsize=(5, 5))
-    plt.plot(fpr, tpr, label=f"ROC curve (AUC = {roc:.3f})", linewidth=2)
-    plt.title("ROC curve")
-    plt.xlabel("False positive rate")
-    plt.ylabel("True positive rate")
-    plt.axis("square")
-    plt.xlim(0, 1)
-    plt.ylim(0, 1)
-    plt.legend(loc = 'center right')
-    plt.show()
-
-    return images, gt, pred, roc
-
-
 def plot_failures(images, gt, pred, threshold=.5, plot_num=5):
     from matplotlib import pyplot as plt 
     from numpy import array, squeeze
@@ -71,10 +43,10 @@ def plot_failures(images, gt, pred, threshold=.5, plot_num=5):
 
 
 class fwd_hook():
-    def __init__(self, model):
-        self.hook = model.register_forward_hook(self.hook_func)
+    def __init__(self, layer):
+        self.hook = layer.register_forward_hook(self.hook_func)
 
-    def hook_func(self, model, i, o):
+    def hook_func(self, layer, i, o):
         print("Forward hook running ...") 
         self.activations = o.detach().clone()
         print(f"Activations size: {self.activations.size()}")
@@ -87,10 +59,10 @@ class fwd_hook():
 
 
 class bwd_hook():
-    def __init__(self, model):
-        self.hook = model.register_full_backward_hook(self.hook_func)
+    def __init__(self, layer):
+        self.hook = layer.register_full_backward_hook(self.hook_func)
 
-    def hook_func(self, model, gi, go):
+    def hook_func(self, layer, gi, go):
         print("Backward hook running ...")
         self.gradients = go[0].detach().clone()
         print(f"Gradients size: {self.gradients.size()}")
