@@ -71,10 +71,10 @@ def plot_failures(images, gt, pred, threshold=.5, plot_num=5):
 
 
 class fwd_hook():
-    def __init__(self, model):
-        self.hook = model.register_forward_hook(self.hook_func)
+    def __init__(self, layer):
+        self.hook = layer.register_forward_hook(self.hook_func)
 
-    def hook_func(self, model, i, o):
+    def hook_func(self, layer, i, o):
         print("Forward hook running ...") 
         self.activations = o.detach().clone()
         print(f"Activations size: {self.activations.size()}")
@@ -87,10 +87,10 @@ class fwd_hook():
 
 
 class bwd_hook():
-    def __init__(self, model):
-        self.hook = model.register_full_backward_hook(self.hook_func)
+    def __init__(self, layer):
+        self.hook = layer.register_full_backward_hook(self.hook_func)
 
-    def hook_func(self, model, gi, go):
+    def hook_func(self, layer, gi, go):
         print("Backward hook running ...")
         self.gradients = go[0].detach().clone()
         print(f"Gradients size: {self.gradients.size()}")
