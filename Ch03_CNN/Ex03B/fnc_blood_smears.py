@@ -76,7 +76,7 @@ class fwd_hook():
 
     def hook_func(self, model, i, o):
         print("Forward hook running ...") 
-        self.activations = o[0].detach().clone()
+        self.activations = o.detach().clone()
         print(f"Activations size: {self.activations.size()}")
 
     def __enter__(self, *args): 
