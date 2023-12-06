@@ -5,15 +5,15 @@ def plot_blood_smears(title, files):
     for i, ax in enumerate(axs.ravel()):
         image = plt.imread(files[i])
         ax.imshow(image)
-        
+
     fig.suptitle(title, fontsize=16)
     plt.show()
 
 
-def plot_failures(images, gt, pred, threshold=.5, plot_num=5):
-    from matplotlib import pyplot as plt 
+def plot_failures(images, gt, pred, threshold=0.5, plot_num=5):
+    from matplotlib import pyplot as plt
     from numpy import array, squeeze
-    
+
     pred = array(pred).squeeze()
     gt = array(gt).squeeze()
     images = array(images)
@@ -42,23 +42,23 @@ def plot_failures(images, gt, pred, threshold=.5, plot_num=5):
     plt.show()
 
 
-class fwd_hook():
+class fwd_hook:
     def __init__(self, layer):
         self.hook = layer.register_forward_hook(self.hook_func)
 
     def hook_func(self, layer, i, o):
-        print("Forward hook running ...") 
+        print("Forward hook running ...")
         self.activations = o.detach().clone()
         print(f"Activations size: {self.activations.size()}")
 
-    def __enter__(self, *args): 
+    def __enter__(self, *args):
         return self
-    
-    def __exit__(self, *args): 
+
+    def __exit__(self, *args):
         self.hook.remove()
 
 
-class bwd_hook():
+class bwd_hook:
     def __init__(self, layer):
         self.hook = layer.register_full_backward_hook(self.hook_func)
 
@@ -67,10 +67,10 @@ class bwd_hook():
         self.gradients = go[0].detach().clone()
         print(f"Gradients size: {self.gradients.size()}")
 
-    def __enter__(self, *args): 
+    def __enter__(self, *args):
         return self
-    
-    def __exit__(self, *args): 
+
+    def __exit__(self, *args):
         self.hook.remove()
 
 
@@ -81,7 +81,7 @@ def plot_activations(activations, cols=8):
 
     fig, axs = plt.subplots(rows, cols, figsize=(2 * cols, 2 * rows))
     for i, ax in enumerate(axs.ravel()):
-        ax.axis('off')
+        ax.axis("off")
         if i < activations.shape[0]:
             ax.imshow(activations[i].numpy())
             ax.set_title(i)
@@ -93,26 +93,28 @@ def plot_activations(activations, cols=8):
 def plot_gradcam(image, grad_cam):
     from matplotlib import pyplot as plt
     import skimage
+    from numpy import array
 
+    image = skimage.exposure.rescale_intensity(array(image), out_range=(0, 1))
     grad_cam = skimage.transform.resize(grad_cam, image.shape, order=2)
     grad_cam = skimage.exposure.rescale_intensity(grad_cam, out_range=(0.25, 1))
 
-    plt.figure(figsize=(12, 5)) 
+    plt.figure(figsize=(12, 5))
 
     plt.subplot(1, 3, 1)
     plt.imshow(image, interpolation="bilinear")
     plt.title("Original image")
     plt.axis("off")
-    
+
     plt.subplot(1, 3, 2)
     plt.imshow(grad_cam.mean(axis=-1), interpolation="bilinear")
     plt.title("Grad-CAM")
     plt.axis("off")
-    
+
     plt.subplot(1, 3, 3)
     plt.imshow(image * grad_cam)
     plt.title("Overlay")
     plt.axis("off")
-    
+
     plt.tight_layout()
     plt.show()
