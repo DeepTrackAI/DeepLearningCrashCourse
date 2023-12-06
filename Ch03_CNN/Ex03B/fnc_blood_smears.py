@@ -77,7 +77,7 @@ class fwd_hook():
     def hook_func(self, model, i, o):
         print("Forward hook running ...") 
         self.activations = o[0].detach().clone()
-        print(f"Activations size: {self.stored.size()}")
+        print(f"Activations size: {self.activations.size()}")
 
     def __enter__(self, *args): 
         return self
@@ -93,7 +93,7 @@ class bwd_hook():
     def hook_func(self, model, gi, go):
         print("Backward hook running ...")
         self.gradients = go[0].detach().clone()
-        print(f"Gradients size: {self.stored.size()}")
+        print(f"Gradients size: {self.gradients.size()}")
 
     def __enter__(self, *args): 
         return self
