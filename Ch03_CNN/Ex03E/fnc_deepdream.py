@@ -17,19 +17,21 @@ class fwd_hooks():
             h.remove() 
 
 
-def plot_deepdream(im, im_out):
-    import matplotlib.pyplot as plt
+def image_to_tensor(im, mean, std): # Preprocess the image: convert to tensor and normalize
+    import torchvision.transforms as tt
 
-    plt.figure(figsize=(10, 5))
+    normalize = tt.Compose([tt.ToTensor(), tt.Normalize(mean, std)])
 
-    plt.subplot(1, 2, 1)
-    plt.imshow(im)
-    plt.title('Original image')
-    plt.axis('off')
+    return normalize(im).unsqueeze(0).requires_grad_(True)
 
-    plt.subplot(1, 2, 2)
-    plt.imshow(im_out)
-    plt.title('Deepdream image') 
-    plt.axis('off')
-    
-    plt.show()
+
+def tensor_to_image(image, mean, std): # Postprocess: Convert back to image format
+    import torchvision.transforms as tt
+    import numpy as np
+    from PIL import Image
+
+    denormalize = tt.Normalize(mean=-mean / std, std=1 / std)
+
+    im_array = denormalize(image.data.clone().detach().squeeze()).numpy()
+    im_array = np.clip(im_array.transpose(1, 2, 0) * 255, 0, 255).astype(np.uint8)
+    return Image.fromarray(im_array, 'RGB')
