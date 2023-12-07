@@ -1,12 +1,14 @@
-def plot_blood_smears(title, files):
+def plot_blood_smears(dataset):
     import matplotlib.pyplot as plt
+    from numpy.random import randint
 
-    fig, axs = plt.subplots(3, 3, figsize=(8, 8))
-    for i, ax in enumerate(axs.ravel()):
-        image = plt.imread(files[i])
+    fig, axs = plt.subplots(3, 6, figsize=(16, 8))
+    for ax in axs.ravel():
+        image, label = dataset[randint(0, len(dataset))]
         ax.imshow(image)
+        ax.set_title("Uninfected (1)" if label == 1 else "Infected (0)")
 
-    fig.suptitle(title, fontsize=16)
+    plt.tight_layout()
     plt.show()
 
 
