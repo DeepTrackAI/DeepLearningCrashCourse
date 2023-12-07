@@ -16,6 +16,22 @@ def plot_blood_smears(dataset):
     plt.show()
 
 
+def plot_roc(classifier, loader):
+    import torchmetrics as tm
+
+    roc = tm.ROC(task="binary")
+
+    for image, label in loader:
+        roc.update(classifier(image), label.long())
+
+    fig, ax = roc.plot(score=True)
+    ax.grid(False)
+    ax.axis("square")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.legend(loc="center right")
+
+
 def plot_failures(images, gt, pred, threshold=0.5, plot_num=5):
     from matplotlib import pyplot as plt
     from numpy import array, squeeze
