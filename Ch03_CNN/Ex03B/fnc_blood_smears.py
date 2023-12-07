@@ -1,10 +1,14 @@
 def plot_blood_smears(dataset):
     import matplotlib.pyplot as plt
     from numpy.random import randint
+    import torch
 
     fig, axs = plt.subplots(3, 6, figsize=(16, 8))
     for ax in axs.ravel():
         image, label = dataset[randint(0, len(dataset))]
+        if isinstance(image, torch.Tensor):
+            image = image.numpy().transpose(1, 2, 0)
+            
         ax.imshow(image)
         ax.set_title("Uninfected (1)" if label == 1 else "Infected (0)")
 
