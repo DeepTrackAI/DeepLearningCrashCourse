@@ -32,18 +32,18 @@ def plot_roc(classifier, loader):
     ax.legend(loc="center right")
 
 
-def plot_failures(images, gt, pred, threshold=0.5, plot_num=5):
+def plot_failures(images, labels, pred, threshold=0.5, plot_num=5):
     from matplotlib import pyplot as plt
     from numpy import array, squeeze
 
     pred = array(pred).squeeze()
-    gt = array(gt).squeeze()
+    labels = array(labels).squeeze()
     images = array(images)
 
-    false_positives = (pred > threshold) & (gt == 0)
+    false_positives = (pred > threshold) & (labels == 0)
     false_positives_images = images[false_positives]
 
-    false_negatives = (pred < threshold) & (gt == 1)
+    false_negatives = (pred < threshold) & (labels == 1)
     false_negatives_images = images[false_negatives]
 
     plt.figure(figsize=(plot_num * 2, 5))
@@ -112,7 +112,7 @@ def plot_activations(activations, cols=8):
     plt.show()
 
 
-def plot_gradcam(image, grad_cam):
+def plot_heatmap(image, grad_cam):
     from matplotlib import pyplot as plt
     import skimage
     from numpy import array
@@ -125,17 +125,17 @@ def plot_gradcam(image, grad_cam):
 
     plt.subplot(1, 3, 1)
     plt.imshow(image, interpolation="bilinear")
-    plt.title("Original image")
+    plt.title("Original image", fontsize=16)
     plt.axis("off")
 
     plt.subplot(1, 3, 2)
     plt.imshow(grad_cam.mean(axis=-1), interpolation="bilinear")
-    plt.title("Grad-CAM")
+    plt.title("Heatmap with Grad-CAM", fontsize=16)
     plt.axis("off")
 
     plt.subplot(1, 3, 3)
     plt.imshow(image * grad_cam)
-    plt.title("Overlay")
+    plt.title("Overlay", fontsize=16)
     plt.axis("off")
 
     plt.tight_layout()
