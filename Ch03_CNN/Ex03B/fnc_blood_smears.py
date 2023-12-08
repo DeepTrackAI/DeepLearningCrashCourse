@@ -112,14 +112,14 @@ def plot_activations(activations, cols=8):
     plt.show()
 
 
-def plot_heatmap(image, grad_cam):
+def plot_heatmap(image, heatmap):
     from matplotlib import pyplot as plt
     import skimage
     from numpy import array
 
     image = skimage.exposure.rescale_intensity(array(image), out_range=(0, 1))
-    grad_cam = skimage.transform.resize(grad_cam, image.shape, order=2)
-    grad_cam = skimage.exposure.rescale_intensity(grad_cam, out_range=(0.25, 1))
+    heatmap = skimage.transform.resize(heatmap, image.shape, order=2)
+    heatmap = skimage.exposure.rescale_intensity(heatmap, out_range=(0.25, 1))
 
     plt.figure(figsize=(12, 5))
 
@@ -129,12 +129,12 @@ def plot_heatmap(image, grad_cam):
     plt.axis("off")
 
     plt.subplot(1, 3, 2)
-    plt.imshow(grad_cam.mean(axis=-1), interpolation="bilinear")
+    plt.imshow(heatmap.mean(axis=-1), interpolation="bilinear")
     plt.title("Heatmap with Grad-CAM", fontsize=16)
     plt.axis("off")
 
     plt.subplot(1, 3, 3)
-    plt.imshow(image * grad_cam)
+    plt.imshow(image * heatmap)
     plt.title("Overlay", fontsize=16)
     plt.axis("off")
 
