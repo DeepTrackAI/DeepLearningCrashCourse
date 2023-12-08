@@ -87,7 +87,7 @@ class Flatten(torch.nn.Module):
 def get_label(image):
     from numpy import array
 
-    position = array(image.get_property("position"))[:, [1, 0]]
+    position = array(image.get_property("position"))
     return position
 
 
@@ -97,7 +97,7 @@ class ParticleDatasetSimul(Dataset):
 
     def __init__(self, pipeline, data_size):
         im = [pipeline.update().resolve() for _ in range(data_size)]
-        self.pos = np.array([get_label(image) for image in im])
+        self.pos = np.array([get_label(image) for image in im])[:, [1, 0]]
         self.im = np.array(im).squeeze()
 
     def __len__(self):
