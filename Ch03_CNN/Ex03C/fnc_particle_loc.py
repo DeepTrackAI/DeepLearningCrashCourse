@@ -1,4 +1,5 @@
 from torch.utils.data import Dataset
+import torch
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -92,9 +93,6 @@ def get_label(image):
 
 
 class ParticleDatasetSimul(Dataset):
-    import torch
-    import numpy as np
-
     def __init__(self, pipeline, data_size):
         im = [pipeline.update().resolve() for _ in range(data_size)]
         self.pos = np.array([get_label(image) for image in im])[:, [1, 0]]
