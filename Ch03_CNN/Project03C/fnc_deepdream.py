@@ -10,7 +10,7 @@ class fwd_hooks():
         self.activations.append(output)
 
     def __enter__(self, *args): 
-         return self
+        return self
     
     def __exit__(self, *args): 
         for h in self.hook:    
