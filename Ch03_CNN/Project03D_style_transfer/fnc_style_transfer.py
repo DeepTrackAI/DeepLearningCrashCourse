@@ -1,3 +1,13 @@
+def gram(tensor):
+    from torch import bmm
+    
+    batch_size, num_channels, height, width = tensor.size()
+    features = tensor.view(batch_size, num_channels, height * width)
+    gram_matrix = bmm(features, features.transpose(1, 2)) / (height * width)
+
+    return gram_matrix
+
+
 def image_to_tensor(im, mean, std):
     import torchvision.transforms as tt
 
