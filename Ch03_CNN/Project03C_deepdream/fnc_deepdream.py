@@ -14,11 +14,12 @@ def tensor_to_image(image, mean, std):
     denormalize = tt.Normalize(mean=-mean / std, std=1 / std)
 
     im_array = denormalize(image.data.clone().detach().squeeze()).numpy()
-    im_array = np.clip(im_array.transpose(1, 2, 0) * 255, 0, 255).astype(np.uint8)
+    im_array = np.clip(im_array.transpose(1, 2, 0) * 255, 0, 255)
+    im_array = im_array.astype(np.uint8)
     return Image.fromarray(im_array, 'RGB')
 
 
-class fwd_hooks():
+class Fwd_Hooks():
     def __init__(self, layers):
         self.hooks = []
         self.activations_list = []
