@@ -32,17 +32,15 @@ class ManualAnnotation:
         self.fig.canvas.footer_visible = False
 
     def start(self):
-        self.im = self.ax.imshow(self.images[self.i], cmap="gray", vmin=0, vmax=1)
-        self.text = self.ax.text(
-            3, 
-            5, 
-            f"Frame {self.i + 1} of {len(self.images)}", 
-            color="white", 
-            fontsize=12,
-        )
+        self.im = self.ax.imshow(self.images[self.i], cmap="gray", 
+                                 vmin=0, vmax=1)
+        self.text = self.ax.text(3, 5, 
+                                 f"Frame {self.i + 1} of {len(self.images)}", 
+                                 color="white", fontsize=12)
         self.ax.axis("off")
         self.cursor = Cursor(self.ax, useblit=True, color="red", linewidth=1)
-        self.cid = self.fig.canvas.mpl_connect("button_press_event", self.onclick)
+        self.cid = self.fig.canvas.mpl_connect("button_press_event", 
+                                               self.onclick)
         self.next_image()
         plt.show()
 
@@ -62,7 +60,7 @@ class ManualAnnotation:
             return
 
 
-class ParticleDataset(Dataset):
+class AnnotatedDataset(Dataset):
     def __init__(self, file_images, file_positions):
         self.images = np.load(file_images)
         self.positions = np.load(file_positions)
@@ -77,6 +75,20 @@ class ParticleDataset(Dataset):
         return sample
 
 
+def plot_simulated_particles(image_pipeline):
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    fig, axes = plt.subplots(1, 4, figsize=(25, 12))
+    for i, ax in enumerate(axes.flatten()):
+        output_image = image_pipeline.update().resolve()
+        ax.imshow(np.squeeze(output_image), cmap="gray")
+        ax.set_xticks([])
+        ax.set_yticks([])
+        
+    plt.show()
+
+
 def get_label(image):
     from numpy import array
 
@@ -85,17 +97,36 @@ def get_label(image):
     return position
 
 
+def plot_simulated_particles_with_positions(image_pipeline):
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    fig, axes = plt.subplots(1, 4, figsize=(25, 12))
+    for i, ax in enumerate(axes.flatten()):
+        output_image = image_pipeline.update().resolve()
+        particle_position = get_label(output_image)
+
+        ax.imshow(np.squeeze(output_image), cmap="gray")
+        ax.scatter(particle_position[1], particle_position[0], s=60,
+                   facecolors="none", edgecolor="g", linewidth=4)
+        
+        ax.set_xticks([])
+        ax.set_yticks([])
+
+    plt.show()
+
+
 class SimulatedDataset(Dataset):
     def __init__(self, pipeline, data_size):
-        im = [pipeline.update().resolve() for _ in range(data_size)]
-        self.pos = np.array([get_label(image) for image in im])[:, [1, 0]]
-        self.im = np.array(im).squeeze()
+        images = [pipeline.update().resolve() for _ in range(data_size)]
+        self.images = np.array(images).squeeze()
+        self.positions = np.array([get_label(im) for im in images])[:, [1, 0]]
 
     def __len__(self):
-        return self.im.shape[0]
+        return self.image.shape[0]
 
     def __getitem__(self, idx):
-        img = torch.tensor(self.im[idx, np.newaxis, :, :]).float()
-        labels = torch.tensor(self.pos[idx] / img.shape[-1] - 0.5).float()
-        sample = [img, labels]
+        im = torch.tensor(self.images[idx, np.newaxis, :, :]).float()
+        pos = torch.tensor(self.positions[idx] / image.shape[-1] - 0.5).float()
+        sample = [im, pos]
         return sample
