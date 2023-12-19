@@ -32,15 +32,17 @@ class ManualAnnotation:
         self.fig.canvas.footer_visible = False
 
     def start(self):
-        self.im = self.ax.imshow(self.images[self.i], cmap="gray", 
-                                 vmin=0, vmax=1)
-        self.text = self.ax.text(3, 5, 
-                                 f"Frame {self.i + 1} of {len(self.images)}", 
-                                 color="white", fontsize=12)
+        self.im = self.ax.imshow(self.images[self.i], cmap="gray", vmin=0, vmax=1)
+        self.text = self.ax.text(
+            3,
+            5,
+            f"Frame {self.i + 1} of {len(self.images)}",
+            color="white",
+            fontsize=12,
+        )
         self.ax.axis("off")
         self.cursor = Cursor(self.ax, useblit=True, color="red", linewidth=1)
-        self.cid = self.fig.canvas.mpl_connect("button_press_event", 
-                                               self.onclick)
+        self.cid = self.fig.canvas.mpl_connect("button_press_event", self.onclick)
         self.next_image()
         plt.show()
 
@@ -70,7 +72,7 @@ class AnnotatedDataset(Dataset):
 
     def __getitem__(self, idx):
         im = torch.tensor(self.images[idx, np.newaxis, :, :]).float()
-        pos = torch.tensor(self.positions[idx] / im.shape[-1] - .5).float()
+        pos = torch.tensor(self.positions[idx] / im.shape[-1] - 0.5).float()
         sample = [im, pos]
         return sample
 
@@ -85,7 +87,7 @@ def plot_simulated_particles(image_pipeline):
         ax.imshow(np.squeeze(output_image), cmap="gray")
         ax.set_xticks([])
         ax.set_yticks([])
-        
+
     plt.show()
 
 
@@ -93,7 +95,7 @@ def get_label(image):
     from numpy import array
 
     position = array(image.get_property("position"))
-    
+
     return position
 
 
@@ -107,9 +109,15 @@ def plot_simulated_particles_with_positions(image_pipeline):
         particle_position = get_label(output_image)
 
         ax.imshow(np.squeeze(output_image), cmap="gray")
-        ax.scatter(particle_position[1], particle_position[0], s=60,
-                   facecolors="none", edgecolor="g", linewidth=4)
-        
+        ax.scatter(
+            particle_position[1],
+            particle_position[0],
+            s=60,
+            facecolors="none",
+            edgecolor="g",
+            linewidth=4,
+        )
+
         ax.set_xticks([])
         ax.set_yticks([])
 
@@ -123,7 +131,7 @@ class SimulatedDataset(Dataset):
         self.positions = np.array([get_label(im) for im in images])[:, [1, 0]]
 
     def __len__(self):
-        return self.image.shape[0]
+        return self.images.shape[0]
 
     def __getitem__(self, idx):
         im = torch.tensor(self.images[idx, np.newaxis, :, :]).float()
