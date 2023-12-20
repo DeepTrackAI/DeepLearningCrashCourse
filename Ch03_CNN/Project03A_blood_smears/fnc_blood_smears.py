@@ -10,7 +10,7 @@ def plot_blood_smears(dataset):
             image = image.numpy().transpose(1, 2, 0)
             
         ax.imshow(image)
-        ax.set_title("Uninfected (1)" if label == 1 else "Infected (0)")
+        ax.set_title("Uninfected (1)" if label == 1 else "Parasitized (0)")
 
     plt.tight_layout()
     plt.show()
