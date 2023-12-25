@@ -8,7 +8,8 @@ def plot_image(title, image):
     """Plot a grayscale image with a title."""
     
     plt.imshow(image, cmap="gray")
-    plt.title(title)
+    plt.title(title, fontsize=24)
+    plt.axis("off")
     plt.show()
 
 
