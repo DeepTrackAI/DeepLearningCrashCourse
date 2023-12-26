@@ -17,6 +17,8 @@ class SimulatedDataset(Dataset):
     """Simulated dataset generating pairs of noisy and clean images."""
     
     def __init__(self, pipeline, buffer_size, replace=0):
+        """Initialize the dataset."""
+        
         self.buffer_size = buffer_size
         self.pipeline = pipeline
         self.replace = replace
