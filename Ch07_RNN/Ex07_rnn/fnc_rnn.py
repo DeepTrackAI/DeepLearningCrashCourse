@@ -1,6 +1,7 @@
 """Module for the RNN Example."""
 import matplotlib.pyplot as plt
 import numpy as np
+from lightning.pytorch.callbacks import Callback
 
 
 def plot_data(data, header, start=0, samples_per_cycle=144, cycles=14):
@@ -31,7 +32,27 @@ def plot_training(epochs, train_losses, val_losses, benchmark):
     plt.plot([0, epochs - 1], [benchmark, benchmark], 
             linestyle="--", color="k", label="Benchmark")
     plt.legend()
-    plt.xlabel("Loss")
-    plt.ylabel("Epoch")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
     plt.xlim([0, epochs - 1])
     plt.show()
+
+
+class TrainingHistory(Callback):
+    """Callback to record the training and validation losses."""
+    
+    def on_train_start(self, trainer, pl_module):
+        """Initialize lists to store loss values."""
+        self.train_losses = []
+        self.val_losses = []
+
+    def on_train_epoch_end(self, trainer, pl_module):
+        """Store training and validation losses."""
+        
+        train_loss = trainer.callback_metrics.get("train_loss")  # Retrieve the training loss from the current epoch.
+        if train_loss is not None:
+            self.train_losses.append(train_loss.item())
+        
+        val_loss = trainer.callback_metrics.get("val_loss")  # Retrieve the validation loss from the current epoch.
+        if val_loss is not None:
+            self.val_losses.append(val_loss.item())
