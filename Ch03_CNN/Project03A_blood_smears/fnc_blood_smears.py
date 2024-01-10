@@ -1,4 +1,4 @@
-def plot_blood_smears(dataset):
+def plot_blood_smears(dataset, parasitized):
     import matplotlib.pyplot as plt
     from numpy.random import randint
     import torch
@@ -10,7 +10,8 @@ def plot_blood_smears(dataset):
             image = image.numpy().transpose(1, 2, 0)
             
         ax.imshow(image)
-        ax.set_title("Uninfected (1)" if label == 1 else "Parasitized (0)")
+        ax.set_title(f"Uninfected ({label})" if label == parasitized 
+                     else f"Parasitized ({label})")
 
     plt.tight_layout()
     plt.show()
