@@ -36,6 +36,6 @@ class SimulatedDataset(Dataset):
             self.images[idx] = self.pipeline.update().resolve()
             
         image_pair = self.images[idx]
-        noisy_image, clean_image = image_pair[0]._value, image_pair[1]._value
+        noisy_image, clean_image = image_pair[0], image_pair[1]
         
         return noisy_image, clean_image
