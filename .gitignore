@@ -2,6 +2,7 @@
 *ubyte*
 *_dataset/
 data/
+groundtruth-drosophila-vnc
 
 # Distribution / packaging
 build/
