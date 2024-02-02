@@ -3,6 +3,8 @@
 *_dataset/
 data/
 groundtruth-drosophila-vnc
+q_net.pth
+Q_table.txt
 
 # Distribution / packaging
 build/
