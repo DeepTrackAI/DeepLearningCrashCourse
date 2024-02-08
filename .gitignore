@@ -2,7 +2,6 @@
 *ubyte*
 *_dataset/
 data/
-groundtruth-drosophila-vnc
 q_net.pth
 Q_table.txt
 
