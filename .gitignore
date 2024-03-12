@@ -22,3 +22,6 @@ logs/
 
 # Byte-compiled / optimized / DLL files
 *.pyc
+
+# Model checkpoints
+*.ckpt
