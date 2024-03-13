@@ -26,5 +26,6 @@ logs/
 # Model checkpoints
 *.ckpt
 
-# Figures
+# Figures & Backups
 __fig*
+__BAK*
