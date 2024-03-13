@@ -25,3 +25,6 @@ logs/
 
 # Model checkpoints
 *.ckpt
+
+# Figures
+__fig*
