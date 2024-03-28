@@ -29,3 +29,6 @@ logs/
 # Figures & Backups
 __fig*
 __BAK*
+
+# Python environment
+py_env_dlcc
