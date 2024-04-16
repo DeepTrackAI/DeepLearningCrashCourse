@@ -4,6 +4,7 @@
 data/
 q_net.pth
 Q_table.txt
+.vector_cache
 
 # Distribution / packaging
 build/
