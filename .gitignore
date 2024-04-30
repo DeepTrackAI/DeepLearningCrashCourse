@@ -26,6 +26,7 @@ logs/
 
 # Model checkpoints
 *.ckpt
+!SAND-GNS-model.ckpt
 
 # Figures & Backups
 __fig*
