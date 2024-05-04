@@ -95,6 +95,7 @@ def plot_mse_train_vs_val(mse_t, mse_v, smooth=11):
     ax[0].set_xlabel("epoch", fontsize=24)
     ax[0].set_ylabel("MSE", fontsize=24)
     ax[0].tick_params(axis="both", which="major", labelsize=16)
+    ax[0].legend(fontsize=16)
 
     ax[1].loglog(mse_t, c="tab:orange",  label="train")
     ax[1].loglog(mse_v, ":", c="tab:green", label="validation")
@@ -103,6 +104,7 @@ def plot_mse_train_vs_val(mse_t, mse_v, smooth=11):
     ax[1].set_xlabel("epoch", fontsize=24)
     ax[1].set_ylabel("MSE", fontsize=24)
     ax[1].tick_params(axis="both", which="major", labelsize=16)
+    ax[1].legend(fontsize=16)
     
     plt.tight_layout()
     plt.show()

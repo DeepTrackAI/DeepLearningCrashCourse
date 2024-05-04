@@ -39,7 +39,7 @@ def plot_pred_2d(x, y_gt, y_p, fig_name):  ### def plot_pred_2d(x, y_gt, y_p):
     plt.scatter(x[:, 0], x[:, 1], c=y_p, s=100, marker="x", label="predicted") 
     plt.legend(fontsize=20)
     plt.colorbar()
-    plt.axis("equal")q
+    plt.axis("equal")
     plt.xlabel("x0", fontsize=24)
     plt.ylabel("x1", fontsize=24) 
     plt.tick_params(axis="both", which="major", labelsize=16) 
@@ -89,20 +89,22 @@ def plot_mse_train_vs_val(mse_t, mse_v, smooth=11, fig_name=""):  ### def plot_m
     fig.set_size_inches(10, 5)
     
     ax[0].plot(mse_t, c="tab:orange",  label="train")
-    ax[0].plot(mse_v, c="tab:green", label="validation")
+    ax[0].plot(mse_v, ":", c="tab:green", label="validation")
     ax[0].plot(range(smooth // 2, len(mse_t) - smooth // 2), mse_t_s, c="k")
     ax[0].plot(range(smooth // 2, len(mse_v) - smooth // 2), mse_v_s, c="k")
     ax[0].set_xlabel("epoch", fontsize=24)
     ax[0].set_ylabel("MSE", fontsize=24)
     ax[0].tick_params(axis="both", which="major", labelsize=16)
-
+    ax[0].legend(fontsize=16)
+    
     ax[1].loglog(mse_t, c="tab:orange",  label="train")
-    ax[1].loglog(mse_v, c="tab:green", label="validation")
+    ax[1].loglog(mse_v, ":", c="tab:green", label="validation")
     ax[1].loglog(range(smooth // 2, len(mse_v) - smooth // 2), mse_t_s, c="k")
     ax[1].loglog(range(smooth // 2, len(mse_v) - smooth // 2), mse_v_s, c="k")
     ax[1].set_xlabel("epoch", fontsize=24)
     ax[1].set_ylabel("MSE", fontsize=24)
     ax[1].tick_params(axis="both", which="major", labelsize=16)
+    ax[1].legend(fontsize=16)
     
     plt.tight_layout()
     plt.savefig(fig_name, bbox_inches="tight")  ### plt.show()
