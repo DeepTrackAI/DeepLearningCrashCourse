@@ -65,13 +65,13 @@ def plot_mse(mse, fig_name):  ### def plot_mse(mse, smooth=11):
     fig.set_size_inches(10, 5)
     
     ax[0].plot(mse, c="tab:orange")
-    # ax[0].plot(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, c="k")
+    # ax[0].plot(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, "k--")
     ax[0].set_xlabel("epoch", fontsize=24)
     ax[0].set_ylabel("MSE", fontsize=24)
     ax[0].tick_params(axis="both", which="major", labelsize=16)
 
     ax[1].loglog(mse, c="tab:orange")
-    # ax[1].loglog(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, c="k")
+    # ax[1].loglog(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, "k--")
     ax[1].set_xlabel("epoch", fontsize=24)
     ax[1].set_ylabel("MSE", fontsize=24)
     ax[1].tick_params(axis="both", which="major", labelsize=16)
