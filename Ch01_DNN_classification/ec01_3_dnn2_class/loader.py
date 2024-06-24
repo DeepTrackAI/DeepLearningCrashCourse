@@ -5,8 +5,8 @@ from numpy import asarray, reshape
 
 def load_data_1d(filename):
     """Load 1D data."""
-    with open(filename) as f:
-        reader = csv.reader(f)
+    with open(filename) as file:
+        reader = csv.reader(file)
         header = next(reader)
         data = []
         for row in reader:
@@ -19,8 +19,8 @@ def load_data_1d(filename):
 
 def load_data(filename):
     """Load multidimensional data."""
-    with open(filename) as f:
-        reader = csv.reader(f)
+    with open(filename) as file:
+        reader = csv.reader(file)
         header = next(reader)
         data = []
         for row in reader:
