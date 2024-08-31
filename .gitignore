@@ -29,8 +29,8 @@ logs/
 !SAND-GNS-model.ckpt
 
 # Figures & Backups
-# __fig*
-# __BAK*
+__fig*
+__BAK*
 
 # Python environment
 py_env_dlcc
