@@ -1,0 +1,1720 @@
+\chapter[Attention and Transformers for Sequence Processing]{Attention and Transformers for Sequence Processing}\label{ch:08}
+
+In this chapter, you'll learn about \emph{transformers}, a revolutionary neural network architecture that has changed the handling of sequence data, such as timeseries and text. Unlike traditional neural networks, transformers use the mechanism of attention to focus on different parts of the input data as needed, making them highly effective at understanding complex relationships within the data. 
+
+Since Google introduced the transformer architecture in 2017, transformers have become the go-to model for many language processing tasks, including translating text (machine translation), creating a short summary of a long document (text summarization), and determining whether a piece of text has a positive or negative tone (sentiment analysis). Transformers have also been used to predict protein structure from genetic sequences (AlphaFold), to analyze images (vision transformers, ViT), and to link language and images by learning visual concepts from natural language supervision (contrastive language-image pretraining, CLIP). Their ability to handle long-range dependencies in data allows transformers to outperform older models, such as recurrent neural networks, in these and other tasks.
+
+You'll begin by exploring sentiment analysis, applying transformers to determine the emotional tone of text, such as whether a review is positive or negative. Next, you'll implement a machine translation network using attention, which outperforms the recurrent neural network used in Project~7A.
+Finally, you'll apply transformer principles to image analysis using the ViT, a groundbreaking architecture that outperforms traditional convolutional neural networks.
+By the chapter's end, your understanding of the attention mechanism and transformers will allow you to apply them to your own projects.
+
+\section{Understanding Transformer Structure and Attention}
+
+Before using them for concrete applications, you'll need to understand the basic structure of a transformer and the attention mechanism.
+
+A transformer has two main parts: the encoder and the decoder. The main part of this chapter focuses on the transformer encoder,  illustrated in Figure~\ref{fig:08:encoder}. Later, you'll learn about the decoder in Project~8A to improve the translation of a text.
+
+\begin{figure}[H]
+    \includegraphics[width=1.5in]{ch_08/fig_08_01a} %%% This figure will be redrawn
+    \includegraphics[width=1.5in]{ch_08/fig_08_01b} %%% This figure will be redrawn
+    \caption{A transformer encoder layer (left) and its multi-head attention (right)}
+    \label{fig:08:encoder}
+\end{figure}
+
+The \emph{transformer encoder}'s structure consists of a stack of identical layers, each containing a multi-head attention layer and a fully-connected dense neural network. 
+The \emph{multi-head attention layer} enables the neural network to identify relationships between the input data's features. Moreover, it provides transformers with the key computational advantage of parallelization. 
+For example, when processing a sentence, instead of handling each word one by one as in recurrent neural networks, the transformer can analyze all words at the same time. This parallel processing allows the model to handle longer sequences more efficiently and reduces training time.
+Subsequently, the fully-connected dense neural network integrates and refines data processed by the multi-head attention layer, enhancing the understanding and representation of the input data.
+
+The \emph{transformer decoder} takes data from the encoder as input and outputs a sequence of predictions. It mirrors the encoder's structure, but adds a sub-layer that performs multi-head attention over the encoder's output. This is known as encoder-decoder attention. \emph{Encoder-decoder attention} allows the decoder to focus on relevant parts of the encoded input sequence, regardless of their position. This ability gives transformers key advantages in handling sequences for tasks like machine translation. By interweaving its attention mechanism with that of the encoder, the decoder can generate an output sequence that is contextually aligned with the input, transforming sequences with remarkable precision. For example, in machine translation, if the input sequence is an English sentence, the encoder processes this sentence and creates a detailed representation. The decoder then uses this representation to generate the corresponding sentence in another language like Spanish, focusing on relevant parts of the input sentence at each step to ensure accurate and contextually appropriate translation.  Furthermore, the decoding process is auto-regressive. This means that the decoder uses its previous outputs up to the current step as additional inputs for the next step. This sequential generation makes transformers especially powerful for language-related tasks where context and sequence are paramount, as you'll see in Project~8A.
+
+\section{Breaking Down Multi-Head Attention}
+
+In the previous section, you saw that a multi-head attention layer is crucial to both the encoder and decoder. This is because it enables the model to understand relationships in sequential input data. It has multiple \emph{attention heads} that work independently to analyze various aspects of these relationships, as shown on the right side of Figure~\ref{fig:08:encoder}.
+
+For example, you can naturally represent a sentence as a sequence of words arranged logically to convey meaning. For instance, consider the sentence: ``The man fell from the chair because it was flimsy.'' 
+For humans, deriving semantic information from this sentence requires little effort. We can immediately answer questions like ``Does `flimsy' refer to the `man' or the `chair'?'' For an algorithm, this task is more challenging.
+
+\subsubsection{Self-attention}
+
+Attention heads use \emph{self-attention} to comprehend the underlying relational structure of an input sequence. To answer the question in the previous example, the self-attention mechanism would evaluate the importance of each word in the sentence in relation to the other words in the same sentence (hence, ``self''-attention) in order to identify  connections between them. As a result, it can recognize the correlation between `flimsy' and `chair', even though they don't appear close to each other in the sentence.
+
+\subsubsection{Input Embeddings}
+
+Of course, words cannot be fed directly into the model, but you can transform them into a vector representation through embeddings. In doing so, you represent the input sequence as a matrix, as shown on the left side of Figure~\ref{fig:08:QKV}.
+
+\begin{figure}[H]
+    \includegraphics[width=1.675in]{ch_08/fig_08_02a} %%% This figure will be redrawn
+    \includegraphics[width=2.675in]{ch_08/fig_08_02b} %%% This figure will be redrawn
+    \caption{Transforming the input sequence into query, key, and value matrices}
+    \label{fig:08:QKV}
+\end{figure}
+
+The matrix representing the input sequence is denoted by $X \in \mathbb{R}^{n \times d}$. Here, $n$ is the sequence length, and $d$ is the number of features that represent each element (the number of elements in the embeddings).
+
+\subsubsection{Query, Key, and Value}
+
+As shown on the right side of Figure~\ref{fig:08:QKV}, the algorithm multiplies the input sequence by some weight matrices ($W^{\rm Q}$, $W^{\rm K}$, and $W^{\rm V}$) to transform it into three matrices: the query matrix $Q \in \mathbb{R}^{n \times d_{\rm m}}$, the key matrix $K \in \mathbb{R}^{n \times d_{\rm m}}$, and the value matrix $V \in \mathbb{R}^{n \times d_{\rm m}}$, where $d_{\rm m}$ is the latent dimensionality of the self-attention module, similar to the dimension of the latent space you saw in Chapter~\ref{ch:04} on encoder-decoders. 
+For now, these weight matrices are initialized randomly, but they'll be later learned during the training process.
+
+For transformer models, you can understand the concepts of query, key, and value by comparing them to the structure of a hash table. In a hash table, a unique key is used to store and retrieve a corresponding value from a collection of data, as shown on the left side of Figure~\ref{fig:08:hash}.
+
+\begin{figure}[H]
+    %\includegraphics[width=4.675in]{ch_08/fig_08_03} 
+    %%% This figure will be redrawn 
+    %%% The idea is to show the process from query to key to value in the hashtable
+    \caption{Queries, keys, and values in a hash table}
+    \label{fig:08:hash}
+\end{figure}
+
+Similarly, a transformer's attention mechanism uses a set of queries, keys, and values to navigate through and extract information from input data.
+However, unlike a traditional hash table where keys and values are provided by the user, in a transformer model, the queries, keys, and values are learned through the training process.
+
+In this process, each input element is converted into a trio of vectors representing its query, key, and value. 
+The query is like a search term that you're looking for in the hash table: it's the mechanism by which the model seeks out relevant information to fulfill the task at hand. But instead of being explicitly provided, the query is derived from the input data by multiplying it with a learned weight matrix.
+
+The key is like the unique identifier in a hash table that you use to look up information: it's used to match each query with the correct value. Again, in a transformer, the key is computed by multiplying the input by a different learned weight matrix, allowing the model to encode positional and contextual information dynamically.
+
+Finally, the value in a transformer contains the actual information from the input element, representing the relationships and significance of that element within the sequence, similar to the data associated with a key in a hash table.  However, in a transformer, the value vector is learned through another weight matrix, and the model adjusts these vectors during training to best capture the relationships needed for the task at hand.
+
+\subsubsection{Attention Matrix}
+
+During the attention process, the transformer computes compatibility scores between each line of the query matrix and all lines of the key matrix, similar to looking up which keys match each query term in a hash table. The higher the score, the more relevant the corresponding value (the line in the value matrix) is to fulfilling the task at hand. 
+
+Since the concept of self-attention assumes that you can represent every element in a sequence as a linear combination of the other elements in the sequence, you can compute the compatibility scores by calculating the dot product of each query and all key vectors for each element. 
+This results in an $n \times n$ matrix where each element $(i, j)$ is the dot product between the query vector of the $i$-th element and the key vector of the $j$-th element. This matrix is then normalized by dividing each element by the square root of the latent dimensionality of the self-attention module ($d_{\rm m}$), and applying the softmax function, as shown in Figure~\ref{fig:08:SA}. 
+These scores are then used to weight the values before they are summed to produce the output for each input element. This process allows the transformer to identify the most relevant parts of the input data based on the keys that match your query terms, similar to retrieving the most pertinent information from a hash table.
+
+%Since the concept of self-attention assumes that you can represent every element in a sequence as a linear combination of the other elements in the sequence, you can compute the compatibility scores by calculating the dot product of the query and key vectors for each element. 
+%This results in an $n \times n$ matrix where each element $(i, j)$ is the dot product between the query vector of the $i$-th element and the key vector of the $j$-th element. This matrix is then normalized by dividing each element by the square root of the latent dimensionality of the self-attention module ($d_{\rm m}$), and applying the softmax function, as shown in Figure~\ref{fig:08:SA}. 
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_04} %%% This figure will be redrawn
+    \caption{Self-attention mechanism}
+    \label{fig:08:SA}
+\end{figure}
+
+This normalized matrix is called the attention matrix, $A$. Each entry of the matrix $A(i, j)$ represents the importance of the relation between the $j$-th element and  the $i$-th element.
+In Figure~\ref{fig:08:SA}, the importance of each element is coded in a heatmap format. A properly trained self-attention module should assign high values to semantically related elements in the same row. For instance, the importance of the word `flimsy' to the understanding of `chair' should be high because one modifies the other. 
+
+To calculate the output of the self-attention module, you need to multiply the attention matrix $A$ by the value matrix $V$. The resulting matrix has a shape of $(n, d_{\rm m})$, where the representation of each element is a linear combination of the representations of all other elements in the sequence. 
+For example, in a sentence like ``The man fell from the chair because it was flimsy'', the word `flimsy' will have a representation that combines information from other relevant words like `chair' to understand its context better.
+This is why this module is called self-attention:  it allows each element to interact with the others so that it learns which relationships it should pay attention to.
+
+Finally, the output of each attention head is concatenated and combined with a linear transformation to produce the final output of the multi-head attention layer.
+In other words, each attention head looks at different parts or aspects of the input data. After all heads have done their job, their outputs are stitched together (concatenated) to form one large vector. This combined vector is then passed through a linear transformation (a simple neural network layer) to mix and refine the information, creating a more comprehensive and nuanced understanding of the input. This process allows the model to consider multiple perspectives and relationships within the data simultaneously, leading to a richer and more accurate final representation.
+In a way, this is similar to convolutional layers in a convolutional neural network, where different filters (analogous to attention heads) focus on various local features of an image, and their outputs are combined to provide a fuller understanding of the visual input.
+
+\section{Performing Sentiment Analysis with a Transformer}
+
+To see these concepts in action, you'll implement a transformer encoder to perform sentiment analysis, a common task in natural language processing (NLP) that involves categorizing text according to its positive or negative tone.
+
+\subsection{Loading the IMDB Dataset}
+
+Start by downloading the Large Movie Review Dataset at \url{https://huggingface.co/datasets/imdb}. It contains 50,000 movie reviews, labeled as positive or negative. The dataset is divided into 25,000 reviews for training and 25,000 reviews for testing. You can download it using Listing~\ref{cd:08:imdb}.
+\begin{lstlisting}[
+    label=cd:08:imdb,
+    caption=Downloading the IMDB dataset
+]
+from datasets import load_dataset
+
+dataset = load_dataset("imdb")
+\end{lstlisting}
+This code downloads the \lstinline{dataset} dictionary that contains the \lstinline{"train"} and \lstinline{"test"} sets. Each set is also a dictionary with two keys: \lstinline{"text"}, which contains movie reviews, and \lstinline{"label"}, which contains the sentiment of the review: 0 denotes a negative sentiment, and 1 denotes a positive sentiment.
+
+Before proceeding, split the training set into training and validation datasets, as shown by Listing~\ref{cd:08:split}.
+\begin{lstlisting}[
+    label=cd:08:split,
+    caption=Splitting the training and validation datasets
+]
+split = dataset["train"] \
+    .train_test_split(test_size=0.2, stratify_by_column="label", seed=42)
+train_dataset, val_dataset = split["train"], split["test"]
+\end{lstlisting}
+This code splits the \lstinline{"train"} portion of the dataset into a training dataset (80 percent) and a validation dataset (20 percent). To  retain the same distribution of labels in both datasets as in the original, it uses \lstinline{stratify_by_column="label"}. Doing this helps maintain a balanced representation of classes, meaning that both the training and validation sets will have the same proportion of positive and negative examples as the original dataset. 
+Finally, seeding the random number generator ensures with \lstinline{seed=42} reproducibility of the split. Doing this will ensure that, every time you run the code, you will get the same split into training and validation sets allowing you to consistently reproduce your results and debug more effectively. (Note that instead of 42 you could use any other random seed.)
+
+You can now print three example reviews from the training set using Listing~\ref{cd:08:view}.
+\begin{lstlisting}[
+    label=cd:08:view,
+    caption=Printing some example reviews
+]
+import numpy as np
+import pandas as pd
+
+samples = (@\wingding{1}@)train_dataset.select(np.random.randint(0, len(train_dataset), 3))
+df = pd.DataFrame({"Text": samples["text"], "Label": samples["label"]})
+styled_df = df.style.set_properties(**{"text-align": "left"}).set_table_styles(
+    [{"selector": "th", "props": [("text-align", "center")]}]
+)
+with pd.option_context("display.max_colwidth", None):
+    display(styled_df)
+\end{lstlisting}
+This code selects three samples from the training dataset \wingding{1}, creates a Pandas dataframe, styles it, and displays it.
+The resulting display should resemble Figure~\ref{fig:08:reviews}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_05} %%% This figure will be redrawn
+    \caption{Example reviews}
+    \label{fig:08:reviews}
+\end{figure}
+
+In this case, the first two reviews are  positive, while the third one is negative.
+
+\subsection{Preprocessing the Reviews}
+
+Before conducting sentiment analysis, the reviews must be converted into a decipherable form.
+The first step in processing the data is \emph{tokenization}. It involves breaking down a sentence into individual words. This crucial step for NLP helps the model to comprehend the input data's structure. 
+
+Different tokenization methods have their own advantages and drawbacks. For example, Listing~\ref{cd:08:tokenize1} creates a \lstinline{tokenizer()} function that splits the input text into tokens by using punctuation and white spaces.
+
+\begin{lstlisting}[
+    label=cd:08:tokenize1,
+    caption=Function to tokenize a sentence
+]
+from torchtext.data.utils import get_tokenizer
+
+tokenizer = get_tokenizer("basic_english")
+
+def tokenize(text):
+    """Tokenize text."""
+    tokens = tokenizer(text)
+    return tokens
+\end{lstlisting}
+For example, you can tokenize a sentence using
+\begin{lstlisting}
+print(tokenize("This is a simple example!"))
+\end{lstlisting}
+which results in
+\begin{lstlisting}
+['this', 'is', 'a', 'simple', 'example', '!']
+\end{lstlisting}
+You can see that each word has been separated and set in lowercase.
+
+\subsubsection{Handling contractions}
+
+Although tokenizing texts based on punctuation and white spaces might work for simple sentences, the training data contains various types of words, punctuations, contractions, and other linguistic elements that require proper handling. In particular, contractions can pose a challenge to model training.
+\emph{Contractions} are linguistic shortcuts that combine two words into one, often to mimic spoken language and make writing more fluid. Some common examples include ``don't'' (``do not''), ``I'm'' (``I am''), and ``I've'' (``I have'').
+
+While contractions are commonly used in spoken and written English, language models can struggle with the variability they introduce. This is because contractions can represent the same idea in multiple forms.
+Depending on the task, an NLP model may not recognize that these different forms have the same underlying meaning, leading to errors in understanding and processing text.
+
+Listing~\ref{cd:08:tokenize2} updates the \lstinline{tokenize()} function by converting contractions into their expanded forms.
+\begin{lstlisting}[
+    label=cd:08:tokenize2,
+    caption=Function to tokenize a sentence dealing with contractions
+    (\expand{cd:08:tokenize1})
+]
+***import contractions***
+___--snip--___
+def tokenize(text):
+    """Tokenize text."""
+    ***text = contractions.fix(text)***
+    tokens = tokenizer(text)
+    return tokens
+\end{lstlisting}
+Once you've finished, use this updated function with
+\begin{lstlisting}
+print(tokenize("I can't believe that it's attention all you'll ever need!"))
+\end{lstlisting}
+which results in
+\begin{lstlisting}
+['i', 'cannot', 'believe', 'that', 'it', 'is', 'attention', 'all', 'you', 
+'will', 'ever', 'need', '!']
+\end{lstlisting}
+Note that ``can't'', ``it's'', and `you'll'' are handled correctly.
+
+%This standardization is important since it guarantees semantic consistency and robustness for various writing styles.
+
+\subsubsection{Removing Noise}
+
+Text, like any other data, contains noise. In the context of NLP, noise is everything that isn't semantically relevant to the task. Punctuation, question and exclamation marks, quotes, and non-alphabetic characters are often considered noise.
+
+Listing~\ref{cd:08:tokenize3} updates the \lstinline{tokenize()} function to remove any unnecessary noise or unwanted elements.
+\begin{lstlisting}[
+    label=cd:08:tokenize3,
+    caption=Function to tokenize a sentence dealing with contractions and removing noise
+    (\expand{cd:08:tokenize2})
+]
+***import re***
+___--snip--___
+def tokenize(text):
+    """Tokenize text."""
+    text = contractions.fix(text)
+    (@\codewingding{1}@)***replacements = {"’": "'", "‘": "'", "“": '"', "”": '"', "´": "'", "´´": '"'}
+    for old, new in replacements.items():
+        text = text.replace(old, new)***
+    tokens = tokenizer(text)
+    ***filtered_tokens = [
+        token for token in tokens
+        if (@\wingding{2}@)re.match(r"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*(_[a-zA-Z0-9]+)*$", token)
+    ]***
+    return ***filtered_tokens***
+\end{lstlisting}
+After standardizing contractions, this function replaces different types of quotation marks and apostrophes with their ASCII equivalents \wingding{1}. 
+%This standardization makes the text easier to process by ensuring consistency in punctuation marks, which is especially important for tokenization and further text analysis tasks.
+After tokenization, the code filters the tokens based on a regular expression pattern \wingding{2} to identify tokens that consist of alphanumeric characters (\lstinline{a-zA-Z0-9}) optionally connected by hyphens (\lstinline{-}) or underscores (\lstinline{_}), such as compound words or phrases.
+
+For example, you can use this function with
+\begin{lstlisting}
+print(tokenize("It isn't just useful, but crucial to double-check your code!"))
+\end{lstlisting}
+which results in
+\begin{lstlisting}
+['it', 'is', 'not', 'just', 'useful', 'but', 'crucial', 'to', 'double-check', 
+'your', 'code']
+\end{lstlisting}
+Note that this code has removed punctuation marks  while correctly identifying the compound word ``double-check''.
+
+\subsubsection{Creating a Vocabulary}
+
+Now that you can transform a sentence into a list of standardized tokens, you'll need to convert these tokens into numerical representations. You can do this by iterating through the tokens to create a \emph{vocabulary} that maps each distinct token corresponding to a word to a unique integer in a dataset.
+
+You can create a vocabulary with Listing~\ref{cd:08:vocab}.
+\begin{lstlisting}[
+    label=cd:08:vocab,
+    caption=Creating a vocabulary
+]
+from torchtext.vocab import build_vocab_from_iterator
+
+def imdb_iterator(dataset):
+    """Iterate over the IMBD dataset."""
+    for data in dataset:
+        yield tokenize(data["text"])
+
+vocab = build_vocab_from_iterator(imdb_iterator(train_dataset), 
+                                  specials=["<unk>"])
+vocab.set_default_index(vocab["<unk>"])
+\end{lstlisting}
+This code creates the \lstinline{vocab} vocabulary, which works as a lookup table that assigns a unique integer to each distinct token in the dataset. 
+
+It starts by defining the \lstinline{imdb_iterator()} function, which tokenizes the text data for each item in the dataset. 
+Then, it builds \lstinline{vocab}, which takes the iterator as its first argument and a way to define special tokens  included in the vocabulary as its second. In this case, \lstinline{["<unk>"]} adds the special token \lstinline{<unk>} to the vocabulary to represent unknown tokens not found in the vocabulary.
+Finally, it sets \lstinline{["<unk>"]} as the default index to returned when a token is not found. This is crucial to ensure that the model can handle out-of-vocabulary words it hasn't seen before in a standardized way.
+
+You can now test the vocabulary using:
+\begin{lstlisting}
+for token in ["the", "movie", "was", "amazing", "i", "loved", "it", "utkn"]:
+    print(f"{token}: {vocab[token]}")
+\end{lstlisting}
+which prints:
+\begin{lstlisting}
+the: 1
+movie: 17
+was: 13
+amazing: 462
+i: 9
+loved: 426
+it: 7
+utkn: 0
+\end{lstlisting}
+Each token is assigned a numerical value whose magnitude depends on how frequently that word appears in the English language.
+Note that the unknown token \lstinline{"utkn"} is assigned the value \lstinline{0}.
+
+\subsubsection{Preprocessing the Datasets}
+
+After creating  vocabulary, your next step is to standardize, clean, tokenize, and numerically represent the elements of the datasets using the \lstinline{preprocess()} function shown in Listing~\ref{cd:08:preprocess}.
+\begin{lstlisting}[
+    label=cd:08:preprocess,
+    caption=Preprocessing the datasets
+]
+def preprocessing(sample):
+    """Preprocess the input data."""
+    sentence = sample["text"]
+    tokens = tokenize(sentence)
+    sequence_of_indices = vocab(tokens)
+    sample.update({"sequence": sequence_of_indices}) 
+    return sample
+
+train_dataset = train_dataset.map(preprocessing)
+val_dataset = val_dataset.map(preprocessing)
+test_dataset = dataset["test"].map(preprocessing)
+\end{lstlisting}
+The \lstinline{preprocess()} function performs two main steps: it tokenizes and cleans the input sentence contained in the \lstinline{sample} dictionary under the key \lstinline{"text"}, and it maps the tokens to their corresponding numerical indices. Then, it adds these indices to the \lstinline{sample} dictionary under the \lstinline{"sequence"} key.
+
+Afterwards, this code applies the preprocessing function to every element in the training, validation, and testing datasets.
+
+\subsection{Building a Transformer Encoder Layer}
+
+Now that the dataset is in usable form, you'll implement a transformer encoder layer. As discussed earlier, this layer consists of two essential components: a multi-head attention layer and a fully-connected feedforward neural network.
+
+In Figure~\ref{fig:08:encoder}, the workflow within a transformer encoder layer starts with the input of a sequence of tokens. These tokens first encounter the multi-head attention layer, which processes them to produce an intermediate output. The layer then adds this processed information with the original input in a way that keeps important features from both through a residual connection. It then normalizes the combined result to keep the learning process stable and ensure the model trains effectively.
+After passing through this layer, the sequence of tokens is transformed into a richer representation that captures more meaningful information about the relationships between the tokens. This enriched sequence is then passed on to the next layer in the model for further processing.
+
+%Subsequently, the fully connected feedforward neural network mirrors the process that took place in the multi-head attention layer. This network takes the normalized output from the multi-head layer and subjects it to a sequence of linear transformations and activation functions. The feedforward network's resultant output is then combined with the normalized output from the multi-head attention stage through another residual connection. Finally, layer normalization is applied to this combined output.
+
+Next, the fully connected feedforward neural network continues processing the tokens. First, it takes the adjusted output from the previous multi-head attention layer. Then, it applies a series of simple calculations to further refine the information. This includes linear transformations and activation functions. After this, the newly processed information is added to the adjusted output from the multi-head attention layer, ensuring that important details from both stages are retained. Finally, the result is normalized again to keep the learning process stable.
+
+By the end of this process, each token in the sequence has been enriched with even more meaningful information, capturing both its own features and its relationships with other tokens. This enriched sequence is now much better understood by the model, which can use it for tasks like predicting the next word in a sentence or determining the sentiment of a text.
+
+\subsubsection{Implementing the Multi-Head Attention Layer}
+
+To effectively process your input sequence and use the vocabulary you generated, you need to implement the multi-head attention layer. This layer is crucial for understanding the relationships between the words in the sequence and refining their representations. 
+
+Start by implementing a class to represent the multi-head attention layer, as shown in Listing~\ref{cd:08:mhal}
+\begin{lstlisting}[
+    label=cd:08:mhal,
+    caption=Class to implement a multi-head attention layer
+]
+import deeplay as dl
+import torch
+import torch.nn as nn
+
+class MultiHeadAttentionLayer(dl.DeeplayModule):
+    """"Multi-head attention layer."""
+    
+    def __init__(self, num_features, num_heads):
+        """Initialize multi-head attention layer."""
+        super().__init__()
+        self.num_features, self.num_heads = num_features, num_heads
+        self.layer = dl.Layer(nn.MultiheadAttention, num_features, num_heads)
+
+    def forward(self, in_sequences, batch_indices):
+        """Calculate forward pass."""
+        (@\codewingding{1}@)attn_mask = ~torch.eq(batch_indices.unsqueeze(1), 
+                              batch_indices.unsqueeze(0))
+        (@\codewingding{2}@)out_sequences, *_ = self.layer(in_sequences, in_sequences, 
+                                       in_sequences, attn_mask=attn_mask)
+        return out_sequences
+\end{lstlisting}
+This class defines the structure and functionality needed to perform multi-head attention, which allows the model to focus on different parts of the input sequence simultaneously.
+
+The \lstinline{forward()} method of the  multi-head attention layer takes two main inputs: a concatenated tensor of sequences, \lstinline{sequences}, which stacks input sequences along its first dimension, and a tensor of batch indices, \lstinline{batch_indices}, which indicates the batch to which each element in \lstinline{x} belongs. For instance, if \lstinline{batch_indices} is equal to \lstinline{[0, 0, 0, 1, 1, 2, 2, 2, 2]}, the first three elements are from the first sequence in the batch, the next two elements are from the second sequence, and the remaining four elements are from the third sequence.
+This ensures that the attention mechanism focuses on the correct parts of each sequence within the batch, maintaining the integrity of each sentence or phrase being processed.
+
+First, this code calculates the attention mask, which ensures that the model doesn't pay attention across elements of different sequences within the same batch based on \lstinline{batch_indices} \wingding{1}. The result is a square tensor with dimensions equal to the length of \lstinline{sequences}---that is the number of elements across all sequences in the batch.
+%This ensures that the attention mechanism correctly isolates each sequence, allowing the model to focus on relationships within individual sequences rather than incorrectly mixing information from different sequences.
+
+Then, the code provides the mask to the multihead attention layer \wingding{2}. Doing so restricts the attention mechanism's focus to individual sequences, preventing the layer from considering elements from multiple sequences in the batch during attention operations.
+
+\subsubsection{Implementing a Transformer Encoder Layer}
+
+Using the multi-head attention layer, you can now implement the transformer encoder layer, as shown in Listing~\ref{cd:08:tel}.
+\begin{lstlisting}[
+    label=cd:08:tel,
+    caption=Class to implement a transformer encoder layer
+]
+from torch_geometric.nn.norm import LayerNorm
+
+class TransformerEncoderLayer(dl.DeeplayModule):
+    """Transformer encoder layer."""
+    
+    def __init__(self, num_features, num_heads, feedforward_dim, dropout=0.0):
+        """Initialize transformer encoder layer."""
+        super().__init__()
+        self.num_features, self.num_heads = num_features, num_heads
+        self.feedforward_dim, self.dropout = feedforward_dim, dropout
+
+        self.self_attn = MultiHeadAttentionLayer(num_features, num_heads)
+        self.attn_dropout = dl.Layer(nn.Dropout, dropout) 
+        self.attn_skip = dl.Add() 
+        self.attn_norm = dl.Layer(LayerNorm, num_features, eps=1e-6)
+
+        self.feedforward = dl.Sequential(
+            dl.Layer(nn.Linear, num_features, feedforward_dim),
+            dl.Layer(nn.ReLU),
+            dl.Layer(nn.Linear, feedforward_dim, num_features),
+        )
+        self.feedforward_dropout = dl.Layer(nn.Dropout, dropout) 
+        self.feedforward_skip = dl.Add() 
+        self.feedforward_norm = dl.Layer(LayerNorm, num_features, eps=1e-6)
+
+    def forward(self, in_sequences, batch_indices):
+        """Refine sequence via attention and feedforward layers."""
+        (@\codewingding{1}@)attns = self.self_attn(in_sequences, batch_indices)
+        (@\codewingding{2}@)attns = self.attn_dropout(attns)
+        (@\codewingding{3}@)attns = self.attn_skip(in_sequences, attns)
+        (@\codewingding{4}@)attns = self.attn_norm(attns, batch_indices)
+
+        (@\codewingding{5}@)out_sequences = self.feedforward(attns)
+        (@\codewingding{6}@)out_sequences = self.feedforward_dropout(out_sequences)
+        (@\codewingding{7}@)out_sequences = self.feedforward_skip(attns, out_sequences)
+        (@\codewingding{8}@)out_sequences = self.feedforward_norm(out_sequences, batch_indices)
+        
+        return out_sequences
+\end{lstlisting}
+This code creates a transformer encoder layer that processes the input sequence with multi-head attention, then combines the output of the multi-head attention layer with the input to enhance the representation of the sequence. This enhanced sequence is then further refined using a feedforward neural network. 
+
+The \lstinline{forward()} method of this class performs the following operations:
+It applies multi-head attention on input sequence, \lstinline{x} \wingding{1}. It applies dropout to the attention output \wingding{2}, which randomly deactivates a fraction of neurons during training to prevent overfitting and help the model generalize better. It adds the original input, \lstinline{x}, to the dropout-adjusted attention output, implementing a residual connection \wingding{3}. It normalizes the output of the skip (or residual) connection with layer normalization \wingding{4}. It passes the normalized attention output through the feedforward network \wingding{5}. It applies dropout to the feedforward network's output \wingding{6}. It adds the feedforward output to the original attention output, creating another residual connection \wingding{7}. Finally, it normalizes the final output with layer normalization \wingding{8}.
+
+These steps ensure that the input tokens are enriched with contextual information and refined through several stages of processing, making them more informative and robust for the subsequent layers of the transformer encoder. This processed output can then be effectively used by the overall encoder to build a comprehensive representation of the input sequence, which is crucial for tasks like sentiment analysis or machine translation.
+
+\subsection{Building a Transformer Encoder Model}
+
+The transformer encoder model will include an embedding layer, a positional encoding layer, a stack of transformer encoder layers, and a dense top.
+You can implement it with the class shown in Listing~\ref{cd:08:tem}.
+\begin{lstlisting}[
+    label=cd:08:tem,
+    caption=Class to implement a transformer encoder model
+]
+class TransformerEncoderModel(dl.DeeplayModule):
+    """Transformer encoder model."""
+    
+    def __init__(self, vocab_size, num_features, num_heads, feedforward_dim,
+                 num_layers, out_dim, dropout=0.0):
+        """Initialize transformer encoder model."""
+        super().__init__()
+        self.num_features, self.num_heads = num_features, num_heads
+        self.feedforward_dim, self.num_layers = feedforward_dim, num_layers
+        self.dropout, self.out_dim = dropout, out_dim
+
+        self.embedding = dl.Layer(nn.Embedding, vocab_size, num_features)
+        
+        self.pos_encoder = dl.IndexedPositionalEmbedding(num_features)
+        self.pos_encoder.dropout.configure(p=dropout)
+
+        self.blocks = dl.LayerList()
+        for _ in range(num_layers):
+            self.blocks.append(
+                TransformerEncoderLayer(
+                    num_features, num_heads, feedforward_dim, dropout=dropout
+                )
+            )
+            
+        self.out_block = dl.Sequential(
+            dl.Layer(nn.Dropout, dropout),
+            dl.Layer(nn.Linear, num_features, num_features // 2), 
+            dl.Layer(nn.ReLU),
+            dl.Layer(nn.Linear, num_features // 2, out_dim), 
+            dl.Layer(nn.Sigmoid)
+        )
+
+    def forward(self, dict):
+        """Predict sentiment of movie reviews."""
+        sequences, batch_indices = dict["sequences"], dict["batch_indices"]
+
+        (@\codewingding{1}@)embeddings = self.embedding(sequences) * self.num_features ** 0.5
+        (@\codewingding{2}@)pos_embeddings = self.pos_encoder(embeddings, batch_indices)
+        
+        out_sequence = pos_embeddings
+        for layer in self.blocks:
+            (@\codewingding{3}@)out_sequence = layer(out_sequence, batch_indices)
+
+        (@\codewingding{4}@)batch_size = torch.max(batch_indices) + 1
+        g = torch.zeros(batch_size, self.num_features, 
+                        device=out_sequence.device) 
+        for batch_index in torch.unique(batch_indices):
+            mask =  batch_indices == batch_index
+            g[batch_index] = out_sequence[mask].mean(dim=0)
+
+        (@\wingding{5}@)pred_sentiment = self.out_block(g).squeeze()
+
+        return pred_sentiment
+\end{lstlisting}
+This class takes a dictionary, represents it numerically, processes information about the order of each sequence, passes the result through multiple encoder layers and dense layers, then outputs the aggregate data.
+
+The \lstinline{forward()} method of this class accepts a dictionary as input. This dictionary  includes two key components: \lstinline{dict["sequences"]}, which contains the input sequences, and \lstinline{dict["batch_indices"]} which contains the corresponding batch indices.
+Then, it performs the following operations to transform these inputs into  its output:
+\begin{enumerate}
+\item %Initially, the embedding layer transforms the input token numerical indices into dense vector representations \wingding{1}. An embedding matrix facilitates this transformation. Its dimensions are determined by the vocabulary size and the specified embedding dimension (\lstinline{num_features}). The embedding layer maps each token numerical index to a unique vector in this high-dimensional space. Doing so converts sparse categorical data into a format suitable for neural network processing.
+Initially, the embedding layer maps each token numerical index to a unique vector in a high-dimensional space whose dimension is defined by the specified embedding dimension (\lstinline{num_features}) \wingding{1}.
+In doing so, it converts the sparse categorical data of the input sequences into a numerical format more suitable for neural network processing.
+
+\item The model then applies positional encoding to incorporate  additional information about the order of tokens within each sequence \wingding{2} (See Note on page~\pageref{note:positionalencoding}). Unlike traditional sequence processing models like recurrent neural networks that inherently understand sequence order, transformers treat inputs as unordered sets. Positional encoding gives each position in the sequence a unique marker, enabling the model to recognize the tokens' order and use it to understand their relation to the other tokens. To do so, this layer adds a unique vector to each token embedding for every individual position in the sequence, allowing the model to understand sequence order. 
+
+\item The core of the model consists of multiple transformer encoder layers \wingding{3}. Each layer takes a turn processing the sequence, with the output from one layer feeding into the next. The attention mechanisms and feedforward neural networks in these layers allow the model to identify complex relationships between different parts of the input sequence. The result is a sequence of token representations that have been contextually enriched by information from other tokens in the sequence, meaning each token's representation is a vector that includes information from other relevant tokens in the sequence, allowing the model to understand the context of each token within the entire sequence.
+
+\item After the transformer layers process each sequence, the model computes an aggregate representation of the entire batch \wingding{4}. This is achieved by averaging the output vectors across the sequence length dimension, condensing the sequence data into a single vector that represents the essence of each sequence as a whole. 
+
+\item Finally, the aggregated sequence representations are passed through a series of dense layers \wingding{5}. These dense layers further process the aggregated data, typically through functions like nonlinear activations and dropout for regularization. This allows the model to transform the enriched token representations into the final format needed for the specific task at hand, such as classifying the sentiment of a text or translating a sentence into another language. The final output will be a prediction or a set of predictions based on the task, such as whether a movie review is positive or negative.
+\end{enumerate}
+
+You're ready to instantiate this model with Listing~\ref{cd:08:model}.
+\begin{lstlisting}[
+    label=cd:08:model,
+    caption=Instantiating the transformer encoder model
+]
+model = TransformerEncoderModel(
+vocab_size=len(vocab), num_features=300, num_heads=12, feedforward_dim=512,
+    num_layers=4, out_dim=1, dropout=0.1
+).create()
+\end{lstlisting}
+You can print out the details of this model with \lstinline{print(model)}.
+
+\iffalse %%% REPLACED WITH NOTE FOR BREVITY
+\subsubsection{Understanding Positional Encodings}
+
+Transformers incorporate sequence order information into their architecture through \emph{positional encodings}, which are generated using a combination of sine and cosine functions of different frequencies. For each position $i$ in the sequence and each dimension $j$ of the positional encoding vector, the encoding is defined as follows:
+\begin{align}
+{\rm PE}_{(i,2j)} &= \sin\left(\frac{i}{10000^{2j/d_{\text{m}}}}\right)\\
+{\rm PE}_{(i,2j+1)} &= \cos\left(\frac{i}{10000^{2j/d_{\text{m}}}}\right)
+\end{align}
+
+You can visualize how positional encodings vary across different positions and dimensions using Listing~\ref{cd:08:embeddings}.
+\begin{lstlisting}[
+    label=cd:08:embeddings,
+    caption=Visualizing how positional encodings vary
+]
+import matplotlib.pyplot as plt
+
+num_features, length = 20, 100
+PElayer = dl.IndexedPositionalEmbedding(num_features, max_length=length)
+PE = PElayer.embs.detach().numpy().squeeze()
+
+fig, ax = plt.subplots(2, 1, figsize=(12, 8))
+
+c = ax[0].pcolormesh(PE, cmap="viridis")
+fig.colorbar(c, ax=ax[0], label="Encoding value")
+ax[0].set_title("Positional Encoding Heatmap")
+ax[0].set_xlabel("Dimension"), ax[0].set_ylabel("Position")
+
+for i in range(min(num_features, 10)):
+    ax[1].plot(PE[:, i], label=f"Dim {i}")
+ax[1].set_title("Positional Encoding for Selected Dimensions")
+ax[1].set_xlabel("Position"), ax[1].set_ylabel("Encoding value")
+ax[1].legend()
+
+plt.subplots_adjust(hspace=0.4), plt.show();
+\end{lstlisting}
+This script generates the plots shown in Figure~\ref{fig:08:embeddings}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_06} %%% This figure will be redrawn
+    \caption{Heatmap of positional encodings (top) and line plots for the first 10 dimensions (bottom)}
+    \label{fig:08:embeddings}
+\end{figure}
+
+The top panel shows a heatmap of positional encodings for given sequence length (\lstinline{length}) and model dimensions (\lstinline{num_features}). It plots the encoding values across positions (vertical axis) and dimensions (horizontal axis).
+
+The bottom panel displays line plots for selected dimensions (up to the first 10 for clarity) against positions. This more detailed view demonstrates how the encoding values change across positions for individual dimensions, giving insight into the oscillatory pattern created by the sine and cosine functions.
+
+\subsubsection{Adding Pretrained Embeddings}
+\fi
+
+Although the model is ready for training, incorporating pretrained embeddings can significantly improve its performance. 
+\emph{Pretrained embeddings} are representations of rich semantic information about words aggregated from a large corpus of text data. They are often used to initialize a model's embedding layer. This can help the model start with a better understanding of the input data, leading to faster convergence and better generalization.
+
+\begin{note}
+Transformers incorporate sequence order information into their architecture through {\upshape{positional encodings}}, which are generated using a combination of sine and cosine functions of different frequencies. For each position $i$ in the sequence and each dimension $j$ of the positional encoding vector, the encoding is defined as follows:
+\begin{align}
+{\rm PE}_{(i,2j)} &= \sin\left(\frac{i}{10000^{2j/d_{\text{m}}}}\right)\\
+{\rm PE}_{(i,2j+1)} &= \cos\left(\frac{i}{10000^{2j/d_{\text{m}}}}\right)
+\end{align}
+The oscillatory pattern created by the sine and cosine functions permit the encoding values to change across positions for individual dimensions.
+\label{note:positionalencoding}
+\end{note}
+
+GloVe provides some of the most popular pretrained embeddings (see \url{https://nlp.stanford.edu/projects/glove/}).  Listing~\ref{cd:08:glove} downloads the GloVe embeddings and initializes the model's embedding layer with the weights of these pretrained embeddings.
+\begin{lstlisting}[
+    label=cd:08:glove,
+    caption=Adding pretrained embeddings
+]
+from torchtext.vocab import GloVe
+
+glove = GloVe(name="42B", dim=300, cache=".glove_cache")
+model.embedding.weight.data = glove.get_vecs_by_tokens(vocab.get_itos(), 
+                                                       lower_case_backup=True)
+model.embedding.weight.requires_grad = False
+\end{lstlisting}
+This code downloads the GloVe embeddings. The parameters specify the version of GloVe to use (\lstinline{"42B"} indicates the version trained on 42 billion tokens) and the dimensionality of the embeddings (\lstinline{dim=300}). The \lstinline{cache} parameter determines where the downloaded embeddings will be stored locally.
+
+Next,  the code retrieves the embeddings for the words in the model's vocabulary and assigns them to the model's embedding layer. After \lstinline{vocab.get_itos()} returns a list of tokens, the \lstinline{get_vecs_by_tokens()} method fetches the GloVe vectors for each token in the model's vocabulary. The \lstinline{lower_case_backup} option attempts to match a token's lowercase form if the original form is not found in GloVe's vocabulary.
+
+Finally, \lstinline{requires_grad} is set to \lstinline{False} to prevents the pretrained embedding layers' weights from being updated during training.
+
+\subsection{Defining the Data Loaders}
+
+As usual, before training, you need to define data loaders that will feed the training, validation, and test data to the model during the training and evaluation processes.
+You can do this with Listing~\ref{cd:08:dataloaders}.
+\begin{lstlisting}[
+    label=cd:08:dataloaders,
+    caption=Creating the data loaders
+]
+from torch.utils.data import DataLoader
+from torch_geometric.data import Data
+
+def collate(batch):
+    """Prepare a batch of data for the model to process."""
+    sequences, labels, batch_indices = [], [], []
+    for batch_index, sample in enumerate(batch):
+        sequence = torch.tensor(sample["sequence"])
+        sequences.append(sequence)
+
+        batch_indices.append(torch.ones_like(sequence, dtype=torch.long) 
+                             * batch_index)
+        
+        label = torch.tensor(sample["label"])
+        labels.append(label)
+    return Data(sequences=torch.cat(sequences), 
+                batch_indices=torch.cat(batch_indices),
+                y=torch.Tensor(labels).float())
+
+train_dataloader = \
+    DataLoader(train_dataset, batch_size=8, shuffle=True, collate_fn=collate)
+val_dataloader = \
+    DataLoader(val_dataset, batch_size=8, shuffle=False, collate_fn=collate)
+test_dataloader = \
+    DataLoader(test_dataset, batch_size=8, shuffle=False, collate_fn=collate)
+\end{lstlisting}
+This code first implements the \lstinline{collate()} function, which is essential for preprocessing batches of data.
+The input batch for the \lstinline{collate()} function is a list of dictionaries, where each dictionary contains the input sequence (\lstinline{"sequence"}) and the corresponding label (\lstinline{"label"}). 
+This code creates the \lstinline{squencess} and \lstinline{labels} lists by appending the input sequences (\lstinline{"sequence"}) and the labels (\lstinline{"label"}) for each sample in the batch, after their conversion into tensors. 
+The \lstinline{batch_indices} list creates tensors that mark the batch index for each input sequence by multiplying a tensor of ones with the same shape as \lstinline{sequence} by the index of the current sample. 
+Finally, the \lstinline{collate()} function joins the input sequences, batch indices, and labels into a single dictionary and returns it.
+
+Then, the code creates the data loaders, passing the \lstinline{collate()} function to the \lstinline{collate_fn} argument of the PyTorch's \lstinline{DataLoader} class.
+When loading a batch of data points, \lstinline{DataLoader} uses \lstinline{collate_fn} to determine how to combine the data points into a single batch for the model to process. 
+
+\subsection{Training the Model}
+
+You can now compile the model with Listing~\ref{cd:08:compile}.
+\begin{lstlisting}[
+    label=cd:08:compile,
+    caption=Compiling the model
+]
+classifier = dl.BinaryClassifier(model=model, 
+                                 optimizer=dl.AdamW(lr=1e-4)).create()
+\end{lstlisting}
+This code compiles the model with the AdamW optimizer and the default binary cross-entropy loss function.
+
+You now need to create a trainer for the model and train the model, as shown in Listing~\ref{cd:08:trainer}.
+\begin{lstlisting}[
+    label=cd:08:trainer,
+    caption=Training the model
+]
+from lightning.pytorch.callbacks import ModelCheckpoint
+
+checkpoint_callback = ModelCheckpoint((@\wingding{1}@)monitor="valBinaryAccuracy", \
+    (@\wingding{2}@)dirpath="models", \
+    (@\wingding{3}@)filename="ATT-model{epoch:02d}-val_accuracy{valBinaryAccuracy:.2f}",
+    auto_insert_metric_name=False, mode="max")
+trainer = dl.Trainer(max_epochs=5, callbacks=[checkpoint_callback])
+trainer.fit(classifier, train_dataloader, val_dataloader)
+\end{lstlisting}
+The \lstinline{ModelCheckpoint} callback monitors the validation binary accuracy \wingding{1}. This callback saves the model checkpoints to the specified directory \wingding{2} with a filename pattern that includes both the epoch number and the validation accuracy \wingding{3}. 
+The \lstinline{auto_insert_metric_name=False} parameter indicates that the metric name (\lstinline{valBinaryAccuracy}) should not be automatically inserted into the checkpoint filename, as the filename already includes it explicitly. 
+Furthermore, the \lstinline{mode="max"} argument directs the checkpoint to save the models with the maximum \lstinline{valBinaryAccuracy} to identify the best-performing model over the training epochs.
+
+\subsection{Evaluating the Trained Model}
+
+After training the model and saving its weights, you can evaluate it on the test set by loading the best model with Listing~\ref{cd:08:eval1}. 
+\begin{lstlisting}[
+    label=cd:08:eval1,
+    caption=Loading the best model
+]
+import glob, os
+
+best_model = glob.glob("./models/ATT-model*")
+best_model = max(best_model, key=os.path.getctime)
+best_classifier = dl.BinaryClassifier \
+    .load_from_checkpoint(best_model, model=model).create()
+\end{lstlisting}
+
+Once you've finished, test how well this model predicts a critic's sentiment towards a movie (positive or negative) based on their IMDb review using
+\begin{lstlisting}
+test_results = trainer.test(best_classifier, test_dataloader)
+\end{lstlisting}
+After just 5 rounds of training, the model should have reached an accuracy of approximately 87 percent on the test data, demonstrating the effectiveness of transformer models for NLP tasks.
+
+You can display the model's predictions on a few examples from the test set using Listing~\ref{cd:08:eval3}.
+\begin{lstlisting}[
+    label=cd:08:eval3,
+    caption=Displaying the model's prediction on some reviews
+]
+import random
+
+best_classifier.model.eval()
+
+texts, labels, predictions = [], [], []
+for idx in random.sample(range(len(test_dataset)), 3):
+    sample = test_dataset[idx]
+    
+    input_tensor = torch.Tensor(vocab(tokenize(sample["text"]))).long()
+    test_input = {
+        "x": input_tensor,
+        "batch_indices": torch.zeros_like(input_tensor, dtype=torch.long)
+    }
+
+    probability = classifier.model(test_input)
+    pred = probability > 0.5
+    
+    texts.append(sample["text"])
+    labels.append(sample["label"])
+    predictions.append(pred.item() * 1)
+
+df = pd.DataFrame({"text": texts, "label": labels, "prediction": predictions})
+styled_df = df.style.set_properties(**{"text-align": "left"}).set_table_styles(
+    [{"selector": "th", "props": [("text-align", "center")]}]
+)
+with pd.option_context("display.max_colwidth", None):
+    display(styled_df)
+\end{lstlisting}
+The resulting display should be similar to Figure~\ref{fig:08:reviews2}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_07} %%% This figure will be redrawn
+    \caption{Example reviews with model predictions}
+    \label{fig:08:reviews2}
+\end{figure}
+
+Note that the model's performance can be improved by fine-tuning the hyperparameters, increasing the number of training epochs, or using more advanced techniques such as learning rate schedules, gradient clipping, and early stopping.
+
+\subsection{Code 8-1: Predicting Sentiment Using a Transformer}
+
+The \emph{transformer.ipynb} notebook provides you with a complete code example that predicts the sentiment of movie reviews using a transformer encoder network.
+
+\section{Project 8A: Using Attention to Improve Language Translation}
+
+In complex sequence-to-sequence tasks such as machine translation, relations between words and phrases often extend across lengthy sequences. In the basic seq2seq model you implemented in Project~7A, the decoder sequentially generates each word, relying primarily on the encoder's final hidden state for context. Consequently, the hidden state's context vector---which represents the entire input sequence’s meaning---is responsible for preserving all pertinent information. This approach tends to result in significant information loss, particularly with longer input sequences, constraining the decoder’s effectiveness.
+
+Recalling Project~7A, you might remember the translation example where the phrase ``This book is very interesting.'' was translated as ``Este libro es muy interesante .''. However, the output was often less accurate with longer and more complex sentences, like ``The book that I bought is very interesting.''. The transformer model aims to improve upon this by better handling these long-range dependencies.
+
+In Project~8A, you'll learn two methods of setting up an attention mechanism, multiplicative and additive, as well as the advantages of each.  Then, you'll modify and train the decoder by applying attention to sequence-to-sequence processing. Finally, you'll analyze how and why translating text with attention improves upon the results of the recurrent neural network in Project 7A by visualizing attention using heatmaps.
+You'll do so by modifying the \emph{nlp\_rnn.ipynb} you implemented in Project~7A.
+
+\subsection{Defining the Attention Mechanism}
+
+Incorporating an attention mechanism into the seq2seq model addresses some of the limitations you've encountered with machine translation performed with recurrent neural networks in Project~7A. 
+This mechanism introduces a more complex context vector that captures interactions between the encoder outputs and the hidden state at a specific step. Afterwards, the context vector is joined to the encoder output and passed to the decoder's recurrent neural network. This enhances the model’s ability to focus on different segments of the input for each step of the decoding, ensuring more accurate and contextually appropriate translations.
+
+Sequence-to-sequence models can use two main types of attention mechanisms: multiplicative attention and additive attention. Each has implementations that can affect the performance and computational efficiency of the model.
+
+\subsubsection{Implementing Multiplicative Attention}
+
+\emph{Multiplicative attention}, also known as \emph{dot-product attention},
+%, was first introduced by Minh-Thang Luong and colleagues in their article ``Effective Approaches to Attention-based Neural Machine Translation''. This attention mechanism 
+calculates the attention scores using the dot product between the query and key vectors. In machine translation, the query typically corresponds to the decoder's hidden state at a specific step. The keys correspond to the encoder outputs. Accordingly, you can interpret this dot product as a simple measure of the similarity between the two inputs. 
+In the context of translating a sequence of words, the hidden state in the decoder represents the current word or phrase being generated, while the encoder outputs represent the entire source sentence. The dot product helps determine which parts of the source sentence are most relevant to the current word being translated, allowing the model to focus on the appropriate context for accurate translation.
+%Multiplicative attention can have different variations depending on the specific calculations used, such as the scaled dot-product attention commonly used in transformer models.
+
+%Although multiplicative attention was introduced after additive attention, we will implement and apply it first due to its simpler and more intuitive nature. In 
+Listing~\ref{cd:08:A:dotprod_attn} defines a custom class to implement a basic dot-product attention mechanism.
+\begin{lstlisting}[
+    label=cd:08:A:dotprod_attn,
+    caption=Class implementing multiplicative (dot-product) attention
+]
+import deeplay as dl
+
+class DotProductAttention(dl.DeeplayModule):
+    """Multiplicative attention."""
+
+    def __init__(self):
+        """Initialize multiplicative attention."""
+        super().__init__()
+        self.attn = dl.Layer(torch.nn.Softmax, dim=-1)
+
+    def forward(self, queries, keys, values):
+        """Perform forward pass."""
+        (@\codewingding{1}@)scores = torch.sum(query * keys, dim=2).unsqueeze(1)
+        (@\codewingding{2}@)weights = self.attn(scores)
+        (@\codewingding{3}@)context = torch.bmm(weights, values)
+        return context, weights
+\end{lstlisting}
+This code computes attention scores by taking the dot product of the query vector with each key vector \wingding{1}, producing a scalar score for each key. These scores are then passed through a softmax function to convert them into attention weights \wingding{2}. 
+The scalar scores show the raw similarity between the queries and keys. The attention weights are normalized probabilities from these scores, indicating the importance of each key. This normalization ensures the attention weights sum to 1, allowing consistent weighting of each key.
+Accordingly, the attention weights represent the importance of each key relative to the query.
+
+or, more precisely, the relevance of each encoder's output to the decoder's hidden state at a specific step.
+In the context of translation, this means the attention weights indicate how relevant each word from the input sentence of the decoder (the encoder's output) is to generating the next word in the translated sentence (the decoder's hidden state).
+
+Usually, the model would use the attention weights to compute a weighted sum of the value vectors. However, in this task, keys and values are the same \wingding{3} since in translation, both represent the encoder's outputs for each word in the input sentence. The fact that that they are the same simplifies the computation in accordance with the mechanism's goal: to determine which parts of the input sequence are most relevant to the current output step, then to use that information directly. In the case of translation, this information would reveal which words from the input sentence are most relevant for predicting the next word in the translated sentence.
+The final output of the attention mechanism is the context vector. Afterwards, the decoder uses this vector to generate the next output in the sequence.
+
+\subsubsection{Implementing Additive Attention}
+
+\emph{Additive attention}, also known as \emph{Bahdanau attention},
+%, was introduced by Dzmitry Bahdanau and collaborators in their paper ``Neural Machine Translation by Jointly Learning to Align and Translate''. This type of attention 
+calculates the attention scores using dense neural networks. This makes additive attention more flexible than multiplicative attention, allowing it to capture more complex relationships between the query and key vectors. However, it's also more computationally intensive. Listing~\ref{cd:08:A:additive_attn} shows how to implement this mechanism.
+\begin{lstlisting}[
+    label=cd:08:A:additive_attn,
+    caption=Class implementing additive attention
+    (\expand{cd:08:A:dotprod_attn})
+]
+class ***AdditiveAttention***(dl.DeeplayModule):
+    """***Additive*** attention."""
+
+    def __init__(self***, in_features=128, emb_dim=300***):
+        """Initialize ***additive*** attention."""
+        super().__init__()
+        ***self.Wa = dl.Layer(torch.nn.Linear, in_features, emb_dim)
+        self.Ua = dl.Layer(torch.nn.Linear, in_features, emb_dim)
+        self.Va = dl.Layer(torch.nn.Linear, emb_dim, 1)***
+        self.attn = dl.Layer(torch.nn.Softmax, dim=-1)
+
+    def forward(self, query, keys):
+        """Perform forward pass."""
+        (@\codewingding{1}@)scores = ***self.Va(torch.tanh(self.Wa(query) + self.Ua(keys)))***
+        ***scores = scores.squeeze(2).unsqueeze(1)***
+        weights = self.attn(scores)
+        context = torch.bmm(weights, keys)
+        return context, weights
+\end{lstlisting}
+This code passes the query and key vectors through a dense neural network, then concatenates them into a single vector. Then, it passes this concatenated vector through another dense neural network to compute the attention scores \wingding{1}. Similar to multiplicative attention, the scores are  normalized using the softmax function to get the attention weights. Finally, the attention weights are used to compute a weighted sum of the key vector.
+
+\subsection{Incorporating Attention in the Sequence-to-Sequence Model}
+
+Now that you understand how to implement these  different types of attention mechanisms, you'll incorporate an optional attention mechanism to some of the modules composing the seq2seq model so that the seq2seq model can be used either with or without attention as needed.
+
+\subsubsection{Modifying the Decoder}
+
+Start from the \lstinline{Seq2SeqDecoder()} described in Listing~\ref{cd:07:A:decoder}. The changes to the decoder are shown in Listing~\ref{cd:08:A:decoder}.
+
+\begin{lstlisting}[
+    label=cd:08:A:decoder,
+    caption=Class implementing a decoder network with an optional attention mechanism
+    (\expand{cd:07:A:decoder})
+]
+class Seq2SeqDecoder(DeeplayModule):
+    """Seq2seq decoder ***with optional attention***."""
+
+    def __init__(___--snip--___***, attn=DotProductAttention***):
+        ___--snip--___
+        self.relu = dl.Layer(torch.nn.ReLU)
+        ***self.attn = attn***
+        
+        self.embedding = dl.Layer(torch.nn.Embedding, vocab_size, in_features)
+        self.rnn = dl.Layer(torch.nn.GRU, \
+            input_size=in_features + ***hidden_features*** , \
+            hidden_size=hidden_features, ___--snip--___)
+        ___--snip--___
+
+    def forward(self, decoder_in_values, hidden***, encoder_outputs***):
+        """Perform forward pass."""
+        x = self.embedding(x)
+        out_embeddings = self.embedding(decoder_in_values)
+        ***query = hidden[-1:, :, :].permute(1, 0, 2)
+        context, attn_weights = self.attn(query, encoder_outputs)
+        x = torch.cat((x, context), dim=2)
+        x = self.relu(x)
+
+        out_embeddings = self.embedding(decoder_in_values)
+        out_embeddings = self.relu(out_embeddings)
+        decoder_outputs, contexts = self.rnn(out_embeddings, contexts)
+        decoder_outputs = self.dense(decoder_outputs)
+        decoder_outputs = self.softmax(decoder_outputs)
+
+        output, hidden = self.rnn(x, hidden)
+        output = self.dense(output)
+        output = self.softmax(output)
+        return output, hidden***, attn_weights***
+\end{lstlisting}
+This code adds an optional \lstinline{attn} parameter to the initialization method. This parameter accepts an attention module that will enable the decoder to focus on specific parts of the input sequence based on the context provided by the encoder outputs. If an attention module is provided, the recurrent neural network will take additional context vectors from the attention mechanism and concatenate them to the regular input embeddings. The code also modifies the input size of the recurrent neural network layer if an attention module is used. 
+
+The \lstinline{forward()} method’s signature includes \lstinline{encoder_outputs}, which are necessary for the attention mechanism to function. If the attention module is provided, the decoder uses the module to compute a context vector from a query (derived from the last hidden state) and the key (the encoder outputs).
+The resulting context vector is concatenated with the input embeddings and fed into the recurrent neural network. This allows the decoder to use additional contextual information from the encoder to generate the output sequence.
+With the optional attention module, the forward method returns the attention weights \lstinline{attn_weights}. These weights will offer a way to visually identify which parts of the input sequence are most influential in determining each part of the output sequence. Without the module, the method defaults to applying a ReLU activation on the embeddings and setting the attention weights to an empty list.
+
+\subsubsection{Customizing the Sequence-to-Sequence Model}
+
+Next, you should modify the \lstinline{Seq2SeqModel()} described in Listing~\ref{cd:07:A:seq2seq} in a way similar to the decoder, as highlighted in Listing~\ref{cd:08:A:seq2seq}.
+\begin{lstlisting}[
+    label=cd:08:A:seq2seq,
+    caption=Class implementing a sequence-to-sequence model with an optional attention mechanism
+    (\expand{cd:07:A:seq2seq})
+]
+class Seq2SeqModel(DeeplayModule):
+    """Seq2seq model ***with optional attention***."
+
+    def __init__(___--snip--___***, attn=None***):
+        ___--snip--___
+        ***self.attn = attn*** 
+        ___--snip--___
+        self.decoder = /
+            Seq2SeqDecoder(out_vocab_size, embedding_dim, hidden_features,
+                           hidden_layers, dropout, rnn_type***, attn***)
+
+    def forward(self, x):
+        ___--snip--___
+        ***encoder_outputs***, contexts = self.encoder(in_sequences)
+        ___--snip--___
+        for t in range(sequence_length):
+            decoder_output, decoder_hidden***, _*** = /
+                self.decoder(decoder_input, decoder_hidden, ***encoder_outputs***)
+         ___--snip--___
+
+    def evaluate(self, x):
+        ___--snip--___
+        with torch.no_grad():
+            ***encoder_outputs***, contexts = self.encoder(in_sequences)
+        ___--snip--___
+        ***attentions = []***
+        for t in range(input.size(1)):
+            ___--snip--___
+            with torch.no_grad():
+                decoder_output, decoder_hidden***, attn_weights*** = self.decoder( \
+                decoder_input, decoder_hidden, ***encoder_outputs***)
+                ***attentions.append(attn_weights)***
+            _, top1 = decoder_output.topk(1)
+            outputs[:, t] = top1.squeeze()
+
+        return outputs***, attentions***
+\end{lstlisting}
+Integrating the optional attention mechanism into the module requires adding the \lstinline{attn} parameter to the constructors. Then, you'll modify the call to the decoder in the forward and evaluate methods to use \lstinline{encoder_outputs} as an input. These encoder outputs will help the decoder focus on relevant parts of the input sequence during each decoding step. Later, in the \lstinline{forward()} method's decoder output, you'll use a placeholder (\lstinline{_}) to ignore the attention weights that are not needed for the decoder. Finally, in the \lstinline{evaluate()} method, you'll append the attention weights in a list to be returned along with the usual output. Doing so will help you interpret the output of the model.
+
+\subsubsection{Building Attention into the Application}
+
+Lastly, you also need to add the \lstinline{attn} parameter to the \lstinline{Seq2Seq()} application of Listing~\ref{cd:07:A:applic}, as shown in Listing~\ref{cd:08:A:applic}.
+\begin{lstlisting}[
+    label=cd:08:A:applic,
+    caption=Class implementing the application to train the seq2seq model with optional attention 
+    (\expand{cd:07:A:applic})
+]
+class Seq2Seq(Application):
+    """Application for the seq2seq model*** with optional attention***."""
+
+    def __init__(___--snip--___***, attn=None***):
+        ___--snip--___
+        self.model = model or Seq2SeqModel(in_vocab_size=in_vocab_size, \
+            out_vocab_size=out_vocab_size, teacher_prob=teacher_prob, \
+            ***attn=attn***)
+        ___--snip--___
+\end{lstlisting}
+This updated class passes the attention to the sequence-to-sequence model.
+Adding the attention parameter to the sequence-to-sequence application enhances the model's ability to focus on relevant parts of the input sequence during training and prediction so that the model can more effectively handle tasks like machine translation using the attention mechanism to improve accuracy and contextual understanding.
+
+\subsection{Training the Seq2seq Model with Attention}
+
+You're now ready to perform all the steps described in Project~8A to train the seq2seq model. You'll specify the type of attention to use by modifying Listing~\ref{cd:07:A:create_model} when creating the model demonstrated in Listing~\ref{cd:08:A:create_model}.
+\begin{lstlisting}[
+    label=cd:08:A:create_model,
+    caption=Creating the seq2seq model with attention
+    (\expand{cd:07:A:create_model})
+]
+seq2seq = Seq2Seq(in_vocab=vocab_input, out_vocab=vocab_target, 
+                  teacher_prob=0.85, ***attn=DotProductAttention()***)
+seq2seq = seq2seq.create()
+___--snip--___
+\end{lstlisting}
+This code introduces a dot-product attention mechanism into the model. Although using multiplicative attention doesn't increase the network's trainable parameters, it significantly increases performance. When trained in the same conditions as the basic seq2seq application of Project~7A, the final loss consistently reaches values smaller than 1. In addition, assessing the translation quality over the test dataset produces a BLEU score of 0.37. 
+
+You can use the additive attention by replacing \lstinline{attn=DotProductAttention()} with \lstinline{attn=AdditiveAttention()} in Listing~\ref{cd:08:A:create_model}. The flexibility introduced by the higher number of trainable weights will produce a final loss value of about 0.06 and a BLEU score of about 0.41.
+
+%It is important to note that, aside from how the attention scores are computed, seq2seq models with different types of attention can also differ in their computation paths, which can impact their performance. The \lstinline{Seq2SeqDecoder()} class in Listing~\ref{cd:08:A:decoder} follows an algorithm inspired by Bahdanau, where attention scores are calculated from previous hidden states. This sequence of operations remains consistent regardless of the type of attention used. However, when describing the use of multiplicative attention, Luong proposed a different algorithm in which the scores are calculated from the current hidden states.
+
+To evaluate performance, you'll need to slightly modify the code in Listing~\ref{cd:07:A:test} by inserting a placeholder to ignore the attention weights output by the \lstinline{evaluate()} method, as detailed in Listing~\ref{cd:08:A:test}.
+\begin{lstlisting}[
+    label=cd:08:A:test,
+    caption=Testing the model and calculating the BLEU score
+    (\expand{cd:07:A:test})
+]
+___--snip--___
+for batch_index, (in_puts, targets) in enumerate(test_loader):
+    inputs, targets = inputs.to(device), targets.to(device)
+    y_hat***, _*** = seq2seq.model.evaluate((inputs, targets))  
+___--snip--___
+\end{lstlisting}
+
+Besides improving the model performance, attention weights can help us better understand the model's behavior, particularly how much different parts of the input sequence influence the output. This can help make the translation process more transparent.
+Since the evaluate method now returns both the predicted sequence and attention weights, you can modify the \lstinline{translate()} function of Listing~\ref{cd:07:A:translate}
+to introduce a new section that visualizes the attention weights using a heatmap, as shown in Listing~\ref{cd:08:A:translate_and_display_attn}. The map can help us identify which parts of the input sequence the model focuses on during translation.
+\begin{lstlisting}[
+    label=cd:08:A:translate_and_display_attn,
+    caption=Translating user-defined sentences and visualizing the attention map
+    (\expand{cd:07:A:translate})
+]
+***from matplotlib import pyplot as plt
+from matplotlib.ticker import MultipleLocator***
+
+def translate***_attn***(source_text, model, input_lang, vocab_input, 
+                               vocab_target):
+    """Translate sentences and display attention."""
+    ___--snip--___
+    source_sequence = source_sequence.to(next(model.parameters()).device)
+    y_hat***, attns*** = model.evaluate(source_sequence)
+
+    (@\codewingding{1}@)***y_hat_un = [vocab_target.lookup_token(y) for y in y_hat.squeeze()]***
+
+    (@\codewingding{2}@)***att = torch.cat(attns, dim=1).squeeze()***
+    (@\codewingding{3}@)***fig = plt.figure()
+    ax = fig.add_subplot(111)
+    cax = ax.matshow(att, cmap="bone")
+    fig.colorbar(cax)
+
+    ax.set_xticklabels([""] + query_tokens, rotation=90)
+    ax.set_yticklabels([""] + y_hat_un)
+
+    ax.xaxis.set_major_locator(MultipleLocator(1))
+    ax.yaxis.set_major_locator(MultipleLocator(1))
+
+    plt.show()***
+
+    translated_text = unprocess(y_hat, vocab_target)
+    print(f"Predicted Translation: {translated_text[0]}")
+\end{lstlisting}
+The updated function \lstinline{translate_attn()} incorporates attention visualization \lstinline{translate()} function. The function now returns attention weights \lstinline{attns} in addition to the predicted sequence \lstinline{y_hat}.
+Later in the function, the predicted token indices are converted back to human words using the target vocabulary \wingding{1}. Then, attention weights are concatenated across all decoding steps as a list of attention weight tensors \wingding{2}. Finally, the updated code sets up a figure to visualize the attention weights as a heatmap, with tokens of the input sequence and predicted output added to the axes \wingding{3}.
+
+When translating a user-defined sequence, both the attention models provide a good translation. Let's see what happens when using the additive attention model on the same sentence translated in Project~7A: 
+\begin{lstlisting}
+source_text = "Do you think that we should go home?"
+translate_attn(source_text, seq2seq.model, in_lang, in_vocab, out_vocab, specials)
+\end{lstlisting}
+The result is:
+\begin{lstlisting}
+Predicted Translation: ¿ Crees que deberíamos ir a casa ?
+\end{lstlisting}
+The additive attention model not only translates the sentence well, but displays the corresponding attention map that highlights which parts of the input sequence the model focuses on while generating each word of the output, as shown in Figure~\ref{fig:08:A:attn_map1}.
+
+\begin{figure}[H]
+    \includegraphics[width=2.675in]{ch_08/fig_08_A1}
+    \caption{Example of attention map for translation}
+    \label{fig:08:A:attn_map1}
+\end{figure}
+
+The x-axis represents the tokens of the source sentence in English, while the y-axis represents the tokens of the translated sentence in Spanish. The heatmap displays the attention weights, with brighter areas indicating higher attention scores. For a well-aligned translation of grammatically similar languages, the heatmap should exhibit a somewhat diagonal pattern. This indicates that the attention model focuses on the word that shares the same position in the source sentence as the word it generates in the target sentence.
+
+However, when words are reordered during translation, the heatmap might not follow a strict diagonal pattern. For example, the verb ``Crees'' has high attention weights for ``think'', while the auxiliary verb ``should'' is closely linked to ``deber\'iamos''. Interestingly, the initial question mark in Spanish, ``¿'', which doesn't exist in English, has high attention weights for the English word ``Do'', which initiates the interrogative sentence. Similarly, the word ``a'', which has no direct equivalent in the English sentence, shows high attention weights for ``go'' and ``home''.
+
+To conclude this project, you'll apply the attention-enabled model to a sentence where the basic model of Project~7A yielded poor results. 
+\begin{lstlisting}
+source_text = "The book that I bought is very interesting."
+translate_attn(source_text, seq2seq.model, in_lang, in_vocab, out_vocab, specials)
+\end{lstlisting}
+The improved translation now reads:
+\begin{lstlisting}
+Predicted Translation: El libro que compré es muy interesante.
+\end{lstlisting}
+The corresponding attention map is shown in Figure~\ref{fig:08:A:attn_map2}). 
+
+\begin{figure}[H]
+    \includegraphics[width=2.675in]{ch_08/fig_08_A2}
+    \caption{Another example of attention map for translation}
+    \label{fig:08:A:attn_map2}
+\end{figure}
+
+In this case, the phrase ``The book that I bought'' is translated into ``El libro que compré'', with the model correctly attending  to the corresponding parts of each sequence. For instance, ``The book'' is linked closely to ``El libro'', and ``that I bought'' is correctly aligned with ``que compré''. The structure of`is very interesting'' corresponds closely to ``es muy interesante'', maintaining the proper sequence and context. This alignment pattern shows that the attention model effectively captures the relationships between the source and target languages, producing a more coherent and contextually accurate translation compared to the basic model in Project~7A.
+
+\subsection{Code 8-A: Translating with Attention}
+
+The \emph{nlp\_attn.ipynb} notebook provides a complete code example that demonstrates how to implement a sequence-to-sequence (seq2seq) model for machine translation using recurrent neural networks and the attention mechanism.
+
+\section{Project 8B: Classifying Images with a Vision Transformer}
+
+Historically, the convolutional neural networks you first met in Chapter~\ref{ch:03} have dominated image analysis tasks. However, inspired by the impact of transformer models in natural language processing,  Google Research developed the \emph{vision transformer} (\emph{ViT})in 2020---a breakthrough in image interpretation. The introduction of ViT also showed that a model originally designed for text could excel in visual domains. The ViT model has outperformed existing convolutional-based methods across various image classification benchmarks, demonstrating remarkable scalability and generalization capabilities. Its success has led to its adoption in several cutting-edge applications, including image segmentation (dividing an image into meaningful regions for easier analysis) and multimodal learning (integrating and processing information from multiple sources, such as text, images, and audio).
+
+This project introduces the ViT model, explaining its architecture and how it can be used for image classification tasks. 
+It begins by introducing you to the CIFAR-10 dataset, a set of images sorted into different classes like cats and cars. You'll learn how to preprocess the images, build the ViT model, and train it. After observing how unmodified ViT results in unimpressive results when trained on small datasets, you'll apply the CutMix augmentation to improve its classifications. Finally, you'll see how powerful ViT can be when pretrained on larger datasets.
+
+\subsection{Using the CIFAR Dataset}
+
+The CIFAR-10 dataset will serve as your primary playground for experimenting with ViT.
+Comprising 60,000 full-color 32x32 pixel images, CIFAR-10 includes 10 distinct classes, with each class containing 6,000 images. The dataset is divided into a training set of 50,000 images and a testing set of 10,000 images.
+
+Use Listing~\ref{cd:08:B:datasets} to download and prepare the data.
+\begin{lstlisting}[
+    label=cd:08:B:datasets,
+    caption=Preparing the datasets
+]
+from torchvision import transforms, datasets
+
+train_dataset = datasets.CIFAR10(root="./data", train=True, download=True, 
+                                 transform=transforms.ToTensor())
+test_dataset = datasets.CIFAR10(root="./data", train=False, download=True, 
+                                transform=transforms.ToTensor())
+\end{lstlisting}
+This script initializes the training and testing CIFAR-10 datasets using PyTorch's \lstinline{datasets.CIFAR10} class. 
+To initiate the training dataset, the script specifies the root directory for storing the data, sets the \lstinline{train} parameter to \lstinline{True}, and enables the download option. Additionally, it uses the \lstinline{transforms.ToTensor()} method to convert the images into PyTorch tensors. The script uses similar parameters to initialize the testing dataset, except for the \lstinline{train} parameter, which is set to \lstinline{False}.
+
+You can visualize some images from the CIFAR-10 dataset by using the \lstinline{plot_class_examples()} function in Listing~\ref{cd:08:B:plot_images}.
+\begin{lstlisting}[
+    label=cd:08:B:plot_images,
+    caption=Visualizing sample images.
+]
+import matplotlib.pyplot as plt
+
+def plot_class_examples(dataset, n_images=5):
+    """Plot the first images for each class in the dataset."""
+    classes = dataset.classes
+    indices = {c: [] for c in range(len(classes))}
+    for i, (_, label) in enumerate(dataset):
+        (@\codewingding{1}@)if all(len(v) == n_images for v in indices.values()):
+            break
+        if len(indices[label]) < n_images:
+            (@\codewingding{2}@)indices[label].append(i)
+
+    fig, axs = plt \
+        .subplots(len(classes), n_images, figsize=(8, 16), squeeze=False)
+    for i, (c, idx) in enumerate(indices.items()):
+        for j, id in enumerate(idx):
+            img = dataset[id][0].permute(1, 2, 0)
+            axs[i, j].imshow(img)
+            axs[i, j].set(xticks=[], yticks=[])
+            axs[i, j].set_ylabel(classes[c], size="large") if j == 0
+    plt.subplots_adjust(wspace=0.05, hspace=0.05), plt.show();
+\end{lstlisting}
+This function displays the first  \lstinline{n_images} examples for each class in the dataset.
+It begins by extracting the \lstinline{classes} from the dataset and initializing a dictionary to hold \lstinline{indices} of images for each class.  Then, as it iterates over the dataset, the function checks whether it has collected enough images for each class \wingding{1}. If a class still needs more, it adds the current index to its dictionary of indices \wingding{2}. 
+
+Once it reaches the desired number of images for each class, the function prepares a MatPlotLib figure with a grid of subplots that contain one column per class. 
+For each class, the function iterates over its collected image indices, retrieves the images, formats them for display, and plots them in the corresponding subplot cell.
+
+You can now execute
+\begin{lstlisting}
+plot_class_examples(train_dataset, n_images=5)
+\end{lstlisting} 
+to run the function and display 5 samples for each class, illustrated in Figure~\ref{fig:08:B:CIFAR}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_B1}
+    \caption{Example images from the CIFAR dataset}
+    \label{fig:08:B:CIFAR}
+\end{figure}
+
+The visualization showcases the diversity of categories in the CIFAR-10 dataset, ranging from vehicles like trucks and ships to animals such as horses, frogs, and dogs. This diversity, plus the variety of colors, orientations, and contexts within each class, highlights the challenge of classification tasks.
+
+\subsection{Data Preprocessing}
+
+During training, you'll need to ensure that the model learns effectively and generalizes well to unseen data. To this end, since the default CIFAR-10 dataset contains only training and testing subsets, you must partition it to create a separate validation set. You will use Listing~\ref{cd:08:B:train_valid_split} to implement the \lstinline{split_train_val()} function, which splits the training set into training and validation subsets based on a specified validation split ratio.
+\begin{lstlisting}[
+    label=cd:08:B:train_valid_split,
+    caption=Splitting  training and validation datasets
+]
+import copy, torch
+from torch.utils.data import Subset
+
+(@\codewingding{1}@)indices = torch.randperm(len(train_dataset)).tolist()
+(@\codewingding{2}@)split = int(len(train_dataset) * 0.20)
+(@\codewingding{3}@)train_indices, val_indices = indices[split:], indices[:split]
+train_dataset = Subset(train_dataset, train_indices)
+val_dataset = Subset(copy.deepcopy(train_dataset), val_indices)
+\end{lstlisting}
+This code takes the training dataset and a validation split ratio as inputs and returns the training and validation subsets. To begin, it generates random indices for the dataset \wingding{1}, calculates the split index based on the validation split ratio (here, 20 percent validation and 80 percent training) \wingding{2}, and splits the indices into training and validation indices \wingding{3}. Then, it creates the training and validation subsets using the \lstinline{Subset()} class, which generates a subset of the dataset corresponding to the specified indices. To ensure that the training and validation subsets are independent, the function uses the \lstinline{copy.deepcopy()} function.
+
+To enhance the model's ability to generalize and prevent overfitting,  you'll apply various data augmentation techniques to the training dataset during preprocessing, as shown in Listing~\ref{cd:08:B:train_dataset_augment}.
+\begin{lstlisting}[
+    label=cd:08:B:train_dataset_augment,
+    caption=Preprocessing the training dataset
+]
+train_transform = transforms.Compose([
+    (@\codewingding{1}@)transforms.RandomCrop(32, padding=4),
+    (@\codewingding{2}@)transforms.RandomHorizontalFlip(), 
+    transforms.ToTensor(),
+    (@\codewingding{3}@)transforms.Normalize([0.49139968, 0.48215841, 0.44653091], 
+                         [0.24703223, 0.24348513, 0.26158784])
+train_dataset.dataset.transform = train_transform
+\end{lstlisting}
+This code augments the CIFAR-10  training dataset by random cropping and padding \wingding{1}, and horizontal flipping \wingding{2}. These augmentations help improve the model's performance by increasing the diversity of the training data, which in turn helps with generalization and reduces overfitting.
+Then, it normalizes the image tensors using the training set mean and standard deviation values for each channel \wingding{3}.
+
+To preprocess the validation dataset, you should only convert the images to tensors and normalize them, as shown in Listing~\ref{cd:08:B:valid_dataset_augment}. Avoiding augmentation maintains the validity of the evaluation process.
+
+\begin{lstlisting}[
+    label=cd:08:B:valid_dataset_augment,
+    caption=Preprocessing the validation dataset
+]
+val_transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize([0.49139968, 0.48215841, 0.44653091], 
+                         [0.24703223, 0.24348513, 0.26158784])
+val_dataset.dataset.transform = val_transform
+\end{lstlisting}
+
+Next, define the data loaders to feed the training and validation data to the model, as detailed in Listing~\ref{cd:08:B:dataloader} .
+\begin{lstlisting}[
+    label=cd:08:B:dataloader,
+    caption=Defining the dataloaders.
+]
+from torch.utils.data import DataLoader
+
+train_dataloader =  /
+    DataLoader(train_dataset, batch_size=128, shuffle=True, num_workers=4)
+val_dataloader = / 
+    DataLoader(val_dataset, batch_size=128, shuffle=False, num_workers=4)
+\end{lstlisting}
+The batch size is set to 128 for both data loaders, but only the training data are shuffled.
+
+\subsection{Building the ViT Model}
+
+Having prepared the data, you should now define the ViT model. The ViT architecture is illustrated in Figure~\ref{fig:08:B:ViT}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_B2} %%% This figure will be redrawn % ensure that the 4 components are consistently labelled with the text
+    \caption{ViT architecture}
+    \label{fig:08:B:ViT}
+\end{figure}
+
+The ViT consists of four components that work together to process and classify images.
+
+First, \emph{image patch embeddings} slice the input image into fixed-size, non-overlapping patches. By dividing the image into smaller patches, the model can analyze the image in segments and learn local features before integrating them to form a global understanding. 
+These patches are then transformed into vectors through a linear transformation, which means they are converted into a numerical format that the model can process.
+Thus, these patches are linearly embedded, creating a series of flattened embeddings that form the input sequence for the transformer encoder. 
+To capture holistic information about the image, the ViT integrates into the patch embeddings an additional learnable class token, a special token added to the sequence that learns to represent the overall image during training. This class token doesn't directly correspond to any individual patch. Instead, it symbolizes the collective image and its relationships with the embeddings, providing a comprehensive view during classification.
+
+Second, positional encodings add spatial context to the patch embeddings, ensuring that the model comprehends the layout and position of each patch within the image. Unlike sine and cosine encodings, these positional encodings are initially randomized, then refined through the learning process.
+
+Third, the \emph{transformer encoder} at the heart of the model analyzes the images. It consists of several layers of transformer blocks. Each block features a multi-head self-attention mechanism and a feedforward neural network. This structure allows the model to focus on different parts of the image simultaneously, facilitating a deeper understanding of the visual content.
+Unlike convolutional neural networks, which have a fixed receptive field and can struggle with long-range dependencies, the transformer encoder can dynamically adjust its focus to capture relationships across the entire image, regardless of distance. This ability to globally attend to all parts of the image at once helps the model integrate both local and global information, leading to a more comprehensive understanding.
+
+Fourth, the \emph{classification head} (or \emph{dense top}) takes the class token output from the transformer encoder and feeds it through a feedforward neural network to predict the image's class label.
+
+You can use Listing~\ref{cd:08:B:model} to instantiate the ViT model.
+\begin{lstlisting}[
+    label=cd:08:B:model,
+    caption=Instantiating the ViT model
+]
+import deeplay as dl
+
+vit = dl.ViT(in_channels=3, image_size=32, patch_size=4, \
+    hidden_features=[384,] * 7, out_features=10, num_heads=12)
+\end{lstlisting}
+The Deeplay \lstinline{ViT()} class manages the ViT model architecture. The class constructor initializes the model components, including the patch embeddings, positional encodings, transformer encoder, and classification head. The constructor includes the following parameters:
+\begin{itemize}
+    \item \lstinline{in_channels} defines the number of input channels in the image. For the CIFAR-10 dataset, the number of channels is 3 (RGB).
+    \item \lstinline{image_size} defines the size of the input image, which is 32x32 for the CIFAR-10 dataset.
+    \item \lstinline{patch_size} defines the size of the image patches. This parameter is set to 4, resulting in a total of 64 patches of size 4x4.
+    \item \lstinline{hidden_features} defines the the number and size of the hidden layers in the transformer encoder. The listing defines seven transformer blocks (or layers), each with a hidden size of 384 channels.
+    \item \lstinline{out_channels} defines the number of classes in the dataset, which is 10 for CIFAR-10.
+    \item \lstinline{num_heads}  defines the number of attention heads in the multi-head self-attention mechanism. In this case, it is set to 12.
+\end{itemize}
+
+You can visualize the ViT architecture using the print function \lstinline{print(vit)}.
+
+\subsection{Training and Evaluating the ViT}
+
+Now that you've preprocessed the images and initialized the ViT components, you can begin training the model.  The code in Listing~\ref{cd:08:B:trainer} sets up a classifier by specifying the model and optimizer. Then, it creates a trainer object to train the model. Additionally, a checkpointing mechanism saves the best-performing models during training based on validation accuracy.
+
+\begin{lstlisting}[
+    label=cd:08:B:trainer,
+    caption=Defining the classifier and the checkpointing mechanism
+]
+from lightning.pytorch.callbacks import ModelCheckpoint
+
+classifier = dl.Classifier(model=vit, \
+    optimizer=dl.Adam(lr=1e-3, weight_decay=5e-5, betas=(0.9, 0.999)), \
+    num_classes=10).create()
+
+checkpoint_callback = ModelCheckpoint(monitor="valMulticlassAccuracy", \
+    mode="max", dirpath="checkpoint_classifier", \
+    filename="cifar10-{epoch:02d}-{valMulticlassAccuracy:.2f}",
+    auto_insert_metric_name=False)
+trainer = dl.Trainer(max_epochs=100, callbacks=[checkpoint_callback])
+\end{lstlisting}
+The classifier is instantiated to use the Adam optimizer with a learning rate of $10^{-3}$ and a weight decay for regularization of $10^{-4}$. The coefficients used to compute running averages of gradient and its square, \lstinline{betas}, are set to 0.9 and 0.999. The \lstinline{CrossEntropyLoss} is set as the loss function by default.
+
+The class \lstinline{ModelCheckpoint()} is configured with several parameters to control how and when to save the model. The checkpoint monitors the validation multiclass accuracy metric. When this metric is maximized, the checkpoint saves the model.
+
+The trainer is instantiated by specifying a maximum number of 100 epochs for training and the criteria for when to save the model checkpoints during training.
+
+Now, you can train the model and visualize the loss and accuracy for training and validation datasets using
+\begin{lstlisting}
+trainer.fit(classifier, train_dataloader, val_dataloader)
+trainer.history.plot()
+\end{lstlisting}
+The resulting plot is shown in Figure~\ref{fig:08:B:3}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_B3}
+    \caption{ViT architecture}
+    \label{fig:08:B:3}
+\end{figure}
+
+The ViT model achieves a validation accuracy of approximately 70 percent, where it reaches hits a ceiling.
+
+%\subsubsection{Evaluating the Trained Model on the Test Dataset}
+
+You'll now evaluate the model using the test dataset. The test data loader is defined in Listing~\ref{cd:08:B:test_set}.
+\begin{lstlisting}[
+    label=cd:08:B:test_set,
+    caption=Defining the test data loader
+]
+test_dataset.transform = val_transform
+test_loader = DataLoader(test_dataset, batch_size=128, shuffle=False)
+\end{lstlisting}
+This code uses the same preprocessing for the test data as the validation set. 
+
+To apply the trained model to the test dataset, you'll first find the most recent checkpoint and load it using Listing~\ref{cd:08:B:testing}.
+\begin{lstlisting}[
+    label=cd:08:B:testing,
+    caption=Applying the model to the test set
+]
+import glob, os
+
+best_model_path = glob.glob(os.path.join("checkpoint_classifier", "*.ckpt"))
+best_model_path = sorted(best_model_path, key=os.path.getmtime)[-1]
+checkpoint = torch.load(best_model_path)
+classifier.load_state_dict(checkpoint["state_dict"])
+trainer.test(classifier, test_loader)
+\end{lstlisting}
+The code finds all files with the extension \lstinline{.ckpt} in the \lstinline{checkpoint_classifier} directory, sorts them  by their last modification time, and retrieves the most recently modified checkpoint file. After loading this last \lstinline{checkpoint}, it transfers the model parameters from the checkpoint into the \lstinline{classifier}.
+Ultimately, running the classifier on the test dataset shows that the model achieves a similar accuracy as it did on the validation set. 
+While this performance isn't bad, it falls short of the classification ability of convolutional neural networks.
+Luckily, you'll see how to fine-tune the ViT model in the next section.
+
+\subsection{Improving the ViT Model with CutMix}
+
+Compared to convolutional neural networks, ViT models lack strong inductive biases. \emph{Inductive bias} refers to the set of assumptions a model makes about the data it trains on. These assumptions allow it to generalize from the training data to unseen data effectively. For instance, convolutional neural networks inherently assume spatial relations in images, since they recognize that nearby pixels are more likely to be related than distant ones. Early layers identify local patterns like edges and textures,  and deeper layers compose them into higher-order features, such as objects. 
+%This architectural innatency towards capturing spatial locality and translation invariance directly supports learning from image data.
+
+Without these biases, ViT requires a substantial amount of data to learn effectively from images. Rather than assuming spatial correlations, the architecture infers these relationships from the data it interprets when analyzing the image as a sequence of patches. Since they must learn from scratch what convolutional neural networks receive pre-programmed, ViT models need larger datasets to achieve impressive performance.
+
+Containing only 60,000 images, the CIFAR-10 dataset is small relative to  datasets like ImageNet with over 14 million images. These vast datasets have been instrumental in training ViTs to exhibit state-of-the-art performance.
+
+Researchers have designed several techniques to help networks learn local relationships more efficiently, effectively incorporating mechanisms to learn spatial insights without relying on vast amounts of data. 
+
+In the next section, you'll implement CutMix, a technique that addresses this challenge, improving the ViT model's ability to learn from smaller datasets like CIFAR-10.
+
+\subsubsection{Implementing CutMix}
+
+\emph{CutMix} is a data augmentation strategy that helps the model understand and integrate different local features within images, improving its ability to generalize and handle variations in input data. Originating from the idea of Mixup, where two images are blended together by averaging their pixels, CutMix takes this concept further by combining patches from two different images rather than mixing the entire content of the two images. 
+
+%This technique not only enriches the dataset but also introduces a more challenging and nuanced learning task for the model.
+
+In a typical CutMix augmentation, a random patch from one image is cut and pasted onto another image, while the labels are mixed proportionally to the area of the patches. This process creates  a composite of features and labels from two distinct images to form a new training example. The model is then tasked with predicting a mixed label that reflects the composition of the input image. This method's primary advantage is its ability to force the model to focus on less dominant features of the image, promoting a deeper and more robust understanding of spatial relationships and feature representations. In doing so, it helps the model become more resilient to variations in the data, such as occlusions or changes in background. The Listing~\ref{cd:08:B:cutmix} implements the class \lstinline{CutMix}.
+
+\begin{lstlisting}[
+    label=cd:08:B:cutmix,
+    caption=Class implementing CutMix
+]
+import numpy as np
+from numpy.random import uniform
+
+class CutMix(object):
+    """CutMix."""
+
+    def __init__(self, size, beta):
+        """Initialize CutMix."""
+        self.size, self.beta = size, beta
+
+    def __call__(self, batch):
+        """Execute CutMix."""
+        img, label = batch
+        rand_img, rand_label = self._shuffle_minibatch(batch)
+        (@\codewingding{1}@)L = np.random.beta(self.beta, self.beta)
+
+        (@\codewingding{2}@)augmented_img = img.clone()
+
+        r_x, r_y = uniform(0, self.size), uniform(0, self.size)
+        r_w, r_h = self.size * np.sqrt(1 - L), self.size * np.sqrt(1 - L)
+
+        x1 = np.clip(int(r_x - r_w // 2), a_min=0, a_max=self.size)
+        x2 = np.clip(int(r_x + r_w // 2), a_min=0, a_max=self.size)
+        y1 = np.clip(int(r_y - r_h // 2), a_min=0, a_max=self.size)
+        y2 = np.clip(int(r_y + r_h // 2), a_min=0, a_max=self.size)
+
+        (@\codewingding{3}@)augmented_img[:, :, y1:y2, x1:x2] = rand_img[:, :, y1:y2, x1:x2]
+        (@\codewingding{4}@)L = 1 - ((x2 - x1) * (y2 - y1) / (self.size**2))
+        return augmented_img, label, rand_label, L
+
+    def _shuffle_minibatch(self, batch):
+        """Support method to shuffle data."""
+        img, label = batch
+        rand_idx = torch.randperm(img.size(0))
+        rand_img = img[rand_idx]
+        rand_label = label[rand_idx]
+        return rand_img, rand_label
+\end{lstlisting}
+The \lstinline{CutMix} class is initialized with two parameters: \lstinline{size}, which specifies the dimensions of the images, and \lstinline{beta}, a hyperparameter for the Beta distribution used to sample the mixing coefficient. The Beta distribution is a type of probability distribution that is defined on the interval [0, 1] and is often used to model the behavior of random variables that have a limited range. It is shaped like a curve that can be left-skewed, right-skewed, or symmetric, depending on its parameters. The mixing coefficient determines the proportion of the area from the source image that will be mixed into the target image. 
+
+The \lstinline{__call__()} method takes a batch of images and labels as input. 
+Then, it uses the \lstinline{_shuffle_minibatch()} method to shuffle the images and labels within the batch, creating \lstinline{rand_img} and \lstinline{rand_label}. To determine the area of the image to be replaced, the \lstinline{L} mixing coefficient is sampled from a Beta distribution using the beta parameter \wingding{1}. 
+A cloned copy of the original images is also created to preserve the unmodified, original batch \wingding{2}.
+Random coordinates \lstinline{(r_x, r_y)} and dimensions \lstinline{(r_w, r_h)} for the patch are selected using uniform and Beta distributions. Afterwards, the coordinates for the patch boundaries \lstinline{(x1, x2, y1, y2)} are calculated and clipped to ensure they lie within the image dimensions.
+The corresponding patch in the cloned images is then replaced with the patch from the shuffled images \wingding{3}.
+In turn, the \lstinline{L} mixing coefficient is recalculated based on the area of the patch to acccurately reflect the proportion of the image that was replaced \wingding{4}.
+Ultimately, the method returns the augmented images, original labels, shuffled labels, and the adjusted mixing coefficient.
+
+Listing~\ref{cd:08:B:display_cutmix} visualizes the CutMix augmentation by applying it to a random pair of images from the training dataset.
+\begin{lstlisting}[
+    label=cd:08:B:display_cutmix,
+    caption=Displaying an example of CutMix augmentation
+]
+import random
+from itertools import chain
+
+def create_batch(samples):
+    """Create batch."""
+    images, labels = zip(*samples)
+    return torch.stack(images), torch.tensor(labels)
+
+def normalize_image(image):
+    """Normalize image."""
+    mean = torch.tensor([0.49139968, 0.48215841, 0.44653091]).view(3, 1, 1)
+    std = torch.tensor([0.24703223, 0.24348513, 0.26158784]).view(3, 1, 1)
+    return image * std + mean
+
+(@\codewingding{1}@)samples = random.choices(train_dataset, k=2)
+batch = create_batch(samples)
+
+augmented_img, *_, lam = CutMix(size=32, beta=1.0)(batch)
+
+fig, axs = plt.subplots(1, 4, figsize=(12, 3))
+titles = ["Original 1", "Original 2", "CutMix 1", "CutMix 2"]
+for i, (img, title) in enumerate(zip(chain(batch[0], augmented_img), titles)):
+    axs[i].imshow(normalize_image(img).permute(1, 2, 0))
+    axs[i].set_title(f"{title}\nλ={lam:.2f}" if "CutMix" in title else title)
+    axs[i].axis("off")
+plt.show()
+\end{lstlisting}
+This code selects two random images from the training dataset \wingding{1}. Next, the \lstinline{create_batch()} function creates a batch of images and labels from the selected images. The code then applies the \lstinline{CutMix()} class to the batch to generate the augmented images and labels. Finally, the original and augmented images are displayed side-by-side for comparison. 
+
+The resulting image should be similar to Figure~\ref{fig:08:B:4}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_B4}
+    \caption{Original and CutMix-augmented images}
+    \label{fig:08:B:4}
+\end{figure}
+
+The first two images are the original CIFAR-10 dataset images. The next two show the result of applying CutMix, where a patch from the second image is overlaid onto the first image and vice versa. The lambda value ($\lambda$) displays the proportion of the mixed image area taken from each original image. This visualization  illustrates how CutMix blends parts of two different images to create a composite, enhancing the dataset's diversity and making the model more resilient to variations and noise in the data so that it can identify  relevant features even when images are altered or contain mixed information.
+
+Note that since the shuffle operation might place a batch of images in its original order, the mixed images might sometimes appear identical. If this occurs, re-run Listing~\ref{cd:08:B:display_cutmix}.
+
+\subsubsection{Training with CutMix}
+
+To train the model with CutMix, you need to define the \lstinline{CutMixClassifier()} class , which enables the \lstinline{Classifier()} in Listing~\ref{cd:08:B:trainer} to incorporate the CutMix augmentation. This is demonstrated in Listing~\ref{cd:08:B:cutmixclassifier}.
+\begin{lstlisting}[
+    label=cd:08:B:cutmixclassifier,
+    caption=Class implementing a classifier with CutMix
+]
+import torch.optim as optim
+import warmup_scheduler
+
+class CutMixClassifier(Classifier):
+    """Classifier with CutMix."""
+
+    def __init__(self, model, size=32, beta=1.0, **kwargs):
+        """Initialize classifier with CutMix."""
+        super().__init__(model, **kwargs)
+        self.cutmix = CutMix(size=size, beta=beta)
+
+    def training_step(self, batch, batch_idx):
+        """Perform one training step."""
+        (@\codewingding{1}@)augmented_img, labels, rand_labels, L = self.cutmix(batch)
+
+        (@\codewingding{2}@)output = self.model(augmented_img)
+        (@\codewingding{3}@)loss = self.loss(output, labels) * L + (1 - L) 
+               * self.loss(output, rand_labels)
+
+        self.log("train_loss", loss, on_step=True, on_epoch=True,
+                 prog_bar=True, logger=True)
+        self.log_metrics("train", output, labels, on_step=True, 
+                         on_epoch=True, prog_bar=True, logger=True)
+        return loss
+
+    def configure_optimizers(self):
+        """Configure optimizers."""
+        optim = super().configure_optimizers()
+        (@\codewingding{4}@)base_scheduler = optim.lr_scheduler \
+            .CosineAnnealingLR(optim, T_max=200, eta_min=1e-5)
+        (@\codewingding{5}@)scheduler = warmup_scheduler \
+            .GradualWarmupScheduler(optim, multiplier=1.0, total_epoch=5, 
+            after_scheduler=base_scheduler)
+
+        return {"optimizer": optim,
+                "lr_scheduler": {"scheduler": scheduler, "interval": "epoch"}}
+\end{lstlisting}
+During training,  the new classifier first applies CutMix augmentation to the input batch, creating augmented images with their corresponding labels and random labels alongside the mixing coefficient \lstinline{L} \wingding{1}. The model processes the augmented images \wingding{2}. Afterwards, the loss is calculated using a combination of the losses from the predictions for the original labels and the random labels, weighted by \lstinline{L} and \lstinline{1 - L}, respectively, to reflect the proportion of each image in the augmented mix \wingding{3}. 
+
+To further enhance the model's performance, the classifier sets up a learning rate schedule, starting with a \lstinline{CosineAnnealingLR} scheduler, which adjusts the learning rate following a cosine curve \wingding{4}. Then, it begins a warm-up phase using \lstinline{GradualWarmupScheduler}.  This gradually increases the learning rate over the first five epochs to the initial learning rate before transitioning to the cosine annealing schedule \wingding{5}. An annealing schedule is a method to systematically decrease the learning rate during training, often helping the model converge more smoothly and avoid overshooting minima in the loss function. This approach optimizes the learning process by starting with a lower learning rate to avoid large, unstable updates at the beginning of training, then gradually adjusts the learning rate to fine-tune the model. This improves training stability and model performance by finding a balance between exploration (higher learning rates) and exploitation (lower learning rates).
+
+Now, you'll proceed to train the model using the \lstinline{CutMixClassifier} class using Listing~\ref{cd:08:B:training_with_cutmix}. 
+\begin{lstlisting}[
+    label=cd:08:B:training_with_cutmix,
+    caption=Training the ViT model with CutMix
+]
+(@\codewingding{1}@)model[..., "attention#-1"].log_output("attention_output")
+
+classifier = CutMixClassifier(
+    model=model,
+    optimizer=Adam(lr=1e-3, weight_decay=5e-5, betas=(0.9, 0.999)),
+    num_classes=10,
+).create()
+
+checkpoint_callback = ModelCheckpoint(
+    monitor="valMulticlassAccuracy",
+    mode="max",
+    dirpath="checkpoint_cutmix_classifier",
+    filename="cifar10-{epoch:02d}-{valMulticlassAccuracy:.2f}",
+    auto_insert_metric_name=False,
+)
+trainer = Trainer(max_epochs=700, callbacks=[checkpoint_callback])
+trainer.fit(classifier, train_dataloader, val_dataloader)
+\end{lstlisting}
+The \lstinline{log_output()} method is used to log the output of the attention layer in the last transformer block \wingding{1}. This will allow you to visualize and interpret the attention maps generated by the model.
+
+The model is trained for 700 epochs, giving it sufficient time to learn from the augmented data and improve its performance.
+
+With a slight modification of Listing~\ref{cd:08:B:testing}, shown in Listing~\ref{cd:08:B:testing_cutmix}, you can apply the trained model to the test set.
+\begin{lstlisting}[
+    label=cd:08:B:testing_cutmix,
+    caption=Applying the CutMix model to the test set
+    (\expand{cd:08:B:testing})
+]
+___--snip--___
+best_model_path = \
+    glob.glob(os.path.join(***"checkpoint_cutmix_classifier"***, "*.ckpt"))
+___--snip--___
+\end{lstlisting}
+You should see that the model has achieved a validation accuracy of approximately 90 percent, a significant improvement over the previous accuracy of 70 percent.
+
+\subsubsection{Visualizing Attention Maps}
+
+The attention maps can provide insights into which regions of the image the model focuses on while making predictions. This visualization can help you understand the model's decision-making process and identify the areas that most contribute to its predictions.
+Use Listing~\ref{cd:08:B:attn_map} for plotting test images and attention maps, together with ground truth and predicted labels.
+\begin{lstlisting}[
+    label=cd:08:B:attn_map,
+    caption=Visualizing the attention maps
+]
+from skimage.transform import resize
+
+samples = random.choices(test_dataset, k=4)
+images, labels = create_batch(samples)
+
+classifier.model.eval()
+output = classifier(images)
+preds = torch.argmax(output, dim=1)
+
+attn_maps = classifier.logs["attention_output"][1][:, 0, 1:].reshape(4, 8, 8)
+
+fig, axs = plt.subplots(2, 4, figsize=(12, 6))
+for i, (img, label, pred, attn_map) in enumerate(
+    zip(images, labels, preds, attn_maps)
+):
+    img = normalize_image(img).detach().permute(1, 2, 0)
+
+    axs[0, i].imshow(img)
+    axs[0, i].set_title(
+        f"Label: {test_dataset.classes[label]}\nPred: {test_dataset.classes[pred]}"
+    )
+    axs[0, i].axis("off")
+
+    resized_attn_map = resize(
+        attn_map.detach().numpy(), (32, 32), anti_aliasing=True
+    )
+    axs[1, i].imshow(img)
+    axs[1, i].imshow(resized_attn_map, cmap="hot", alpha=0.5)
+    axs[1, i].set_title("Attention Map")
+    axs[1, i].axis("off")
+
+plt.show()
+\end{lstlisting}
+
+The resulting image should be similar to Figure~\ref{fig:08:B:5}.
+
+\begin{figure}[H]
+    \includegraphics[width=4.675in]{ch_08/fig_08_B5}
+    \caption{CIFAR-10 images (top) and attention maps from the model trained with CutMix}
+    \label{fig:08:B:5}
+\end{figure}
+
+The top row shows the original images along with their ground truth labels and predicted labels. The bottom row displays the same images overlaid with their corresponding attention maps, highlighting the areas of the images that the model focused on. The attention maps use an intensity scheme, where brighter regions indicate higher attention scores. 
+%This visualization helps in understanding the model's decision-making process and provides insights into which parts of the images were most influential for the predictions.
+
+\subsection{Using a Pretrained ViT Model}
+
+The model you trained from scratch achieved a 90 percent accuracy, comparable to the performance of convolutional neural networks trained on the CIFAR-10 dataset. However, the ViT achieves its best performance when trained on datasets like ImageNet, which contains millions of images. Such large-scale datasets unlock the model's full capacity to learn and generalize effectively, allowing it to significantly outperform convolutional neural networks.
+
+To demonstrate this, you'll use a  ViT model pretrained on the diverse images in the ImageNet dataset. This model performs well on a variety of tasks. Listing~\ref{cd:08:B:pretrained_ViT} loads the pretrained ViT model and wraps it in a PyTorch Module that appends a \emph{classification head}, the final layer of the model that maps the features extracted by the ViT to the desired output classes. Another example of a classification head is the dense top following a convolutional neural network for classification, which you encountered in Project~3A.
+\begin{lstlisting}[
+    label=cd:08:B:pretrained_ViT,
+    caption=Class to use a pretrained ViT model
+]
+import torch.nn as nn
+from transformers import ViTModel
+
+class PretrainedViTModel(nn.Module):
+    """Pretrained ViT model."""
+
+    def __init__(self, output_channels,
+                 pretrained_model="google/vit-base-patch16-224-in21k"):
+        """Initialize pretrained ViT model."""
+        super().__init__()
+
+        (@\codewingding{1}@)self.backbone = ViTModel.from_pretrained(pretrained_model)
+
+        (@\codewingding{2}@)hidden_features = self.backbone.config.hidden_size
+        (@\codewingding{3}@)self.classifier = nn.Linear(hidden_features, output_channels)
+
+    def forward(self, x):
+        """Perform forward step."""
+        x = self.backbone(x).last_hidden_state[:, 0]
+        return self.classifier(x)
+\end{lstlisting}
+The default identifier for the pretrained ViT model from the Hugging Face Model Hub is set to \lstinline{google/vit-base-patch16-224-in21k}. This code initializes the pretrained ViT model using \lstinline{ViTModel.from_pretrained()}, which downloads and loads the pretrained model weights \wingding{1}. It retrieves the hidden size of the ViT model \wingding{2}, which is used as the input size for the fully connected layer that maps the hidden features to the specified number of output classes \wingding{3}.
+
+You'll use Listing~\ref{cd:08:B:preprocess_imagenet} to configure the preprocessing and augmentation pipelines to make the training, validation, and testing datasets compatible with the pretrained Vision Transformer model. 
+\begin{lstlisting}[
+    label=cd:08:B:preprocess_imagenet,
+    caption=Implementing the preprocessing and augmentation pipelines
+]
+import torchvision.transforms as transforms
+from transformers import ViTImageProcessor
+
+processor = ViTImageProcessor.from_pretrained("google/vit-base-patch16-224-in21k")
+
+image_mean, image_std = processor.image_mean, processor.image_std
+size = processor.size["height"]
+
+train_transforms = [
+    transforms.Resize((size, size)),
+    transforms.RandomCrop(size, padding=4),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(image_mean, image_std),
+]
+
+val_transforms = [
+    transforms.Resize((size, size)),
+    transforms.ToTensor(),
+    transforms.Normalize(image_mean, image_std),
+]
+
+train_dataset.dataset.transform = transforms.Compose(train_transforms)
+val_dataset.dataset.transform = transforms.Compose(val_transforms)
+test_dataset.transform = transforms.Compose(val_transforms)
+\end{lstlisting}
+Using the \lstinline{ViTImageProcessor} from the Hugging Face transformers library, the images are resized, augmented, and normalized to meet the requirements of the pretrained model.
+Similar transformations without augmentations are  performed for the validation and test sets to ensure consistent evaluation.
+
+With Listing~\ref{cd:08:B:loaders}, you'll redefine the data loaders to accommodate the resized and normalized the images.
+\begin{lstlisting}[
+    label=cd:08:B:loaders,
+    caption=Redefining the data loaders
+]
+train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+val_dataloader = DataLoader(val_dataset, batch_size=32, shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False)
+\end{lstlisting}
+
+Running the code in Listing~\ref{cd:08:B:classifier_pretrained}, you'll set up and train a classifier using the pretrained ViT model. 
+\begin{lstlisting}[
+    label=cd:08:B:classifier_pretrained,
+    caption=Setting up and training the classifier
+]
+classifier = Classifier(
+    model=PretrainedViTModel(output_channels=10),
+    optimizer=Adam(lr=2e-5),
+    num_classes=10,
+).create()
+
+trainer = Trainer(max_epochs=2)
+trainer.fit(classifier, train_dataloader, val_dataloader)
+\end{lstlisting}
+The \lstinline{Classifier()} class is used to initialize the classifier with the pretrained model and an Adam optimizer. 
+The learning rate is set to the unusually small value of $2 \times 10^{-5}$, which permits the training to fine-tune the ViT model without erasing the previous training. The classifier is configured to handle the 10 output classes of the CIFAR-10 dataset.
+
+Once the classifier is created, the code instantiates a \lstinline{Trainer} object with a maximum of 2 epochs. Then, it calls the fit method of the \lstinline{Trainer} to start the training process.
+
+After only two epochs, the pretrained ViT model achieves an accuracy of approximately 98 percent on the CIFAR-10 dataset, outperforming the model trained from scratch. To verify that this is the case, you can use \lstinline{trainer.test(classifier, test_dataloader)}.
+
+\subsection{Code 8-B: Classifying Images with a Vision Transformer}
+
+The \emph{vit.ipynb} notebook provides you with a complete code example that demonstrates how to use a vision transformer (ViT) to classify images.
+
+\section{Summary}
+
+In this chapter, you explored the impact of transformer models and attention mechanisms on sequence processing and image classification tasks. To understand this impact, you learned about the architecture of transformers, which use multi-head attention to understand complex relationships within input data. You saw this attention mechanism in action  through applications like sentiment analysis and language translation, which demonstrate how transformers outperform traditional recurrent neural network-based models by capturing long-term dependencies and contextual information more effectively.
+
+The first project on machine translation showcased how incorporating multiplicative and additive attention mechanisms significantly enhances the model's ability to identify and exploit complex dependencies in sequential data. Through attention maps, you visualized the attention mechanism's ability to dynamically focus on relevant parts of the input sequence, providing insights into the translation model's decision-making process.
+
+The second project introduced the ViT, a pioneering model that uses the transformer architecture for image processing. By breaking images into patches and applying self-attention, the ViT remarkably outperforms convolutional neural networks in image classification, challenging their dominance. This project demonstrated the ViT model's effectiveness on the CIFAR-10 dataset.  In particular, the pretrained models achieved high accuracy even with limited training epochs.
+
+Programmers are finding more and more applications for the attention concept in many areas of deep learning. By understanding and using these powerful techniques, you'll be well-equipped to tackle a wide range of advanced machine learning tasks.
+
+\begin{nspbox}{Challenge Problems}
+\begin{description}
+    \item[8.1: Transformer for timeseries forecasting] 
+    Implement a transformer model for timeseries forecasting on the Jena Climate Dataset and compare its performance with more traditional methods, such as the recurrent neural networks you implemented.
+    
+    \item [8-2: Language translation]
+    Develop a transformer model capable of translating between multiple languages. Use the well-known ``TED Talks Open Translation Project'' dataset available from the AI4Bharat IndicNLP Catalogue, which offers parallel collections of texts for several language pairs.
+    Construct and train a transformer with both encoder and decoder components to handle translation tasks.  Assess the quality of translations using BLEU scores and compare your results with baseline models provided within the dataset.
+
+    \item [8-3: Multi-modal learning with ViT and text transformers]
+    Build a multi-modal learning system that combines visual data from a ViT model and textual data from a transformer model to perform a classification task. Use the dataset ``Twitter Image and Text Sentiment Analysis'' or the ``Hateful Memes Dataset'' to create a system that classifies social media posts based on both their image and text content. Preprocess the image and text data, train the multi-modal model, and evaluate its performance. Analyze how the integration of visual and textual information improves classification accuracy and provides richer context for decision-making.
+
+    \item [7-5: Create a Chatbot]
+    Build an attention-based chatbot capable of engaging in basic conversations. Use the ``Cornell Movie-Dialogs Corpus'' to train your chatbot. This dataset contains a large collection of movie character dialogues that can teach your model how to handle conversational context and generate appropriate responses. Focus on preprocessing the text data, designing a suitable recurrent neural network architecture, and implementing a mechanism to handle context and conversation flow. Compare the performance of this chatbot with that of the one implemented using a recurrent-neural network.
+\end{description}    
+\end{nspbox}
