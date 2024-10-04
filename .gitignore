@@ -32,5 +32,7 @@ logs/
 __fig*
 __BAK*
 
-# Python environment
+# Python environments
+.python-version
 py_env_dlcc
+py_env_book
