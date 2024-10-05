@@ -1,0 +1,63 @@
+{class_label} individuals are attending a play in a theater that seats eight. How many people are in the theater?
+There are six types of flowers in the garden, and {class_label} are roses. How many flowers are roses?
+{class_label} students passed the math test out of nine who took it. How many students succeeded?
+In a parking lot, {class_label} out of eight vehicles are vans. How many vans are parked?
+During a survey, {class_label} out of nine respondents said they enjoy gardening. How many participants enjoy gardening?
+A chef makes nine dishes, and {class_label} are vegetarian. How many dishes are vegetarian?
+Eight people finished their tasks, and {class_label} were volunteers. How many volunteers completed their tasks?
+A group of tourists visits a national park, and {class_label} of them are seniors. How many seniors are visiting?
+{class_label} out of nine poets read their poems live. How many poets read their poems?
+Out of nine players, {class_label} play chess. How many chess players are there?
+A library has seven sections and {class_label} are for fiction books. How many sections are for fiction books?
+A magazine has {class_label} articles on technology out of nine total. How many articles cover technological events?
+{class_label} rabbits are playing in the garden, while four are resting. How many rabbits are active?
+Generate an image of a {class_label}.
+Create a sample of a {class_label}.
+Show me a picture of a {class_label}.
+Produce an illustration of a {class_label}.
+Please generate an image of a {class_label}.
+Kindly create a depiction of a {class_label}.
+I'd like to see a representation of a {class_label}.
+Show me an image of a {class_label}.
+Generate a visual of a {class_label} in a 28x28 resolution.
+Create an artistic version of an {class_label}.
+Show me a grayscale rendering of a {class_label}.
+Generate a stylish image of a {class_label}.
+Design a unique illustration of a {class_label}.
+Produce a fashionable depiction of a {class_label}.
+Show me a modern representation of a {class_label}.
+Craft an image of a {class_label} with intricate details.
+Generate an elegant portrayal of a {class_label}.
+Create a trendy picture of a {class_label}.
+Showcase a realistic depiction of a {class_label}.
+Generate an artistic image of an {class_label}.
+Create a vintage-inspired illustration of a {class_label}.
+Produce a stylish representation of a {class_label}.
+Show me a depiction of a {class_label} in a retro style.
+Generate an image of a {class_label} with contemporary flair.
+Craft an innovative representation of a {class_label}.
+Design a {class_label} with intricate detailing.
+Create an image of a {class_label} with a unique twist.
+Generate an image of a {class_label} with vibrant colors.
+Show me a {class_label} in a fashionable context.
+Produce a chic depiction of a {class_label}.
+Create an image of a {class_label} with abstract elements.
+Generate a modern illustration of a {class_label}.
+Design a {class_label} with artistic accents.
+Produce an image of a {class_label} with detailed patterns.
+Craft a {class_label} in a creative and imaginative style.
+Show me a depiction of a {class_label} with attention to texture.
+Generate an image of a {class_label} with trendy graphics.
+Create a {class_label} with a futuristic touch.
+Design a {class_label} with intricate stitching.
+Produce a unique illustration of a {class_label}.
+Show me a {class_label} with a retro aesthetic.
+Generate an artistic depiction of a {class_label}.
+Craft an image of a {class_label} with dynamic patterns.
+Design a {class_label} with abstract elements.
+Produce an image of a {class_label} with a bold color scheme.
+Create a {class_label} with emphasis on design.
+Generate an image of a {class_label} with vibrant colors.
+Show me a {class_label} in a creative and artistic manner.
+Produce a {class_label} with attention to detail.
+Create a {class_label} with a modern twist.
