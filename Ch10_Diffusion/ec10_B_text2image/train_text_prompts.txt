@@ -1,6 +1,6 @@
+Show me a picture of the digit {class_label}.
 Generate the digit {class_label}.
 Create a sample of the number {class_label}.
-Show me a picture of the digit {class_label}.
 Produce the handwritten digit {class_label}.
 Please generate a grayscale image of the number {class_label}.
 Kindly create the digit {class_label} in a 28x28 resolution.
