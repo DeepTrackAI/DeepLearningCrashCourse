@@ -1,0 +1,113 @@
+Generate the digit {class_label}.
+Create a sample of the number {class_label}.
+Show me a picture of the digit {class_label}.
+Produce the handwritten digit {class_label}.
+Please generate a grayscale image of the number {class_label}.
+Kindly create the digit {class_label} in a 28x28 resolution.
+I'd like to see the number {class_label} in bold font style.
+Show me the digit {class_label} in a slanted appearance.
+Generate the digit {class_label} with smooth curves.
+Create the number {class_label} with sharp edges.
+Show me an enhanced image of the digit {class_label}.
+Generate a blurry version of the digit {class_label}.
+Create an artistic representation of the number {class_label}.
+Show me the digit {class_label} as if drawn by a child.
+Generate the digit {class_label} with a serif font style.
+Create the number {class_label} with consistent stroke thickness.
+Show me the digit {class_label} in a tilted orientation.
+Generate the digit {class_label} with added noise.
+Create the number {class_label} using minimal strokes.
+Show me the digit {class_label} in a cursive font style.
+Please create a sketch of the number {class_label}.
+Show me a grayscale drawing of the digit {class_label}.
+Generate the digit {class_label} with a textured background.
+Create the number {class_label} in a monospaced font.
+Produce a simple version of the digit {class_label}.
+Generate an elegant image of the number {class_label}.
+Show me the digit {class_label} with embellishments.
+Create the number {class_label} with precise symmetry.
+Show me a modern representation of the digit {class_label}.
+Generate a futuristic version of the number {class_label}.
+Create the digit {class_label} with intricate details.
+Show me the number {class_label} in a retro style.
+Generate the digit {class_label} with artistic distortions.
+Create the number {class_label} with a shadow effect.
+Show me the digit {class_label} with vibrant colors.
+Generate the digit {class_label} with a 3D appearance.
+Create the number {class_label} with calligraphy strokes.
+Show me the digit {class_label} with embossed features.
+Generate the digit {class_label} with a pixelated look.
+Create the number {class_label} with fluid brush strokes.
+Show me the digit {class_label} with an abstract touch.
+Generate the digit {class_label} with pastel colors.
+Create the number {class_label} with a neon glow.
+Show me the digit {class_label} with a watercolor effect.
+Generate the digit {class_label} with a graffiti style.
+Create the number {class_label} with 8-bit pixel art.
+Show me the digit {class_label} with a mosaic pattern.
+Generate the digit {class_label} with a sketched appearance.
+Create the number {class_label} with a stained glass effect.
+Show me the digit {class_label} with a comic book style.
+Generate the digit {class_label} with a metallic sheen.
+{class_label} individuals are watching a movie in a theater that seats nine. How many people are in the theater?
+There are eight kinds of fruits in the basket, and {class_label} are oranges. How many pieces of fruit are oranges?
+{class_label} students passed the exam out of nine who took it. How many learners succeeded?
+In a parking lot, {class_label} out of eight vehicles are cars. How many cars are parked?
+During a survey, {class_label} out of nine respondents said they read regularly. How many participants are readers?
+A baker makes nine pies, and {class_label} are apple flavored. How many desserts are ready?
+A group of tourists visits a zoo, and {class_label} of them are children. How many youngsters are visiting?
+There are {class_label} pens and five erasers in the box. How many writing tools are there?
+Out of nine athletes, {class_label} compete in running. How many runners are competing?
+A classroom has seven tables and {class_label} chairs. How many seats are there?
+A book has {class_label} chapters on science out of nine total. How many chapters cover scientific events?
+{class_label} cats are playing in the park, while four are resting. How many pets are active?
+{class_label} individuals are attending a concert in a venue that seats nine. How many people are at the concert?
+There are six kinds of vegetables in the basket, and {class_label} are carrots. How many vegetables are carrots?
+{class_label} students passed the exam out of nine who took it. How many learners succeeded?
+In a parking lot, {class_label} out of nine vehicles are trucks. How many trucks are parked?
+During a survey, {class_label} out of nine respondents said they cook regularly. How many participants cook regularly?
+A group of tourists visits a theme park, and {class_label} of them are adults. How many adults are visiting?
+Out of nine athletes, {class_label} compete in cycling. How many cyclists are competing?
+A classroom has eight tables and {class_label} chairs. How many seats are there?
+A book has {class_label} chapters on geography out of nine total. How many sections cover geographical events?
+{class_label} birds are playing in the park, while five are resting. How many birds are active?
+{class_label} individuals are attending a lecture in a hall that seats nine. How many people are at the lecture?
+There are seven kinds of candies in the jar, and {class_label} are jelly beans. How many candies are jelly beans?
+{class_label} students passed the exam out of nine who took it. How many learners succeeded?
+In a parking lot, {class_label} out of nine vehicles are bicycles. How many bicycles are parked?
+During a survey, {class_label} out of nine respondents said they travel regularly. How many participants travel regularly?
+A group of tourists visits a beach, and {class_label} of them are teenagers. How many teenagers are visiting?
+There are {class_label} crayons and seven erasers in the box. How many coloring tools are there?
+Out of nine athletes, {class_label} compete in basketball. How many basketball players are competing?
+A book has {class_label} chapters on literature out of nine total. How many sections cover literary events?
+{class_label} squirrels are playing in the park, while six are resting. How many squirrels are active?
+{class_label} individuals are attending a seminar in a room that seats nine. How many people are at the seminar?
+There are eight kinds of cookies in the box, and {class_label} are chocolate chip. How many cookies are chocolate chip?
+{class_label} students passed the exam out of nine who took it. How many learners succeeded?
+In a parking lot, {class_label} out of nine vehicles are scooters. How many scooters are parked?
+During a survey, {class_label} out of nine respondents said they paint regularly. How many participants paint regularly?
+Four friends are at a cafe, and {class_label} order coffee. How many people ordered coffee?
+Three physicians work at a clinic, and {class_label} are surgeons. How many doctors are surgeons?
+Five males joined the club, and {class_label} participated in the event. How many men participated?
+Six girls are in the classroom, and {class_label} are studying. How many students are studying?
+Seven athletes are competing, and {class_label} are runners. How many competitors are runners?
+Four artists display their paintings, and {class_label} sell theirs. How many painters sold their work?
+Three bakers are at work, and {class_label} make bread. How many workers make bread?
+Six singers performed, and {class_label} are sopranos. How many vocalists are sopranos?
+Five novelists are writing books, and {class_label} are publishing soon. How many authors are publishing?
+Seven builders are constructing a house, and {class_label} are carpenters. How many laborers are carpenters?
+Four dancers rehearsed, and {class_label} are ballet dancers. How many performers are ballet dancers?
+Three professors teach at the university, and {class_label} are mathematicians. How many academics are mathematicians?
+Five leaders attended the meeting, and {class_label} spoke. How many officials spoke?
+Six pilots fly for commercial airlines, and {class_label} fly internationally. How many aviators fly internationally?
+Four chefs work in a kitchen, and {class_label} specialize in desserts. How many cooks specialize in desserts?
+Seven engineers are designing a bridge, and {class_label} are structural engineers. How many professionals are structural engineers?
+Three architects are drafting plans, and {class_label} focus on skyscrapers. How many designers focus on skyscrapers?
+Five children are playing in the park, and {class_label} are on the swings. How many youngsters are on the swings?
+Six critics reviewed the movie, and {class_label} praised it. How many reviewers praised the movie?
+Four cyclists are racing, and {class_label} are leading. How many riders are leading?
+Seven programmers are coding new software, and {class_label} are working on apps. How many developers are working on apps?
+Three farmers harvest crops, and {class_label} grow vegetables. How many agriculturists grow vegetables?
+Five accountants are auditing records, and {class_label} focus on tax files. How many auditors focus on tax files?
+Six lawyers are defending clients, and {class_label} are in court. How many attorneys are in court?
+Four electricians are fixing the wiring, and {class_label} are at the commercial site. How many technicians are at the commercial site?
