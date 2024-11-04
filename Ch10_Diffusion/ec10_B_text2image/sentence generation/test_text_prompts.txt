@@ -1,0 +1,53 @@
+Generate a clear image of the number {class_label}.	s
+Show a detailed picture of the digit {class_label}.	s
+Create a grayscale version of the number {class_label}.	s
+Produce an MNIST-style image of the digit {class_label}.	s
+Display a simple image of the number {class_label}.	s
+Render a clear picture of the digit {class_label}.	s
+Provide a 28x28 image of the number {class_label}.	s
+Show a high-resolution image of the digit {class_label}.	s
+Create a black and white picture of the number {class_label}.	s
+Generate a representation of the digit {class_label}.	s
+Generate an image of a {class_label}.	s
+Create a sample of a {class_label}.	s
+Produce an illustration of a {class_label}.	s
+Show me a picture of a {class_label}.	s
+Please generate an image of a {class_label}.	s
+Kindly create a depiction of a {class_label}.	s
+I'd like to see a representation of a {class_label}.	s
+Show me an image of a {class_label}.	s
+{class_label} individuals are attending a play in a theater that seats {rand1}. How many people are in the theater?	t
+There are {rand1} types of flowers in the garden, and {class_label} are roses. How many flowers are roses?	t
+{class_label} students passed the math test out of {rand1} who took it. How many students succeeded?	t
+In a parking lot, {class_label} out of {rand1} vehicles are vans. How many vans are parked?	t
+A chef makes {rand1} dishes, and {class_label} are vegetarian. How many dishes are vegetarian?	t
+{rand1} people finished their tasks, and {class_label} were volunteers. How many volunteers completed their tasks?	t
+{class_label} out of {rand1} poets read their poems live. How many poets read their poems?	t
+Out of {rand1} players, {class_label} play chess. How many chess players are there?	t
+A magazine has {class_label} articles on technology out of {rand1} total. How many articles cover technological events?	t
+{class_label} rabbits are playing in the garden, while {rand1} are resting. How many rabbits are active?	t
+During a survey, {class_label} out of {rand1} respondents said they enjoy gardening. How many participants enjoy gardening?	t
+A group of {rand1} tourists visits a national park, and {class_label} of them are seniors. How many seniors are visiting?	t
+A library has {rand1} sections and {class_label} are for fiction books. How many sections are for fiction books?	t
+In the garage, there are {class_label} scooters and {rand1} cars. How many two-wheelers are there?	t
+In the park, there are {class_label} benches and {rand1} fountains. How many seating options are there?	t
+In the library, there are {rand1} desks and {class_label} dictionaries. How many reference books are there?	t
+At the concert, there are {rand1} trumpets and {class_label} cellos. How many string instruments are there?	t
+In the office, there are {class_label} printers and {rand1} pencils. How many electronic devices are there?	t
+At the farm, there are {rand1} farmers and {class_label} sheep. How many livestock are there?	t
+In the playground, there are {class_label} slides and {rand1} trees. How many playground equipment pieces are there?	t
+In the zoo, there are {rand1} tigers and {class_label} koalas. How many marsupials are there?	t
+In the living room, there are {rand1} rugs and {class_label} cushions. How many decor items are there?	t
+At the pool, there are {class_label} swim caps and {rand1} water bottles. How many swimming accessories are there?	t
+At the campsite, there are {rand1} lanterns and {class_label} tents. How many light sources are there?	t
+In the backyard, you’ll see {rand1} butterflies, {rand2} squirrels, and {class_label} robins. How many birds are there?	u
+Inside the drawer, you’ll see {rand1} pens, {rand2} glue sticks, and {class_label} crayons. How many coloring tools are there?	u
+In the garage, there are {rand1} boxes, {rand2} wheels, and {class_label} screwdrivers. How many tools are there?	u
+In the locker room, there are {class_label} benches, {rand1} baskets, and {rand2} shoes. How many seating options are there?	u
+In the bakery, there are {rand2} muffins, {rand1} cupcakes, and {class_label} trays. How many serving items are there?	u
+In the living room, there are {rand2} cushions, {class_label} sofas, and {rand1} rugs. How many seating items are there?	u
+In the classroom, there are {class_label} rulers, {rand1} erasers, and {rand2} scissors. How many measuring tools can you find?	u
+In the cafeteria, there are {class_label} cups, {rand1} trays, and {rand2} baskets. How many drinking vessels are there?	u
+At the beach, there are {class_label} baskets, {rand1} surfboards, and {rand2} towels. How many items used to carry things are there?	u
+In the forest, you’ll find {class_label} owls, {rand1} raccoons, and {rand2} foxes. How many nocturnal animals are there?	u
+In the orchard, there are {class_label} apple trees, {rand1} cherry trees, and {rand2} pear trees. How many apple trees are there?	u
