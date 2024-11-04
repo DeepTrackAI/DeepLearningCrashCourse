@@ -1,0 +1,2000 @@
+Create a black and white picture of the number 3.	3
+During a survey, 1 out of 9 respondents said they enjoy gardening. How many participants enjoy gardening?	1
+Inside the drawer, you’ll see 5 pens, zero glue sticks, and seven crayons. How many coloring tools are there?	7
+During a survey, zero out of 9 respondents said they enjoy gardening. How many participants enjoy gardening?	0
+Produce an MNIST-style image of the digit seven.	7
+Show a high-resolution image of the digit 0.	0
+Show me a picture of a nine.	9
+In the playground, there are two slides and 7 trees. How many playground equipment pieces are there?	2
+At the concert, there are 9 trumpets and 7 cellos. How many string instruments are there?	7
+A library has 3 sections and 3 are for fiction books. How many sections are for fiction books?	3
+A group of nine tourists visits a national park, and seven of them are seniors. How many seniors are visiting?	7
+In the classroom, there are three rulers, six erasers, and 4 scissors. How many measuring tools can you find?	3
+In the library, there are six desks and 5 dictionaries. How many reference books are there?	5
+Show a detailed picture of the digit 7.	7
+A group of 6 tourists visits a national park, and four of them are seniors. How many seniors are visiting?	4
+In the locker room, there are 4 benches, seven baskets, and two shoes. How many seating options are there?	4
+In the cafeteria, there are 8 cups, three trays, and four baskets. How many drinking vessels are there?	8
+Show a detailed picture of the digit two.	2
+six students passed the math test out of six who took it. How many students succeeded?	6
+Generate a representation of the digit two.	2
+3 students passed the math test out of 7 who took it. How many students succeeded?	3
+Out of eight players, 4 play chess. How many chess players are there?	4
+In the office, there are zero printers and 6 pencils. How many electronic devices are there?	0
+In the cafeteria, there are six cups, eight trays, and 5 baskets. How many drinking vessels are there?	6
+In the bakery, there are 4 muffins, nine cupcakes, and one trays. How many serving items are there?	1
+In a parking lot, 6 out of six vehicles are vans. How many vans are parked?	6
+There are 8 types of flowers in the garden, and zero are roses. How many flowers are roses?	0
+A group of six tourists visits a national park, and three of them are seniors. How many seniors are visiting?	3
+In the cafeteria, there are 2 cups, 0 trays, and five baskets. How many drinking vessels are there?	2
+In the classroom, there are six rulers, 1 erasers, and 3 scissors. How many measuring tools can you find?	6
+Show me a picture of a nine.	9
+9 out of 9 poets read their poems live. How many poets read their poems?	9
+In the library, there are seven desks and 3 dictionaries. How many reference books are there?	3
+In the orchard, there are 0 apple trees, five cherry trees, and 7 pear trees. How many apple trees are there?	0
+At the campsite, there are nine lanterns and 9 tents. How many light sources are there?	9
+In the garage, there are 9 scooters and 9 cars. How many two-wheelers are there?	9
+At the pool, there are five swim caps and seven water bottles. How many swimming accessories are there?	5
+In the orchard, there are four apple trees, eight cherry trees, and one pear trees. How many apple trees are there?	4
+Generate a representation of the digit zero.	0
+At the beach, there are 5 baskets, 1 surfboards, and 3 towels. How many items used to carry things are there?	5
+In the living room, there are eight cushions, one sofas, and three rugs. How many seating items are there?	1
+Generate a clear image of the number 4.	4
+In the garage, there are two scooters and four cars. How many two-wheelers are there?	2
+In the locker room, there are two benches, 7 baskets, and eight shoes. How many seating options are there?	2
+Show me an image of a 2.	2
+In the garage, there are 3 scooters and 5 cars. How many two-wheelers are there?	3
+In the garage, there are three scooters and 5 cars. How many two-wheelers are there?	3
+A group of two tourists visits a national park, and one of them are seniors. How many seniors are visiting?	1
+Generate a clear image of the number 9.	9
+In the garage, there are 5 scooters and 9 cars. How many two-wheelers are there?	5
+In the garage, there are 9 boxes, nine wheels, and 7 screwdrivers. How many tools are there?	7
+A library has 6 sections and two are for fiction books. How many sections are for fiction books?	2
+Generate a representation of the digit zero.	0
+In the locker room, there are two benches, 3 baskets, and 8 shoes. How many seating options are there?	2
+In the cafeteria, there are nine cups, 1 trays, and zero baskets. How many drinking vessels are there?	9
+In the zoo, there are eight tigers and eight koalas. How many marsupials are there?	8
+Generate a clear image of the number two.	2
+Display a simple image of the number four.	4
+Provide a 28x28 image of the number four.	4
+Generate a clear image of the number 2.	2
+zero out of 5 poets read their poems live. How many poets read their poems?	0
+In the park, there are 0 benches and seven fountains. How many seating options are there?	0
+In the zoo, there are nine tigers and 9 koalas. How many marsupials are there?	9
+In the garage, there are 9 boxes, eight wheels, and 4 screwdrivers. How many tools are there?	4
+In the locker room, there are one benches, 7 baskets, and four shoes. How many seating options are there?	1
+two rabbits are playing in the garden, while seven are resting. How many rabbits are active?	2
+Show a high-resolution image of the digit 7.	7
+At the farm, there are six farmers and 0 sheep. How many livestock are there?	0
+Out of 7 players, 5 play chess. How many chess players are there?	5
+five students passed the math test out of 5 who took it. How many students succeeded?	5
+In the living room, there are 6 cushions, 2 sofas, and one rugs. How many seating items are there?	2
+A chef makes 8 dishes, and eight are vegetarian. How many dishes are vegetarian?	8
+A magazine has eight articles on technology out of 9 total. How many articles cover technological events?	8
+At the concert, there are four trumpets and three cellos. How many string instruments are there?	3
+Generate an image of a seven.	7
+I'd like to see a representation of a 9.	9
+At the farm, there are 9 farmers and 5 sheep. How many livestock are there?	5
+Out of four players, 1 play chess. How many chess players are there?	1
+In the zoo, there are 5 tigers and zero koalas. How many marsupials are there?	0
+During a survey, 9 out of nine respondents said they enjoy gardening. How many participants enjoy gardening?	9
+At the pool, there are nine swim caps and 9 water bottles. How many swimming accessories are there?	9
+At the farm, there are 8 farmers and 7 sheep. How many livestock are there?	7
+eight people finished their tasks, and five were volunteers. How many volunteers completed their tasks?	5
+A magazine has four articles on technology out of 5 total. How many articles cover technological events?	4
+Out of 4 players, two play chess. How many chess players are there?	2
+Produce an MNIST-style image of the digit four.	4
+Render a clear picture of the digit four.	4
+Produce an illustration of a two.	2
+There are 7 types of flowers in the garden, and 6 are roses. How many flowers are roses?	6
+3 individuals are attending a play in a theater that seats 5. How many people are in the theater?	3
+In a parking lot, two out of 6 vehicles are vans. How many vans are parked?	2
+Kindly create a depiction of a zero.	0
+1 out of 4 poets read their poems live. How many poets read their poems?	1
+Provide a 28x28 image of the number 8.	8
+In the library, there are three desks and one dictionaries. How many reference books are there?	1
+In the backyard, you’ll see 9 butterflies, seven squirrels, and 1 robins. How many birds are there?	1
+There are nine types of flowers in the garden, and 8 are roses. How many flowers are roses?	8
+Generate a representation of the digit three.	3
+Show a high-resolution image of the digit four.	4
+Show me an image of a 0.	0
+2 students passed the math test out of two who took it. How many students succeeded?	2
+four people finished their tasks, and three were volunteers. How many volunteers completed their tasks?	3
+Kindly create a depiction of a two.	2
+Generate a representation of the digit seven.	7
+In the park, there are seven benches and seven fountains. How many seating options are there?	7
+Inside the drawer, you’ll see 1 pens, 7 glue sticks, and eight crayons. How many coloring tools are there?	8
+Show a detailed picture of the digit two.	2
+Show me an image of a 3.	3
+In the classroom, there are four rulers, 1 erasers, and 1 scissors. How many measuring tools can you find?	4
+Provide a 28x28 image of the number 6.	6
+Display a simple image of the number 0.	0
+nine rabbits are playing in the garden, while nine are resting. How many rabbits are active?	9
+In the living room, there are two cushions, 8 sofas, and 2 rugs. How many seating items are there?	8
+A library has five sections and four are for fiction books. How many sections are for fiction books?	4
+8 out of 8 poets read their poems live. How many poets read their poems?	8
+A chef makes nine dishes, and nine are vegetarian. How many dishes are vegetarian?	9
+In the forest, you’ll find 3 owls, 8 raccoons, and two foxes. How many nocturnal animals are there?	3
+At the beach, there are six baskets, 7 surfboards, and 3 towels. How many items used to carry things are there?	6
+five people finished their tasks, and 2 were volunteers. How many volunteers completed their tasks?	2
+Generate a representation of the digit six.	6
+A library has 4 sections and 0 are for fiction books. How many sections are for fiction books?	0
+Show me an image of a 9.	9
+In the park, there are five benches and eight fountains. How many seating options are there?	5
+Show me a picture of a two.	2
+At the pool, there are six swim caps and 6 water bottles. How many swimming accessories are there?	6
+In the backyard, you’ll see 7 butterflies, five squirrels, and 6 robins. How many birds are there?	6
+During a survey, six out of 8 respondents said they enjoy gardening. How many participants enjoy gardening?	6
+Generate a clear image of the number 0.	0
+Please generate an image of a 0.	0
+nine rabbits are playing in the garden, while 9 are resting. How many rabbits are active?	9
+Render a clear picture of the digit 8.	8
+In the zoo, there are 7 tigers and 7 koalas. How many marsupials are there?	7
+6 students passed the math test out of nine who took it. How many students succeeded?	6
+A group of 1 tourists visits a national park, and zero of them are seniors. How many seniors are visiting?	0
+In the zoo, there are nine tigers and 8 koalas. How many marsupials are there?	8
+Show me a picture of a 1.	1
+Create a sample of a 1.	1
+In the garage, there are 7 scooters and nine cars. How many two-wheelers are there?	7
+Please generate an image of a four.	4
+A magazine has 6 articles on technology out of 9 total. How many articles cover technological events?	6
+In the living room, there are four rugs and 2 cushions. How many decor items are there?	2
+During a survey, nine out of 9 respondents said they enjoy gardening. How many participants enjoy gardening?	9
+In the classroom, there are nine rulers, 5 erasers, and 5 scissors. How many measuring tools can you find?	9
+In the locker room, there are 2 benches, five baskets, and one shoes. How many seating options are there?	2
+Provide a 28x28 image of the number nine.	9
+I'd like to see a representation of a 0.	0
+Display a simple image of the number two.	2
+Create a sample of a 2.	2
+1 out of 4 poets read their poems live. How many poets read their poems?	1
+8 individuals are attending a play in a theater that seats eight. How many people are in the theater?	8
+In the classroom, there are four rulers, one erasers, and one scissors. How many measuring tools can you find?	4
+During a survey, four out of 8 respondents said they enjoy gardening. How many participants enjoy gardening?	4
+Produce an MNIST-style image of the digit one.	1
+one out of 6 poets read their poems live. How many poets read their poems?	1
+In the garage, there are 5 scooters and nine cars. How many two-wheelers are there?	5
+Please generate an image of a nine.	9
+There are six types of flowers in the garden, and 5 are roses. How many flowers are roses?	5
+At the concert, there are 2 trumpets and 2 cellos. How many string instruments are there?	2
+At the campsite, there are 7 lanterns and 1 tents. How many light sources are there?	1
+2 students passed the math test out of three who took it. How many students succeeded?	2
+Out of 6 players, 4 play chess. How many chess players are there?	4
+6 out of seven poets read their poems live. How many poets read their poems?	6
+At the concert, there are 9 trumpets and 7 cellos. How many string instruments are there?	7
+In the classroom, there are zero rulers, eight erasers, and three scissors. How many measuring tools can you find?	0
+At the concert, there are 8 trumpets and eight cellos. How many string instruments are there?	8
+Produce an MNIST-style image of the digit 7.	7
+Generate a clear image of the number five.	5
+Show me an image of a 4.	4
+Show a detailed picture of the digit eight.	8
+At the concert, there are seven trumpets and two cellos. How many string instruments are there?	2
+In the orchard, there are 9 apple trees, 4 cherry trees, and four pear trees. How many apple trees are there?	9
+A library has nine sections and three are for fiction books. How many sections are for fiction books?	3
+Out of nine players, 9 play chess. How many chess players are there?	9
+A group of 8 tourists visits a national park, and 0 of them are seniors. How many seniors are visiting?	0
+In a parking lot, eight out of 9 vehicles are vans. How many vans are parked?	8
+In the orchard, there are two apple trees, five cherry trees, and six pear trees. How many apple trees are there?	2
+nine people finished their tasks, and nine were volunteers. How many volunteers completed their tasks?	9
+In the classroom, there are seven rulers, six erasers, and two scissors. How many measuring tools can you find?	7
+In the backyard, you’ll see 0 butterflies, one squirrels, and 9 robins. How many birds are there?	9
+In the backyard, you’ll see 5 butterflies, four squirrels, and 3 robins. How many birds are there?	3
+6 students passed the math test out of nine who took it. How many students succeeded?	6
+There are six types of flowers in the garden, and six are roses. How many flowers are roses?	6
+In the living room, there are nine rugs and five cushions. How many decor items are there?	5
+In the office, there are 0 printers and 9 pencils. How many electronic devices are there?	0
+In the backyard, you’ll see zero butterflies, four squirrels, and two robins. How many birds are there?	2
+In the orchard, there are eight apple trees, 9 cherry trees, and 3 pear trees. How many apple trees are there?	8
+In the library, there are 7 desks and 1 dictionaries. How many reference books are there?	1
+Show a detailed picture of the digit six.	6
+There are nine types of flowers in the garden, and six are roses. How many flowers are roses?	6
+Please generate an image of a 4.	4
+nine rabbits are playing in the garden, while nine are resting. How many rabbits are active?	9
+At the beach, there are six baskets, 0 surfboards, and nine towels. How many items used to carry things are there?	6
+two out of 2 poets read their poems live. How many poets read their poems?	2
+At the beach, there are seven baskets, two surfboards, and 2 towels. How many items used to carry things are there?	7
+nine individuals are attending a play in a theater that seats nine. How many people are in the theater?	9
+Generate an image of a five.	5
+Show me an image of a eight.	8
+Generate a clear image of the number zero.	0
+Create a black and white picture of the number 9.	9
+In the bakery, there are 0 muffins, 6 cupcakes, and nine trays. How many serving items are there?	9
+Create a black and white picture of the number four.	4
+Kindly create a depiction of a 5.	5
+Show me an image of a 2.	2
+In the living room, there are nine rugs and 7 cushions. How many decor items are there?	7
+A magazine has eight articles on technology out of nine total. How many articles cover technological events?	8
+In the orchard, there are five apple trees, zero cherry trees, and four pear trees. How many apple trees are there?	5
+Produce an illustration of a 2.	2
+A group of 6 tourists visits a national park, and six of them are seniors. How many seniors are visiting?	6
+In the cafeteria, there are zero cups, two trays, and seven baskets. How many drinking vessels are there?	0
+Generate a representation of the digit 3.	3
+A group of 6 tourists visits a national park, and zero of them are seniors. How many seniors are visiting?	0
+A magazine has 9 articles on technology out of 9 total. How many articles cover technological events?	9
+In the zoo, there are nine tigers and 9 koalas. How many marsupials are there?	9
+Display a simple image of the number 6.	6
+In the library, there are 9 desks and 9 dictionaries. How many reference books are there?	9
+1 rabbits are playing in the garden, while 5 are resting. How many rabbits are active?	1
+Generate an image of a eight.	8
+Show a high-resolution image of the digit zero.	0
+Create a sample of a 6.	6
+In the orchard, there are 6 apple trees, 9 cherry trees, and four pear trees. How many apple trees are there?	6
+At the beach, there are one baskets, 2 surfboards, and zero towels. How many items used to carry things are there?	1
+Produce an MNIST-style image of the digit seven.	7
+In the playground, there are 1 slides and four trees. How many playground equipment pieces are there?	1
+A chef makes eight dishes, and 4 are vegetarian. How many dishes are vegetarian?	4
+Provide a 28x28 image of the number five.	5
+In the library, there are 9 desks and nine dictionaries. How many reference books are there?	9
+9 people finished their tasks, and 9 were volunteers. How many volunteers completed their tasks?	9
+In the living room, there are eight rugs and 8 cushions. How many decor items are there?	8
+Show a detailed picture of the digit 9.	9
+zero individuals are attending a play in a theater that seats 2. How many people are in the theater?	0
+At the campsite, there are nine lanterns and nine tents. How many light sources are there?	9
+Show a high-resolution image of the digit three.	3
+In the classroom, there are 0 rulers, one erasers, and 2 scissors. How many measuring tools can you find?	0
+Produce an MNIST-style image of the digit five.	5
+Produce an MNIST-style image of the digit 5.	5
+Generate a clear image of the number one.	1
+At the pool, there are 9 swim caps and 9 water bottles. How many swimming accessories are there?	9
+In the library, there are 8 desks and six dictionaries. How many reference books are there?	6
+In the garage, there are 9 boxes, three wheels, and 6 screwdrivers. How many tools are there?	6
+In the office, there are nine printers and nine pencils. How many electronic devices are there?	9
+A library has 6 sections and three are for fiction books. How many sections are for fiction books?	3
+There are seven types of flowers in the garden, and 5 are roses. How many flowers are roses?	5
+Render a clear picture of the digit zero.	0
+Produce an illustration of a 6.	6
+8 people finished their tasks, and 5 were volunteers. How many volunteers completed their tasks?	5
+In a parking lot, 9 out of nine vehicles are vans. How many vans are parked?	9
+I'd like to see a representation of a nine.	9
+I'd like to see a representation of a 7.	7
+Show me a picture of a 1.	1
+Create a black and white picture of the number 5.	5
+At the farm, there are 8 farmers and eight sheep. How many livestock are there?	8
+Generate an image of a 7.	7
+In the zoo, there are nine tigers and 6 koalas. How many marsupials are there?	6
+Show me a picture of a one.	1
+In the garage, there are 4 scooters and six cars. How many two-wheelers are there?	4
+9 people finished their tasks, and nine were volunteers. How many volunteers completed their tasks?	9
+Show me a picture of a eight.	8
+Show me a picture of a 2.	2
+Create a sample of a zero.	0
+I'd like to see a representation of a one.	1
+0 individuals are attending a play in a theater that seats 7. How many people are in the theater?	0
+In the living room, there are 9 rugs and 8 cushions. How many decor items are there?	8
+At the campsite, there are 8 lanterns and five tents. How many light sources are there?	5
+Create a black and white picture of the number one.	1
+In the locker room, there are 5 benches, 4 baskets, and nine shoes. How many seating options are there?	5
+Show me a picture of a five.	5
+There are 9 types of flowers in the garden, and eight are roses. How many flowers are roses?	8
+In the bakery, there are 1 muffins, seven cupcakes, and five trays. How many serving items are there?	5
+Produce an MNIST-style image of the digit 0.	0
+Kindly create a depiction of a 3.	3
+In the cafeteria, there are six cups, two trays, and 1 baskets. How many drinking vessels are there?	6
+Kindly create a depiction of a 1.	1
+In the garage, there are three scooters and five cars. How many two-wheelers are there?	3
+There are five types of flowers in the garden, and four are roses. How many flowers are roses?	4
+nine out of 9 poets read their poems live. How many poets read their poems?	9
+Provide a 28x28 image of the number 0.	0
+Create a sample of a nine.	9
+Show me an image of a four.	4
+In the playground, there are 4 slides and 6 trees. How many playground equipment pieces are there?	4
+In the living room, there are eight cushions, 2 sofas, and seven rugs. How many seating items are there?	2
+Show me a picture of a two.	2
+Create a grayscale version of the number 7.	7
+In the forest, you’ll find nine owls, 0 raccoons, and one foxes. How many nocturnal animals are there?	9
+At the farm, there are nine farmers and 9 sheep. How many livestock are there?	9
+Generate a representation of the digit 9.	9
+Show a high-resolution image of the digit five.	5
+In the cafeteria, there are 6 cups, 1 trays, and five baskets. How many drinking vessels are there?	6
+Please generate an image of a three.	3
+In a parking lot, one out of 1 vehicles are vans. How many vans are parked?	1
+Generate a clear image of the number zero.	0
+A magazine has five articles on technology out of eight total. How many articles cover technological events?	5
+seven out of eight poets read their poems live. How many poets read their poems?	7
+4 students passed the math test out of five who took it. How many students succeeded?	4
+In the park, there are three benches and seven fountains. How many seating options are there?	3
+Show me a picture of a two.	2
+Show a high-resolution image of the digit 2.	2
+At the concert, there are eight trumpets and 7 cellos. How many string instruments are there?	7
+Produce an illustration of a 4.	4
+Show a high-resolution image of the digit eight.	8
+In the zoo, there are nine tigers and four koalas. How many marsupials are there?	4
+Display a simple image of the number 4.	4
+Render a clear picture of the digit 5.	5
+Create a grayscale version of the number two.	2
+A library has 4 sections and 4 are for fiction books. How many sections are for fiction books?	4
+Inside the drawer, you’ll see 8 pens, nine glue sticks, and zero crayons. How many coloring tools are there?	0
+In the living room, there are five cushions, 2 sofas, and 9 rugs. How many seating items are there?	2
+In the playground, there are three slides and 6 trees. How many playground equipment pieces are there?	3
+Display a simple image of the number 2.	2
+Provide a 28x28 image of the number 4.	4
+Create a grayscale version of the number one.	1
+There are seven types of flowers in the garden, and 6 are roses. How many flowers are roses?	6
+During a survey, four out of four respondents said they enjoy gardening. How many participants enjoy gardening?	4
+A library has eight sections and 6 are for fiction books. How many sections are for fiction books?	6
+At the concert, there are 9 trumpets and seven cellos. How many string instruments are there?	7
+In the playground, there are eight slides and 9 trees. How many playground equipment pieces are there?	8
+3 rabbits are playing in the garden, while nine are resting. How many rabbits are active?	3
+nine rabbits are playing in the garden, while 9 are resting. How many rabbits are active?	9
+A library has nine sections and 5 are for fiction books. How many sections are for fiction books?	5
+In a parking lot, one out of five vehicles are vans. How many vans are parked?	1
+Inside the drawer, you’ll see 6 pens, 4 glue sticks, and nine crayons. How many coloring tools are there?	9
+eight rabbits are playing in the garden, while 8 are resting. How many rabbits are active?	8
+Create a black and white picture of the number six.	6
+Out of 4 players, 2 play chess. How many chess players are there?	2
+Show me a picture of a 7.	7
+A chef makes 4 dishes, and three are vegetarian. How many dishes are vegetarian?	3
+Show me a picture of a 0.	0
+four rabbits are playing in the garden, while seven are resting. How many rabbits are active?	4
+In the orchard, there are 0 apple trees, 6 cherry trees, and 7 pear trees. How many apple trees are there?	0
+A chef makes 9 dishes, and 8 are vegetarian. How many dishes are vegetarian?	8
+Please generate an image of a two.	2
+In the library, there are 0 desks and zero dictionaries. How many reference books are there?	0
+Show a high-resolution image of the digit 7.	7
+Show me an image of a eight.	8
+During a survey, 8 out of eight respondents said they enjoy gardening. How many participants enjoy gardening?	8
+zero individuals are attending a play in a theater that seats six. How many people are in the theater?	0
+At the campsite, there are 9 lanterns and 2 tents. How many light sources are there?	2
+Display a simple image of the number four.	4
+In the orchard, there are 3 apple trees, 5 cherry trees, and 8 pear trees. How many apple trees are there?	3
+Create a grayscale version of the number seven.	7
+Provide a 28x28 image of the number eight.	8
+In the classroom, there are five rulers, six erasers, and 7 scissors. How many measuring tools can you find?	5
+Generate a representation of the digit 3.	3
+In the cafeteria, there are 6 cups, 1 trays, and seven baskets. How many drinking vessels are there?	6
+A magazine has zero articles on technology out of 9 total. How many articles cover technological events?	0
+In the locker room, there are 3 benches, four baskets, and 6 shoes. How many seating options are there?	3
+Generate an image of a 2.	2
+Generate a representation of the digit six.	6
+In the bakery, there are six muffins, six cupcakes, and nine trays. How many serving items are there?	9
+Kindly create a depiction of a nine.	9
+In the forest, you’ll find nine owls, five raccoons, and 7 foxes. How many nocturnal animals are there?	9
+Render a clear picture of the digit 2.	2
+During a survey, 4 out of 8 respondents said they enjoy gardening. How many participants enjoy gardening?	4
+At the farm, there are eight farmers and eight sheep. How many livestock are there?	8
+five students passed the math test out of 8 who took it. How many students succeeded?	5
+0 individuals are attending a play in a theater that seats 4. How many people are in the theater?	0
+Show a detailed picture of the digit nine.	9
+During a survey, 4 out of nine respondents said they enjoy gardening. How many participants enjoy gardening?	4
+In the bakery, there are one muffins, 8 cupcakes, and five trays. How many serving items are there?	5
+In the classroom, there are 2 rulers, 8 erasers, and eight scissors. How many measuring tools can you find?	2
+In the living room, there are 8 cushions, three sofas, and zero rugs. How many seating items are there?	3
+Create a black and white picture of the number 0.	0
+In the living room, there are 8 cushions, two sofas, and one rugs. How many seating items are there?	2
+Generate an image of a 4.	4
+In the park, there are 5 benches and seven fountains. How many seating options are there?	5
+Create a black and white picture of the number 2.	2
+At the concert, there are 6 trumpets and 3 cellos. How many string instruments are there?	3
+A chef makes 9 dishes, and three are vegetarian. How many dishes are vegetarian?	3
+Please generate an image of a 1.	1
+I'd like to see a representation of a three.	3
+In the forest, you’ll find zero owls, three raccoons, and 4 foxes. How many nocturnal animals are there?	0
+Display a simple image of the number 3.	3
+Produce an MNIST-style image of the digit 2.	2
+At the pool, there are seven swim caps and seven water bottles. How many swimming accessories are there?	7
+A magazine has 5 articles on technology out of 7 total. How many articles cover technological events?	5
+9 people finished their tasks, and three were volunteers. How many volunteers completed their tasks?	3
+In the living room, there are five rugs and 5 cushions. How many decor items are there?	5
+Create a black and white picture of the number 0.	0
+Render a clear picture of the digit 6.	6
+In the orchard, there are nine apple trees, 2 cherry trees, and zero pear trees. How many apple trees are there?	9
+In the zoo, there are eight tigers and 0 koalas. How many marsupials are there?	0
+Show a high-resolution image of the digit 3.	3
+Render a clear picture of the digit five.	5
+In the orchard, there are eight apple trees, 3 cherry trees, and 3 pear trees. How many apple trees are there?	8
+There are nine types of flowers in the garden, and six are roses. How many flowers are roses?	6
+In the library, there are two desks and one dictionaries. How many reference books are there?	1
+Provide a 28x28 image of the number 2.	2
+In the locker room, there are seven benches, eight baskets, and three shoes. How many seating options are there?	7
+Show me a picture of a 5.	5
+I'd like to see a representation of a 7.	7
+Inside the drawer, you’ll see zero pens, nine glue sticks, and 5 crayons. How many coloring tools are there?	5
+In the library, there are 2 desks and 1 dictionaries. How many reference books are there?	1
+Produce an MNIST-style image of the digit 8.	8
+At the farm, there are 8 farmers and 4 sheep. How many livestock are there?	4
+Generate an image of a zero.	0
+At the campsite, there are three lanterns and 2 tents. How many light sources are there?	2
+At the farm, there are eight farmers and eight sheep. How many livestock are there?	8
+Show me an image of a 1.	1
+In the forest, you’ll find five owls, 2 raccoons, and seven foxes. How many nocturnal animals are there?	5
+eight students passed the math test out of 9 who took it. How many students succeeded?	8
+A library has seven sections and four are for fiction books. How many sections are for fiction books?	4
+In the backyard, you’ll see three butterflies, 7 squirrels, and two robins. How many birds are there?	2
+At the concert, there are 5 trumpets and one cellos. How many string instruments are there?	1
+Show me a picture of a 0.	0
+In the bakery, there are 0 muffins, one cupcakes, and 4 trays. How many serving items are there?	4
+In the library, there are 6 desks and 4 dictionaries. How many reference books are there?	4
+In the living room, there are eight rugs and 7 cushions. How many decor items are there?	7
+Generate a representation of the digit 0.	0
+At the concert, there are 9 trumpets and nine cellos. How many string instruments are there?	9
+At the concert, there are three trumpets and three cellos. How many string instruments are there?	3
+two rabbits are playing in the garden, while three are resting. How many rabbits are active?	2
+In the cafeteria, there are five cups, four trays, and one baskets. How many drinking vessels are there?	5
+A magazine has four articles on technology out of 4 total. How many articles cover technological events?	4
+Produce an MNIST-style image of the digit three.	3
+At the campsite, there are 9 lanterns and 7 tents. How many light sources are there?	7
+In the locker room, there are 2 benches, 0 baskets, and 6 shoes. How many seating options are there?	2
+In the orchard, there are 0 apple trees, 3 cherry trees, and two pear trees. How many apple trees are there?	0
+Generate a representation of the digit eight.	8
+Out of 7 players, six play chess. How many chess players are there?	6
+During a survey, 7 out of 7 respondents said they enjoy gardening. How many participants enjoy gardening?	7
+Inside the drawer, you’ll see six pens, eight glue sticks, and 3 crayons. How many coloring tools are there?	3
+In the cafeteria, there are 8 cups, three trays, and 6 baskets. How many drinking vessels are there?	8
+In the classroom, there are zero rulers, 5 erasers, and eight scissors. How many measuring tools can you find?	0
+During a survey, two out of 9 respondents said they enjoy gardening. How many participants enjoy gardening?	2
+six out of 6 poets read their poems live. How many poets read their poems?	6
+In the playground, there are 3 slides and nine trees. How many playground equipment pieces are there?	3
+At the farm, there are nine farmers and seven sheep. How many livestock are there?	7
+In the living room, there are eight cushions, 4 sofas, and seven rugs. How many seating items are there?	4
+In the classroom, there are 8 rulers, three erasers, and 1 scissors. How many measuring tools can you find?	8
+In the garage, there are five scooters and 8 cars. How many two-wheelers are there?	5
+In the orchard, there are 9 apple trees, six cherry trees, and 4 pear trees. How many apple trees are there?	9
+Render a clear picture of the digit one.	1
+Create a sample of a seven.	7
+A magazine has zero articles on technology out of 8 total. How many articles cover technological events?	0
+6 rabbits are playing in the garden, while 6 are resting. How many rabbits are active?	6
+A chef makes eight dishes, and 5 are vegetarian. How many dishes are vegetarian?	5
+Display a simple image of the number five.	5
+In the office, there are 4 printers and 9 pencils. How many electronic devices are there?	4
+Generate a clear image of the number 8.	8
+9 individuals are attending a play in a theater that seats nine. How many people are in the theater?	9
+There are 8 types of flowers in the garden, and 8 are roses. How many flowers are roses?	8
+5 individuals are attending a play in a theater that seats 8. How many people are in the theater?	5
+At the farm, there are 8 farmers and three sheep. How many livestock are there?	3
+In the playground, there are 1 slides and seven trees. How many playground equipment pieces are there?	1
+At the farm, there are nine farmers and eight sheep. How many livestock are there?	8
+Provide a 28x28 image of the number 8.	8
+In the living room, there are six rugs and four cushions. How many decor items are there?	4
+A magazine has 7 articles on technology out of eight total. How many articles cover technological events?	7
+A chef makes four dishes, and two are vegetarian. How many dishes are vegetarian?	2
+Render a clear picture of the digit one.	1
+There are nine types of flowers in the garden, and zero are roses. How many flowers are roses?	0
+At the farm, there are 5 farmers and 4 sheep. How many livestock are there?	4
+A library has 8 sections and 2 are for fiction books. How many sections are for fiction books?	2
+During a survey, seven out of seven respondents said they enjoy gardening. How many participants enjoy gardening?	7
+Please generate an image of a 3.	3
+Create a black and white picture of the number 5.	5
+six individuals are attending a play in a theater that seats seven. How many people are in the theater?	6
+6 out of 7 poets read their poems live. How many poets read their poems?	6
+In the orchard, there are 7 apple trees, nine cherry trees, and five pear trees. How many apple trees are there?	7
+In the bakery, there are 2 muffins, 9 cupcakes, and 7 trays. How many serving items are there?	7
+3 individuals are attending a play in a theater that seats 4. How many people are in the theater?	3
+At the concert, there are eight trumpets and seven cellos. How many string instruments are there?	7
+In the locker room, there are three benches, 2 baskets, and 2 shoes. How many seating options are there?	3
+In the locker room, there are one benches, eight baskets, and 0 shoes. How many seating options are there?	1
+Produce an illustration of a six.	6
+In the garage, there are three scooters and 9 cars. How many two-wheelers are there?	3
+Create a sample of a one.	1
+In the forest, you’ll find nine owls, zero raccoons, and three foxes. How many nocturnal animals are there?	9
+Out of seven players, 7 play chess. How many chess players are there?	7
+In the locker room, there are six benches, 8 baskets, and 8 shoes. How many seating options are there?	6
+A chef makes 7 dishes, and 5 are vegetarian. How many dishes are vegetarian?	5
+In the classroom, there are one rulers, seven erasers, and nine scissors. How many measuring tools can you find?	1
+In the park, there are five benches and six fountains. How many seating options are there?	5
+A chef makes 7 dishes, and five are vegetarian. How many dishes are vegetarian?	5
+Create a black and white picture of the number nine.	9
+In the library, there are 8 desks and 7 dictionaries. How many reference books are there?	7
+Show a high-resolution image of the digit nine.	9
+In the orchard, there are 4 apple trees, nine cherry trees, and six pear trees. How many apple trees are there?	4
+Create a sample of a 6.	6
+six rabbits are playing in the garden, while nine are resting. How many rabbits are active?	6
+In the garage, there are nine scooters and nine cars. How many two-wheelers are there?	9
+Show me a picture of a one.	1
+Show me a picture of a seven.	7
+A library has 8 sections and seven are for fiction books. How many sections are for fiction books?	7
+Produce an illustration of a 9.	9
+During a survey, 4 out of 4 respondents said they enjoy gardening. How many participants enjoy gardening?	4
+In the orchard, there are 6 apple trees, seven cherry trees, and zero pear trees. How many apple trees are there?	6
+In the office, there are 9 printers and nine pencils. How many electronic devices are there?	9
+At the beach, there are 6 baskets, 5 surfboards, and one towels. How many items used to carry things are there?	6
+In the living room, there are 9 rugs and nine cushions. How many decor items are there?	9
+four individuals are attending a play in a theater that seats 5. How many people are in the theater?	4
+three out of 6 poets read their poems live. How many poets read their poems?	3
+In a parking lot, nine out of nine vehicles are vans. How many vans are parked?	9
+two rabbits are playing in the garden, while 3 are resting. How many rabbits are active?	2
+Create a grayscale version of the number three.	3
+In the office, there are four printers and 9 pencils. How many electronic devices are there?	4
+4 people finished their tasks, and 3 were volunteers. How many volunteers completed their tasks?	3
+Show a high-resolution image of the digit 7.	7
+In the cafeteria, there are eight cups, 0 trays, and one baskets. How many drinking vessels are there?	8
+In the living room, there are six cushions, zero sofas, and 6 rugs. How many seating items are there?	0
+In the bakery, there are 8 muffins, 3 cupcakes, and 1 trays. How many serving items are there?	1
+Generate an image of a seven.	7
+In the garage, there are 3 scooters and 6 cars. How many two-wheelers are there?	3
+Generate a representation of the digit 2.	2
+one individuals are attending a play in a theater that seats seven. How many people are in the theater?	1
+At the farm, there are nine farmers and eight sheep. How many livestock are there?	8
+A library has 9 sections and 2 are for fiction books. How many sections are for fiction books?	2
+In the orchard, there are 0 apple trees, one cherry trees, and 5 pear trees. How many apple trees are there?	0
+Show me an image of a zero.	0
+I'd like to see a representation of a 3.	3
+Create a sample of a 3.	3
+In the living room, there are 8 rugs and six cushions. How many decor items are there?	6
+In the playground, there are 4 slides and 5 trees. How many playground equipment pieces are there?	4
+In the office, there are eight printers and 9 pencils. How many electronic devices are there?	8
+In the bakery, there are two muffins, 0 cupcakes, and three trays. How many serving items are there?	3
+In the locker room, there are seven benches, six baskets, and zero shoes. How many seating options are there?	7
+3 rabbits are playing in the garden, while four are resting. How many rabbits are active?	3
+Create a grayscale version of the number zero.	0
+At the pool, there are 4 swim caps and 7 water bottles. How many swimming accessories are there?	4
+Please generate an image of a 7.	7
+During a survey, 3 out of nine respondents said they enjoy gardening. How many participants enjoy gardening?	3
+Display a simple image of the number zero.	0
+In a parking lot, 1 out of 2 vehicles are vans. How many vans are parked?	1
+In the zoo, there are 5 tigers and 3 koalas. How many marsupials are there?	3
+Create a sample of a 4.	4
+A library has eight sections and 7 are for fiction books. How many sections are for fiction books?	7
+In the garage, there are two boxes, four wheels, and zero screwdrivers. How many tools are there?	0
+Out of four players, 1 play chess. How many chess players are there?	1
+Show me a picture of a nine.	9
+In the garage, there are zero boxes, three wheels, and 1 screwdrivers. How many tools are there?	1
+A chef makes 9 dishes, and six are vegetarian. How many dishes are vegetarian?	6
+Please generate an image of a five.	5
+During a survey, six out of 8 respondents said they enjoy gardening. How many participants enjoy gardening?	6
+At the concert, there are eight trumpets and 8 cellos. How many string instruments are there?	8
+Inside the drawer, you’ll see zero pens, four glue sticks, and 3 crayons. How many coloring tools are there?	3
+Create a black and white picture of the number six.	6
+In the living room, there are six rugs and six cushions. How many decor items are there?	6
+Display a simple image of the number 7.	7
+I'd like to see a representation of a nine.	9
+Display a simple image of the number 3.	3
+Provide a 28x28 image of the number nine.	9
+Produce an illustration of a nine.	9
+Display a simple image of the number 1.	1
+A chef makes six dishes, and 3 are vegetarian. How many dishes are vegetarian?	3
+In the living room, there are 8 rugs and five cushions. How many decor items are there?	5
+There are 9 types of flowers in the garden, and 9 are roses. How many flowers are roses?	9
+Produce an illustration of a 7.	7
+zero students passed the math test out of zero who took it. How many students succeeded?	0
+In the park, there are 4 benches and 6 fountains. How many seating options are there?	4
+At the campsite, there are 8 lanterns and eight tents. How many light sources are there?	8
+At the pool, there are 6 swim caps and 7 water bottles. How many swimming accessories are there?	6
+In the park, there are 9 benches and nine fountains. How many seating options are there?	9
+Display a simple image of the number 5.	5
+Render a clear picture of the digit three.	3
+Produce an illustration of a six.	6
+Display a simple image of the number seven.	7
+In the playground, there are one slides and 5 trees. How many playground equipment pieces are there?	1
+Create a black and white picture of the number three.	3
+Show me an image of a zero.	0
+A magazine has 3 articles on technology out of 9 total. How many articles cover technological events?	3
+At the beach, there are 0 baskets, two surfboards, and three towels. How many items used to carry things are there?	0
+In the orchard, there are 0 apple trees, 6 cherry trees, and six pear trees. How many apple trees are there?	0
+Out of eight players, 7 play chess. How many chess players are there?	7
+In a parking lot, 8 out of 8 vehicles are vans. How many vans are parked?	8
+In the cafeteria, there are seven cups, 3 trays, and 2 baskets. How many drinking vessels are there?	7
+There are two types of flowers in the garden, and 2 are roses. How many flowers are roses?	2
+At the concert, there are 8 trumpets and 0 cellos. How many string instruments are there?	0
+nine individuals are attending a play in a theater that seats nine. How many people are in the theater?	9
+In the living room, there are nine rugs and six cushions. How many decor items are there?	6
+Show a high-resolution image of the digit eight.	8
+At the campsite, there are 5 lanterns and 4 tents. How many light sources are there?	4
+Show me an image of a 8.	8
+I'd like to see a representation of a zero.	0
+In the garage, there are 7 boxes, zero wheels, and 5 screwdrivers. How many tools are there?	5
+Create a sample of a 9.	9
+Generate a representation of the digit 9.	9
+In the bakery, there are 5 muffins, eight cupcakes, and seven trays. How many serving items are there?	7
+seven out of seven poets read their poems live. How many poets read their poems?	7
+In the forest, you’ll find 6 owls, one raccoons, and seven foxes. How many nocturnal animals are there?	6
+Show a detailed picture of the digit 8.	8
+There are 3 types of flowers in the garden, and 1 are roses. How many flowers are roses?	1
+In the garage, there are 0 scooters and 8 cars. How many two-wheelers are there?	0
+In the orchard, there are zero apple trees, three cherry trees, and three pear trees. How many apple trees are there?	0
+In the locker room, there are 6 benches, 0 baskets, and 8 shoes. How many seating options are there?	6
+Show me a picture of a 1.	1
+Produce an illustration of a zero.	0
+In the living room, there are eight cushions, six sofas, and 7 rugs. How many seating items are there?	6
+At the campsite, there are nine lanterns and 7 tents. How many light sources are there?	7
+Generate a clear image of the number 2.	2
+Show me an image of a zero.	0
+Out of 9 players, four play chess. How many chess players are there?	4
+At the concert, there are five trumpets and two cellos. How many string instruments are there?	2
+At the pool, there are seven swim caps and nine water bottles. How many swimming accessories are there?	7
+Inside the drawer, you’ll see seven pens, one glue sticks, and nine crayons. How many coloring tools are there?	9
+Create a black and white picture of the number 0.	0
+In the cafeteria, there are three cups, zero trays, and 9 baskets. How many drinking vessels are there?	3
+6 students passed the math test out of 7 who took it. How many students succeeded?	6
+Generate a representation of the digit 2.	2
+A magazine has 1 articles on technology out of five total. How many articles cover technological events?	1
+In the locker room, there are 1 benches, 5 baskets, and eight shoes. How many seating options are there?	1
+I'd like to see a representation of a four.	4
+In the bakery, there are 5 muffins, 9 cupcakes, and eight trays. How many serving items are there?	8
+I'd like to see a representation of a 9.	9
+Kindly create a depiction of a zero.	0
+In the living room, there are 8 cushions, seven sofas, and five rugs. How many seating items are there?	7
+Inside the drawer, you’ll see 8 pens, four glue sticks, and two crayons. How many coloring tools are there?	2
+3 out of eight poets read their poems live. How many poets read their poems?	3
+At the farm, there are 9 farmers and 9 sheep. How many livestock are there?	9
+Produce an MNIST-style image of the digit 9.	9
+In the living room, there are 3 rugs and 0 cushions. How many decor items are there?	0
+In the living room, there are seven rugs and 5 cushions. How many decor items are there?	5
+At the pool, there are 1 swim caps and 5 water bottles. How many swimming accessories are there?	1
+There are three types of flowers in the garden, and one are roses. How many flowers are roses?	1
+Produce an illustration of a 6.	6
+Provide a 28x28 image of the number 2.	2
+In the living room, there are one cushions, 8 sofas, and six rugs. How many seating items are there?	8
+Produce an MNIST-style image of the digit 4.	4
+In the forest, you’ll find 3 owls, four raccoons, and 4 foxes. How many nocturnal animals are there?	3
+Inside the drawer, you’ll see four pens, 3 glue sticks, and 0 crayons. How many coloring tools are there?	0
+At the concert, there are seven trumpets and seven cellos. How many string instruments are there?	7
+A magazine has 3 articles on technology out of 8 total. How many articles cover technological events?	3
+Generate a representation of the digit 1.	1
+Generate a clear image of the number 5.	5
+Kindly create a depiction of a 6.	6
+Generate an image of a four.	4
+At the concert, there are 7 trumpets and 7 cellos. How many string instruments are there?	7
+I'd like to see a representation of a nine.	9
+In the garage, there are 5 boxes, five wheels, and 0 screwdrivers. How many tools are there?	0
+Produce an illustration of a 9.	9
+Generate a representation of the digit eight.	8
+Kindly create a depiction of a 3.	3
+Create a sample of a three.	3
+Produce an illustration of a two.	2
+seven out of 7 poets read their poems live. How many poets read their poems?	7
+A group of 8 tourists visits a national park, and 8 of them are seniors. How many seniors are visiting?	8
+During a survey, 2 out of 3 respondents said they enjoy gardening. How many participants enjoy gardening?	2
+At the campsite, there are 7 lanterns and three tents. How many light sources are there?	3
+In the cafeteria, there are 4 cups, seven trays, and 7 baskets. How many drinking vessels are there?	4
+A group of four tourists visits a national park, and zero of them are seniors. How many seniors are visiting?	0
+six rabbits are playing in the garden, while 7 are resting. How many rabbits are active?	6
+Render a clear picture of the digit six.	6
+Generate an image of a six.	6
+In the garage, there are 6 scooters and 7 cars. How many two-wheelers are there?	6
+In the forest, you’ll find five owls, nine raccoons, and 1 foxes. How many nocturnal animals are there?	5
+In the living room, there are 5 rugs and 3 cushions. How many decor items are there?	3
+Generate a clear image of the number 7.	7
+A magazine has 2 articles on technology out of seven total. How many articles cover technological events?	2
+seven individuals are attending a play in a theater that seats 9. How many people are in the theater?	7
+Produce an illustration of a 3.	3
+Show a high-resolution image of the digit 5.	5
+Kindly create a depiction of a 7.	7
+7 individuals are attending a play in a theater that seats eight. How many people are in the theater?	7
+In the classroom, there are 3 rulers, 9 erasers, and six scissors. How many measuring tools can you find?	3
+At the beach, there are 1 baskets, two surfboards, and 8 towels. How many items used to carry things are there?	1
+Show a high-resolution image of the digit two.	2
+In the living room, there are 3 cushions, five sofas, and zero rugs. How many seating items are there?	5
+In the locker room, there are 1 benches, 3 baskets, and 3 shoes. How many seating options are there?	1
+Show me an image of a eight.	8
+Create a grayscale version of the number 3.	3
+In the classroom, there are 3 rulers, two erasers, and 0 scissors. How many measuring tools can you find?	3
+Show me an image of a 7.	7
+In the library, there are 7 desks and 0 dictionaries. How many reference books are there?	0
+Generate a representation of the digit three.	3
+In the library, there are seven desks and one dictionaries. How many reference books are there?	1
+Please generate an image of a six.	6
+In a parking lot, four out of nine vehicles are vans. How many vans are parked?	4
+At the pool, there are six swim caps and 6 water bottles. How many swimming accessories are there?	6
+Kindly create a depiction of a four.	4
+There are four types of flowers in the garden, and 2 are roses. How many flowers are roses?	2
+Show a detailed picture of the digit zero.	0
+Generate a representation of the digit six.	6
+Show me an image of a 6.	6
+Show a high-resolution image of the digit nine.	9
+0 rabbits are playing in the garden, while six are resting. How many rabbits are active?	0
+Generate a clear image of the number 8.	8
+At the beach, there are eight baskets, 1 surfboards, and three towels. How many items used to carry things are there?	8
+A library has nine sections and nine are for fiction books. How many sections are for fiction books?	9
+During a survey, 3 out of four respondents said they enjoy gardening. How many participants enjoy gardening?	3
+There are 6 types of flowers in the garden, and six are roses. How many flowers are roses?	6
+Generate a representation of the digit 7.	7
+Generate an image of a two.	2
+At the campsite, there are 8 lanterns and 8 tents. How many light sources are there?	8
+Show me a picture of a 7.	7
+Show a high-resolution image of the digit two.	2
+At the campsite, there are 5 lanterns and 4 tents. How many light sources are there?	4
+Show a detailed picture of the digit eight.	8
+nine people finished their tasks, and five were volunteers. How many volunteers completed their tasks?	5
+I'd like to see a representation of a eight.	8
+In the locker room, there are 8 benches, three baskets, and seven shoes. How many seating options are there?	8
+Out of 7 players, five play chess. How many chess players are there?	5
+At the beach, there are 8 baskets, five surfboards, and seven towels. How many items used to carry things are there?	8
+In the playground, there are 2 slides and six trees. How many playground equipment pieces are there?	2
+In the garage, there are 0 boxes, 3 wheels, and 2 screwdrivers. How many tools are there?	2
+In the library, there are one desks and zero dictionaries. How many reference books are there?	0
+0 students passed the math test out of nine who took it. How many students succeeded?	0
+At the campsite, there are 3 lanterns and three tents. How many light sources are there?	3
+Show a detailed picture of the digit three.	3
+In the backyard, you’ll see 2 butterflies, 0 squirrels, and 1 robins. How many birds are there?	1
+Render a clear picture of the digit two.	2
+In the garage, there are 6 scooters and seven cars. How many two-wheelers are there?	6
+In the cafeteria, there are 0 cups, 8 trays, and 2 baskets. How many drinking vessels are there?	0
+In the backyard, you’ll see 4 butterflies, 2 squirrels, and 8 robins. How many birds are there?	8
+In the backyard, you’ll see two butterflies, 8 squirrels, and six robins. How many birds are there?	6
+At the concert, there are eight trumpets and 0 cellos. How many string instruments are there?	0
+Provide a 28x28 image of the number 8.	8
+In a parking lot, four out of 7 vehicles are vans. How many vans are parked?	4
+5 students passed the math test out of nine who took it. How many students succeeded?	5
+Generate a clear image of the number 1.	1
+In the cafeteria, there are four cups, three trays, and seven baskets. How many drinking vessels are there?	4
+At the beach, there are 5 baskets, two surfboards, and 8 towels. How many items used to carry things are there?	5
+In the orchard, there are six apple trees, 0 cherry trees, and eight pear trees. How many apple trees are there?	6
+seven individuals are attending a play in a theater that seats 9. How many people are in the theater?	7
+At the concert, there are nine trumpets and 6 cellos. How many string instruments are there?	6
+Render a clear picture of the digit one.	1
+In the forest, you’ll find seven owls, six raccoons, and four foxes. How many nocturnal animals are there?	7
+Produce an illustration of a 2.	2
+Show a high-resolution image of the digit 5.	5
+3 individuals are attending a play in a theater that seats 6. How many people are in the theater?	3
+Kindly create a depiction of a zero.	0
+In the forest, you’ll find two owls, 1 raccoons, and four foxes. How many nocturnal animals are there?	2
+In the bakery, there are two muffins, six cupcakes, and 9 trays. How many serving items are there?	9
+Create a sample of a one.	1
+At the concert, there are nine trumpets and nine cellos. How many string instruments are there?	9
+Show me a picture of a 0.	0
+Create a grayscale version of the number four.	4
+eight people finished their tasks, and five were volunteers. How many volunteers completed their tasks?	5
+9 people finished their tasks, and two were volunteers. How many volunteers completed their tasks?	2
+A library has nine sections and 2 are for fiction books. How many sections are for fiction books?	2
+Render a clear picture of the digit two.	2
+I'd like to see a representation of a four.	4
+In the garage, there are one scooters and 6 cars. How many two-wheelers are there?	1
+In the cafeteria, there are zero cups, six trays, and 6 baskets. How many drinking vessels are there?	0
+In the forest, you’ll find zero owls, 8 raccoons, and two foxes. How many nocturnal animals are there?	0
+I'd like to see a representation of a 4.	4
+In the zoo, there are nine tigers and nine koalas. How many marsupials are there?	9
+Display a simple image of the number 6.	6
+In the cafeteria, there are four cups, eight trays, and eight baskets. How many drinking vessels are there?	4
+Generate an image of a 4.	4
+In the locker room, there are five benches, 4 baskets, and three shoes. How many seating options are there?	5
+In the garage, there are 2 scooters and 3 cars. How many two-wheelers are there?	2
+In the locker room, there are six benches, seven baskets, and three shoes. How many seating options are there?	6
+A library has 7 sections and six are for fiction books. How many sections are for fiction books?	6
+Kindly create a depiction of a eight.	8
+Out of five players, two play chess. How many chess players are there?	2
+Show me a picture of a 4.	4
+Inside the drawer, you’ll see two pens, 4 glue sticks, and 1 crayons. How many coloring tools are there?	1
+In the classroom, there are 1 rulers, four erasers, and 4 scissors. How many measuring tools can you find?	1
+In the garage, there are six scooters and eight cars. How many two-wheelers are there?	6
+Generate a clear image of the number nine.	9
+There are five types of flowers in the garden, and five are roses. How many flowers are roses?	5
+Show me a picture of a 7.	7
+At the concert, there are 8 trumpets and 4 cellos. How many string instruments are there?	4
+A library has 7 sections and seven are for fiction books. How many sections are for fiction books?	7
+Show a detailed picture of the digit eight.	8
+three people finished their tasks, and 2 were volunteers. How many volunteers completed their tasks?	2
+At the concert, there are eight trumpets and seven cellos. How many string instruments are there?	7
+Generate an image of a seven.	7
+Generate an image of a two.	2
+At the farm, there are nine farmers and 9 sheep. How many livestock are there?	9
+At the beach, there are 6 baskets, eight surfboards, and two towels. How many items used to carry things are there?	6
+Render a clear picture of the digit seven.	7
+In the garage, there are nine boxes, two wheels, and 4 screwdrivers. How many tools are there?	4
+Inside the drawer, you’ll see nine pens, 4 glue sticks, and five crayons. How many coloring tools are there?	5
+Show a detailed picture of the digit 8.	8
+In the park, there are 2 benches and six fountains. How many seating options are there?	2
+Inside the drawer, you’ll see 5 pens, 2 glue sticks, and 8 crayons. How many coloring tools are there?	8
+A magazine has 2 articles on technology out of two total. How many articles cover technological events?	2
+two students passed the math test out of nine who took it. How many students succeeded?	2
+In the backyard, you’ll see 8 butterflies, 8 squirrels, and six robins. How many birds are there?	6
+Generate an image of a four.	4
+Show me a picture of a eight.	8
+In the classroom, there are 3 rulers, 7 erasers, and 1 scissors. How many measuring tools can you find?	3
+In the office, there are 9 printers and nine pencils. How many electronic devices are there?	9
+At the campsite, there are 9 lanterns and 8 tents. How many light sources are there?	8
+Show me an image of a 0.	0
+Show me a picture of a seven.	7
+zero students passed the math test out of 1 who took it. How many students succeeded?	0
+In the orchard, there are one apple trees, zero cherry trees, and 8 pear trees. How many apple trees are there?	1
+Generate a representation of the digit six.	6
+There are nine types of flowers in the garden, and six are roses. How many flowers are roses?	6
+In the bakery, there are three muffins, one cupcakes, and two trays. How many serving items are there?	2
+Show a high-resolution image of the digit 5.	5
+Show a high-resolution image of the digit zero.	0
+Show a detailed picture of the digit three.	3
+In a parking lot, 5 out of 6 vehicles are vans. How many vans are parked?	5
+In the garage, there are three scooters and three cars. How many two-wheelers are there?	3
+seven out of seven poets read their poems live. How many poets read their poems?	7
+In the backyard, you’ll see 9 butterflies, nine squirrels, and 7 robins. How many birds are there?	7
+A group of nine tourists visits a national park, and five of them are seniors. How many seniors are visiting?	5
+Inside the drawer, you’ll see 2 pens, two glue sticks, and eight crayons. How many coloring tools are there?	8
+Inside the drawer, you’ll see three pens, three glue sticks, and 2 crayons. How many coloring tools are there?	2
+In the park, there are nine benches and nine fountains. How many seating options are there?	9
+There are 8 types of flowers in the garden, and six are roses. How many flowers are roses?	6
+Show me a picture of a zero.	0
+Show a high-resolution image of the digit 0.	0
+In the classroom, there are four rulers, 0 erasers, and 1 scissors. How many measuring tools can you find?	4
+In the garage, there are 6 boxes, 9 wheels, and 0 screwdrivers. How many tools are there?	0
+Please generate an image of a three.	3
+5 rabbits are playing in the garden, while 7 are resting. How many rabbits are active?	5
+Generate an image of a 1.	1
+At the farm, there are nine farmers and 9 sheep. How many livestock are there?	9
+Create a sample of a 0.	0
+In the cafeteria, there are 4 cups, five trays, and nine baskets. How many drinking vessels are there?	4
+In the living room, there are 2 cushions, 7 sofas, and 5 rugs. How many seating items are there?	7
+In the bakery, there are one muffins, zero cupcakes, and 9 trays. How many serving items are there?	9
+Show a high-resolution image of the digit 8.	8
+In the locker room, there are two benches, six baskets, and 7 shoes. How many seating options are there?	2
+Generate a clear image of the number one.	1
+In the zoo, there are four tigers and four koalas. How many marsupials are there?	4
+At the farm, there are five farmers and 5 sheep. How many livestock are there?	5
+In the library, there are seven desks and seven dictionaries. How many reference books are there?	7
+Generate a clear image of the number seven.	7
+In a parking lot, zero out of 2 vehicles are vans. How many vans are parked?	0
+Render a clear picture of the digit 8.	8
+During a survey, two out of 6 respondents said they enjoy gardening. How many participants enjoy gardening?	2
+Generate a representation of the digit 4.	4
+Create a black and white picture of the number 2.	2
+Show a detailed picture of the digit 8.	8
+A library has one sections and one are for fiction books. How many sections are for fiction books?	1
+At the pool, there are 2 swim caps and seven water bottles. How many swimming accessories are there?	2
+In the garage, there are 1 boxes, four wheels, and 3 screwdrivers. How many tools are there?	3
+Create a grayscale version of the number 2.	2
+In the office, there are 6 printers and eight pencils. How many electronic devices are there?	6
+At the beach, there are six baskets, 0 surfboards, and 4 towels. How many items used to carry things are there?	6
+5 rabbits are playing in the garden, while 5 are resting. How many rabbits are active?	5
+In the backyard, you’ll see nine butterflies, 1 squirrels, and 8 robins. How many birds are there?	8
+Show a high-resolution image of the digit two.	2
+one individuals are attending a play in a theater that seats 1. How many people are in the theater?	1
+Create a black and white picture of the number 4.	4
+In the living room, there are eight cushions, 6 sofas, and eight rugs. How many seating items are there?	6
+In the living room, there are six rugs and five cushions. How many decor items are there?	5
+8 rabbits are playing in the garden, while 9 are resting. How many rabbits are active?	8
+Produce an illustration of a six.	6
+5 individuals are attending a play in a theater that seats 7. How many people are in the theater?	5
+A chef makes two dishes, and two are vegetarian. How many dishes are vegetarian?	2
+At the pool, there are seven swim caps and 8 water bottles. How many swimming accessories are there?	7
+Create a sample of a 0.	0
+In the zoo, there are five tigers and three koalas. How many marsupials are there?	3
+At the farm, there are 9 farmers and one sheep. How many livestock are there?	1
+I'd like to see a representation of a nine.	9
+Show me an image of a one.	1
+8 rabbits are playing in the garden, while nine are resting. How many rabbits are active?	8
+Kindly create a depiction of a one.	1
+Show me a picture of a eight.	8
+At the concert, there are eight trumpets and eight cellos. How many string instruments are there?	8
+At the campsite, there are 4 lanterns and two tents. How many light sources are there?	2
+Generate a representation of the digit three.	3
+A group of six tourists visits a national park, and six of them are seniors. How many seniors are visiting?	6
+At the pool, there are one swim caps and 2 water bottles. How many swimming accessories are there?	1
+In the classroom, there are four rulers, 5 erasers, and seven scissors. How many measuring tools can you find?	4
+Show me a picture of a 0.	0
+At the farm, there are 4 farmers and 3 sheep. How many livestock are there?	3
+In the cafeteria, there are seven cups, nine trays, and one baskets. How many drinking vessels are there?	7
+Show me an image of a 1.	1
+Out of 8 players, 7 play chess. How many chess players are there?	7
+Show me an image of a 1.	1
+In the living room, there are 2 cushions, 7 sofas, and five rugs. How many seating items are there?	7
+Inside the drawer, you’ll see two pens, zero glue sticks, and 3 crayons. How many coloring tools are there?	3
+A chef makes nine dishes, and five are vegetarian. How many dishes are vegetarian?	5
+In the living room, there are two cushions, 0 sofas, and three rugs. How many seating items are there?	0
+Display a simple image of the number 6.	6
+seven individuals are attending a play in a theater that seats 8. How many people are in the theater?	7
+At the campsite, there are six lanterns and 0 tents. How many light sources are there?	0
+A chef makes 8 dishes, and 6 are vegetarian. How many dishes are vegetarian?	6
+In the classroom, there are eight rulers, two erasers, and 3 scissors. How many measuring tools can you find?	8
+A library has 9 sections and one are for fiction books. How many sections are for fiction books?	1
+At the beach, there are seven baskets, 2 surfboards, and five towels. How many items used to carry things are there?	7
+During a survey, 0 out of zero respondents said they enjoy gardening. How many participants enjoy gardening?	0
+6 rabbits are playing in the garden, while 7 are resting. How many rabbits are active?	6
+In the park, there are 8 benches and 9 fountains. How many seating options are there?	8
+At the campsite, there are six lanterns and 6 tents. How many light sources are there?	6
+At the beach, there are 2 baskets, 9 surfboards, and 6 towels. How many items used to carry things are there?	2
+Kindly create a depiction of a 3.	3
+Render a clear picture of the digit 1.	1
+A group of 9 tourists visits a national park, and eight of them are seniors. How many seniors are visiting?	8
+In the zoo, there are 5 tigers and five koalas. How many marsupials are there?	5
+Render a clear picture of the digit 5.	5
+At the campsite, there are 1 lanterns and zero tents. How many light sources are there?	0
+Create a sample of a zero.	0
+Create a sample of a two.	2
+In the playground, there are zero slides and one trees. How many playground equipment pieces are there?	0
+In the park, there are two benches and 2 fountains. How many seating options are there?	2
+Out of 8 players, six play chess. How many chess players are there?	6
+four people finished their tasks, and two were volunteers. How many volunteers completed their tasks?	2
+In the garage, there are 6 boxes, four wheels, and 1 screwdrivers. How many tools are there?	1
+In the library, there are 8 desks and 8 dictionaries. How many reference books are there?	8
+Generate an image of a 2.	2
+In the living room, there are four cushions, nine sofas, and 7 rugs. How many seating items are there?	9
+2 individuals are attending a play in a theater that seats five. How many people are in the theater?	2
+5 out of 9 poets read their poems live. How many poets read their poems?	5
+Inside the drawer, you’ll see two pens, nine glue sticks, and zero crayons. How many coloring tools are there?	0
+Produce an MNIST-style image of the digit 6.	6
+Generate a clear image of the number zero.	0
+In the cafeteria, there are 4 cups, one trays, and five baskets. How many drinking vessels are there?	4
+In a parking lot, 9 out of nine vehicles are vans. How many vans are parked?	9
+In the orchard, there are five apple trees, 8 cherry trees, and 4 pear trees. How many apple trees are there?	5
+In the orchard, there are seven apple trees, 6 cherry trees, and eight pear trees. How many apple trees are there?	7
+Out of nine players, 9 play chess. How many chess players are there?	9
+In a parking lot, 3 out of six vehicles are vans. How many vans are parked?	3
+A library has eight sections and zero are for fiction books. How many sections are for fiction books?	0
+one students passed the math test out of 2 who took it. How many students succeeded?	1
+I'd like to see a representation of a two.	2
+Produce an MNIST-style image of the digit 0.	0
+Create a grayscale version of the number 4.	4
+In the office, there are two printers and five pencils. How many electronic devices are there?	2
+A library has two sections and two are for fiction books. How many sections are for fiction books?	2
+In the cafeteria, there are six cups, 3 trays, and 1 baskets. How many drinking vessels are there?	6
+I'd like to see a representation of a 0.	0
+Show a detailed picture of the digit one.	1
+There are 6 types of flowers in the garden, and 6 are roses. How many flowers are roses?	6
+Provide a 28x28 image of the number zero.	0
+Out of 9 players, nine play chess. How many chess players are there?	9
+In the living room, there are nine rugs and six cushions. How many decor items are there?	6
+In the garage, there are 5 scooters and 8 cars. How many two-wheelers are there?	5
+Kindly create a depiction of a eight.	8
+In the playground, there are 2 slides and four trees. How many playground equipment pieces are there?	2
+Create a grayscale version of the number 7.	7
+A library has nine sections and eight are for fiction books. How many sections are for fiction books?	8
+In a parking lot, four out of eight vehicles are vans. How many vans are parked?	4
+In the living room, there are 9 cushions, 6 sofas, and 0 rugs. How many seating items are there?	6
+In the bakery, there are 1 muffins, three cupcakes, and 9 trays. How many serving items are there?	9
+Produce an illustration of a zero.	0
+Generate a representation of the digit 4.	4
+2 students passed the math test out of eight who took it. How many students succeeded?	2
+Show a high-resolution image of the digit one.	1
+Generate a representation of the digit 4.	4
+Render a clear picture of the digit eight.	8
+At the beach, there are 8 baskets, seven surfboards, and 3 towels. How many items used to carry things are there?	8
+Create a black and white picture of the number five.	5
+In the living room, there are six rugs and zero cushions. How many decor items are there?	0
+In a parking lot, 9 out of nine vehicles are vans. How many vans are parked?	9
+A group of 0 tourists visits a national park, and zero of them are seniors. How many seniors are visiting?	0
+I'd like to see a representation of a one.	1
+six rabbits are playing in the garden, while six are resting. How many rabbits are active?	6
+Create a grayscale version of the number 8.	8
+In the living room, there are 9 rugs and 6 cushions. How many decor items are there?	6
+In the backyard, you’ll see six butterflies, 3 squirrels, and two robins. How many birds are there?	2
+Show me an image of a zero.	0
+Create a black and white picture of the number nine.	9
+In the library, there are 9 desks and 9 dictionaries. How many reference books are there?	9
+nine out of nine poets read their poems live. How many poets read their poems?	9
+In the office, there are six printers and nine pencils. How many electronic devices are there?	6
+1 individuals are attending a play in a theater that seats 7. How many people are in the theater?	1
+In the locker room, there are 0 benches, seven baskets, and eight shoes. How many seating options are there?	0
+In the classroom, there are nine rulers, 0 erasers, and six scissors. How many measuring tools can you find?	9
+In the garage, there are five boxes, two wheels, and 7 screwdrivers. How many tools are there?	7
+In the orchard, there are zero apple trees, 1 cherry trees, and eight pear trees. How many apple trees are there?	0
+Please generate an image of a 8.	8
+Produce an illustration of a one.	1
+Kindly create a depiction of a one.	1
+A group of 5 tourists visits a national park, and zero of them are seniors. How many seniors are visiting?	0
+In the living room, there are five rugs and four cushions. How many decor items are there?	4
+Create a sample of a 2.	2
+I'd like to see a representation of a 6.	6
+A magazine has eight articles on technology out of 9 total. How many articles cover technological events?	8
+Provide a 28x28 image of the number four.	4
+Show a high-resolution image of the digit two.	2
+In the garage, there are zero boxes, 8 wheels, and five screwdrivers. How many tools are there?	5
+Create a black and white picture of the number 6.	6
+In the classroom, there are three rulers, eight erasers, and six scissors. How many measuring tools can you find?	3
+Create a black and white picture of the number one.	1
+In the office, there are four printers and 7 pencils. How many electronic devices are there?	4
+In the locker room, there are 0 benches, seven baskets, and 4 shoes. How many seating options are there?	0
+Generate a representation of the digit 8.	8
+Create a black and white picture of the number one.	1
+A magazine has 2 articles on technology out of 8 total. How many articles cover technological events?	2
+Kindly create a depiction of a five.	5
+Generate a clear image of the number 4.	4
+In the living room, there are 9 rugs and five cushions. How many decor items are there?	5
+At the concert, there are nine trumpets and nine cellos. How many string instruments are there?	9
+In the cafeteria, there are 1 cups, four trays, and nine baskets. How many drinking vessels are there?	1
+In the library, there are nine desks and 7 dictionaries. How many reference books are there?	7
+In a parking lot, 7 out of eight vehicles are vans. How many vans are parked?	7
+Create a sample of a 8.	8
+A magazine has six articles on technology out of 7 total. How many articles cover technological events?	6
+Generate a clear image of the number nine.	9
+Create a grayscale version of the number one.	1
+A magazine has 0 articles on technology out of five total. How many articles cover technological events?	0
+In the living room, there are two cushions, three sofas, and seven rugs. How many seating items are there?	3
+A magazine has seven articles on technology out of seven total. How many articles cover technological events?	7
+In the living room, there are nine rugs and eight cushions. How many decor items are there?	8
+Display a simple image of the number 0.	0
+Please generate an image of a 0.	0
+In the forest, you’ll find four owls, five raccoons, and 9 foxes. How many nocturnal animals are there?	4
+Generate a clear image of the number zero.	0
+Create a sample of a nine.	9
+Show a high-resolution image of the digit one.	1
+8 rabbits are playing in the garden, while eight are resting. How many rabbits are active?	8
+In the park, there are 9 benches and nine fountains. How many seating options are there?	9
+In the forest, you’ll find 3 owls, five raccoons, and 5 foxes. How many nocturnal animals are there?	3
+six people finished their tasks, and 1 were volunteers. How many volunteers completed their tasks?	1
+In the orchard, there are one apple trees, 0 cherry trees, and five pear trees. How many apple trees are there?	1
+Out of 0 players, zero play chess. How many chess players are there?	0
+There are two types of flowers in the garden, and 0 are roses. How many flowers are roses?	0
+Out of 7 players, 2 play chess. How many chess players are there?	2
+Create a black and white picture of the number nine.	9
+At the campsite, there are four lanterns and two tents. How many light sources are there?	2
+A magazine has 9 articles on technology out of 9 total. How many articles cover technological events?	9
+Render a clear picture of the digit 8.	8
+Please generate an image of a nine.	9
+7 students passed the math test out of 9 who took it. How many students succeeded?	7
+At the pool, there are five swim caps and five water bottles. How many swimming accessories are there?	5
+In the classroom, there are 8 rulers, 7 erasers, and nine scissors. How many measuring tools can you find?	8
+Produce an illustration of a six.	6
+Provide a 28x28 image of the number zero.	0
+In the locker room, there are zero benches, two baskets, and six shoes. How many seating options are there?	0
+four people finished their tasks, and 4 were volunteers. How many volunteers completed their tasks?	4
+6 people finished their tasks, and four were volunteers. How many volunteers completed their tasks?	4
+seven people finished their tasks, and six were volunteers. How many volunteers completed their tasks?	6
+Out of 7 players, 3 play chess. How many chess players are there?	3
+In the living room, there are 9 cushions, 8 sofas, and zero rugs. How many seating items are there?	8
+In the library, there are 6 desks and 6 dictionaries. How many reference books are there?	6
+1 students passed the math test out of 7 who took it. How many students succeeded?	1
+In the bakery, there are two muffins, three cupcakes, and 1 trays. How many serving items are there?	1
+6 students passed the math test out of seven who took it. How many students succeeded?	6
+There are nine types of flowers in the garden, and six are roses. How many flowers are roses?	6
+A library has 9 sections and 9 are for fiction books. How many sections are for fiction books?	9
+At the farm, there are 6 farmers and five sheep. How many livestock are there?	5
+Please generate an image of a six.	6
+Create a black and white picture of the number six.	6
+A chef makes 7 dishes, and five are vegetarian. How many dishes are vegetarian?	5
+In the orchard, there are 2 apple trees, six cherry trees, and one pear trees. How many apple trees are there?	2
+nine people finished their tasks, and one were volunteers. How many volunteers completed their tasks?	1
+At the beach, there are 5 baskets, four surfboards, and 7 towels. How many items used to carry things are there?	5
+In the locker room, there are two benches, six baskets, and five shoes. How many seating options are there?	2
+In the garage, there are four scooters and 5 cars. How many two-wheelers are there?	4
+In the library, there are eight desks and 2 dictionaries. How many reference books are there?	2
+six students passed the math test out of six who took it. How many students succeeded?	6
+Generate a clear image of the number 7.	7
+A magazine has 9 articles on technology out of 9 total. How many articles cover technological events?	9
+During a survey, nine out of 9 respondents said they enjoy gardening. How many participants enjoy gardening?	9
+In the backyard, you’ll see two butterflies, zero squirrels, and 8 robins. How many birds are there?	8
+In the garage, there are zero scooters and 5 cars. How many two-wheelers are there?	0
+In the living room, there are six rugs and five cushions. How many decor items are there?	5
+A group of eight tourists visits a national park, and four of them are seniors. How many seniors are visiting?	4
+Provide a 28x28 image of the number 8.	8
+Create a black and white picture of the number eight.	8
+Generate an image of a seven.	7
+Show me a picture of a 0.	0
+Show a high-resolution image of the digit eight.	8
+six people finished their tasks, and three were volunteers. How many volunteers completed their tasks?	3
+At the beach, there are three baskets, four surfboards, and 1 towels. How many items used to carry things are there?	3
+Generate an image of a two.	2
+In the zoo, there are 9 tigers and 8 koalas. How many marsupials are there?	8
+Create a sample of a 3.	3
+At the pool, there are 2 swim caps and 5 water bottles. How many swimming accessories are there?	2
+In the living room, there are 1 rugs and one cushions. How many decor items are there?	1
+In the locker room, there are 3 benches, seven baskets, and eight shoes. How many seating options are there?	3
+A group of 7 tourists visits a national park, and 4 of them are seniors. How many seniors are visiting?	4
+In the zoo, there are 8 tigers and 2 koalas. How many marsupials are there?	2
+In the forest, you’ll find 1 owls, five raccoons, and 9 foxes. How many nocturnal animals are there?	1
+five out of 9 poets read their poems live. How many poets read their poems?	5
+In a parking lot, zero out of 2 vehicles are vans. How many vans are parked?	0
+nine individuals are attending a play in a theater that seats 9. How many people are in the theater?	9
+In the living room, there are 9 rugs and nine cushions. How many decor items are there?	9
+In the garage, there are eight boxes, 5 wheels, and 3 screwdrivers. How many tools are there?	3
+I'd like to see a representation of a 0.	0
+In the park, there are zero benches and one fountains. How many seating options are there?	0
+In the cafeteria, there are 4 cups, seven trays, and 7 baskets. How many drinking vessels are there?	4
+In the library, there are 7 desks and 6 dictionaries. How many reference books are there?	6
+A group of 7 tourists visits a national park, and 6 of them are seniors. How many seniors are visiting?	6
+At the beach, there are 6 baskets, 3 surfboards, and 3 towels. How many items used to carry things are there?	6
+I'd like to see a representation of a eight.	8
+A library has 7 sections and 4 are for fiction books. How many sections are for fiction books?	4
+Display a simple image of the number eight.	8
+In the office, there are 1 printers and five pencils. How many electronic devices are there?	1
+At the campsite, there are seven lanterns and six tents. How many light sources are there?	6
+Generate an image of a 4.	4
+Render a clear picture of the digit 3.	3
+six out of 8 poets read their poems live. How many poets read their poems?	6
+Show me a picture of a one.	1
+Generate a clear image of the number 0.	0
+In the office, there are eight printers and 8 pencils. How many electronic devices are there?	8
+At the beach, there are three baskets, one surfboards, and 5 towels. How many items used to carry things are there?	3
+Generate an image of a 7.	7
+eight people finished their tasks, and 7 were volunteers. How many volunteers completed their tasks?	7
+In the living room, there are one cushions, nine sofas, and 8 rugs. How many seating items are there?	9
+1 people finished their tasks, and 1 were volunteers. How many volunteers completed their tasks?	1
+In the living room, there are 9 rugs and 6 cushions. How many decor items are there?	6
+In the library, there are 8 desks and 1 dictionaries. How many reference books are there?	1
+There are 9 types of flowers in the garden, and 9 are roses. How many flowers are roses?	9
+In the zoo, there are 3 tigers and two koalas. How many marsupials are there?	2
+Render a clear picture of the digit five.	5
+In the backyard, you’ll see zero butterflies, 7 squirrels, and two robins. How many birds are there?	2
+In the park, there are 7 benches and 9 fountains. How many seating options are there?	7
+four students passed the math test out of nine who took it. How many students succeeded?	4
+In a parking lot, 1 out of one vehicles are vans. How many vans are parked?	1
+In the orchard, there are 6 apple trees, four cherry trees, and two pear trees. How many apple trees are there?	6
+Generate a clear image of the number one.	1
+Create a sample of a eight.	8
+In the bakery, there are 7 muffins, 7 cupcakes, and 8 trays. How many serving items are there?	8
+four rabbits are playing in the garden, while 8 are resting. How many rabbits are active?	4
+Generate a clear image of the number eight.	8
+During a survey, 2 out of seven respondents said they enjoy gardening. How many participants enjoy gardening?	2
+Create a grayscale version of the number five.	5
+In the living room, there are 9 rugs and five cushions. How many decor items are there?	5
+Show a detailed picture of the digit 9.	9
+In the office, there are 6 printers and 9 pencils. How many electronic devices are there?	6
+In the bakery, there are 0 muffins, six cupcakes, and five trays. How many serving items are there?	5
+7 people finished their tasks, and two were volunteers. How many volunteers completed their tasks?	2
+Produce an illustration of a eight.	8
+In the orchard, there are six apple trees, 0 cherry trees, and 9 pear trees. How many apple trees are there?	6
+During a survey, eight out of 8 respondents said they enjoy gardening. How many participants enjoy gardening?	8
+At the beach, there are 0 baskets, seven surfboards, and 1 towels. How many items used to carry things are there?	0
+2 students passed the math test out of 3 who took it. How many students succeeded?	2
+0 students passed the math test out of 1 who took it. How many students succeeded?	0
+A group of nine tourists visits a national park, and 9 of them are seniors. How many seniors are visiting?	9
+In a parking lot, seven out of 8 vehicles are vans. How many vans are parked?	7
+A magazine has seven articles on technology out of 9 total. How many articles cover technological events?	7
+Create a black and white picture of the number 1.	1
+In the park, there are 1 benches and five fountains. How many seating options are there?	1
+In the park, there are 0 benches and 9 fountains. How many seating options are there?	0
+During a survey, 3 out of seven respondents said they enjoy gardening. How many participants enjoy gardening?	3
+During a survey, 9 out of nine respondents said they enjoy gardening. How many participants enjoy gardening?	9
+Create a black and white picture of the number 5.	5
+At the farm, there are nine farmers and seven sheep. How many livestock are there?	7
+In the classroom, there are two rulers, 5 erasers, and three scissors. How many measuring tools can you find?	2
+Produce an MNIST-style image of the digit two.	2
+In the zoo, there are six tigers and 3 koalas. How many marsupials are there?	3
+In the garage, there are 2 scooters and 6 cars. How many two-wheelers are there?	2
+In the living room, there are 8 rugs and four cushions. How many decor items are there?	4
+At the concert, there are seven trumpets and three cellos. How many string instruments are there?	3
+Render a clear picture of the digit 7.	7
+In the classroom, there are 3 rulers, seven erasers, and 0 scissors. How many measuring tools can you find?	3
+In a parking lot, 8 out of nine vehicles are vans. How many vans are parked?	8
+A magazine has zero articles on technology out of nine total. How many articles cover technological events?	0
+At the campsite, there are seven lanterns and 5 tents. How many light sources are there?	5
+Out of two players, zero play chess. How many chess players are there?	0
+A group of 5 tourists visits a national park, and one of them are seniors. How many seniors are visiting?	1
+At the campsite, there are 7 lanterns and 7 tents. How many light sources are there?	7
+Show a high-resolution image of the digit 1.	1
+Display a simple image of the number six.	6
+In the zoo, there are nine tigers and 2 koalas. How many marsupials are there?	2
+During a survey, five out of nine respondents said they enjoy gardening. How many participants enjoy gardening?	5
+Generate an image of a five.	5
+Produce an MNIST-style image of the digit seven.	7
+During a survey, 0 out of four respondents said they enjoy gardening. How many participants enjoy gardening?	0
+Create a sample of a six.	6
+Create a grayscale version of the number six.	6
+Generate a clear image of the number 3.	3
+In the playground, there are three slides and three trees. How many playground equipment pieces are there?	3
+In the backyard, you’ll see 1 butterflies, 8 squirrels, and 9 robins. How many birds are there?	9
+Create a sample of a 6.	6
+In the orchard, there are 1 apple trees, 4 cherry trees, and two pear trees. How many apple trees are there?	1
+In a parking lot, eight out of nine vehicles are vans. How many vans are parked?	8
+Produce an illustration of a 0.	0
+In the orchard, there are four apple trees, 1 cherry trees, and five pear trees. How many apple trees are there?	4
+1 rabbits are playing in the garden, while seven are resting. How many rabbits are active?	1
+In the zoo, there are five tigers and zero koalas. How many marsupials are there?	0
+At the farm, there are eight farmers and eight sheep. How many livestock are there?	8
+Create a sample of a seven.	7
+8 people finished their tasks, and zero were volunteers. How many volunteers completed their tasks?	0
+In the locker room, there are six benches, three baskets, and 7 shoes. How many seating options are there?	6
+Generate a representation of the digit 0.	0
+Kindly create a depiction of a 1.	1
+In the living room, there are 0 cushions, eight sofas, and 0 rugs. How many seating items are there?	8
+Produce an MNIST-style image of the digit zero.	0
+Show a detailed picture of the digit 9.	9
+Kindly create a depiction of a four.	4
+Create a black and white picture of the number one.	1
+Inside the drawer, you’ll see one pens, seven glue sticks, and five crayons. How many coloring tools are there?	5
+Generate a representation of the digit two.	2
+In the park, there are 0 benches and 4 fountains. How many seating options are there?	0
+Show a detailed picture of the digit 8.	8
+A group of 4 tourists visits a national park, and 3 of them are seniors. How many seniors are visiting?	3
+A group of 2 tourists visits a national park, and 1 of them are seniors. How many seniors are visiting?	1
+A group of 9 tourists visits a national park, and 9 of them are seniors. How many seniors are visiting?	9
+A magazine has eight articles on technology out of 9 total. How many articles cover technological events?	8
+At the concert, there are nine trumpets and one cellos. How many string instruments are there?	1
+In a parking lot, six out of seven vehicles are vans. How many vans are parked?	6
+A group of 9 tourists visits a national park, and one of them are seniors. How many seniors are visiting?	1
+In the garage, there are one boxes, two wheels, and 9 screwdrivers. How many tools are there?	9
+Generate an image of a zero.	0
+Create a grayscale version of the number three.	3
+Provide a 28x28 image of the number six.	6
+In the classroom, there are 4 rulers, five erasers, and seven scissors. How many measuring tools can you find?	4
+In the garage, there are four scooters and six cars. How many two-wheelers are there?	4
+Generate a clear image of the number six.	6
+A library has four sections and four are for fiction books. How many sections are for fiction books?	4
+Render a clear picture of the digit 4.	4
+In the bakery, there are 3 muffins, 4 cupcakes, and 7 trays. How many serving items are there?	7
+A group of 7 tourists visits a national park, and 1 of them are seniors. How many seniors are visiting?	1
+two individuals are attending a play in a theater that seats eight. How many people are in the theater?	2
+In the playground, there are eight slides and nine trees. How many playground equipment pieces are there?	8
+In the backyard, you’ll see eight butterflies, 8 squirrels, and nine robins. How many birds are there?	9
+In the playground, there are 2 slides and five trees. How many playground equipment pieces are there?	2
+five students passed the math test out of 8 who took it. How many students succeeded?	5
+A library has 7 sections and 3 are for fiction books. How many sections are for fiction books?	3
+Produce an MNIST-style image of the digit five.	5
+In the orchard, there are nine apple trees, seven cherry trees, and 2 pear trees. How many apple trees are there?	9
+Out of 0 players, zero play chess. How many chess players are there?	0
+I'd like to see a representation of a zero.	0
+In the playground, there are three slides and seven trees. How many playground equipment pieces are there?	3
+Show me an image of a 3.	3
+In the classroom, there are 8 rulers, six erasers, and 2 scissors. How many measuring tools can you find?	8
+In the forest, you’ll find one owls, seven raccoons, and two foxes. How many nocturnal animals are there?	1
+In the bakery, there are eight muffins, 2 cupcakes, and five trays. How many serving items are there?	5
+Inside the drawer, you’ll see 2 pens, 3 glue sticks, and five crayons. How many coloring tools are there?	5
+I'd like to see a representation of a 1.	1
+At the farm, there are 9 farmers and 3 sheep. How many livestock are there?	3
+Please generate an image of a 3.	3
+Out of nine players, nine play chess. How many chess players are there?	9
+In the bakery, there are 9 muffins, 4 cupcakes, and six trays. How many serving items are there?	6
+In the cafeteria, there are two cups, six trays, and six baskets. How many drinking vessels are there?	2
+six rabbits are playing in the garden, while 6 are resting. How many rabbits are active?	6
+3 out of four poets read their poems live. How many poets read their poems?	3
+In the living room, there are two cushions, 5 sofas, and 7 rugs. How many seating items are there?	5
+A group of two tourists visits a national park, and two of them are seniors. How many seniors are visiting?	2
+Inside the drawer, you’ll see 8 pens, 0 glue sticks, and three crayons. How many coloring tools are there?	3
+I'd like to see a representation of a 1.	1
+two individuals are attending a play in a theater that seats 4. How many people are in the theater?	2
+At the concert, there are eight trumpets and 7 cellos. How many string instruments are there?	7
+In the orchard, there are 6 apple trees, 7 cherry trees, and two pear trees. How many apple trees are there?	6
+There are five types of flowers in the garden, and three are roses. How many flowers are roses?	3
+Create a sample of a eight.	8
+In the backyard, you’ll see six butterflies, eight squirrels, and two robins. How many birds are there?	2
+In the locker room, there are 9 benches, 7 baskets, and seven shoes. How many seating options are there?	9
+In the living room, there are 1 cushions, two sofas, and 5 rugs. How many seating items are there?	2
+Create a sample of a two.	2
+six out of 6 poets read their poems live. How many poets read their poems?	6
+Create a black and white picture of the number 9.	9
+five out of 8 poets read their poems live. How many poets read their poems?	5
+Inside the drawer, you’ll see 2 pens, 3 glue sticks, and 6 crayons. How many coloring tools are there?	6
+In the classroom, there are two rulers, nine erasers, and nine scissors. How many measuring tools can you find?	2
+A chef makes 9 dishes, and 9 are vegetarian. How many dishes are vegetarian?	9
+In the living room, there are three cushions, zero sofas, and 2 rugs. How many seating items are there?	0
+At the beach, there are 7 baskets, four surfboards, and 2 towels. How many items used to carry things are there?	7
+At the farm, there are eight farmers and five sheep. How many livestock are there?	5
+A library has seven sections and 7 are for fiction books. How many sections are for fiction books?	7
+In the orchard, there are 6 apple trees, 8 cherry trees, and three pear trees. How many apple trees are there?	6
+Show a high-resolution image of the digit 3.	3
+A group of nine tourists visits a national park, and zero of them are seniors. How many seniors are visiting?	0
+eight rabbits are playing in the garden, while 9 are resting. How many rabbits are active?	8
+Inside the drawer, you’ll see one pens, six glue sticks, and eight crayons. How many coloring tools are there?	8
+Generate an image of a two.	2
+Produce an MNIST-style image of the digit seven.	7
+In the cafeteria, there are four cups, 3 trays, and 0 baskets. How many drinking vessels are there?	4
+Kindly create a depiction of a 8.	8
+7 out of 8 poets read their poems live. How many poets read their poems?	7
+Render a clear picture of the digit 2.	2
+In the bakery, there are six muffins, eight cupcakes, and nine trays. How many serving items are there?	9
+A chef makes nine dishes, and six are vegetarian. How many dishes are vegetarian?	6
+Show me an image of a 1.	1
+In the bakery, there are 3 muffins, 8 cupcakes, and one trays. How many serving items are there?	1
+In the garage, there are 1 boxes, five wheels, and 4 screwdrivers. How many tools are there?	4
+I'd like to see a representation of a 9.	9
+Provide a 28x28 image of the number 6.	6
+Out of 9 players, nine play chess. How many chess players are there?	9
+Produce an MNIST-style image of the digit 7.	7
+At the farm, there are nine farmers and 5 sheep. How many livestock are there?	5
+Create a grayscale version of the number nine.	9
+In the bakery, there are three muffins, five cupcakes, and 2 trays. How many serving items are there?	2
+At the campsite, there are 9 lanterns and seven tents. How many light sources are there?	7
+In the locker room, there are 3 benches, 9 baskets, and four shoes. How many seating options are there?	3
+Show a detailed picture of the digit nine.	9
+In the bakery, there are seven muffins, five cupcakes, and three trays. How many serving items are there?	3
+Out of 4 players, three play chess. How many chess players are there?	3
+In the office, there are 9 printers and 9 pencils. How many electronic devices are there?	9
+Generate an image of a one.	1
+Display a simple image of the number 8.	8
+During a survey, nine out of 9 respondents said they enjoy gardening. How many participants enjoy gardening?	9
+Render a clear picture of the digit two.	2
+At the beach, there are 0 baskets, six surfboards, and seven towels. How many items used to carry things are there?	0
+Show a detailed picture of the digit one.	1
+In the park, there are five benches and six fountains. How many seating options are there?	5
+In the office, there are 6 printers and 6 pencils. How many electronic devices are there?	6
+In the library, there are nine desks and 9 dictionaries. How many reference books are there?	9
+Produce an MNIST-style image of the digit seven.	7
+Produce an illustration of a 4.	4
+Please generate an image of a eight.	8
+A chef makes seven dishes, and seven are vegetarian. How many dishes are vegetarian?	7
+There are 8 types of flowers in the garden, and 8 are roses. How many flowers are roses?	8
+At the concert, there are 1 trumpets and 1 cellos. How many string instruments are there?	1
+Generate a representation of the digit 9.	9
+In the library, there are four desks and four dictionaries. How many reference books are there?	4
+Create a sample of a 5.	5
+Provide a 28x28 image of the number three.	3
+In the cafeteria, there are zero cups, six trays, and five baskets. How many drinking vessels are there?	0
+A chef makes eight dishes, and seven are vegetarian. How many dishes are vegetarian?	7
+In the bakery, there are 2 muffins, 2 cupcakes, and 9 trays. How many serving items are there?	9
+Show a high-resolution image of the digit 8.	8
+At the beach, there are 3 baskets, 1 surfboards, and 1 towels. How many items used to carry things are there?	3
+zero out of 3 poets read their poems live. How many poets read their poems?	0
+A group of nine tourists visits a national park, and five of them are seniors. How many seniors are visiting?	5
+4 students passed the math test out of 8 who took it. How many students succeeded?	4
+Show a detailed picture of the digit one.	1
+In the locker room, there are two benches, 0 baskets, and 0 shoes. How many seating options are there?	2
+Show me an image of a eight.	8
+In a parking lot, four out of 9 vehicles are vans. How many vans are parked?	4
+At the beach, there are 4 baskets, six surfboards, and six towels. How many items used to carry things are there?	4
+In the living room, there are two cushions, 3 sofas, and 6 rugs. How many seating items are there?	3
+Produce an MNIST-style image of the digit 2.	2
+Show me an image of a six.	6
+In a parking lot, 4 out of five vehicles are vans. How many vans are parked?	4
+In the office, there are eight printers and 8 pencils. How many electronic devices are there?	8
+A magazine has 1 articles on technology out of 4 total. How many articles cover technological events?	1
+Kindly create a depiction of a eight.	8
+Please generate an image of a five.	5
+Produce an MNIST-style image of the digit 4.	4
+In the forest, you’ll find seven owls, five raccoons, and 0 foxes. How many nocturnal animals are there?	7
+Render a clear picture of the digit 7.	7
+In the orchard, there are six apple trees, eight cherry trees, and 0 pear trees. How many apple trees are there?	6
+In the orchard, there are nine apple trees, eight cherry trees, and seven pear trees. How many apple trees are there?	9
+3 individuals are attending a play in a theater that seats 9. How many people are in the theater?	3
+Out of 9 players, 8 play chess. How many chess players are there?	8
+Please generate an image of a five.	5
+In the park, there are 2 benches and 2 fountains. How many seating options are there?	2
+At the farm, there are four farmers and 4 sheep. How many livestock are there?	4
+Show a high-resolution image of the digit 7.	7
+In the library, there are 9 desks and 3 dictionaries. How many reference books are there?	3
+Produce an illustration of a two.	2
+At the pool, there are 6 swim caps and 6 water bottles. How many swimming accessories are there?	6
+In the park, there are 6 benches and seven fountains. How many seating options are there?	6
+Render a clear picture of the digit 1.	1
+In the living room, there are two cushions, 5 sofas, and three rugs. How many seating items are there?	5
+In the playground, there are 7 slides and 7 trees. How many playground equipment pieces are there?	7
+In the orchard, there are 6 apple trees, five cherry trees, and eight pear trees. How many apple trees are there?	6
+Create a grayscale version of the number 3.	3
+There are 6 types of flowers in the garden, and 5 are roses. How many flowers are roses?	5
+Show a detailed picture of the digit zero.	0
+In the bakery, there are four muffins, three cupcakes, and 5 trays. How many serving items are there?	5
+In a parking lot, 1 out of five vehicles are vans. How many vans are parked?	1
+Generate a representation of the digit 6.	6
+Generate a clear image of the number six.	6
+At the beach, there are 3 baskets, zero surfboards, and nine towels. How many items used to carry things are there?	3
+In the zoo, there are five tigers and four koalas. How many marsupials are there?	4
+five people finished their tasks, and 4 were volunteers. How many volunteers completed their tasks?	4
+In the zoo, there are 6 tigers and four koalas. How many marsupials are there?	4
+In the orchard, there are 0 apple trees, 2 cherry trees, and nine pear trees. How many apple trees are there?	0
+Show a high-resolution image of the digit 7.	7
+Kindly create a depiction of a zero.	0
+In the cafeteria, there are eight cups, six trays, and four baskets. How many drinking vessels are there?	8
+Show a high-resolution image of the digit 9.	9
+Generate a representation of the digit five.	5
+At the campsite, there are nine lanterns and 9 tents. How many light sources are there?	9
+Create a grayscale version of the number four.	4
+Provide a 28x28 image of the number zero.	0
+Out of 8 players, 6 play chess. How many chess players are there?	6
+In the zoo, there are five tigers and two koalas. How many marsupials are there?	2
+7 people finished their tasks, and 7 were volunteers. How many volunteers completed their tasks?	7
+At the farm, there are 8 farmers and 4 sheep. How many livestock are there?	4
+At the farm, there are 9 farmers and two sheep. How many livestock are there?	2
+In the park, there are three benches and 6 fountains. How many seating options are there?	3
+Produce an illustration of a three.	3
+In the bakery, there are 3 muffins, 7 cupcakes, and 1 trays. How many serving items are there?	1
+Render a clear picture of the digit 0.	0
+A group of eight tourists visits a national park, and 5 of them are seniors. How many seniors are visiting?	5
+In the locker room, there are nine benches, three baskets, and four shoes. How many seating options are there?	9
+In the forest, you’ll find 0 owls, 6 raccoons, and one foxes. How many nocturnal animals are there?	0
+Inside the drawer, you’ll see 5 pens, nine glue sticks, and 7 crayons. How many coloring tools are there?	7
+In the forest, you’ll find five owls, 2 raccoons, and 4 foxes. How many nocturnal animals are there?	5
+Display a simple image of the number 3.	3
+At the farm, there are 9 farmers and 8 sheep. How many livestock are there?	8
+At the beach, there are nine baskets, 1 surfboards, and zero towels. How many items used to carry things are there?	9
+Create a grayscale version of the number 5.	5
+I'd like to see a representation of a 0.	0
+In the office, there are zero printers and seven pencils. How many electronic devices are there?	0
+In the backyard, you’ll see three butterflies, 8 squirrels, and 5 robins. How many birds are there?	5
+Inside the drawer, you’ll see 7 pens, 6 glue sticks, and one crayons. How many coloring tools are there?	1
+There are 1 types of flowers in the garden, and 1 are roses. How many flowers are roses?	1
+Produce an illustration of a 1.	1
+In the garage, there are 1 scooters and 5 cars. How many two-wheelers are there?	1
+I'd like to see a representation of a 6.	6
+Generate a representation of the digit four.	4
+Generate a clear image of the number zero.	0
+In the library, there are eight desks and two dictionaries. How many reference books are there?	2
+At the campsite, there are 9 lanterns and 3 tents. How many light sources are there?	3
+In the library, there are 1 desks and zero dictionaries. How many reference books are there?	0
+In a parking lot, five out of six vehicles are vans. How many vans are parked?	5
+In the living room, there are four cushions, 2 sofas, and 8 rugs. How many seating items are there?	2
+In the bakery, there are nine muffins, 9 cupcakes, and 2 trays. How many serving items are there?	2
+In the orchard, there are 4 apple trees, 6 cherry trees, and five pear trees. How many apple trees are there?	4
+In the classroom, there are six rulers, 7 erasers, and 0 scissors. How many measuring tools can you find?	6
+In the forest, you’ll find two owls, six raccoons, and 1 foxes. How many nocturnal animals are there?	2
+At the pool, there are 6 swim caps and 7 water bottles. How many swimming accessories are there?	6
+At the farm, there are four farmers and three sheep. How many livestock are there?	3
+Display a simple image of the number three.	3
+Generate a clear image of the number four.	4
+At the beach, there are 5 baskets, 0 surfboards, and nine towels. How many items used to carry things are there?	5
+In the cafeteria, there are 4 cups, 7 trays, and eight baskets. How many drinking vessels are there?	4
+4 individuals are attending a play in a theater that seats 6. How many people are in the theater?	4
+In the locker room, there are eight benches, 5 baskets, and seven shoes. How many seating options are there?	8
+Create a black and white picture of the number 4.	4
+Render a clear picture of the digit 9.	9
+At the farm, there are 8 farmers and 4 sheep. How many livestock are there?	4
+Please generate an image of a zero.	0
+In the living room, there are 0 cushions, 8 sofas, and 5 rugs. How many seating items are there?	8
+In the playground, there are two slides and 3 trees. How many playground equipment pieces are there?	2
+In the playground, there are 7 slides and 9 trees. How many playground equipment pieces are there?	7
+Create a black and white picture of the number three.	3
+In the garage, there are 0 boxes, 2 wheels, and 9 screwdrivers. How many tools are there?	9
+Produce an MNIST-style image of the digit eight.	8
+In the zoo, there are 8 tigers and zero koalas. How many marsupials are there?	0
+I'd like to see a representation of a 2.	2
+In the bakery, there are 4 muffins, 5 cupcakes, and zero trays. How many serving items are there?	0
+A chef makes 3 dishes, and zero are vegetarian. How many dishes are vegetarian?	0
+During a survey, six out of seven respondents said they enjoy gardening. How many participants enjoy gardening?	6
+nine people finished their tasks, and 8 were volunteers. How many volunteers completed their tasks?	8
+I'd like to see a representation of a 4.	4
+In the playground, there are two slides and nine trees. How many playground equipment pieces are there?	2
+In the classroom, there are three rulers, 1 erasers, and seven scissors. How many measuring tools can you find?	3
+Show a high-resolution image of the digit 3.	3
+In the zoo, there are four tigers and 0 koalas. How many marsupials are there?	0
+Produce an MNIST-style image of the digit 6.	6
+A magazine has eight articles on technology out of nine total. How many articles cover technological events?	8
+During a survey, three out of seven respondents said they enjoy gardening. How many participants enjoy gardening?	3
+Show a high-resolution image of the digit seven.	7
+Create a sample of a three.	3
+In a parking lot, 0 out of 8 vehicles are vans. How many vans are parked?	0
+Show a detailed picture of the digit one.	1
+In a parking lot, 4 out of 4 vehicles are vans. How many vans are parked?	4
+In the garage, there are six boxes, three wheels, and four screwdrivers. How many tools are there?	4
+Produce an MNIST-style image of the digit seven.	7
+Kindly create a depiction of a 2.	2
+three people finished their tasks, and 0 were volunteers. How many volunteers completed their tasks?	0
+Produce an illustration of a 7.	7
+In the park, there are 5 benches and 8 fountains. How many seating options are there?	5
+six out of six poets read their poems live. How many poets read their poems?	6
+At the concert, there are 9 trumpets and nine cellos. How many string instruments are there?	9
+In the backyard, you’ll see two butterflies, five squirrels, and three robins. How many birds are there?	3
+In the bakery, there are eight muffins, 9 cupcakes, and 4 trays. How many serving items are there?	4
+Create a grayscale version of the number one.	1
+Generate a representation of the digit 5.	5
+Create a grayscale version of the number seven.	7
+6 out of 6 poets read their poems live. How many poets read their poems?	6
+Please generate an image of a four.	4
+Show me a picture of a 5.	5
+seven rabbits are playing in the garden, while 7 are resting. How many rabbits are active?	7
+At the beach, there are 9 baskets, five surfboards, and 1 towels. How many items used to carry things are there?	9
+4 individuals are attending a play in a theater that seats seven. How many people are in the theater?	4
+Inside the drawer, you’ll see 1 pens, one glue sticks, and nine crayons. How many coloring tools are there?	9
+Produce an illustration of a zero.	0
+In the classroom, there are 2 rulers, 9 erasers, and 0 scissors. How many measuring tools can you find?	2
+nine people finished their tasks, and nine were volunteers. How many volunteers completed their tasks?	9
+In the living room, there are 6 cushions, 2 sofas, and eight rugs. How many seating items are there?	2
+Inside the drawer, you’ll see 9 pens, 5 glue sticks, and 3 crayons. How many coloring tools are there?	3
+A group of 8 tourists visits a national park, and 5 of them are seniors. How many seniors are visiting?	5
+Create a black and white picture of the number 9.	9
+Out of eight players, eight play chess. How many chess players are there?	8
+In the cafeteria, there are nine cups, three trays, and zero baskets. How many drinking vessels are there?	9
+In the orchard, there are 2 apple trees, 1 cherry trees, and one pear trees. How many apple trees are there?	2
+In the office, there are 3 printers and 8 pencils. How many electronic devices are there?	3
+At the campsite, there are seven lanterns and 4 tents. How many light sources are there?	4
+Show a detailed picture of the digit 5.	5
+In the park, there are five benches and 8 fountains. How many seating options are there?	5
+Show me a picture of a 2.	2
+six individuals are attending a play in a theater that seats nine. How many people are in the theater?	6
+Generate an image of a 8.	8
+In the park, there are four benches and 5 fountains. How many seating options are there?	4
+A magazine has 6 articles on technology out of nine total. How many articles cover technological events?	6
+In the garage, there are zero scooters and 2 cars. How many two-wheelers are there?	0
+At the pool, there are 1 swim caps and two water bottles. How many swimming accessories are there?	1
+In the library, there are nine desks and 7 dictionaries. How many reference books are there?	7
+In the office, there are 9 printers and 9 pencils. How many electronic devices are there?	9
+In the living room, there are 9 rugs and 3 cushions. How many decor items are there?	3
+In the backyard, you’ll see 7 butterflies, four squirrels, and 6 robins. How many birds are there?	6
+In the garage, there are 1 boxes, one wheels, and 8 screwdrivers. How many tools are there?	8
+six students passed the math test out of 8 who took it. How many students succeeded?	6
+Show a high-resolution image of the digit three.	3
+Out of 5 players, four play chess. How many chess players are there?	4
+A group of nine tourists visits a national park, and eight of them are seniors. How many seniors are visiting?	8
+Show me an image of a 9.	9
+In the garage, there are 1 scooters and six cars. How many two-wheelers are there?	1
+In a parking lot, 4 out of 7 vehicles are vans. How many vans are parked?	4
+Provide a 28x28 image of the number 6.	6
+Generate a clear image of the number 2.	2
+In the cafeteria, there are nine cups, 1 trays, and 7 baskets. How many drinking vessels are there?	9
+Create a grayscale version of the number 4.	4
+Render a clear picture of the digit eight.	8
+At the farm, there are two farmers and 0 sheep. How many livestock are there?	0
+In the garage, there are 0 scooters and nine cars. How many two-wheelers are there?	0
+Show me an image of a 6.	6
+A chef makes 8 dishes, and 5 are vegetarian. How many dishes are vegetarian?	5
+During a survey, one out of 4 respondents said they enjoy gardening. How many participants enjoy gardening?	1
+In the living room, there are eight rugs and two cushions. How many decor items are there?	2
+Generate a representation of the digit 2.	2
+In the living room, there are 3 cushions, six sofas, and 2 rugs. How many seating items are there?	6
+In the playground, there are 3 slides and 4 trees. How many playground equipment pieces are there?	3
+7 people finished their tasks, and six were volunteers. How many volunteers completed their tasks?	6
+Display a simple image of the number 7.	7
+At the campsite, there are six lanterns and 0 tents. How many light sources are there?	0
+4 out of 8 poets read their poems live. How many poets read their poems?	4
+5 out of 5 poets read their poems live. How many poets read their poems?	5
+In the living room, there are six rugs and six cushions. How many decor items are there?	6
+In the park, there are 3 benches and 9 fountains. How many seating options are there?	3
+In the orchard, there are 0 apple trees, 9 cherry trees, and six pear trees. How many apple trees are there?	0
+At the pool, there are 0 swim caps and 6 water bottles. How many swimming accessories are there?	0
+I'd like to see a representation of a 2.	2
+In the classroom, there are eight rulers, 6 erasers, and 9 scissors. How many measuring tools can you find?	8
+Create a black and white picture of the number 8.	8
+Display a simple image of the number six.	6
+In the zoo, there are seven tigers and 5 koalas. How many marsupials are there?	5
+Show a high-resolution image of the digit eight.	8
+In the classroom, there are 3 rulers, five erasers, and 1 scissors. How many measuring tools can you find?	3
+In the park, there are 0 benches and 2 fountains. How many seating options are there?	0
+Provide a 28x28 image of the number nine.	9
+In the library, there are eight desks and 1 dictionaries. How many reference books are there?	1
+two individuals are attending a play in a theater that seats 9. How many people are in the theater?	2
+Kindly create a depiction of a six.	6
+In the playground, there are nine slides and 9 trees. How many playground equipment pieces are there?	9
+Generate an image of a five.	5
+In the locker room, there are 0 benches, 9 baskets, and 1 shoes. How many seating options are there?	0
+In the garage, there are 4 scooters and 4 cars. How many two-wheelers are there?	4
+Display a simple image of the number 5.	5
+Create a sample of a 0.	0
+In the office, there are 9 printers and nine pencils. How many electronic devices are there?	9
+two individuals are attending a play in a theater that seats 4. How many people are in the theater?	2
+In the park, there are 8 benches and 8 fountains. How many seating options are there?	8
+In the cafeteria, there are 4 cups, 5 trays, and zero baskets. How many drinking vessels are there?	4
+In the cafeteria, there are 5 cups, 8 trays, and 1 baskets. How many drinking vessels are there?	5
+In the park, there are 8 benches and 9 fountains. How many seating options are there?	8
+In the orchard, there are six apple trees, 7 cherry trees, and 8 pear trees. How many apple trees are there?	6
+A magazine has 4 articles on technology out of four total. How many articles cover technological events?	4
+Create a grayscale version of the number one.	1
+In the office, there are 1 printers and three pencils. How many electronic devices are there?	1
+2 students passed the math test out of 7 who took it. How many students succeeded?	2
+Generate an image of a zero.	0
+Kindly create a depiction of a nine.	9
+A group of 2 tourists visits a national park, and 0 of them are seniors. How many seniors are visiting?	0
+Generate an image of a eight.	8
+In the library, there are eight desks and 8 dictionaries. How many reference books are there?	8
+In the living room, there are 6 rugs and 5 cushions. How many decor items are there?	5
+Provide a 28x28 image of the number three.	3
+Create a grayscale version of the number five.	5
+At the concert, there are seven trumpets and 6 cellos. How many string instruments are there?	6
+In the classroom, there are seven rulers, five erasers, and 0 scissors. How many measuring tools can you find?	7
+Show me an image of a two.	2
+A group of nine tourists visits a national park, and nine of them are seniors. How many seniors are visiting?	9
+A magazine has six articles on technology out of seven total. How many articles cover technological events?	6
+In the zoo, there are 8 tigers and five koalas. How many marsupials are there?	5
+Show me a picture of a 3.	3
+Produce an illustration of a 3.	3
+In the backyard, you’ll see 5 butterflies, five squirrels, and 9 robins. How many birds are there?	9
+In the forest, you’ll find two owls, five raccoons, and four foxes. How many nocturnal animals are there?	2
+Create a sample of a 0.	0
+Generate a representation of the digit one.	1
+In the locker room, there are five benches, 0 baskets, and one shoes. How many seating options are there?	5
+Display a simple image of the number one.	1
+6 out of eight poets read their poems live. How many poets read their poems?	6
+There are 6 types of flowers in the garden, and 5 are roses. How many flowers are roses?	5
+At the pool, there are two swim caps and six water bottles. How many swimming accessories are there?	2
+A magazine has 0 articles on technology out of seven total. How many articles cover technological events?	0
+Create a grayscale version of the number 2.	2
+In the bakery, there are five muffins, 9 cupcakes, and eight trays. How many serving items are there?	8
+Generate an image of a 5.	5
+In a parking lot, two out of 2 vehicles are vans. How many vans are parked?	2
+Show a high-resolution image of the digit seven.	7
+In the park, there are one benches and 8 fountains. How many seating options are there?	1
+In the classroom, there are 1 rulers, four erasers, and 8 scissors. How many measuring tools can you find?	1
+A library has seven sections and seven are for fiction books. How many sections are for fiction books?	7
+In the bakery, there are 1 muffins, 9 cupcakes, and eight trays. How many serving items are there?	8
+In the locker room, there are 1 benches, seven baskets, and six shoes. How many seating options are there?	1
+In the playground, there are zero slides and 1 trees. How many playground equipment pieces are there?	0
+9 people finished their tasks, and 9 were volunteers. How many volunteers completed their tasks?	9
+I'd like to see a representation of a 2.	2
+nine students passed the math test out of nine who took it. How many students succeeded?	9
+In the park, there are six benches and six fountains. How many seating options are there?	6
+Generate an image of a six.	6
+A magazine has zero articles on technology out of 1 total. How many articles cover technological events?	0
+Produce an illustration of a 3.	3
+In the locker room, there are 7 benches, five baskets, and nine shoes. How many seating options are there?	7
+In the library, there are seven desks and three dictionaries. How many reference books are there?	3
+In the zoo, there are six tigers and 5 koalas. How many marsupials are there?	5
+In the backyard, you’ll see six butterflies, zero squirrels, and seven robins. How many birds are there?	7
+In the garage, there are 3 boxes, 7 wheels, and eight screwdrivers. How many tools are there?	8
+At the pool, there are six swim caps and 9 water bottles. How many swimming accessories are there?	6
+There are 7 types of flowers in the garden, and 6 are roses. How many flowers are roses?	6
+I'd like to see a representation of a 0.	0
+Render a clear picture of the digit 8.	8
+9 people finished their tasks, and 3 were volunteers. How many volunteers completed their tasks?	3
+zero individuals are attending a play in a theater that seats eight. How many people are in the theater?	0
+There are nine types of flowers in the garden, and 0 are roses. How many flowers are roses?	0
+In the classroom, there are 6 rulers, 3 erasers, and 0 scissors. How many measuring tools can you find?	6
+Inside the drawer, you’ll see 4 pens, 0 glue sticks, and 6 crayons. How many coloring tools are there?	6
+I'd like to see a representation of a six.	6
+Show a detailed picture of the digit 4.	4
+In the zoo, there are eight tigers and 7 koalas. How many marsupials are there?	7
+five students passed the math test out of five who took it. How many students succeeded?	5
+At the beach, there are 2 baskets, three surfboards, and nine towels. How many items used to carry things are there?	2
+Display a simple image of the number three.	3
+Provide a 28x28 image of the number nine.	9
+1 rabbits are playing in the garden, while eight are resting. How many rabbits are active?	1
+During a survey, seven out of 8 respondents said they enjoy gardening. How many participants enjoy gardening?	7
+At the farm, there are 8 farmers and zero sheep. How many livestock are there?	0
+At the campsite, there are 3 lanterns and zero tents. How many light sources are there?	0
+Generate a clear image of the number 0.	0
+In the playground, there are 2 slides and 5 trees. How many playground equipment pieces are there?	2
+Please generate an image of a one.	1
+Provide a 28x28 image of the number 2.	2
+Create a grayscale version of the number eight.	8
+Inside the drawer, you’ll see five pens, nine glue sticks, and eight crayons. How many coloring tools are there?	8
+In the garage, there are 0 scooters and 4 cars. How many two-wheelers are there?	0
+Create a black and white picture of the number seven.	7
+In the locker room, there are 9 benches, 6 baskets, and four shoes. How many seating options are there?	9
+four out of seven poets read their poems live. How many poets read their poems?	4
+In the garage, there are 4 boxes, 2 wheels, and 7 screwdrivers. How many tools are there?	7
+In the office, there are five printers and 7 pencils. How many electronic devices are there?	5
+Please generate an image of a nine.	9
+In the garage, there are nine boxes, 2 wheels, and three screwdrivers. How many tools are there?	3
+A chef makes 6 dishes, and 6 are vegetarian. How many dishes are vegetarian?	6
+Render a clear picture of the digit one.	1
+Inside the drawer, you’ll see 8 pens, 4 glue sticks, and 3 crayons. How many coloring tools are there?	3
+At the beach, there are 0 baskets, eight surfboards, and seven towels. How many items used to carry things are there?	0
+During a survey, zero out of 3 respondents said they enjoy gardening. How many participants enjoy gardening?	0
+eight students passed the math test out of nine who took it. How many students succeeded?	8
+At the beach, there are six baskets, 7 surfboards, and 9 towels. How many items used to carry things are there?	6
+In the park, there are eight benches and 8 fountains. How many seating options are there?	8
+3 out of six poets read their poems live. How many poets read their poems?	3
+4 students passed the math test out of seven who took it. How many students succeeded?	4
+At the farm, there are five farmers and 3 sheep. How many livestock are there?	3
+During a survey, 6 out of 7 respondents said they enjoy gardening. How many participants enjoy gardening?	6
+Generate a representation of the digit 0.	0
+Generate a representation of the digit 6.	6
+Produce an MNIST-style image of the digit six.	6
+Render a clear picture of the digit 3.	3
+In the office, there are six printers and 9 pencils. How many electronic devices are there?	6
+At the concert, there are eight trumpets and 3 cellos. How many string instruments are there?	3
+Generate a representation of the digit eight.	8
+In the playground, there are zero slides and 8 trees. How many playground equipment pieces are there?	0
+Render a clear picture of the digit 0.	0
+At the beach, there are 6 baskets, 9 surfboards, and five towels. How many items used to carry things are there?	6
+A magazine has 5 articles on technology out of six total. How many articles cover technological events?	5
+In the office, there are nine printers and nine pencils. How many electronic devices are there?	9
+Show a detailed picture of the digit 7.	7
+Inside the drawer, you’ll see four pens, three glue sticks, and 0 crayons. How many coloring tools are there?	0
+Show a high-resolution image of the digit 4.	4
+Generate a representation of the digit one.	1
+I'd like to see a representation of a one.	1
+A chef makes three dishes, and 3 are vegetarian. How many dishes are vegetarian?	3
+Render a clear picture of the digit 9.	9
+Show a high-resolution image of the digit 5.	5
+A group of 6 tourists visits a national park, and 6 of them are seniors. How many seniors are visiting?	6
+A magazine has 4 articles on technology out of 4 total. How many articles cover technological events?	4
+four rabbits are playing in the garden, while five are resting. How many rabbits are active?	4
+In the cafeteria, there are 4 cups, 9 trays, and eight baskets. How many drinking vessels are there?	4
+A magazine has 4 articles on technology out of five total. How many articles cover technological events?	4
+Render a clear picture of the digit 3.	3
+5 individuals are attending a play in a theater that seats five. How many people are in the theater?	5
+Produce an MNIST-style image of the digit 3.	3
+At the beach, there are 2 baskets, 5 surfboards, and 5 towels. How many items used to carry things are there?	2
+In the garage, there are seven scooters and nine cars. How many two-wheelers are there?	7
+In the classroom, there are zero rulers, 5 erasers, and four scissors. How many measuring tools can you find?	0
+Create a black and white picture of the number three.	3
+At the beach, there are two baskets, 0 surfboards, and 6 towels. How many items used to carry things are there?	2
+In the garage, there are 8 boxes, six wheels, and 7 screwdrivers. How many tools are there?	7
+A group of 6 tourists visits a national park, and six of them are seniors. How many seniors are visiting?	6
+In a parking lot, one out of 9 vehicles are vans. How many vans are parked?	1
+Provide a 28x28 image of the number 1.	1
+A group of 7 tourists visits a national park, and 5 of them are seniors. How many seniors are visiting?	5
+Kindly create a depiction of a 1.	1
+In the cafeteria, there are 7 cups, 9 trays, and three baskets. How many drinking vessels are there?	7
+In the bakery, there are five muffins, nine cupcakes, and 4 trays. How many serving items are there?	4
+Render a clear picture of the digit eight.	8
+Kindly create a depiction of a 1.	1
+In the office, there are four printers and seven pencils. How many electronic devices are there?	4
+Show a high-resolution image of the digit zero.	0
+In the backyard, you’ll see four butterflies, four squirrels, and two robins. How many birds are there?	2
+In the locker room, there are 8 benches, 0 baskets, and six shoes. How many seating options are there?	8
+In the park, there are eight benches and eight fountains. How many seating options are there?	8
+Display a simple image of the number eight.	8
+Create a sample of a 6.	6
+At the campsite, there are nine lanterns and six tents. How many light sources are there?	6
+Show a detailed picture of the digit five.	5
+In the classroom, there are 5 rulers, two erasers, and 4 scissors. How many measuring tools can you find?	5
+In the backyard, you’ll see two butterflies, 2 squirrels, and four robins. How many birds are there?	4
+A magazine has three articles on technology out of 8 total. How many articles cover technological events?	3
+In the forest, you’ll find 3 owls, nine raccoons, and 0 foxes. How many nocturnal animals are there?	3
+At the farm, there are eight farmers and four sheep. How many livestock are there?	4
+seven out of 9 poets read their poems live. How many poets read their poems?	7
+Create a sample of a 4.	4
+A group of eight tourists visits a national park, and eight of them are seniors. How many seniors are visiting?	8
+In the backyard, you’ll see 1 butterflies, 7 squirrels, and six robins. How many birds are there?	6
+Please generate an image of a six.	6
+At the pool, there are five swim caps and 7 water bottles. How many swimming accessories are there?	5
+Show a detailed picture of the digit 8.	8
+Kindly create a depiction of a seven.	7
+5 individuals are attending a play in a theater that seats eight. How many people are in the theater?	5
+In the classroom, there are two rulers, seven erasers, and 9 scissors. How many measuring tools can you find?	2
+2 students passed the math test out of eight who took it. How many students succeeded?	2
+Out of nine players, one play chess. How many chess players are there?	1
+I'd like to see a representation of a 3.	3
+7 rabbits are playing in the garden, while 8 are resting. How many rabbits are active?	7
+In the garage, there are eight scooters and 8 cars. How many two-wheelers are there?	8
+Produce an illustration of a 5.	5
+In the library, there are eight desks and 2 dictionaries. How many reference books are there?	2
+Create a sample of a 2.	2
+Show me a picture of a 8.	8
+At the beach, there are 9 baskets, four surfboards, and 3 towels. How many items used to carry things are there?	9
+In the zoo, there are seven tigers and 5 koalas. How many marsupials are there?	5
+Show me an image of a 1.	1
+At the campsite, there are five lanterns and 0 tents. How many light sources are there?	0
+Generate a clear image of the number 9.	9
+At the pool, there are eight swim caps and 8 water bottles. How many swimming accessories are there?	8
+At the pool, there are 4 swim caps and 7 water bottles. How many swimming accessories are there?	4
+In the backyard, you’ll see five butterflies, 4 squirrels, and 3 robins. How many birds are there?	3
+In the backyard, you’ll see nine butterflies, 6 squirrels, and 2 robins. How many birds are there?	2
+four individuals are attending a play in a theater that seats 5. How many people are in the theater?	4
+A library has 6 sections and two are for fiction books. How many sections are for fiction books?	2
+Produce an illustration of a zero.	0
+In the office, there are three printers and 7 pencils. How many electronic devices are there?	3
+In the library, there are nine desks and nine dictionaries. How many reference books are there?	9
+At the pool, there are two swim caps and three water bottles. How many swimming accessories are there?	2
+At the concert, there are seven trumpets and 3 cellos. How many string instruments are there?	3
+A library has 8 sections and six are for fiction books. How many sections are for fiction books?	6
+Show me a picture of a zero.	0
+In the garage, there are four scooters and 8 cars. How many two-wheelers are there?	4
+In the playground, there are 0 slides and 6 trees. How many playground equipment pieces are there?	0
+three rabbits are playing in the garden, while 4 are resting. How many rabbits are active?	3
+A magazine has 6 articles on technology out of 6 total. How many articles cover technological events?	6
+A magazine has 2 articles on technology out of 6 total. How many articles cover technological events?	2
+Render a clear picture of the digit 7.	7
+In the cafeteria, there are 2 cups, four trays, and 3 baskets. How many drinking vessels are there?	2
+8 individuals are attending a play in a theater that seats 9. How many people are in the theater?	8
+In the orchard, there are 4 apple trees, one cherry trees, and seven pear trees. How many apple trees are there?	4
+Inside the drawer, you’ll see 6 pens, one glue sticks, and 7 crayons. How many coloring tools are there?	7
+A group of five tourists visits a national park, and five of them are seniors. How many seniors are visiting?	5
+Create a black and white picture of the number 0.	0
+In the zoo, there are 2 tigers and one koalas. How many marsupials are there?	1
+Generate a clear image of the number eight.	8
+In the library, there are seven desks and four dictionaries. How many reference books are there?	4
+1 rabbits are playing in the garden, while one are resting. How many rabbits are active?	1
+At the beach, there are 8 baskets, 2 surfboards, and one towels. How many items used to carry things are there?	8
+Show a detailed picture of the digit zero.	0
+During a survey, seven out of eight respondents said they enjoy gardening. How many participants enjoy gardening?	7
+Kindly create a depiction of a one.	1
+In the library, there are six desks and 6 dictionaries. How many reference books are there?	6
+three individuals are attending a play in a theater that seats six. How many people are in the theater?	3
+In the backyard, you’ll see 8 butterflies, seven squirrels, and nine robins. How many birds are there?	9
+Please generate an image of a zero.	0
+Generate a clear image of the number 3.	3
+In the living room, there are four cushions, 2 sofas, and five rugs. How many seating items are there?	2
+A group of 4 tourists visits a national park, and 3 of them are seniors. How many seniors are visiting?	3
+Create a sample of a zero.	0
+In the cafeteria, there are six cups, five trays, and four baskets. How many drinking vessels are there?	6
+In the bakery, there are one muffins, one cupcakes, and 4 trays. How many serving items are there?	4
+At the campsite, there are six lanterns and two tents. How many light sources are there?	2
+5 students passed the math test out of five who took it. How many students succeeded?	5
+Create a sample of a six.	6
+In a parking lot, 0 out of two vehicles are vans. How many vans are parked?	0
+There are eight types of flowers in the garden, and 2 are roses. How many flowers are roses?	2
+Generate an image of a 0.	0
+Inside the drawer, you’ll see six pens, three glue sticks, and two crayons. How many coloring tools are there?	2
+In the park, there are 2 benches and 9 fountains. How many seating options are there?	2
+Generate a representation of the digit 6.	6
+Please generate an image of a six.	6
+Show me an image of a 3.	3
+A chef makes 9 dishes, and nine are vegetarian. How many dishes are vegetarian?	9
+In the garage, there are two boxes, two wheels, and 5 screwdrivers. How many tools are there?	5
+Show a high-resolution image of the digit 5.	5
+In the cafeteria, there are seven cups, one trays, and two baskets. How many drinking vessels are there?	7
+Generate an image of a zero.	0
+In the zoo, there are 8 tigers and one koalas. How many marsupials are there?	1
+In the bakery, there are zero muffins, 5 cupcakes, and 9 trays. How many serving items are there?	9
+Display a simple image of the number seven.	7
+Show me an image of a eight.	8
+At the beach, there are seven baskets, 1 surfboards, and four towels. How many items used to carry things are there?	7
+Inside the drawer, you’ll see 7 pens, seven glue sticks, and two crayons. How many coloring tools are there?	2
+At the campsite, there are 6 lanterns and six tents. How many light sources are there?	6
+A magazine has 3 articles on technology out of six total. How many articles cover technological events?	3
+In the playground, there are eight slides and 8 trees. How many playground equipment pieces are there?	8
+2 people finished their tasks, and one were volunteers. How many volunteers completed their tasks?	1
+three out of eight poets read their poems live. How many poets read their poems?	3
+In the bakery, there are four muffins, two cupcakes, and 9 trays. How many serving items are there?	9
+seven out of eight poets read their poems live. How many poets read their poems?	7
+Show a high-resolution image of the digit seven.	7
+4 people finished their tasks, and 0 were volunteers. How many volunteers completed their tasks?	0
+In the zoo, there are seven tigers and four koalas. How many marsupials are there?	4
+At the farm, there are 6 farmers and four sheep. How many livestock are there?	4
+In the park, there are 8 benches and nine fountains. How many seating options are there?	8
+A magazine has 6 articles on technology out of eight total. How many articles cover technological events?	6
+Please generate an image of a 9.	9
+Display a simple image of the number nine.	9
+Display a simple image of the number zero.	0
+During a survey, six out of six respondents said they enjoy gardening. How many participants enjoy gardening?	6
+In a parking lot, 2 out of four vehicles are vans. How many vans are parked?	2
+In the classroom, there are six rulers, 1 erasers, and 4 scissors. How many measuring tools can you find?	6
+In the playground, there are 3 slides and 6 trees. How many playground equipment pieces are there?	3
+Show me an image of a 4.	4
+Please generate an image of a one.	1
+In the locker room, there are 5 benches, 0 baskets, and 9 shoes. How many seating options are there?	5
+Generate a clear image of the number 4.	4
+Display a simple image of the number four.	4
+Show me a picture of a 1.	1
+Provide a 28x28 image of the number 7.	7
+I'd like to see a representation of a 1.	1
+Please generate an image of a 2.	2
+Create a grayscale version of the number 3.	3
+Generate a clear image of the number 3.	3
+A group of nine tourists visits a national park, and nine of them are seniors. How many seniors are visiting?	9
+Generate a clear image of the number zero.	0
+Produce an MNIST-style image of the digit 3.	3
+Please generate an image of a 6.	6
+Render a clear picture of the digit zero.	0
+In the locker room, there are 2 benches, five baskets, and one shoes. How many seating options are there?	2
+At the farm, there are 7 farmers and 7 sheep. How many livestock are there?	7
+A chef makes 9 dishes, and nine are vegetarian. How many dishes are vegetarian?	9
+6 out of seven poets read their poems live. How many poets read their poems?	6
+In the park, there are four benches and 4 fountains. How many seating options are there?	4
+A magazine has six articles on technology out of seven total. How many articles cover technological events?	6
+In the playground, there are six slides and 8 trees. How many playground equipment pieces are there?	6
+5 people finished their tasks, and 4 were volunteers. How many volunteers completed their tasks?	4
+At the beach, there are 1 baskets, seven surfboards, and four towels. How many items used to carry things are there?	1
+In the living room, there are five cushions, 8 sofas, and 2 rugs. How many seating items are there?	8
+Show me an image of a zero.	0
+A group of 6 tourists visits a national park, and four of them are seniors. How many seniors are visiting?	4
+In the zoo, there are 3 tigers and zero koalas. How many marsupials are there?	0
+Show me an image of a 4.	4
+A group of nine tourists visits a national park, and 9 of them are seniors. How many seniors are visiting?	9
+Create a black and white picture of the number 0.	0
+Generate a representation of the digit two.	2
+At the campsite, there are 8 lanterns and 6 tents. How many light sources are there?	6
+Create a black and white picture of the number seven.	7
+Show a high-resolution image of the digit 4.	4
+Show a high-resolution image of the digit seven.	7
+1 rabbits are playing in the garden, while 7 are resting. How many rabbits are active?	1
+At the beach, there are 1 baskets, nine surfboards, and eight towels. How many items used to carry things are there?	1
+nine people finished their tasks, and two were volunteers. How many volunteers completed their tasks?	2
+At the beach, there are 1 baskets, 9 surfboards, and 6 towels. How many items used to carry things are there?	1
+Produce an illustration of a four.	4
+In the forest, you’ll find three owls, zero raccoons, and 4 foxes. How many nocturnal animals are there?	3
+During a survey, 1 out of 6 respondents said they enjoy gardening. How many participants enjoy gardening?	1
+Inside the drawer, you’ll see 6 pens, two glue sticks, and nine crayons. How many coloring tools are there?	9
+At the pool, there are one swim caps and three water bottles. How many swimming accessories are there?	1
+Provide a 28x28 image of the number nine.	9
+four individuals are attending a play in a theater that seats six. How many people are in the theater?	4
+There are nine types of flowers in the garden, and two are roses. How many flowers are roses?	2
+In the bakery, there are 3 muffins, one cupcakes, and four trays. How many serving items are there?	4
+Produce an illustration of a 4.	4
+In the orchard, there are four apple trees, seven cherry trees, and 3 pear trees. How many apple trees are there?	4
+Inside the drawer, you’ll see one pens, zero glue sticks, and two crayons. How many coloring tools are there?	2
+During a survey, 7 out of 7 respondents said they enjoy gardening. How many participants enjoy gardening?	7
+In the garage, there are five scooters and 9 cars. How many two-wheelers are there?	5
+In the playground, there are 8 slides and nine trees. How many playground equipment pieces are there?	8
+Out of 3 players, 3 play chess. How many chess players are there?	3
+A library has nine sections and nine are for fiction books. How many sections are for fiction books?	9
+In the zoo, there are one tigers and 1 koalas. How many marsupials are there?	1
+At the concert, there are 5 trumpets and 1 cellos. How many string instruments are there?	1
+In the office, there are four printers and five pencils. How many electronic devices are there?	4
+In the garage, there are 3 boxes, nine wheels, and one screwdrivers. How many tools are there?	1
+In the living room, there are six cushions, 0 sofas, and six rugs. How many seating items are there?	0
+Show a detailed picture of the digit 5.	5
+Produce an MNIST-style image of the digit 3.	3
+In the classroom, there are 8 rulers, seven erasers, and two scissors. How many measuring tools can you find?	8
+In the garage, there are three boxes, 1 wheels, and 7 screwdrivers. How many tools are there?	7
+I'd like to see a representation of a six.	6
+In the office, there are 2 printers and two pencils. How many electronic devices are there?	2
+Create a sample of a 5.	5
+A library has six sections and four are for fiction books. How many sections are for fiction books?	4
+In the cafeteria, there are three cups, 5 trays, and 1 baskets. How many drinking vessels are there?	3
+Create a sample of a 5.	5
+Provide a 28x28 image of the number 5.	5
+Inside the drawer, you’ll see two pens, 7 glue sticks, and three crayons. How many coloring tools are there?	3
+Please generate an image of a seven.	7
+Generate an image of a zero.	0
+1 students passed the math test out of 4 who took it. How many students succeeded?	1
+At the concert, there are 9 trumpets and 8 cellos. How many string instruments are there?	8
+5 out of 7 poets read their poems live. How many poets read their poems?	5
+In a parking lot, five out of nine vehicles are vans. How many vans are parked?	5
+In the garage, there are 7 boxes, 5 wheels, and four screwdrivers. How many tools are there?	4
+In the backyard, you’ll see 1 butterflies, 0 squirrels, and five robins. How many birds are there?	5
+At the farm, there are nine farmers and 8 sheep. How many livestock are there?	8
+Out of 9 players, zero play chess. How many chess players are there?	0
+In the zoo, there are 6 tigers and 4 koalas. How many marsupials are there?	4
+In the office, there are three printers and eight pencils. How many electronic devices are there?	3
+Create a grayscale version of the number 4.	4
+I'd like to see a representation of a five.	5
+At the campsite, there are 8 lanterns and zero tents. How many light sources are there?	0
+2 rabbits are playing in the garden, while nine are resting. How many rabbits are active?	2
+In the living room, there are zero cushions, 5 sofas, and 0 rugs. How many seating items are there?	5
+Provide a 28x28 image of the number five.	5
+Display a simple image of the number three.	3
+In the forest, you’ll find seven owls, five raccoons, and 9 foxes. How many nocturnal animals are there?	7
+There are 7 types of flowers in the garden, and six are roses. How many flowers are roses?	6
+In the park, there are zero benches and one fountains. How many seating options are there?	0
+Create a black and white picture of the number 9.	9
+8 rabbits are playing in the garden, while nine are resting. How many rabbits are active?	8
+In the living room, there are eight cushions, 7 sofas, and three rugs. How many seating items are there?	7
+In the forest, you’ll find one owls, 4 raccoons, and four foxes. How many nocturnal animals are there?	1
+Show me an image of a 5.	5
+In the bakery, there are two muffins, 3 cupcakes, and 1 trays. How many serving items are there?	1
+A magazine has 6 articles on technology out of 8 total. How many articles cover technological events?	6
+seven individuals are attending a play in a theater that seats seven. How many people are in the theater?	7
+Produce an illustration of a 4.	4
+In the cafeteria, there are 4 cups, 8 trays, and two baskets. How many drinking vessels are there?	4
+1 students passed the math test out of six who took it. How many students succeeded?	1
+Produce an MNIST-style image of the digit three.	3
+Show a high-resolution image of the digit eight.	8
+Show a high-resolution image of the digit 9.	9
+Kindly create a depiction of a 7.	7
+1 students passed the math test out of 6 who took it. How many students succeeded?	1
+7 people finished their tasks, and seven were volunteers. How many volunteers completed their tasks?	7
+Show me a picture of a six.	6
+In the living room, there are 4 rugs and one cushions. How many decor items are there?	1
+In the backyard, you’ll see eight butterflies, 2 squirrels, and four robins. How many birds are there?	4
+A magazine has 8 articles on technology out of 9 total. How many articles cover technological events?	8
+In the living room, there are 8 cushions, 5 sofas, and 0 rugs. How many seating items are there?	5
+Out of 9 players, 6 play chess. How many chess players are there?	6
+2 rabbits are playing in the garden, while 7 are resting. How many rabbits are active?	2
+In the forest, you’ll find seven owls, two raccoons, and one foxes. How many nocturnal animals are there?	7
+In the bakery, there are five muffins, zero cupcakes, and one trays. How many serving items are there?	1
+In the playground, there are 3 slides and five trees. How many playground equipment pieces are there?	3
+Generate a clear image of the number 4.	4
+Produce an illustration of a zero.	0
+In the classroom, there are 0 rulers, 1 erasers, and nine scissors. How many measuring tools can you find?	0
+In the bakery, there are four muffins, nine cupcakes, and 7 trays. How many serving items are there?	7
+Produce an illustration of a three.	3
+Inside the drawer, you’ll see 3 pens, seven glue sticks, and six crayons. How many coloring tools are there?	6
+Produce an MNIST-style image of the digit four.	4
+In the garage, there are eight boxes, seven wheels, and five screwdrivers. How many tools are there?	5
+In the orchard, there are 8 apple trees, 1 cherry trees, and 4 pear trees. How many apple trees are there?	8
+In the living room, there are nine rugs and 9 cushions. How many decor items are there?	9
+Show me an image of a 1.	1
+Show a detailed picture of the digit 3.	3
+At the campsite, there are nine lanterns and 9 tents. How many light sources are there?	9
+Show a detailed picture of the digit nine.	9
+I'd like to see a representation of a two.	2
+Generate an image of a nine.	9
+Provide a 28x28 image of the number 6.	6
+In the library, there are nine desks and seven dictionaries. How many reference books are there?	7
+In the zoo, there are nine tigers and two koalas. How many marsupials are there?	2
+9 students passed the math test out of 9 who took it. How many students succeeded?	9
+Produce an illustration of a four.	4
+In the library, there are 8 desks and one dictionaries. How many reference books are there?	1
+During a survey, 1 out of 6 respondents said they enjoy gardening. How many participants enjoy gardening?	1
+At the campsite, there are 8 lanterns and 5 tents. How many light sources are there?	5
+At the farm, there are 0 farmers and 0 sheep. How many livestock are there?	0
+Show me an image of a 9.	9
+At the beach, there are nine baskets, 8 surfboards, and 8 towels. How many items used to carry things are there?	9
+In the forest, you’ll find zero owls, 2 raccoons, and 9 foxes. How many nocturnal animals are there?	0
+Inside the drawer, you’ll see zero pens, three glue sticks, and five crayons. How many coloring tools are there?	5
+Create a black and white picture of the number three.	3
+At the pool, there are five swim caps and 8 water bottles. How many swimming accessories are there?	5
+In the backyard, you’ll see 8 butterflies, 4 squirrels, and three robins. How many birds are there?	3
+In the garage, there are 8 boxes, four wheels, and 5 screwdrivers. How many tools are there?	5
+In the living room, there are six cushions, seven sofas, and eight rugs. How many seating items are there?	7
+I'd like to see a representation of a five.	5
+A chef makes 2 dishes, and 1 are vegetarian. How many dishes are vegetarian?	1
+At the beach, there are 6 baskets, 2 surfboards, and 9 towels. How many items used to carry things are there?	6
+Produce an illustration of a zero.	0
+Create a grayscale version of the number two.	2
+Inside the drawer, you’ll see 6 pens, one glue sticks, and 2 crayons. How many coloring tools are there?	2
+Out of seven players, 3 play chess. How many chess players are there?	3
+A group of 7 tourists visits a national park, and 6 of them are seniors. How many seniors are visiting?	6
+Please generate an image of a four.	4
+Provide a 28x28 image of the number 0.	0
+In the library, there are three desks and three dictionaries. How many reference books are there?	3
+Generate an image of a two.	2
+In the garage, there are 9 scooters and 9 cars. How many two-wheelers are there?	9
+A group of eight tourists visits a national park, and 8 of them are seniors. How many seniors are visiting?	8
+In the living room, there are 8 cushions, five sofas, and three rugs. How many seating items are there?	5
+Kindly create a depiction of a 2.	2
+In the park, there are 8 benches and 8 fountains. How many seating options are there?	8
+In the office, there are one printers and 6 pencils. How many electronic devices are there?	1
+In the backyard, you’ll see 1 butterflies, nine squirrels, and 6 robins. How many birds are there?	6
+In the zoo, there are 9 tigers and 8 koalas. How many marsupials are there?	8
+Produce an MNIST-style image of the digit zero.	0
+In the garage, there are 4 scooters and six cars. How many two-wheelers are there?	4
+Show a high-resolution image of the digit 1.	1
+Show a high-resolution image of the digit 5.	5
+At the beach, there are 2 baskets, 5 surfboards, and 8 towels. How many items used to carry things are there?	2
+Out of 9 players, one play chess. How many chess players are there?	1
+Generate a representation of the digit 0.	0
+In the garage, there are 8 scooters and 9 cars. How many two-wheelers are there?	8
+In the living room, there are eight rugs and 7 cushions. How many decor items are there?	7
+In the locker room, there are 3 benches, six baskets, and nine shoes. How many seating options are there?	3
+Show a high-resolution image of the digit zero.	0
+six people finished their tasks, and five were volunteers. How many volunteers completed their tasks?	5
+0 out of 1 poets read their poems live. How many poets read their poems?	0
+In the bakery, there are three muffins, one cupcakes, and 4 trays. How many serving items are there?	4
+In the zoo, there are one tigers and 1 koalas. How many marsupials are there?	1
+In the office, there are 9 printers and nine pencils. How many electronic devices are there?	9
+Inside the drawer, you’ll see 3 pens, 5 glue sticks, and 8 crayons. How many coloring tools are there?	8
+In the playground, there are four slides and 4 trees. How many playground equipment pieces are there?	4
+Produce an illustration of a four.	4
+At the pool, there are 9 swim caps and nine water bottles. How many swimming accessories are there?	9
+Show a detailed picture of the digit eight.	8
+Produce an MNIST-style image of the digit zero.	0
+Show a high-resolution image of the digit three.	3
+A chef makes 8 dishes, and 4 are vegetarian. How many dishes are vegetarian?	4
+Inside the drawer, you’ll see six pens, 3 glue sticks, and eight crayons. How many coloring tools are there?	8
+In the park, there are nine benches and 9 fountains. How many seating options are there?	9
+In the garage, there are nine scooters and 9 cars. How many two-wheelers are there?	9
+I'd like to see a representation of a 8.	8
+Inside the drawer, you’ll see one pens, 4 glue sticks, and 8 crayons. How many coloring tools are there?	8
+Create a sample of a 7.	7
+In the forest, you’ll find three owls, nine raccoons, and 7 foxes. How many nocturnal animals are there?	3
+one students passed the math test out of 6 who took it. How many students succeeded?	1
+During a survey, 4 out of nine respondents said they enjoy gardening. How many participants enjoy gardening?	4
+Kindly create a depiction of a nine.	9
+In the library, there are 7 desks and four dictionaries. How many reference books are there?	4
+In a parking lot, 0 out of 0 vehicles are vans. How many vans are parked?	0
+In the garage, there are 6 boxes, four wheels, and 0 screwdrivers. How many tools are there?	0
+In the cafeteria, there are 1 cups, 9 trays, and 4 baskets. How many drinking vessels are there?	1
+There are one types of flowers in the garden, and one are roses. How many flowers are roses?	1
+At the beach, there are 5 baskets, 7 surfboards, and seven towels. How many items used to carry things are there?	5
+A chef makes 8 dishes, and 8 are vegetarian. How many dishes are vegetarian?	8
+There are five types of flowers in the garden, and four are roses. How many flowers are roses?	4
+In the library, there are seven desks and zero dictionaries. How many reference books are there?	0
+I'd like to see a representation of a eight.	8
+In the locker room, there are 8 benches, 0 baskets, and zero shoes. How many seating options are there?	8
+Create a grayscale version of the number 8.	8
