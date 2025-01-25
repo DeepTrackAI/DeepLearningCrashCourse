@@ -11,8 +11,26 @@ ISBN-13: 9781718503922
 1. [Dense Neural Networks for Classification](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification)  
    Introduces single- and multi-layer perceptrons for classification tasks (e.g., MNIST digit recognition).
 
-2. [Dense Neural Networks for Regression](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression)  
+2. **Dense Neural Networks for Regression**  
    Explores regression problems and digital twins, focusing on continuous-value prediction with multi-layer networks.
+
+>   - [**Code 2-1: Regressing 1D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression/ec02_1_neuron_reg_1d/neuron_reg_1d.ipynb)  
+>     Implements a single neuron to perform linear regression on 1D data. The example introduces weight updates using stochastic gradient descent to minimize prediction errors.
+>
+>   - [**Code 2-2: Regressing 2D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression/ec02_2_neuron_reg_2d/neuron_reg_2d.ipynb)  
+>     Extends the single-neuron approach to multidimensional data, demonstrating the scalar product between input and weights to predict outputs in 2D data.
+>
+>   - [**Code 2-3: Regressing 2D Data with a Two-Layer Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression/ec02_3_dnn2_reg/dnn2_reg.ipynb)  
+>     Explores two-layer dense neural networks to model linear functions in 2D data using backpropagation for weight updates and training.
+>
+>   - [**Code 2-4: Fitting Data with a Neural Network Trained Using Batch Training**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression/ec02_4_dnn2_reg_batches/dnn2_reg_batches.ipynb)  
+>     Demonstrates mini-batch training for 2D regression tasks, incorporating batch randomization to improve stability and avoid local minima.
+>
+>   - [**Code 2-5: Training a Neural Network Splitting the Data**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression/ec02_5_dnn2_reg_split/dnn2_reg_split.ipynb)  
+>     Divides data into training, validation, and test sets to train and validate a two-layer network, monitoring metrics to identify overfitting.
+>
+>   - [**Code 2-A: Simulating the Forces Acting on an Optically Trapped Particle**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression/ec02_A_optical_forces/optical_forces.ipynb)  
+>     Uses a dense neural network to emulate optical forces on a microsphere in optical tweezers, creating a digital twin to model real-world systems efficiently.
 
 3. [Convolutional Neural Networks for Image Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch03_CNN)  
    Covers convolutional neural networks (CNNs) and their application to tasks such as image classification, localization, style transfer, and DeepDream.

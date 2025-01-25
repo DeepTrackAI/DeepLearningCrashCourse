@@ -41,8 +41,10 @@ ISBN-13: 9781718503922
 11. [Graph Neural Networks for Relational Data Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch11_GNN)  
     Shows how graph neural networks (GNNs) can model graph-structured data (molecules, cell trajectories, physics simulations) using message passing and graph convolutions.
 
-12. [Active Learning for Continuous Learning](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch12_AL)  
+12. **Active Learning for Continuous Learning**  
     Describes techniques to iteratively select the most informative samples to label, improving model performance efficiently.
+
+
 
 13. [Reinforcement Learning for Strategy Optimization](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch13_RL)  
     Explains Q-learning and Deep Q-learning by teaching an agent to master games such as Tetris.

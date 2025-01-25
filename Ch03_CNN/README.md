@@ -14,8 +14,23 @@ ISBN-13: 9781718503922
 2. [Dense Neural Networks for Regression](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression)  
    Explores regression problems and digital twins, focusing on continuous-value prediction with multi-layer networks.
 
-3. [Convolutional Neural Networks for Image Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch03_CNN)  
+3. **Convolutional Neural Networks for Image Analysis**  
    Covers convolutional neural networks (CNNs) and their application to tasks such as image classification, localization, style transfer, and DeepDream.
+
+>   - [**Code 3-1: Implementing Neural Networks in PyTorch**]()  
+>     Demonstrates the basics of convolutional neural networks, including defining convolutional layers, activation functions (ReLU), pooling/upsampling layers, and stacking them into a deeper architecture for image transformation or classification tasks. This notebook also illustrates how to use PyTorch in general.
+>     
+>   - [**Code 3-A: Classifying Blood Smears with a Convolutional Neural Network**]()  
+>     Walks you through loading a malaria dataset, preprocessing images, and training a CNN to distinguish parasitized from uninfected blood cells. It also shows how to generate training logs, measure accuracy, plot ROC curves, and visualize CNN heatmaps and activations to confirm the network’s attention on infected regions.
+>
+>   - [**Code 3-B: Localizing Microscopic Particles with a Convolutional Neural Network**]()  
+>     Focuses on regression tasks (rather than classification) by predicting the (x,y) position of a trapped microparticle in noisy microscope images. It demonstrates how to manually annotate data or use simulated data for training, and includes hooking into intermediate activations to understand how the network learns positional features.
+>
+>   - [**Code 3-C: Creating DeepDreams**]()  
+>     Uses a pre-trained VGG16 model to generate surreal DeepDream visuals, where an image is iteratively adjusted via gradient ascent to amplify the features that specific CNN layers have learned. It implements forward hooks to capture layer activations and shows how to produce dream-like images revealing what the model sees.
+>
+>   - [**Code 3-D: Transferring Image Styles**]()  
+>     Implements neural style transfer, blending the higher-level content of one image with the lower-level textures and brush strokes of another (for example, re-painting a microscopy image in the style of a famous artwork). It demonstrates the use of Gram matrices, L-BFGS optimization, and carefully chosen layers to balance content and style.
 
 4. [Encoders–Decoders for Latent Space Manipulation](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch04_AE)  
    Focuses on autoencoders, variational autoencoders, Wasserstein autoencoders, and anomaly detection, enabling data compression and generation.

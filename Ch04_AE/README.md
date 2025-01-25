@@ -17,8 +17,20 @@ ISBN-13: 9781718503922
 3. [Convolutional Neural Networks for Image Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch03_CNN)  
    Covers convolutional neural networks (CNNs) and their application to tasks such as image classification, localization, style transfer, and DeepDream.
 
-4. [Encoders–Decoders for Latent Space Manipulation](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch04_AE)  
+4. **Encoders–Decoders for Latent Space Manipulation**  
    Focuses on autoencoders, variational autoencoders, Wasserstein autoencoders, and anomaly detection, enabling data compression and generation.
+
+>   - [**Code 4-1: Denoising Images with a Denoising Encoder-Decoder**]()  
+>     Implements a denoising encoder–decoder that cleans noisy microscopy images. It illustrates how to simulate noisy vs. clean pairs, train a small convolutional model to learn noise removal, and verify that the network isn’t simply memorizing one output (checking for mode collapse).
+>
+>   - [**Code 4-A: Generating Digit Images with Variational Autoencoders**]()  
+>     Shows how to implement a variational autoencoder (VAE) on MNIST digits. The encoder outputs a mean and variance for latent variables, and the decoder reconstructs digits from sampled latent points. The notebook demonstrates random sampling to create new digit images and visualizes how the VAE organizes digits in the latent space.
+>
+>   - [**Code 4-B: Morphing Images with Wasserstein Autoencoders**]()  
+>     Explores a Wasserstein autoencoder (WAE) trained on Fashion-MNIST. You’ll see how to decode random latent points to generate clothing/accessory images and how to interpolate (morph) one image into another in latent space, showcasing the smooth transitions that WAEs learn.
+>
+>   - [**Code 4-C: Detecting ECG Anomalies with an Autoencoder**]()  
+>     Uses a 1D convolutional autoencoder to detect abnormal heartbeats in ECG data. It’s trained exclusively on normal ECGs so that reconstruction error (or distance in latent space) highlights anomalies that deviate from learned “normal” patterns. Demonstrates how to set a threshold for detecting anomalous signals and compares two approaches: reconstruction-based vs. neighbor-based in latent space.
 
 5. [U-Nets for Image Transformation](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch05_UNet)  
    Discusses U-Net architectures for image segmentation, cell counting, and various biomedical imaging applications.
