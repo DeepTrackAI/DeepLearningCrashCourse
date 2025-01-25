@@ -1,5 +1,5 @@
 # Deep Learning Crash Course
-[![Early Access - Use Code PREORDER for 25% Off](https://img.shields.io/badge/Early%20Access-Use%20Code%20PREORDER%20for%2025%25%20Off-orange)](https://nostarch.com/deep-learning-crash-course)  
+[![Early Access - Use Code PREORDER for 25% Off](https://img.shields.io/badge/Early%20Access%20Now%20Available-Use%20Code%20PREORDER%20for%2025%25%20Off-orange)](https://nostarch.com/deep-learning-crash-course)  
 by Benjamin Midtvedt, Jesús Pineda, Henrik Klein Moberg, Harshith Bachimanchi, Joana B. Pereira, Carlo Manzo, Giovanni Volpe  
 No Starch Press, San Francisco (CA), 2025  
 ISBN-13: 9781718503922  
