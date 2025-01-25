@@ -26,8 +26,14 @@ ISBN-13: 9781718503922
 6. [Self-Supervised Learning to Exploit Symmetries](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch06_SelfSupervised)  
    Explains how to use unlabeled data and the symmetries symmetries of a problem for improved model performance with an application in particle localization.
 
-7. [Recurrent Neural Networks for Timeseries Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch07_RNN)  
+7. **Recurrent Neural Networks for Timeseries Analysis**  
    Uses recurrent neural networks (RNNs), GRUs, and LSTMs to forecast time-dependent data and build a simple text translator.
+
+>   - [**Code 7-1: Predicting Temperatures using Recurrent Neural Networks**]()  
+>     Demonstrates how to load the Jena Climate Dataset (a 7-year record of hourly weather data), prepare input and output sequences for time-lagged temperature prediction, and compare different RNN variants (basic RNN, stacked RNN, GRU, LSTM). Each model’s training and validation losses are plotted against a simple common-sense baseline (tomorrow’s temperature = today’s temperature). You’ll learn also to mitigate overfitting with dropout.
+>
+>   - [**Code 7-A: Translating with a Recurrent Neural Network**]()  
+>     Implements a seq2seq translation model for English-to-Spanish sentences. It shows how to preprocess text corpora (tokenizing, normalizing, truncating/padding sequences), build vocabularies, load external word embeddings (GloVe), and define an encoder–decoder architecture. It details teacher forcing during training, testing with BLEU score, and visualizing example translations. The approach can also be adapted to other NLP tasks, including chatbot dialogues or more general text generation.
 
 8. [Attention and Transformers for Sequence Processing](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch08_Attention)  
    Introduces attention mechanisms, transformer models, and vision transformers (ViT) for natural language processing (NLP) including improved text translation and sentiment analysis, and image classification.
