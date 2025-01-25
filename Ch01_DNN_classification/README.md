@@ -11,7 +11,7 @@ ISBN-13: 9781718503922
 1. **Dense Neural Networks for Classification**  
    Introduces single- and multi-layer perceptrons for classification tasks (e.g., MNIST digit recognition).
 
->   - [**Code 1-1: Classifying 1D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_1_neuron_class_1d/neuron_class_1d.ipynb)  
+>   - [**Code 1-1: Classifying 1D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_1_neuron_class_1d/neuron_class_1d.ipynb) <a href="https://colab.research.google.com/github/DeepTrackAI/DeepLearningCrashCourse/blob/main/Ch01_DNN_classification/ec01_1_neuron_class_1d/neuron_class_1d.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
 >     Implements a single artificial neuron to classify 1D data into binary classes using a step function. The example walks through loading the dataset, visualizing the results, and training the neuron to improve its predictions using a gradient descent method.
 >   
 >   - [**Code 1-2: Classifying 2D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_2_neuron_class_2d/neuron_class_2d.ipynb)  
