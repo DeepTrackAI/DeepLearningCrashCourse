@@ -47,7 +47,8 @@ ISBN-13: 9781718503922
 13. **Reinforcement Learning for Strategy Optimization**  
     Explains Q-learning and Deep Q-learning by teaching an agent to master games such as Tetris.
 
-
+>   - [**Code 13-1: Teaching a Deep-Q-Learning Agent to Play Tetris**]()  
+>   Demonstrates how to implement a deep reinforcement learning agent to play Tetris by using Deep Q-Learning to overcome the challenges posed by the game's large state space and complex dynamics. The example begins with adapting the Tetris environment to enable efficient interaction for reinforcement learning. The agent employs a neural network to approximate Q-values, allowing it to make decisions without relying on a traditional Q-table. To balance exploration and exploitation, an epsilon-greedy strategy is used, where randomness gradually decreases as the agent learns. A replay buffer is implemented to store past experiences, ensuring diverse training data that enhances stability during learning. The agent refines its policy through iterative training, guided by the Bellman equation, leading to consistent improvements. As training progresses, the agent effectively handles randomized tile sequences and achieves performance levels comparable to skilled human players.
 
 14. [Reservoir Computing for Predicting Chaos](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch14_RC)  
     Covers reservoir computing methods for forecasting chaotic systems such as the Lorenz attractor.
