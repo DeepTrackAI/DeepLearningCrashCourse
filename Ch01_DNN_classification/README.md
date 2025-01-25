@@ -8,7 +8,7 @@ ISBN-13: 9781718503922
 
 ---
 
-> 1. [**Dense Neural Networks for Classification**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification)  
+> 1. [Dense Neural Networks for Classification](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification)  
 >    Introduces single- and multi-layer perceptrons for classification tasks (e.g., MNIST digit recognition).
 > 
 >   - [**Code 1-1: Classifying 1D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_1_neuron_class_1d)  
