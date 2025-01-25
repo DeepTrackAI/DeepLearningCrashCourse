@@ -11,46 +11,46 @@ ISBN-13: 9781718503922
 
 ---
 
-1. **Dense Neural Networks for Classification**  
+1. [**Dense Neural Networks for Classification**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification)  
    Introduces single- and multi-layer perceptrons for classification tasks (e.g., MNIST digit recognition).
 
-2. **Dense Neural Networks for Regression**  
+2. [**Dense Neural Networks for Regression**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression)  
    Explores regression problems and digital twins, focusing on continuous-value prediction with multi-layer networks.
 
-3. **Convolutional Neural Networks for Image Analysis**  
+3. [**Convolutional Neural Networks for Image Analysis**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch03_CNN)  
    Covers CNNs and their application to tasks such as image classification, localization, style transfer, and DeepDream.
 
-4. **Encoders–Decoders for Latent Space Manipulation**  
+4. [**Encoders–Decoders for Latent Space Manipulation**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch04_AE)  
    Focuses on autoencoders, VAEs, and anomaly detection, enabling data compression and generation.
 
-5. **U-Nets for Image Transformation**  
+5. [**U-Nets for Image Transformation**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch05_UNet)  
    Discusses U-Net architectures for image segmentation, cell counting, and various biomedical imaging applications.
 
-6. **Self-Supervised Learning to Exploit Symmetries**  
+6. [**Self-Supervised Learning to Exploit Symmetries**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch06_SelfSupervised)  
    Explains how to leverage unlabeled data and symmetries (translations, flips) for improved model performance.
 
-7. **Recurrent Neural Networks for Timeseries Analysis**  
+7. [**Recurrent Neural Networks for Timeseries Analysis**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch07_RNN)  
    Uses RNNs, GRUs, and LSTMs to forecast time-dependent data and build a simple text translator.
 
-8. **Attention and Transformers for Sequence Processing**  
+8. [**Attention and Transformers for Sequence Processing**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch08_Attention)  
    Introduces attention mechanisms and transformer models (e.g., ViT) for NLP, sentiment analysis, and image classification.
 
-9. **Generative Adversarial Networks for Image Synthesis**  
+9. [**Generative Adversarial Networks for Image Synthesis**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch09_GAN)  
    Demonstrates GAN training for image generation, domain translation (CycleGAN), and virtual staining in microscopy.
 
-10. **Diffusion Models for Data Representation and Exploration**  
+10. [**Diffusion Models for Data Representation and Exploration**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch10_Diffusion)  
     Presents denoising diffusion models for generating and enhancing images, including text-to-image synthesis.
 
-11. **Graph Neural Networks for Relational Data Analysis**  
+11. [**Graph Neural Networks for Relational Data Analysis**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch11_GNN)  
     Shows how GNNs can model graph-structured data (molecules, physics simulations) using message passing and graph convolutions.
 
-12. **Active Learning for Continuous Learning**  
+12. [**Active Learning for Continuous Learning**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch12_AL)  
     Describes techniques to iteratively select the most informative samples to label, improving model performance efficiently.
 
-13. **Reinforcement Learning for Strategy Optimization**  
+13. [**Reinforcement Learning for Strategy Optimization**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch13_RL)  
     Explains Q-learning and Deep Q-learning by teaching an agent to master games such as Tetris.
 
-14. **Reservoir Computing for Predicting Chaos**  
+14. [**Reservoir Computing for Predicting Chaos**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch14_RC)  
     Covers reservoir computing methods for forecasting chaotic systems (e.g., the Lorenz attractor).
 
 ---
