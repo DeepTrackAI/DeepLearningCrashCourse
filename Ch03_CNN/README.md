@@ -14,7 +14,7 @@ ISBN-13: 9781718503922
 2. [Dense Neural Networks for Regression](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression)  
    Explores regression problems and digital twins, focusing on continuous-value prediction with multi-layer networks.
 
-3. [Convolutional Neural Networks for Image Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch03_CNN)  
+3. **Convolutional Neural Networks for Image Analysis**  
    Covers convolutional neural networks (CNNs) and their application to tasks such as image classification, localization, style transfer, and DeepDream.
 
 4. [Encoders–Decoders for Latent Space Manipulation](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch04_AE)  
