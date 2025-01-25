@@ -23,8 +23,14 @@ ISBN-13: 9781718503922
 5. [U-Nets for Image Transformation](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch05_UNet)  
    Discusses U-Net architectures for image segmentation, cell counting, and various biomedical imaging applications.
 
-6. [Self-Supervised Learning to Exploit Symmetries](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch06_SelfSupervised)  
+6. **Self-Supervised Learning to Exploit Symmetries**  
    Explains how to use unlabeled data and the symmetries symmetries of a problem for improved model performance with an application in particle localization.
+
+>   - [**Code 6-1: Localizing Particles Using LodeSTAR**]()  
+>     Demonstrates how to train a self-supervised neural network to determine the sub-pixel position of a particle within a microscope image. The network uses two channels for displacement and one channel for a probability distribution (intensity of detection). This example starts with small, single-particle images and shows how LodeSTAR’s architecture avoids bias by design. You’ll see how the model can accurately predict the x–y position even without direct labels—using only translations (and optionally flips) during training.
+>
+>   - [**Code 6-A: Localizing Multiple Cells Using LodeSTAR**]()  
+>     Applies the LodeSTAR approach to detect multiple mouse stem cells in a brightfield microscopy dataset. Trained solely on a single crop containing one cell, the network can generalize to large frames with many cells. The script showcases how LodeSTAR calculates probability and displacement maps for each pixel, clusters them into detections, and evaluates performance via true centroids provided by Cell Tracking Challenge annotations.
 
 7. [Recurrent Neural Networks for Timeseries Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch07_RNN)  
    Uses recurrent neural networks (RNNs), GRUs, and LSTMs to forecast time-dependent data and build a simple text translator.
