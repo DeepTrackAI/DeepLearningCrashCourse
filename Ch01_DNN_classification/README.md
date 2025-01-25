@@ -17,11 +17,11 @@ ISBN-13: 9781718503922
 >   - [**Code 1-2: Classifying 2D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_2_neuron_class_2d/neuron_class_2d.ipynb)  
 >     Extends the single-neuron concept to classify 2D data. The code introduces weight updates for multidimensional input, visualization of classification boundaries, and evaluation on clean and noisy datasets.
 >   
->   - [**Code 1-3: Training a Dense Neuroal Network with Error Backpropagation**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_3_dnn2_class/dnn2_class.ipynb)  
+>   - [**Code 1-3: Training a Dense Neural Network with Error Backpropagation**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_3_dnn2_class/dnn2_class.ipynb)  
 >     Demonstrates training a two-layer dense neural network using the backpropagation algorithm. This code calculates gradients and updates weights iteratively to minimize the classification error on 2D data.
 >   
 >   - [**Code 1-A: Classifying the MNIST Digits with a Dense Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_A_mnist/mnist.ipynb)  
->     Implements a fully connected neural network with two hidden layers to classify handwritten digits from the MNIST dataset. The example includes data loading, training, evaluation using confusion matrices, and failure analysis to identify misclassified samples​.
+>     Implements a fully connected neural network with two hidden layers to classify handwritten digits from the MNIST dataset. The example includes data loading, training, evaluation using confusion matrices, and failure analysis to identify misclassified samples.
 
 2. [Dense Neural Networks for Regression](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression)  
    Explores regression problems and digital twins, focusing on continuous-value prediction with multi-layer networks.
