@@ -8,19 +8,19 @@ ISBN-13: 9781718503922
 
 ---
 
-> 1. [Dense Neural Networks for Classification](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification)  
->    Introduces single- and multi-layer perceptrons for classification tasks (e.g., MNIST digit recognition).
-> 
->   - [**Code 1-1: Classifying 1D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_1_neuron_class_1d)  
+1. **Dense Neural Networks for Classification**  
+   Introduces single- and multi-layer perceptrons for classification tasks (e.g., MNIST digit recognition).
+
+>   - [**Code 1-1: Classifying 1D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_1_neuron_class_1d/neuron_class_1d.ipynb)  
 >     Implements a single artificial neuron to classify 1D data into binary classes using a step function. The example walks through loading the dataset, visualizing the results, and training the neuron to improve its predictions using a gradient descent method.
 >   
->   - [**Code 1-2: Classifying 2D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_2_neuron_clas_2d)  
+>   - [**Code 1-2: Classifying 2D Data with a Single Neuron**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_2_neuron_class_2d/neuron_class_2d.ipynb)  
 >     Extends the single-neuron concept to classify 2D data. The code introduces weight updates for multidimensional input, visualization of classification boundaries, and evaluation on clean and noisy datasets.
 >   
->   - [**Code 1-3: Training with Error Backpropagation**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_3_dnn2_class)  
+>   - [**Code 1-3: Training with Error Backpropagation**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_3_dnn2_class/dnn2_clas.ipynb)  
 >     Demonstrates training a two-layer dense neural network using the backpropagation algorithm. This code calculates gradients and updates weights iteratively to minimize the classification error on 2D data.
 >   
->   - [**Code 1-A: Classifying the MNIST Digits**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_A_mnist)  
+>   - [**Code 1-A: Classifying the MNIST Digits**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_A_mnist/mnist.ipynb)  
 >     Implements a fully connected neural network with two hidden layers to classify handwritten digits from the MNIST dataset. The example includes data loading, training, evaluation using confusion matrices, and failure analysis to identify misclassified samples​.
 
 2. [Dense Neural Networks for Regression](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression)  
