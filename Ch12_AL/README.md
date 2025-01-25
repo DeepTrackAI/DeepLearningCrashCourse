@@ -44,7 +44,14 @@ ISBN-13: 9781718503922
 12. **Active Learning for Continuous Learning**  
     Describes techniques to iteratively select the most informative samples to label, improving model performance efficiently.
 
-
+>   - [**Code 12-1: Training a Binary Classifier with Active Learning**]()  
+>     Demonstrates the implementation of active learning for a simple binary classification task. A logistic regression model is iteratively trained on a dataset with two distinct classes by selecting the most informative samples.
+>
+>   - [**Code 12-2: Training a Three-Class Classifier with Active Learning**]()  
+>     Extends active learning to a multi-class classification problem. A dataset with three groups of overlapping data points is used to test the effectiveness of active learning. It evaluates random sampling and uncertainty sampling strategies by plotting decision boundaries and observing sampling behavior near class overlaps.
+>
+>   - [**Code 12-A: Training a MNIST Digits Classifier with Active Learning**]()  
+>     Applies active learning to classify handwritten digits from the MNIST dataset using a convolutional neural network. Key elements include preprocessing the MNIST dataset, training a CNN achieving 99% accuracy on the full dataset, and comparing three active learning strategies—random, uncertainty, and adversarial sampling—where adversarial sampling achieves benchmark performance using just 3% of the labeled data.
 
 13. [Reinforcement Learning for Strategy Optimization](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch13_RL)  
     Explains Q-learning and Deep Q-learning by teaching an agent to master games such as Tetris.
