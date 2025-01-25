@@ -44,8 +44,10 @@ ISBN-13: 9781718503922
 12. [Active Learning for Continuous Learning](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch12_AL)  
     Describes techniques to iteratively select the most informative samples to label, improving model performance efficiently.
 
-13. [Reinforcement Learning for Strategy Optimization](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch13_RL)  
+13. **Reinforcement Learning for Strategy Optimization**  
     Explains Q-learning and Deep Q-learning by teaching an agent to master games such as Tetris.
+
+
 
 14. [Reservoir Computing for Predicting Chaos](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch14_RC)  
     Covers reservoir computing methods for forecasting chaotic systems such as the Lorenz attractor.
