@@ -20,7 +20,7 @@ ISBN-13: 9781718503922
 4. [Encoders–Decoders for Latent Space Manipulation](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch04_AE)  
    Focuses on autoencoders, variational autoencoders, Wasserstein autoencoders, and anomaly detection, enabling data compression and generation.
 
-5. **U-Nets for Image Transformation**
+5. **U-Nets for Image Transformation**  
    Discusses U-Net architectures for image segmentation, cell counting, and various biomedical imaging applications.
 
 >   - [**Code 5-1: Segmenting Biological Tissue Images with a U-Net**]()  
