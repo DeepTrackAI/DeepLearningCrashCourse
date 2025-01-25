@@ -32,8 +32,20 @@ ISBN-13: 9781718503922
 8. [Attention and Transformers for Sequence Processing](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch08_Attention)  
    Introduces attention mechanisms, transformer models, and vision transformers (ViT) for natural language processing (NLP) including improved text translation and sentiment analysis, and image classification.
 
-9. [Generative Adversarial Networks for Image Synthesis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch09_GAN)  
+9. **Generative Adversarial Networks for Image Synthesis**  
    Demonstrates generative adversarial networks (GAN) training for image generation, domain translation (CycleGAN), and virtual staining in microscopy.
+
+>   - [**Code 9-1: Generating New MNIST Digits with a GAN**]()  
+>     Implements a simple Deep Convolutional GAN (DCGAN) on the MNIST dataset to generate novel handwritten digits. Illustrates how the generator maps random noise vectors into realistic images, while the discriminator learns to distinguish them from real MNIST samples. Includes visualization of loss curves and intermediate samples during training.
+>
+>   - [**Code 9-A: Generating MNIST Digits On Demand with a Conditional GAN**]()  
+>     Extends the basic MNIST GAN to a conditional GAN (cGAN), enabling you to specify which digit to generate. Shows how to incorporate class labels into both generator and discriminator by concatenating embedding vectors or feature maps, resulting in targeted digit generation (for example, only 7s).
+>
+>   - [**Code 9-B: Virtually Staining a Biological Tissue with a Conditional GAN**]()  
+>     Applies cGANs to transform brightfield images of human motor neurons into virtually stained fluorescence images—without using invasive chemical stains. Demonstrates how to train on paired brightfield and fluorescence images (13 z-planes to 3 fluorescence channels) and produce consistent neuron and nucleus stains. Enables faster, less-destructive microscopy in biomedical studies.
+>
+>   - [**Code 9-C: Converting Microscopy Images with a CycleGAN**]()  
+>     Shows how CycleGAN can handle unpaired images in two domains (e.g., holographic vs. brightfield micrographs). The model learns a forward generator and backward generator with cycle consistency, ensuring that a transformed image can be mapped back to the original domain. Illustrates conversion between holograms and brightfield images even though paired training samples do not exist.
 
 10. [Diffusion Models for Data Representation and Exploration](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch10_Diffusion)  
     Presents denoising diffusion models for generating and enhancing images, including text-to-image synthesis and image super-resolution.
