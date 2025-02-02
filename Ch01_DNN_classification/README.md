@@ -20,7 +20,7 @@ ISBN-13: 9781718503922
 >   - [**Code 1-3: Training a Dense Neural Network with Error Backpropagation**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_3_dnn2_class/dnn2_class.ipynb) <a href="https://colab.research.google.com/github/DeepTrackAI/DeepLearningCrashCourse/blob/main/Ch01_DNN_classification/ec01_3_dnn2_class/dnn2_class.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
 >     Demonstrates training a two-layer dense neural network using the backpropagation algorithm. This code calculates gradients and updates weights iteratively to minimize the classification error on 2D data.
 >   
->   - [**Code 1-A: Classifying the MNIST Digits with a Dense Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_A_mnist/mnist.ipynb)  
+>   - [**Code 1-A: Classifying the MNIST Digits with a Dense Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch01_DNN_classification/ec01_A_mnist/mnist.ipynb)<a href="https://colab.research.google.com/github/DeepTrackAI/DeepLearningCrashCourse/blob/main/Ch01_DNN_classification/ec01_A_mnist/mnist.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
 >     Implements a fully connected neural network with two hidden layers to classify handwritten digits from the MNIST dataset. The example includes data loading, training, evaluation using confusion matrices, and failure analysis to identify misclassified samples.
 
 2. [Dense Neural Networks for Regression](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch02_DNN_regression)  
