@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 from numpy import convolve, full
 
+
 def plot_data_1d(x, y_gt):
     """Plot 1D data."""
     plt.scatter(x, y_gt, s=20, c="k")
@@ -60,22 +61,22 @@ def plot_pred_vs_gt(y_gt, y_p):
 def plot_mse(mse, smooth=11):
     """Plot MSE evolution during training."""
     mse_smooth = convolve(mse, full((smooth,), 1 / smooth), mode="valid")
-    
+
     fig, ax = plt.subplots(1, 2)
     fig.set_size_inches(10, 5)
-    
+
     ax[0].plot(mse, c="tab:orange")
-    ax[0].plot(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, c="k")
+    ax[0].plot(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, "k--")
     ax[0].set_xlabel("epoch", fontsize=24)
     ax[0].set_ylabel("MSE", fontsize=24)
     ax[0].tick_params(axis="both", which="major", labelsize=16)
 
     ax[1].loglog(mse, c="tab:orange")
-    ax[1].loglog(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, c="k")
+    ax[1].loglog(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, "k--")
     ax[1].set_xlabel("epoch", fontsize=24)
     ax[1].set_ylabel("MSE", fontsize=24)
     ax[1].tick_params(axis="both", which="major", labelsize=16)
-    
+
     plt.tight_layout()
     plt.show()
 
@@ -87,24 +88,24 @@ def plot_mse_train_vs_val(mse_t, mse_v, smooth=11):
 
     fig, ax = plt.subplots(1, 2)
     fig.set_size_inches(10, 5)
-    
-    ax[0].plot(mse_t, c="tab:orange",  label="train")
+
+    ax[0].plot(mse_t, c="tab:orange", label="train")
     ax[0].plot(mse_v, ":", c="tab:green", label="validation")
     ax[0].plot(range(smooth // 2, len(mse_t) - smooth // 2), mse_t_s, "k--")
-    ax[0].plot(range(smooth // 2, len(mse_v) - smooth // 2), mse_v_s, "k--")
+    ax[0].plot(range(smooth // 2, len(mse_t) - smooth // 2), mse_v_s, "k--")
+    ax[0].legend(fontsize=16)
     ax[0].set_xlabel("epoch", fontsize=24)
     ax[0].set_ylabel("MSE", fontsize=24)
     ax[0].tick_params(axis="both", which="major", labelsize=16)
-    ax[0].legend(fontsize=16)
 
-    ax[1].loglog(mse_t, c="tab:orange",  label="train")
+    ax[1].loglog(mse_t, c="tab:orange", label="train")
     ax[1].loglog(mse_v, ":", c="tab:green", label="validation")
-    ax[1].loglog(range(smooth // 2, len(mse_v) - smooth // 2), mse_t_s, "k--")
+    ax[1].loglog(range(smooth // 2, len(mse_t) - smooth // 2), mse_t_s, "k--")
     ax[1].loglog(range(smooth // 2, len(mse_v) - smooth // 2), mse_v_s, "k--")
+    ax[1].legend(fontsize=16)
     ax[1].set_xlabel("epoch", fontsize=24)
     ax[1].set_ylabel("MSE", fontsize=24)
     ax[1].tick_params(axis="both", which="major", labelsize=16)
-    ax[1].legend(fontsize=16)
-    
+
     plt.tight_layout()
     plt.show()
