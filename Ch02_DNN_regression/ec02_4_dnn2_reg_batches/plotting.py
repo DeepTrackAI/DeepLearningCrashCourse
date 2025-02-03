@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 from numpy import convolve, full
 
+
 def plot_data_1d(x, y_gt):
     """Plot 1D data."""
     plt.scatter(x, y_gt, s=20, c="k")
@@ -60,10 +61,10 @@ def plot_pred_vs_gt(y_gt, y_p):
 def plot_mse(mse, smooth=11):
     """Plot MSE evolution during training."""
     mse_smooth = convolve(mse, full((smooth,), 1 / smooth), mode="valid")
-    
+
     fig, ax = plt.subplots(1, 2)
     fig.set_size_inches(10, 5)
-    
+
     ax[0].plot(mse, c="tab:orange")
     ax[0].plot(range(smooth // 2, len(mse) - smooth // 2), mse_smooth, "k--")
     ax[0].set_xlabel("epoch", fontsize=24)
@@ -75,6 +76,6 @@ def plot_mse(mse, smooth=11):
     ax[1].set_xlabel("epoch", fontsize=24)
     ax[1].set_ylabel("MSE", fontsize=24)
     ax[1].tick_params(axis="both", which="major", labelsize=16)
-    
+
     plt.tight_layout()
     plt.show()
