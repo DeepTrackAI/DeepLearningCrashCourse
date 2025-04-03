@@ -31,13 +31,13 @@ ISBN-13: 9781718503922
 11. **Graph Neural Networks for Relational Data Analysis**  
     Shows how graph neural networks (GNNs) can model graph-structured data (molecules, cell trajectories, physics simulations) using message passing and graph convolutions.
 
->   - [**Code 11-1: Predicting Molecular Properties with Graph Neural Networks**]()  
+>   - [**Code 11-1: Predicting Molecular Properties with Graph Neural Networks**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch11_GNN/ec11_1_gnn/gnn.ipynb)  
 >     Demonstrates how to implement graph convolutional and message-passing layers, apply them to the ZINC dataset, and predict molecular logP values. It highlights the stepwise approach of building GNN layers, normalizing adjacency matrices, handling node and edge embeddings, and combining them with readouts for regression on chemical compounds.
 >
->   - [**Code 11-A: Simulating Complex Physical Phenomena with Graph Neural Networks**]()  
+>   - [**Code 11-A: Simulating Complex Physical Phenomena with Graph Neural Networks**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch11_GNN/ec11_A_dynamics/dynamics.ipynb)  
 >     Implements a graph-based simulator for granular particle systems (SAND dataset). It shows how a GNN can learn to predict accelerations of interacting particles from observations and iteratively simulates the system dynamics faster than traditional force-field simulations.
 >
->   - [**Code 11-B: Identifying Cell Trajectories with MAGIK**]()  
+>   - [**Code 11-B: Identifying Cell Trajectories with MAGIK**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch11_GNN/ec11_B_magik/magik.ipynb)  
 >     Constructs a directed graph to model cell movement across frames in biological imaging, then trains a simplified MAGIK network to classify edges as true connections. Post-processing recovers trajectories that approximate cells’ paths accurately, even through divisions or noisy segmentations.
 
 12. [Active Learning for Continuous Learning](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch12_AL)  
