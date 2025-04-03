@@ -29,16 +29,16 @@ ISBN-13: 9781718503922
 10. **Diffusion Models for Data Representation and Exploration**  
     Presents denoising diffusion models for generating and enhancing images, including text-to-image synthesis and image super-resolution.
 
->   - [**Code 10-1: Generating Digits with a Diffusion Model**]()  
+>   - [**Code 10-1: Generating Digits with a Diffusion Model**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main//Ch10_Diffusion/ec10_1_ddpm_mnist/ddpm_mnist.ipynb)  
 >     Implements a Denoising Diffusion Probabilistic Model (DDPM) on MNIST digits. It explains the forward process (adding Gaussian noise at each time step) and the reverse process (a trained denoising U-Net), culminating in random but plausible digit images. It also demonstrates how forward and reverse diffusion steps can be visualized, as well as how different runs from the same noise yield different samples.
 >
->   - [**Code 10-A: Generating Bespoke Digits with a Conditional Diffusion Model**]()  
+>   - [**Code 10-A: Generating Bespoke Digits with a Conditional Diffusion Model**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main//Ch10_Diffusion/ec10_A_cddpm_mnist/cddpm_mnist.ipynb)  
 >     Extends the DDPM to condition on class labels using classifier-free guidance. Allows specifying which MNIST digit to generate. After training, the network can produce custom digits on demand by blending conditional and unconditional outputs.
 >
->   - [**Code 10-B: Generating Images of Digits from Text Prompts**]()  
+>   - [**Code 10-B: Generating Images of Digits from Text Prompts**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main//Ch10_Diffusion/ec10_B_text2image/text2image.ipynb)  
 >     Demonstrates a mini text-to-image pipeline by pairing a custom transformer encoder (or pretrained CLIP) with a diffusion model. It converts sentences like "There are three horses and two lions. How many lions?" into correct digits. It also showcases classifier-free guidance, adding textual context into an attention U-Net.
 >
->   - [**Code 10-C: Generating Super-Resolution Images**]()  
+>   - [**Code 10-C: Generating Super-Resolution Images**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main//Ch10_Diffusion/ec10_C_superresolution/superresolution.ipynb)  
 >     Uses a conditional diffusion model to transform low-resolution microscopy images into detailed high-resolution counterparts, showcasing the power of diffusion-based upsampling. It adapts the forward and reverse diffusion to combine the noisy target image with the low-resolution input, effectively learning a mapping to super-resolve biological data.
 
 11. [Graph Neural Networks for Relational Data Analysis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch11_GNN)  
