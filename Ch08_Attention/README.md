@@ -25,16 +25,16 @@ ISBN-13: 9781718503922
 8. **Attention and Transformers for Sequence Processing**  
    Introduces attention mechanisms, transformer models, and vision transformers (ViT) for natural language processing (NLP) including improved text translation and sentiment analysis, and image classification.
 
->   - [**Code 8-1: Understanding Attention**]()  
+>   - [**Code 8-1: Understanding Attention**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch08_Attention/ec08_1_attention/attention.ipynb)  
 >     Builds attention modules from scratch (dot-product, trainable dot-product, additive) and applies them to toy examples, visualizing attention maps that show which tokens focus on which other tokens. It illustrates how pre-trained embeddings (GloVe) can highlight semantic relationships (like she-her) even without fine-tuning. It clarifies the difference between non-learnable and learnable key/value embeddings.
 >
->   - [**Code 8-A: Translating with Attention**]()  
+>   - [**Code 8-A: Translating with Attention**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch08_Attention/ec08_A_nlp_attn/nlp_attn.ipynb)  
 >     Improves the seq2seq model from Chapter 7 with dot-product cross-attention to focus on the most relevant parts of source sentences during translation. It demonstrates how attention helps align multi-word phrases and resolves ambiguities. The model surpasses the earlier RNN-based approach by dynamically highlighting crucial source tokens, proving "attention is all you need" for better translations.
 >
->   - [**Code 8-B: Performing Sentiment Analysis with a Transformer**]()  
+>   - [**Code 8-B: Performing Sentiment Analysis with a Transformer**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch08_Attention/ec08_B_transformer/transformer.ipynb)  
 >     Implements an encoder-only Transformer using multi-head self-attention and feedforward layers to classify the sentiment of IMDB reviews as positive or negative. Details the entire pipeline: tokenizing, building a vocabulary, batching sequences with masks, stacking multiple Transformer blocks, and adding a dense top for binary classification. The approach yields strong sentiment prediction accuracy, highlighting the parallel processing benefits of Transformers over RNN-based models.
 >
->   - [**Code 8-C: Classifying Images with a Vision Transformer**]()  
+>   - [**Code 8-C: Classifying Images with a Vision Transformer**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch08_Attention/ec08_C_vit/vit.ipynb)  
 >     Shows how Transformers can replace convolutions for image tasks by splitting images into patch embeddings. The ViT model is trained from scratch on CIFAR-10, using CutMix to address its weaker inductive biases compared to CNNs. Achieves notable performance when fine-tuned and especially excels if using a pretrained backbone. This underscores ViT’s flexibility and potential to rival or outperform CNNs on visual data.
 
 9. [Generative Adversarial Networks for Image Synthesis](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch09_GAN)  
