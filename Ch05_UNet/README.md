@@ -19,13 +19,13 @@ ISBN-13: 9781718503922
 5. **U-Nets for Image Transformation**  
    Discusses U-Net architectures for image segmentation, cell counting, and various biomedical imaging applications.
 
->   - [**Code 5-1: Segmenting Biological Tissue Images with a U-Net**]()  
+>   - [**Code 5-1: Segmenting Biological Tissue Images with a U-Net**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch05_UNet/ec05_1_unet/unet.ipynb)  
 >     Demonstrates how to build and train a U-Net to segment internal cell structures (for example, mitochondria) in electron micrographs. It covers creating pipelines for raw images and labeled masks, using skip connections for detail retention, applying early stopping to avoid overfitting, and evaluating performance via the Jaccard Index (IoU). The notebook also demonstrates data augmentation to improve segmentation robustness.
 >
->   - [**Code 5-A: Detecting Quantum Dots in Fluorescence Images with a U-Net**]()  
+>   - [**Code 5-A: Detecting Quantum Dots in Fluorescence Images with a U-Net**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch05_UNet/ec05_A_qdots_localization/qdots_localization.ipynb)  
 >     Uses a U-Net to localize fluorescent quantum dots in noisy microscopy images. It simulates realistic training data with random positions, intensities, and added noise, and pairs them with masks indicating quantum dot locations. After training on these simulations, the U-Net is tested on real experimental images. You’ll see how accurately it can mark quantum dots by generating centroid-based masks.
 >
->   - [**Code 5-B: Counting Cells with a U-Net**]()  
+>   - [**Code 5-B: Counting Cells with a U-Net**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch05_UNet/ec05_B_cell_counting/cell_counting.ipynb)  
 >     Applies a U-Net to create binary masks of cell nuclei, then uses connected-component labeling to count how many nuclei the mask contains. After simulating or loading real images of stained nuclei, the notebook trains a single-channel output U-Net using a binary cross-entropy loss. Accuracy is measured by comparing predicted cell counts with ground truth, reporting mean absolute and percentage errors. This pipeline automates cell counting and quantifies how close the predictions are to actual counts.
 
 6. [Self-Supervised Learning to Exploit Symmetries](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch06_SelfSupervised)  
