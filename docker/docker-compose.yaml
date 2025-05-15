@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  dlcc:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../:/home/jovyan/work     # bind-mount whole repo ⇒ edits persist
+    environment:
+      - JUPYTER_ENABLE_LAB=yes

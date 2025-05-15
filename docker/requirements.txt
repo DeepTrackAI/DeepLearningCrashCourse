@@ -1,0 +1,7 @@
+torch==2.7.*
+torchvision
+torchaudio
+deeptrack
+deeplay
+pytorch-lightning
+numpy
