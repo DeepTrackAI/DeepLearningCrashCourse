@@ -1,4 +1,4 @@
-torch==2.7.*
+torch==2.7.*+cpu
 torchvision
 torchaudio
 deeptrack
