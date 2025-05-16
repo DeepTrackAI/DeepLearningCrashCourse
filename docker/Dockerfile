@@ -14,6 +14,11 @@ WORKDIR /home/jovyan/work
 COPY .. .
 
 # ---------- extra Python deps -----------------------------------------------------
+# CPU wheels only
+RUN pip install --no-cache-dir \
+        torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 \
+        --index-url https://download.pytorch.org/whl/cpu
+
 COPY docker/requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
