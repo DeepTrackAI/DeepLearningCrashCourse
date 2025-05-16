@@ -14,7 +14,7 @@ WORKDIR /home/jovyan/work
 COPY .. .
 
 # ---------- extra Python deps -----------------------------------------------------
-COPY requirements.txt /tmp/
+COPY docker/requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 EXPOSE 8888
