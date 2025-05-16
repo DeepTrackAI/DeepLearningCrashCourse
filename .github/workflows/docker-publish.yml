@@ -3,8 +3,7 @@ name: Build & Publish Docker Image
 on:
 
   pull_request:
-    branches:
-      - docker
+    branches: [ docker ]
     paths:
       - 'docker/Dockerfile'
       - 'docker/requirements.txt'
@@ -12,43 +11,57 @@ on:
       - '.github/workflows/docker-publish.yml'
 
   push:
-    branches:
-      - docker
+    branches: [ docker ]
     paths:
       - 'docker/Dockerfile'
       - 'docker/requirements.txt'
       - 'docker/docker-compose.yml'
       - '.github/workflows/docker-publish.yml'
 
+
+# ─────────────── global env ──────────────────────────────────────────────────
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: deeptrackai/deep-learning-crash-course         # change once here
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
-      contents: read         # for checkout
-      packages: write        # to push to GHCR
+      contents: read
+      packages: write           # needed to push to GHCR
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up QEMU (for multi-arch builds)
-        uses: docker/setup-qemu-action@v2
+      - uses: docker/setup-qemu-action@v3      # multi-arch emulation
+      - uses: docker/setup-buildx-action@v3    # Buildx driver with cache support
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      # -------- optional, but speeds repeat builds -----------
+      - name: Restore Docker layer cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-buildx-
+      # --------------------------------------------------------
 
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v2
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v3
+      - name: Build (and push on main branch)
+        uses: docker/build-push-action@v5
         with:
-          context: .                   # or ./docker if you keep your Dockerfile there
-          file: ./docker/Dockerfile    # adjust path if needed
-          push: true
+          context: .
+          file: docker/Dockerfile          # adjust if your Dockerfile moves
           platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name == 'push' }}   # PRs build but don’t publish
           tags: |
             ghcr.io/deeptrackai/deep-learning-crash-course:latest
             ghcr.io/deeptrackai/deep-learning-crash-course:${{ github.sha }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to:   type=local,dest=/tmp/.buildx-cache,mode=max
