@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------
 # Universal multi-arch image (works on both Apple Silicon & Intel)
 # ---------------------------------------------------------------------------------
-FROM quay.io/jupyter/pytorch-notebook:cuda-12.3.1-cudnn8-runtime-ubuntu22.04-py3.11
+FROM quay.io/jupyter/datascience-notebook:python-3.11
 # ---------- system utilities ------------------------------------------------------
 USER root
 RUN apt-get update && \
