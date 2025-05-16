@@ -1,8 +1,8 @@
 --index-url https://download.pytorch.org/whl/cpu
-torch==2.6.0
-torchvision==0.21.0
-torchaudio==2.6.0
-deeptrack
-deeplay
-pytorch-lightning
-numpy
+torch==2.7.0
+torchvision==0.22.0
+torchaudio==2.7.0
+deeptrack==2.0.1
+deeplay==0.1.3
+pytorch-lightning==2.5.1
+numpy==2.2.5
