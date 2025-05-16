@@ -1,12 +1,21 @@
 name: Build & Publish Docker Image
 
 on:
-  push:
+  
+  pull_request:
     branches:
-      - main
+      - docker
     paths:
       - 'docker/**'
       - '.github/workflows/docker-publish.yml'
+  push:
+    branches:
+      - docker
+    paths:
+      - 'docker/**'
+      - '.github/workflows/docker-publish.yml'
+    paths-ignore:
+      - 'docker/README.md'
 
 jobs:
   build-and-push:
