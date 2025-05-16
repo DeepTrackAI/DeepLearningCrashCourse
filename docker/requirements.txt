@@ -1,6 +1,6 @@
-torch==2.7.0+cpu
-torchvision
-torchaudio
+torch==2.6.0+cpu
+torchvision==0.21.0+cpu
+torchaudio==2.6.0+cpu
 deeptrack
 deeplay
 pytorch-lightning
