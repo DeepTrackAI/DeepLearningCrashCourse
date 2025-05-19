@@ -53,10 +53,11 @@ docker run --rm -it --gpus all \
   -p 8888:8888 \
   ghcr.io/deeptrackai/deep-learning-crash-course-gpu:latest
 ```
-### 3. Run in JupyterLab...
+### 3. Run in JupyterLab ...
+
 After startup, copy the URL with token (e.g., http://127.0.0.1:8888/lab?token=…) into your browser to access JupyterLab.
 
-### ...or attach in VS Code (Dev Containers)
+### ... or attach in VS Code (Dev Containers)
 
    1. In VS Code, open Command Palette (`Ctrl+Shift+P`).
    
