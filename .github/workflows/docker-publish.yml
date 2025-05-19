@@ -60,7 +60,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name == 'push' }}   # PRs build but don’t publish
           tags: |
-            tags: |
               ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
               ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           cache-from: type=local,src=/tmp/.buildx-cache
