@@ -1,6 +1,0 @@
-.git
-.github
-.gitignore
-.ipynb_checkpoints
-docker-compose.yml
-docker-publish.yml
