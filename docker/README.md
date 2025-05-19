@@ -39,7 +39,8 @@ Docker will automatically select the correct architecture slice (amd64 or arm64)
 
 ```docker run --rm -it \
   -p 8888:8888 \
-  ghcr.io/deeptrackai/deep-learning-crash-course:latest```
+  ghcr.io/deeptrackai/deep-learning-crash-course:latest
+```
 
 --- 
 
@@ -65,6 +66,6 @@ After startup, in VS Code (with Dev Containers installed):
 
       - Open Folder → /home/jovyan/work (the repo inside the container).
 
-      - Select Interpreter in the bottom bar → the one at `/opt/conda/bin/python` (Python 3.11).
+      - Select Interpreter → the one at `/opt/conda/bin/python` (Python 3.11).
 
    5. Open any `.ipynb` and run cells.
