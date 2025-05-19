@@ -64,8 +64,8 @@ After startup, in VS Code (with Dev Containers installed):
 
       - Install Python & Jupyter extensions when prompted.
 
-      - Open Folder → /home/jovyan/work (the repo inside the container).
+      - Open Folder → `/home/jovyan/work` (the repo inside the container).
 
-      - Select Interpreter → the one at `/opt/conda/bin/python` (Python 3.11).
+      - Select Kernel → `Python Environments...` → pick the one at `/opt/conda/bin/python` (Python 3.11).
 
    5. Open any `.ipynb` and run cells.
