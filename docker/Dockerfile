@@ -13,8 +13,13 @@ USER ${NB_UID}
 WORKDIR /home/jovyan/work
 COPY .. .
 
+# ---------- ensure correct ownership ---------------------------------------------
+    USER root
+    RUN chown -R ${NB_UID}:${NB_GID} /home/jovyan/work
+    USER ${NB_UID}
+
 # ---------- extra Python deps -----------------------------------------------------
-# CPU wheels only
+# CPU-only PyTorch (wheels from CPU index)
 RUN pip install --no-cache-dir \
         torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 \
         --index-url https://download.pytorch.org/whl/cpu

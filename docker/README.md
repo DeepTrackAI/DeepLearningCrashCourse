@@ -23,41 +23,48 @@ Works on Intel & Apple-Silicon Macs, Linux ×86_64 & ARM64.
 
 
 ---
-## General use
+## Quick Start
 
-### 1. Pull the latest image
+### Open Docker Desktop
 
-```bash
+### Pull the Latest Image
+
+```
 docker pull ghcr.io/deeptrackai/deep-learning-crash-course:latest
 ```
 Docker will automatically select the correct architecture slice (amd64 or arm64).
 
-### 2. Run JupyterLab
+
+### Startup Docker Image
+
 ```docker run --rm -it \
   -p 8888:8888 \
-  -v "$(pwd)":/home/jovyan/work \
-  ghcr.io/deeptrackai/deep-learning-crash-course:latest
-  ```
-After startup you’ll see a URL with a token (e.g. http://127.0.0.1:8888/lab?token=…). Paste it into your browser.
+  ghcr.io/deeptrackai/deep-learning-crash-course:latest```
 
 --- 
 
-## Use in VS Code (Dev Containers)
+### Open in JupyterLab
 
-### 1. Install the “Dev Containers” extension in VS Code.
+After startup, you’ll see a URL with a token (e.g. http://127.0.0.1:8888/lab?token=…). Paste it into your browser. You'll see the full set of Crash Course notebooks.
 
-### 2. Command Palette → Dev Containers: Open Folder in Container…
+---
 
-### 3. Select your local DeepLearningCrashCourse folder.
+### Open in VS Code (Dev Containers)
 
-### 4. In the new window:
+After startup, in VS Code (with Dev Containers installed):
+   
+   1. Open the Command Palette. 
 
-   - Install Python & Jupyter extensions when prompted.
+   2. Run ```Dev Containers: Attach to Running Container...```.
 
-   - Open Folder → /home/jovyan/work (the repo inside the container).
+   3. Select your container, a new VS Code window will pop up.
 
-   - Select Interpreter in the bottom bar → the one at `/opt/conda/bin/python` (Python 3.11).
+   4. In the new window:
 
-### 5. Use the integrated terminal (`Ctrl`+``) or Run & Debug scripts (F5).
+      - Install Python & Jupyter extensions when prompted.
 
-### 6. Open any `.ipynb` and run cells.
+      - Open Folder → /home/jovyan/work (the repo inside the container).
+
+      - Select Interpreter in the bottom bar → the one at `/opt/conda/bin/python` (Python 3.11).
+
+   5. Open any `.ipynb` and run cells.
