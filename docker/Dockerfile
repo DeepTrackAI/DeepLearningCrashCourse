@@ -32,13 +32,14 @@ RUN pip install --no-cache-dir \
 COPY ./requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-# Enable Jupyter widget support
-RUN pip install --no-cache-dir ipywidgets
+# Install widget support
+RUN pip install --no-cache-dir \
+      ipywidgets \
+      jupyterlab_widgets
 
-# For JupyterLab (inside the container), install the widget manager
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
-  --no-build && \
-  jupyter lab build
+# Classic Notebook support (optional)
+RUN jupyter nbextension install --py widgetsnbextension --sys-prefix && \
+    jupyter nbextension enable  --py widgetsnbextension --sys-prefix
 
 EXPOSE 8888
 CMD ["start-notebook.sh"]
