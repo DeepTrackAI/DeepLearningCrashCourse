@@ -2,21 +2,23 @@
 # GPU-enabled Jupyter + PyTorch + your course
 # ────────────────────────────────────────────────────────────────────────────────
 FROM quay.io/jupyter/pytorch-notebook:cuda12-python-3.11.9
-
+# ---------- system utilities ------------------------------------------------------
 USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
     rm -rf /var/lib/apt/lists/*
 USER ${NB_UID}
 
+# ---------- copy the course -------------------------------------------------------
 WORKDIR /home/jovyan/work
 RUN git clone --depth 1 https://github.com/DeepTrackAI/DeepLearningCrashCourse.git .
 
-# ensure jovyan owns the workspace
+# ---------- ensure correct ownership ---------------------------------------------
 USER root
 RUN chown -R ${NB_UID}:${NB_GID} /home/jovyan/work
 USER ${NB_UID}
 
+# ---------- extra Python deps -----------------------------------------------------
 # Base image already has CUDA-enabled PyTorch 2.7+
 # Install PyG CUDA wheels matching torch 2.7.0+cu121
 RUN pip install --no-cache-dir \
@@ -35,7 +37,6 @@ RUN pip install --no-cache-dir \
 # Classic Notebook support (optional)
 RUN jupyter nbextension install --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable  --py widgetsnbextension --sys-prefix
-
 
 EXPOSE 8888
 CMD ["start-notebook.sh"]

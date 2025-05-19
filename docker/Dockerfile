@@ -14,9 +14,9 @@ WORKDIR /home/jovyan/work
 RUN git clone --depth 1 https://github.com/DeepTrackAI/DeepLearningCrashCourse.git .
 
 # ---------- ensure correct ownership ---------------------------------------------
-    USER root
-    RUN chown -R ${NB_UID}:${NB_GID} /home/jovyan/work
-    USER ${NB_UID}
+USER root
+RUN chown -R ${NB_UID}:${NB_GID} /home/jovyan/work
+USER ${NB_UID}
 
 # ---------- extra Python deps -----------------------------------------------------
 # CPU-only PyTorch (wheels from CPU index)
@@ -29,6 +29,7 @@ RUN pip install --no-cache-dir \
         torch-geometric \
         -f https://data.pyg.org/whl/torch-2.7.0+cpu.html
 
+# Then install your extra deps
 COPY ./requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
