@@ -11,7 +11,6 @@ USER ${NB_UID}
 
 # ---------- copy the course -------------------------------------------------------
 WORKDIR /home/jovyan/work
-# COPY .. .
 RUN git clone --depth 1 https://github.com/DeepTrackAI/DeepLearningCrashCourse.git .
 
 # ---------- ensure correct ownership ---------------------------------------------
