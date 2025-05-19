@@ -1,54 +1,109 @@
-name: Build & Publish Docker Image
+name: Build & Publish DLCC Images
 
 on:
-  pull_request:
-    branches: [ docker ]
-    paths:
-      - 'docker/Dockerfile'
-      - 'docker/requirements.txt'
-      - 'docker/docker-compose.yml'
-      - '.github/workflows/docker-publish.yml'
-
   push:
-    branches: [ docker ]
+    branches: [ main ]
     paths:
-      - 'docker/Dockerfile'
-      - 'docker/requirements.txt'
-      - 'docker/docker-compose.yml'
+      - 'docker/**'
+      - '.github/workflows/docker-publish.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docker/**'
       - '.github/workflows/docker-publish.yml'
 
-
-# ─────────────── global env ──────────────────────────────────────────────────
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: deeptrackai/deep-learning-crash-course         # change once here
+  IMAGE_NAME: deep-learning-crash-course
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write           # needed to push to GHCR
+      packages: write
+
+    strategy:
+      matrix:
+        variant: [cpu, gpu]
 
     steps:
       - uses: actions/checkout@v4
-      - uses: docker/setup-qemu-action@v3      # multi-arch emulation
-      - uses: docker/setup-buildx-action@v3    # Buildx driver with cache support
 
-      - name: Log in to GHCR
+      - name: Setup QEMU & Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build (and push on main branch)
+      - name: Build & push ${{ matrix.variant }} image
         uses: docker/build-push-action@v3
         with:
           context: ./docker
-          file: ./docker/Dockerfile          # adjust if your Dockerfile moves
-          platforms: linux/amd64,linux/arm64
-          push: ${{ github.event_name == 'push' }}   # PRs build but don’t publish
+          file: ./docker/Dockerfile${{ matrix.variant == 'gpu' && '.gpu' || '' }}
+          platforms: linux/amd64${{ matrix.variant == 'cpu' && ',linux/arm64' || '' }}
+          push: ${{ github.event_name == 'push' }}
           tags: |
-              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/deeptrackai/${{ env.IMAGE_NAME }}${{ matrix.variant == 'gpu' && '-gpu' || '' }}:latest
+            ${{ env.REGISTRY }}/deeptrackai/${{ env.IMAGE_NAME }}${{ matrix.variant == 'gpu' && '-gpu' || '' }}:${{ github.sha }}
+
+
+
+# name: Build & Publish Docker Image
+
+# on:
+#   pull_request:
+#     branches: [ docker ]
+#     paths:
+#       - 'docker/Dockerfile'
+#       - 'docker/requirements.txt'
+#       - 'docker/docker-compose.yml'
+#       - '.github/workflows/docker-publish.yml'
+
+#   push:
+#     branches: [ docker ]
+#     paths:
+#       - 'docker/Dockerfile'
+#       - 'docker/requirements.txt'
+#       - 'docker/docker-compose.yml'
+#       - '.github/workflows/docker-publish.yml'
+
+
+# # ─────────────── global env ──────────────────────────────────────────────────
+# env:
+#   REGISTRY: ghcr.io
+#   IMAGE_NAME: deeptrackai/deep-learning-crash-course         # change once here
+
+# jobs:
+#   build-and-push:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       packages: write           # needed to push to GHCR
+
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: docker/setup-qemu-action@v3      # multi-arch emulation
+#       - uses: docker/setup-buildx-action@v3    # Buildx driver with cache support
+
+#       - name: Log in to GHCR
+#         uses: docker/login-action@v3
+#         with:
+#           registry: ${{ env.REGISTRY }}
+#           username: ${{ github.actor }}
+#           password: ${{ secrets.GITHUB_TOKEN }}
+
+#       - name: Build (and push on main branch)
+#         uses: docker/build-push-action@v3
+#         with:
+#           context: ./docker
+#           file: ./docker/Dockerfile          # adjust if your Dockerfile moves
+#           platforms: linux/amd64,linux/arm64
+#           push: ${{ github.event_name == 'push' }}   # PRs build but don’t publish
+#           tags: |
+#               ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+#               ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}

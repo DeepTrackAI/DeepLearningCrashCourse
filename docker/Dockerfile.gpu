@@ -1,0 +1,32 @@
+# docker/Dockerfile.gpu
+# ────────────────────────────────────────────────────────────────────────────────
+# GPU-enabled Jupyter + PyTorch + your course
+# ────────────────────────────────────────────────────────────────────────────────
+FROM quay.io/jupyter/pytorch-notebook:cuda12-python-3.11.9
+
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/*
+USER ${NB_UID}
+
+WORKDIR /home/jovyan/work
+RUN git clone --depth 1 https://github.com/DeepTrackAI/DeepLearningCrashCourse.git .
+
+# ensure jovyan owns the workspace
+USER root
+RUN chown -R ${NB_UID}:${NB_GID} /home/jovyan/work
+USER ${NB_UID}
+
+# Base image already has CUDA-enabled PyTorch 2.7+
+# Install PyG CUDA wheels matching torch 2.7.0+cu121
+RUN pip install --no-cache-dir \
+        torch-geometric \
+        -f https://data.pyg.org/whl/torch-2.7.0+cu121.html
+
+# Then install your extra deps
+COPY ./requirements.txt /tmp/
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+EXPOSE 8888
+CMD ["start-notebook.sh"]
