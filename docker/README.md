@@ -11,61 +11,61 @@ ISBN-13: 9781718503922
 ![Docker Image CI](https://github.com/DeepTrackAI/DeepLearningCrashCourse/actions/workflows/docker-publish.yml/badge.svg)
 
 A ready-to-run JupyterLab environment with all notebooks and dependencies baked in.  
-Works on Intel & Apple-Silicon Macs, Linux ×86_64 & ARM64.
+Works on Intel & Apple-Silicon Macs, Linux ×86_64 & ARM64; also provides an NVIDIA-CUDA-enabled variant for GPU hosts.
 
 ---
 
 ## Prerequisites
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) (macOS, Windows) or Docker Engine (Linux)  
-- (Optional) [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/) on Linux for GPU support  
-- (Optional) VS Code + [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
-
+- **Docker**  
+  - macOS / Windows → [Docker Desktop](https://www.docker.com/products/docker-desktop)  
+  - Linux → Docker Engine + (optional) [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/)  
+- (Optional) **VS Code** + [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 ---
+
 ## Quick Start
 
-### Open Docker Desktop
+### 1. Pull the image
 
-### Pull the Latest Image
-
-```
+**CPU-only (multi-arch)**  
+```bash
 docker pull ghcr.io/deeptrackai/deep-learning-crash-course:latest
 ```
-Docker will automatically select the correct architecture slice (amd64 or arm64).
 
+**GPU-enabled (amd64 + CUDA)**
+```bash
+docker pull ghcr.io/deeptrackai/deep-learning-crash-course-gpu:latest
+```
 
-### Startup Docker Image
+### 2. Start JupyterLab
 
-```docker run --rm -it \
+**CPU-only (multi-arch)**  
+```bash
+docker run --rm -it \
   -p 8888:8888 \
   ghcr.io/deeptrackai/deep-learning-crash-course:latest
 ```
 
---- 
+**GPU-enabled (amd64 + CUDA)**
+```bash
+docker run --rm -it --gpus all \
+  -p 8888:8888 \
+  ghcr.io/deeptrackai/deep-learning-crash-course-gpu:latest
+```
+After startup, copy the URL with token (e.g., http://127.0.0.1:8888/lab?token=…) into your browser to access JupyterLab.
 
-### Open in JupyterLab
 
-After startup, you’ll see a URL with a token (e.g. http://127.0.0.1:8888/lab?token=…). Paste it into your browser. You'll see the full set of Crash Course notebooks.
+### Attach in VS Code (Dev Containers)
 
----
-
-### Open in VS Code (Dev Containers)
-
-After startup, in VS Code (with Dev Containers installed):
+   1. In VS Code, open Command Palette (`Ctrl+Shift+P`).
    
-   1. Open the Command Palette. 
+   2. Run **Dev Containers: Attach to Running Container...**
 
-   2. Run ```Dev Containers: Attach to Running Container...```.
+   3. Select your **CPU** or **GPU** container from the list. A new VS Code window will pop up.
 
-   3. Select your container, a new VS Code window will pop up.
+   4. Install Python & Jupyter extensions when prompted.
 
-   4. In the new window:
+   5. **Open Folder** → `/home/jovyan/work` and  **Select Kernel** → `/opt/conda/bin/python` (Python 3.11).
 
-      - Install Python & Jupyter extensions when prompted.
-
-      - Open Folder → `/home/jovyan/work` (the repo inside the container).
-
-      - Select Kernel → `Python Environments...` → pick the one at `/opt/conda/bin/python` (Python 3.11).
-
-   5. Open any `.ipynb` and run cells.
+   6. Open any `.ipynb` and run cells.
