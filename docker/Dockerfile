@@ -38,9 +38,5 @@ RUN pip install --no-cache-dir \
       ipywidgets \
       jupyterlab_widgets
 
-# Classic Notebook support (optional)
-RUN jupyter nbextension install --py widgetsnbextension --sys-prefix && \
-    jupyter nbextension enable  --py widgetsnbextension --sys-prefix
-
 EXPOSE 8888
 CMD ["start-notebook.sh"]
