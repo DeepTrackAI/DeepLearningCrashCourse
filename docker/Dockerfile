@@ -21,8 +21,14 @@ COPY .. .
 # ---------- extra Python deps -----------------------------------------------------
 # CPU-only PyTorch (wheels from CPU index)
 RUN pip install --no-cache-dir \
-        torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 \
+        torch==2.7.0 torchvision==0.22.0\
         --index-url https://download.pytorch.org/whl/cpu
+
+# CPU-only PyG (and its C/C++ extensions)
+RUN pip install --no-cache-dir \
+        torch-geometric \
+        -f https://data.pyg.org/whl/torch-2.7.0+cpu.html
+
 
 COPY docker/requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
