@@ -5,7 +5,7 @@ on:
     branches: [ docker ]
     paths:
       - 'docker/Dockerfile'
-      - 'docker/Dockerfile.gpu''
+      - 'docker/Dockerfile.gpu'
       - 'docker/requirements.txt'
       - 'docker/docker-compose.yml'
       - '.github/workflows/docker-publish.yml'
@@ -13,7 +13,7 @@ on:
     branches: [ docker ]
     paths:
       - 'docker/Dockerfile'
-      - 'docker/Dockerfile.gpu''
+      - 'docker/Dockerfile.gpu'
       - 'docker/requirements.txt'
       - 'docker/docker-compose.yml'
       - '.github/workflows/docker-publish.yml'
