@@ -33,7 +33,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: docker/setup-qemu-action@v3      # multi-arch emulation
       - uses: docker/setup-buildx-action@v3    # Buildx driver with cache support
 
@@ -54,14 +53,15 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build (and push on main branch)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v3
         with:
           context: .
           file: docker/Dockerfile          # adjust if your Dockerfile moves
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name == 'push' }}   # PRs build but don’t publish
           tags: |
-            ghcr.io/deeptrackai/deep-learning-crash-course:latest
-            ghcr.io/deeptrackai/deep-learning-crash-course:${{ github.sha }}
+            tags: |
+              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to:   type=local,dest=/tmp/.buildx-cache,mode=max
