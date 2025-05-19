@@ -31,7 +31,7 @@ RUN pip install --no-cache-dir \
         -f https://data.pyg.org/whl/torch-2.7.0+cpu.html
 
 
-COPY docker/requirements.txt /tmp/
+COPY ./requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 EXPOSE 8888
