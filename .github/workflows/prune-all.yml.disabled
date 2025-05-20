@@ -1,4 +1,4 @@
-name: "Prune old GHCR images"
+name: "Prune all GHCR image versions"
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gh
 
-      - name: Delete all but the newest version for CPU & GPU images
+      - name: Delete **all** versions of CPU & GPU images
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER:   ${{ github.repository_owner }}
@@ -34,24 +34,25 @@ jobs:
           for IMAGE in deep-learning-crash-course deep-learning-crash-course-gpu; do
             echo
             echo "🔍 Processing package: $OWNER/$IMAGE"
+
+            # Fetch all versions (paginated)
             versions=$(gh api --paginate \
               -H "Accept: application/vnd.github.v3+json" \
               /orgs/$OWNER/packages/container/$IMAGE/versions)
 
-            # delete every version except the newest
-            echo "$versions" | jq -c '.[]' | while read version; do
-              id=$(echo "$version" | jq -r '.id')
+            # Delete every version ID
+            echo "$versions" | jq -r '.[].id' | while read id; do
               echo "→ Deleting version $id of $IMAGE"
               for attempt in 1 2 3; do
-                  if gh api -X DELETE \
-                      -H "Accept: application/vnd.github.v3+json" \
-                      /orgs/$OWNER/packages/container/$IMAGE/versions/$id; then
+                if gh api -X DELETE \
+                     -H "Accept: application/vnd.github.v3+json" \
+                     /orgs/$OWNER/packages/container/$IMAGE/versions/$id; then
                   echo "   ✅ Deleted $id"
                   break
-                  else
+                else
                   echo "   ⚠️ Attempt $attempt failed, retrying in $((5*attempt))s…"
                   sleep $((5*attempt))
-                  fi
+                fi
               done
             done
           done

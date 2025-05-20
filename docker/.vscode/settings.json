@@ -5,7 +5,6 @@
     "jsdelivr.com",
     "unpkg.com"
   ],
-
   // Make sure VS Code always uses the container’s Python
   "python.defaultInterpreterPath": "/opt/conda/bin/python"
 }
