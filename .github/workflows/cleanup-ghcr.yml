@@ -4,10 +4,6 @@ on:
   registry_package:
     types: [ published ]
     package_type: container
-  # schedule:
-  #   - cron: '0 2 * * *'      # daily at 02:00 UTC
-  # push:
-  #   branches: [ docker ]
 
 permissions:
   contents: read
@@ -67,3 +63,8 @@ jobs:
               fi
             done
           done
+
+  # schedule:
+  #   - cron: '0 2 * * *'      # daily at 02:00 UTC
+  # push:
+  #   branches: [ docker ]
