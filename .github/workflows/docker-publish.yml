@@ -18,6 +18,7 @@ on:
       - 'docker/docker-compose.yml'
       - '.github/workflows/docker-publish.yml'
 
+
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: deep-learning-crash-course
