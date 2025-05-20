@@ -7,7 +7,6 @@ on:
     branches: [ docker ]
   registry_package:
     types: [ published ]
-    package_type: container
 
 permissions:
   contents: read
