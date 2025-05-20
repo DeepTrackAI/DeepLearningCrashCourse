@@ -71,4 +71,4 @@ After startup, copy the URL with token (e.g., http://127.0.0.1:8888/lab?token=�
 
    5. **Open Folder** → `/home/jovyan/work` and  **Select Kernel** → `/opt/conda/bin/python` (Python 3.11).
 
-   6. Open any `.ipynb` and run cells.
+   6. Open any `.ipynb` and run cells. If `ipywidgets` fails, Reload window.
