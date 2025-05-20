@@ -1,6 +1,10 @@
 name: "Prune old GHCR images"
 
 on:
+  schedule:
+    - cron: '0 2 * * *'      # daily at 02:00 UTC
+  push:
+    branches: [ docker ]
   registry_package:
     types: [ published ]
     package_type: container
@@ -63,8 +67,3 @@ jobs:
               fi
             done
           done
-
-  # schedule:
-  #   - cron: '0 2 * * *'      # daily at 02:00 UTC
-  # push:
-  #   branches: [ docker ]

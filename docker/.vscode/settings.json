@@ -1,0 +1,11 @@
+{
+  // Allow the VS Code widget renderer to fetch JS directly
+  "jupyter.widgetScriptSources": [
+    "localhost:8888",
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
+
+  // Make sure VS Code always uses the container’s Python
+  "python.defaultInterpreterPath": "/opt/conda/bin/python"
+}
