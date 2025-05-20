@@ -29,8 +29,5 @@ RUN pip install --no-cache-dir \
 COPY ./requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-# Enable Jupyter widget support
-RUN pip install --no-cache-dir ipywidgets
-
 EXPOSE 8888
 CMD ["start-notebook.sh"]
