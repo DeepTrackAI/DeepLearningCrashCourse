@@ -28,7 +28,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gh
 
-      - name: Re-tag newest as “latest” and prune the rest
+      - name: Delete all but the newest version for CPU & GPU images
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER:   ${{ github.repository_owner }}
@@ -37,27 +37,32 @@ jobs:
 
           for IMAGE in deep-learning-crash-course deep-learning-crash-course-gpu; do
             echo
-            echo "🔍 Processing $OWNER/$IMAGE"
+            echo "🔍 Processing package: $OWNER/$IMAGE"
             versions=$(gh api --paginate \
               -H "Accept: application/vnd.github.v3+json" \
               /orgs/$OWNER/packages/container/$IMAGE/versions)
 
-            # pick the newest by creation date
+            # pick most recent by creation date
             newest_id=$(echo "$versions" \
-                          | jq -r 'sort_by(.created_at) | last | .id')
-            echo "🛡 Retagging version $newest_id as latest"
-            gh api -X POST \
-              -H "Accept: application/vnd.github.v3+json" \
-              /orgs/$OWNER/packages/container/$IMAGE/versions/$newest_id/tags \
-              -f name=latest
+              | jq -r 'sort_by(.created_at) | reverse | .[0].id')
+            echo "🛡 Keeping version $newest_id for $IMAGE"
 
-            # delete all other versions
-            echo "$versions" \
-              | jq -r --arg keep "$newest_id" '.[] | select(.id != ($keep|tonumber)) | .id' \
-              | while read id; do
-                  echo "→ Deleting version $id"
-                  gh api -X DELETE \
-                    -H "Accept: application/vnd.github.v3+json" \
-                    /orgs/$OWNER/packages/container/$IMAGE/versions/$id
+            # delete every version except the newest
+            echo "$versions" | jq -c '.[]' | while read version; do
+              id=$(echo "$version" | jq -r '.id')
+              if [[ "$id" != "$newest_id" ]]; then
+                echo "→ Deleting version $id of $IMAGE"
+                for attempt in 1 2 3; do
+                  if gh api -X DELETE \
+                       -H "Accept: application/vnd.github.v3+json" \
+                       /orgs/$OWNER/packages/container/$IMAGE/versions/$id; then
+                    echo "   ✅ Deleted $id"
+                    break
+                  else
+                    echo "   ⚠️ Attempt $attempt failed, retrying in $((5*attempt))s…"
+                    sleep $((5*attempt))
+                  fi
                 done
+              fi
+            done
           done
