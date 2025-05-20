@@ -9,7 +9,6 @@ on:
       - 'docker/requirements.txt'
       - 'docker/docker-compose.yml'
       - '.github/workflows/docker-publish.yml'
-      - 'docker/.vscode/settings.json'
   pull_request:
     branches: [ docker ]
     paths:
@@ -18,7 +17,6 @@ on:
       - 'docker/requirements.txt'
       - 'docker/docker-compose.yml'
       - '.github/workflows/docker-publish.yml'
-      - 'docker/.vscode/settings.json'
 
 
 env:

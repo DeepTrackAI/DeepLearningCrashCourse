@@ -28,7 +28,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gh
 
-      - name: Delete all non-`:latest` versions
+      - name: Re-tag newest as “latest” and prune the rest
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER:   ${{ github.repository_owner }}
@@ -37,29 +37,27 @@ jobs:
 
           for IMAGE in deep-learning-crash-course deep-learning-crash-course-gpu; do
             echo
-            echo "🔍 Processing package: $OWNER/$IMAGE"
+            echo "🔍 Processing $OWNER/$IMAGE"
             versions=$(gh api --paginate \
               -H "Accept: application/vnd.github.v3+json" \
               /orgs/$OWNER/packages/container/$IMAGE/versions)
 
-            # Only delete versions *not* tagged "latest"
-            echo "$versions" \
-              | jq -c '.[] | select((.metadata.container.tags // []) | index("latest") | not)' \
-              | while read version; do
+            # pick the newest by creation date
+            newest_id=$(echo "$versions" \
+                          | jq -r 'sort_by(.created_at) | last | .id')
+            echo "🛡 Retagging version $newest_id as latest"
+            gh api -X POST \
+              -H "Accept: application/vnd.github.v3+json" \
+              /orgs/$OWNER/packages/container/$IMAGE/versions/$newest_id/tags \
+              -f name=latest
 
-                id=$(echo "$version" | jq -r '.id')
-                tags=$(echo "$version" | jq -r '.metadata.container.tags[]')
-                echo "→ Deleting version $id (tags: $tags)"
-                for attempt in 1 2 3; do
-                  if gh api -X DELETE \
-                       -H "Accept: application/vnd.github.v3+json" \
-                       /orgs/$OWNER/packages/container/$IMAGE/versions/$id; then
-                    echo "   ✅ Deleted $id"
-                    break
-                  else
-                    echo "   ⚠️ Attempt $attempt failed, retrying…"
-                    sleep $((5*attempt))
-                  fi
+            # delete all other versions
+            echo "$versions" \
+              | jq -r --arg keep "$newest_id" '.[] | select(.id != ($keep|tonumber)) | .id' \
+              | while read id; do
+                  echo "→ Deleting version $id"
+                  gh api -X DELETE \
+                    -H "Accept: application/vnd.github.v3+json" \
+                    /orgs/$OWNER/packages/container/$IMAGE/versions/$id
                 done
-              done
           done
