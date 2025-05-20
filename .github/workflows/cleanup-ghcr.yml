@@ -29,15 +29,14 @@ jobs:
         env:
           OWNER: ${{ github.repository_owner }}
           IMAGE: deep-learning-crash-course
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Fetching all versions of $OWNER/$IMAGE..."
           versions=$(gh api --paginate -H "Accept: application/vnd.github.v3+json" \
                       /orgs/$OWNER/packages/container/$IMAGE/versions)
-          # find the newest by creation timestamp
           newest_id=$(echo "$versions" \
                         | jq -r 'sort_by(.created_at) | reverse | .[0].id')
           echo "🛡 Keeping version $newest_id (most recent)"
-          # loop through all and delete those that aren't the newest
           echo "$versions" | jq -c '.[]' | while read ver; do
             id=$(echo "$ver" | jq -r '.id')
             if [ "$id" != "$newest_id" ]; then
@@ -47,4 +46,5 @@ jobs:
                 /orgs/$OWNER/packages/container/$IMAGE/versions/$id
             fi
           done
+
 
