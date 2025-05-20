@@ -1,0 +1,58 @@
+name: "Prune all GHCR image versions"
+
+on:
+  push:
+    branches: [ docker ]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+            | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+            | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+          sudo apt-get update
+          sudo apt-get install -y gh
+
+      - name: Delete **all** versions of CPU & GPU images
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER:   ${{ github.repository_owner }}
+        run: |
+          set -euo pipefail
+
+          for IMAGE in deep-learning-crash-course deep-learning-crash-course-gpu; do
+            echo
+            echo "🔍 Processing package: $OWNER/$IMAGE"
+
+            # Fetch all versions (paginated)
+            versions=$(gh api --paginate \
+              -H "Accept: application/vnd.github.v3+json" \
+              /orgs/$OWNER/packages/container/$IMAGE/versions)
+
+            # Delete every version ID
+            echo "$versions" | jq -r '.[].id' | while read id; do
+              echo "→ Deleting version $id of $IMAGE"
+              for attempt in 1 2 3; do
+                if gh api -X DELETE \
+                     -H "Accept: application/vnd.github.v3+json" \
+                     /orgs/$OWNER/packages/container/$IMAGE/versions/$id; then
+                  echo "   ✅ Deleted $id"
+                  break
+                else
+                  echo "   ⚠️ Attempt $attempt failed, retrying in $((5*attempt))s…"
+                  sleep $((5*attempt))
+                fi
+              done
+            done
+          done
