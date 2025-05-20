@@ -25,26 +25,39 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gh
 
+
       - name: Delete all but the newest version
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           IMAGE: deep-learning-crash-course
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Fetching all versions of $OWNER/$IMAGE..."
-          versions=$(gh api --paginate -H "Accept: application/vnd.github.v3+json" \
-                      /orgs/$OWNER/packages/container/$IMAGE/versions)
+          set -euo pipefail
+
+          echo "Fetching all versions of $OWNER/$IMAGE…"
+          versions=$(gh api --paginate \
+            -H "Accept: application/vnd.github.v3+json" \
+            /orgs/$OWNER/packages/container/$IMAGE/versions)
+
           newest_id=$(echo "$versions" \
-                        | jq -r 'sort_by(.created_at) | reverse | .[0].id')
+            | jq -r 'sort_by(.created_at) | reverse | .[0].id')
           echo "🛡 Keeping version $newest_id (most recent)"
-          echo "$versions" | jq -c '.[]' | while read ver; do
-            id=$(echo "$ver" | jq -r '.id')
-            if [ "$id" != "$newest_id" ]; then
-              echo "Deleting version $id"
-              gh api -X DELETE \
-                -H "Accept: application/vnd.github.v3+json" \
-                /orgs/$OWNER/packages/container/$IMAGE/versions/$id
+
+          echo "$versions" | jq -c '.[]' | while read version; do
+            id=$(echo "$version" | jq -r '.id')
+            if [[ "$id" != "$newest_id" ]]; then
+              echo "→ Deleting version $id"
+              # retry up to 3 times on transient errors
+              for attempt in 1 2 3; do
+                if gh api -X DELETE \
+                     -H "Accept: application/vnd.github.v3+json" \
+                     /orgs/$OWNER/packages/container/$IMAGE/versions/$id; then
+                  echo "   ✅ Deleted $id"
+                  break
+                else
+                  echo "   ⚠️ Attempt $attempt failed, retrying in $((5*attempt))s…"
+                  sleep $((5*attempt))
+                fi
+              done
             fi
           done
-
-
