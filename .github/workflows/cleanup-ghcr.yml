@@ -1,44 +1,38 @@
 name: "Prune old GHCR images"
 
 on:
-  # 1) Run daily at 02:00 UTC
   schedule:
-    - cron: '0 2 * * *'
-  # 2) Also run on every push to main (or your default branch)
+    - cron: '0 2 * * *'      # daily at 02:00 UTC
   push:
-    branches:
-      - docker
-
+    branches: [ docker ]
 permissions:
-  contents: read     # for listing versions
-  packages: write    # for deleting package versions
+  contents: read
+  packages: write
 
 jobs:
   prune:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install jq and GitHub CLI
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
           curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
             | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-          echo \
-            "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] \
-             https://cli.github.com/packages stable main" \
-            | sudo tee /etc/apt/sources.list.d/github-cli.list
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+            | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
           sudo apt-get update
           sudo apt-get install -y gh
-
 
       - name: Delete non-latest versions
         env:
           OWNER: ${{ github.repository_owner }}
           IMAGE: deep-learning-crash-course
         run: |
+          echo "Fetching all versions of $OWNER/$IMAGE…"
           gh api -H "Accept: application/vnd.github.v3+json" \
-            /users/$OWNER/packages/container/$IMAGE/versions \
+            /orgs/$OWNER/packages/container/$IMAGE/versions \
           | jq -c '.[]' \
           | while read version; do
               id=$(echo "$version" | jq -r '.id')
@@ -47,6 +41,6 @@ jobs:
                 echo "Deleting version $id (tags: $tags)"
                 gh api -X DELETE \
                   -H "Accept: application/vnd.github.v3+json" \
-                  /users/$OWNER/packages/container/$IMAGE/versions/$id
+                  /orgs/$OWNER/packages/container/$IMAGE/versions/$id
               fi
             done
