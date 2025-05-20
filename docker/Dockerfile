@@ -36,10 +36,5 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt
 # Enable Jupyter widget support
 RUN pip install --no-cache-dir ipywidgets
 
-# For JupyterLab (inside the container), install the widget manager
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
-  --no-build && \
-  jupyter lab build 
-  
 EXPOSE 8888
 CMD ["start-notebook.sh"]
