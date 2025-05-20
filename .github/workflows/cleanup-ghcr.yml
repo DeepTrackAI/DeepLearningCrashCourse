@@ -25,22 +25,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gh
 
-      - name: Delete non-latest versions
+      - name: Delete all but the newest version
         env:
           OWNER: ${{ github.repository_owner }}
           IMAGE: deep-learning-crash-course
         run: |
-          echo "Fetching all versions of $OWNER/$IMAGE…"
-          gh api -H "Accept: application/vnd.github.v3+json" \
-            /orgs/$OWNER/packages/container/$IMAGE/versions \
-          | jq -c '.[]' \
-          | while read version; do
-              id=$(echo "$version" | jq -r '.id')
-              tags=$(echo "$version" | jq -r '.metadata.container.tags[]')
-              if [[ ! " $tags " =~ " latest " ]]; then
-                echo "Deleting version $id (tags: $tags)"
-                gh api -X DELETE \
-                  -H "Accept: application/vnd.github.v3+json" \
-                  /orgs/$OWNER/packages/container/$IMAGE/versions/$id
-              fi
-            done
+          echo "Fetching all versions of $OWNER/$IMAGE..."
+          versions=$(gh api --paginate -H "Accept: application/vnd.github.v3+json" \
+                      /orgs/$OWNER/packages/container/$IMAGE/versions)
+          # find the newest by creation timestamp
+          newest_id=$(echo "$versions" \
+                        | jq -r 'sort_by(.created_at) | reverse | .[0].id')
+          echo "🛡 Keeping version $newest_id (most recent)"
+          # loop through all and delete those that aren't the newest
+          echo "$versions" | jq -c '.[]' | while read ver; do
+            id=$(echo "$ver" | jq -r '.id')
+            if [ "$id" != "$newest_id" ]; then
+              echo "Deleting version $id"
+              gh api -X DELETE \
+                -H "Accept: application/vnd.github.v3+json" \
+                /orgs/$OWNER/packages/container/$IMAGE/versions/$id
+            fi
+          done
+
