@@ -22,3 +22,4 @@ torchmetrics==1.6.1
 tqdm==4.67.1
 transformers==4.51.3
 warmup_scheduler==0.3
+pygame==2.6.1
