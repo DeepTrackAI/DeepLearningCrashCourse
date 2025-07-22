@@ -23,7 +23,7 @@ ISBN-13: 9781718503922
 7. **Recurrent Neural Networks for Timeseries Analysis**  
    Uses recurrent neural networks (RNNs), GRUs, and LSTMs to forecast time-dependent data and build a simple text translator.
 
->   - [**Code 7-1: Predicting Temperatures using Recurrent Neural Networks**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch07_RNN/ec07_1_rnn/rnn.ipynb)  
+>   - [**Code 7-1: Predicting Temperatures Using Recurrent Neural Networks**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch07_RNN/ec07_1_rnn/rnn.ipynb)  
 >     Demonstrates how to load the Jena Climate Dataset (a 7-year record of hourly weather data), prepare input and output sequences for time-lagged temperature prediction, and compare different RNN variants (basic RNN, stacked RNN, GRU, LSTM). Each model’s training and validation losses are plotted against a simple common-sense baseline (tomorrow’s temperature = today’s temperature). You’ll learn also to mitigate overfitting with dropout.
 >
 >   - [**Code 7-A: Translating with Recurrent Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch07_RNN/ec07_A_nlp_rnn/nlp_rnn.ipynb)  
