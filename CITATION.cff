@@ -1,6 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this book, please cite it as follows:"
 authors:
+  - family-names: Volpe
+    given-names: Giovanni
   - family-names: Midtvedt
     given-names: Benjamin
   - family-names: Pineda
@@ -13,10 +15,8 @@ authors:
     given-names: Joana B.
   - family-names: Manzo
     given-names: Carlo
-  - family-names: Volpe
-    given-names: Giovanni
 title: Deep Learning Crash Course
-date-released: 2025
+date-released: 2026
 url: https://nostarch.com/deep-learning-crash-course
 isbn: 9781718503922
 publisher: No Starch Press
