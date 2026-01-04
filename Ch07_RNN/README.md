@@ -5,7 +5,7 @@
 -->
 <p align="left">
   <a href="https://nostarch.com/deep-learning-crash-course">
-    <img src="DLCC_frontcover.jpg" width="250">
+    <img src="../DLCC_frontcover.jpg" width="250">
   </a>
 </p>
 by Giovanni Volpe, Benjamin Midtvedt, Jesús Pineda, Henrik Klein Moberg, Harshith Bachimanchi, Joana B. Pereira, Carlo Manzo  
