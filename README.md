@@ -8,9 +8,12 @@
   </a>
 </p>
 by Giovanni Volpe, Benjamin Midtvedt, Jesús Pineda, Henrik Klein Moberg, Harshith Bachimanchi, Joana B. Pereira, Carlo Manzo  
+
 No Starch Press, San Francisco (CA), 2026  
+
 ISBN-13: 9781718503922  
-[https://nostarch.com/deep-learning-crash-course](https://nostarch.com/deep-learning-crash-course)
+
+[https://nostarch.com/deep-learning-crash-course](https://nostarch.com/deep-learning-crash-course)  
 
 ---
 
