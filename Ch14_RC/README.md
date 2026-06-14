@@ -45,7 +45,7 @@ ISBN-13: 9781718503922
 14. **Reservoir Computing for Predicting Chaos**  
     Covers reservoir computing methods for forecasting chaotic systems such as the Lorenz attractor.
 
->   - [**Code 14-1: Training a Reservoir Computer to Predict the Lorenz System**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch14_RC/ec14_1_lorenz/lorenz.ipynb)  
+>   - [**Code 14-1: Training a Reservoir Computer to Predict the Lorenz System**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch14_RC/ec14_1_lorenz/lorenz.ipynb) <a href="https://colab.research.google.com/github/DeepTrackAI/DeepLearningCrashCourse/blob/main/Ch14_RC/ec14_1_lorenz/lorenz.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
 >     Trains a reservoir computer to predict the Lorenz system, a chaotic model governed by nonlinear differential equations. The reservoir, a fixed random network of neurons, transforms input data into a higher-dimensional space, while only the output weights are trained using a regularized least squares method. After generating training and validation data from the Lorenz equations, the reservoir predicts future states of the system. It successfully replicates the Lorenz attractor, capturing the system’s chaotic dynamics and providing accurate short-term forecasts despite eventual divergence due to the system’s sensitivity to initial conditions.
 
 ---
