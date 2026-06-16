@@ -44,7 +44,7 @@ ISBN-13: 9781718503922
 
 14. [Reservoir Computing for Predicting Chaos](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch14_RC)  
 
-    **Companion Examples**  
+CC. **Companion Examples**  
     Provides additional examples complementing those in the book.
 
 >   - [**Code Companion PINN: Solving the Heat Equation with a Physics-Informed Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Companion/cc_pinn/pinn.ipynb) <a href="https://colab.research.google.com/github/DeepTrackAI/DeepLearningCrashCourse/blob/main/Companion/cc_pinn/pinn.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
