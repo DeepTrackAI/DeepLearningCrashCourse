@@ -54,4 +54,6 @@ ISBN-13: 9781718503922
 
 14. [Reservoir Computing for Predicting Chaos](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Ch14_RC)  
 
+    [Companion Examples](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/Companion-Example-PINN/Companion)  
+
 ---
