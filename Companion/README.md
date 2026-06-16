@@ -47,7 +47,7 @@ ISBN-13: 9781718503922
     **Companion Examples**  
     Provides additional examples complementing those in the book.
 
->   - [**Code Companion PINN: Solving the Heat Equation with a Physics-Informed Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Companion//main/pinn/pinn.ipynb) <a href="https://colab.research.google.com/github/DeepTrackAI/DeepLearningCrashCourse/blob/main/Companion//main/pinn/pinn.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
+>   - [**Code Companion PINN: Solving the Heat Equation with a Physics-Informed Neural Network**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/main/Companion//main/cc_pinn/pinn.ipynb) <a href="https://colab.research.google.com/github/DeepTrackAI/DeepLearningCrashCourse/blob/main/Companion//main/cc_pinn/pinn.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
 >     Demonstrates how physical laws can be incorporated directly into the training process of a neural network. The notebook uses automatic differentiation to enforce the heat equation while learning from only a small number of observations, illustrating how PINNs can combine data and domain knowledge to solve differential equations.
 
 ---
