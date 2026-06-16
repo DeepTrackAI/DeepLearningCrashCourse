@@ -62,6 +62,6 @@ ISBN-13: 9781718503922
     Covers reservoir computing methods for forecasting chaotic systems such as the Lorenz attractor.
 
     [**Companion Examples**](https://github.com/DeepTrackAI/DeepLearningCrashCourse/tree/Companion-Example-PINN/Companion)  
-    Additional examples complementing those in the book.
+    Provides additional examples complementing those in the book.
 
 ---
